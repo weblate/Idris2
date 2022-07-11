@@ -1,17 +1,14 @@
 .. _tutorial-index:
 
 #########################
-A Crash Course in Idris 2
+Idris 2 速成课程
 #########################
 
-This is a crash course in Idris 2 (sort of a tutorial, but rather less
-gentle I'm afraid!).
-It provides a brief introduction to programming in the Idris Language.
-It covers the core language features, assuming some experience with an
-existing functional programming language such as Haskell or OCaml.
+这是Idris 2的速成课程（有点像教程，但恐怕不那么温和！）。
+它简要介绍了Idris语言的编程。
+它涵盖了核心语言特性，假设读者有一些函数式编程语言（如Haskell或OCaml）的使用经验。
 
-This has been revised and updated from the Idris 1 tutorial. For details of
-changes since Idris 1, see :ref:`updates-index`.
+已经对Idris 1教程进行了修订和更新。自Idris 1以来更改的详细信息，请参阅:ref:`updates-index`。
 
 .. note::
    The documentation for Idris has been published under the Creative

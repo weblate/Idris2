@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation for the Idris 2 Language
+Idris 2 文档
 ======================================
 
 .. note::
