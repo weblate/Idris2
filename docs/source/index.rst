@@ -6,14 +6,11 @@
 Idris 2 文档
 ======================================
 
-.. note::
-
-   The documentation for Idris 2 has been published under the Creative
-   Commons CC0 License. As such to the extent possible under law, *The
-   Idris Community* has waived all copyright and related or neighboring
-   rights to Documentation for Idris.
-
-   More information concerning the CC0 can be found online at: https://creativecommons.org/publicdomain/zero/1.0/
+.. 备注::
+   
+   Idris 2的文档已根据知识共享CC0许可证发布。因此，在法律允许的范围内， *Idris社区* 已放弃Idris文档的所有版权和相关或邻接权。
+   
+   有关CC0的更多信息，请访问： https://creativecommons.org/publicdomain/zero/1.0/
 
 .. toctree::
    :maxdepth: 1
