@@ -3,27 +3,30 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-13 02:03+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/tutorialtypesfuns/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/tutorial/typesfuns.rst:5 25f9a49e6a31495197f5141cd8dd0bb6
 msgid "Types and Functions"
-msgstr ""
+msgstr "类型和函数"
 
 #: ../../source/tutorial/typesfuns.rst:8 476ccd0e15574f7bb673f6b7c6c40747
 msgid "Primitive Types"
-msgstr ""
+msgstr "原始类型"
 
 #: ../../source/tutorial/typesfuns.rst:10 6fc4e0ab8441460aa60cddd7b383e5a0
 msgid ""
@@ -35,6 +38,11 @@ msgid ""
 "types. Enter the following into a file ``Prims.idr`` and load it into the"
 " Idris interactive environment by typing ``idris2 Prims.idr``:"
 msgstr ""
+"Idris 定义了几个原始类型。 ``Int`` , ``Integer`` 和 ``Double`` 用于数字操作，"
+" ``Char`` 和 ``String`` 用于文本操作，以及 ``Ptr`` "
+"表示外来指针。库中还声明了几种数据类型，包括 ``Bool`` ，其值为 ``True`` 和 "
+"``False`` 。我们可以用这些类型声明一 些常量。在文件 ``Prims.idr`` "
+"中输入以下内容，并通过输入 ``idris2 Prims.idr`` 将其加载到 Idris 交互环境中："
 
 #: ../../source/tutorial/typesfuns.rst:34 d2f6789c0a9141a7bd5e4cbca464089f
 msgid ""
@@ -52,6 +60,14 @@ msgid ""
 " declaration. Alternatively, a semicolon ``;`` can be used to terminate "
 "declarations."
 msgstr ""
+"一个 Idris 文件由一个可选的模块声明（这里是 ``module Prims`` "
+"）组成，后面是可选的导入列表和声明与定义的集合。在这个例子中没有指定导入。"
+"然而 Idris 程序可以由几个模块组成，每个模块的定义都有自己的命名空间。这将在 "
+":ref:`sect-namespaces` 部分进一步讨论。当编写 Idris 程序时，定义的顺序和缩进"
+"都很重要。函数和数据类型必须在使用前定义，顺便说一下，每个定义都必须有一个类"
+"型声明，例如上面列表中的 ``x : Int`` , ``foo : String`` "
+",。新的声明必须从与前一个声明相同的缩进层次开始。或者用分号 ``;`` "
+"来终止声明。"
 
 #: ../../source/tutorial/typesfuns.rst:48 dacb93e27b324fb191373fd2bcc6d8ef
 msgid ""
@@ -61,6 +77,9 @@ msgid ""
 "comparison operators, which we can use at the prompt. Evaluating things "
 "at the prompt gives an answer, for example:"
 msgstr ""
+"库模块 ``prelude`` 会被每个 Idris 程序自动导入，包括 IO "
+"、算术、数据结构和各种常用函数的设施。preclude 模块定义了几个算术和比较运算符"
+"，我们可以在提示符下使用。在提示符下对事物进行求值会得到一个答案，例如："
 
 #: ../../source/tutorial/typesfuns.rst:61 85ff232364184dbfafb0ca6da54cde08
 msgid ""
@@ -70,17 +89,21 @@ msgid ""
 "defined types. Boolean expressions can be tested with the "
 "``if...then...else`` construct, for example:"
 msgstr ""
+"所有常见的算术和比较运算符都是为原始类型定义的。它们通过接口被重载，我们将在 "
+":ref:`sect-interfaces` "
+"一节中讨论，并且可以被扩展到用户定义的类型上工作。例如，布尔表达式可以用 "
+"``if...then...else`` 构建来测试："
 
 #: ../../source/tutorial/typesfuns.rst:73 0f8b86288a204a8090114c38d31197b5
 msgid "Data Types"
-msgstr ""
+msgstr "数据类型"
 
 #: ../../source/tutorial/typesfuns.rst:75 9f6bbef6026543df9b0e40cc71fc3b74
 msgid ""
 "Data types are declared in a similar way and with similar syntax to "
 "Haskell. Natural numbers and lists, for example, can be declared as "
 "follows:"
-msgstr ""
+msgstr "数据类型的声明方式和语法与 Haskell 类似。例如，自然数和列表可以被声明如下："
 
 #: ../../source/tutorial/typesfuns.rst:85 a0e134b23314405097c382fcfbf69ae8
 msgid ""
@@ -92,6 +115,12 @@ msgid ""
 "declaration for ``List``, we used an infix operator ``::``. New operators"
 " such as this can be added using a fixity declaration, as follows:"
 msgstr ""
+"数据类型名称不能以小写字母开头（我们将在后面看到为什么不可以！）。 "
+"上面的声明来自标准库。一进制自然数可以是零 (``Z``)，"
+"也可以是另一个自然数的后继者 (``S k``)。列表可以是空的 (``Nil`` )，"
+"也可以是添加到另一个列表前面的值 (``x :: xs`` )。在 ``List`` 的声明中，"
+"我们使用了一个 infix 运算符 ``::`` "
+"。像这样的新运算符可以使用缀序声明来添加，如下所示："
 
 #: ../../source/tutorial/typesfuns.rst:97 fffcbf84b2524a2d95249698fd4f3cfe
 msgid ""
@@ -99,20 +128,26 @@ msgid ""
 " operators as names. They may be used in prefix form if enclosed in "
 "brackets, e.g. ``(::)``. Infix operators can use any of the symbols:"
 msgstr ""
+"函数、数据构造器和类型构造器都可以被赋予 infix "
+"运算符作为名称。它们可以以前缀的形式使用，如果用括号括起来，例如： ``(::)`` "
+"。中缀运算符可以使用任何符号："
 
 #: ../../source/tutorial/typesfuns.rst:106 85a8741c864d455c94a0c0d25bb80932
 msgid "Some operators built from these symbols can't be user defined. These are"
-msgstr ""
+msgstr "一些由这些符号构建的运算符不能被用户定义。这些是"
 
 #: ../../source/tutorial/typesfuns.rst:108 1e7fa3b7966d4ebc90cc098b5988aa7d
+#, fuzzy
 msgid ""
 "``%``, ``\\``, ``:``, ``=``, ``|``, ``|||``, ``<-``, ``->``, ``=>``, "
 "``?``, ``!``, ``&``, ``**``, ``..``"
 msgstr ""
+"``%``, ``\\``, ``:``, ``=``, ``|``, ``|||``, ``<-``, ``->``, ``=>``, ``?``, "
+"``!``, ``&``, ``**``, ``..``"
 
 #: ../../source/tutorial/typesfuns.rst:112 72e2603c0d064ce995d010baa2cbddb5
 msgid "Functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/tutorial/typesfuns.rst:114 451012a1ef754beca1d5b96185f5bb5c
 msgid ""
@@ -122,6 +157,9 @@ msgid ""
 "Haskell’s double colon ``::``). Some natural number arithmetic functions "
 "can be defined as follows, again taken from the standard library:"
 msgstr ""
+"函数是通过模式匹配实现的，同样使用与 Haskell 类似的语法。主要的区别是 Idris "
+"要求所有函数的类型声明使用单冒号 ``:`` (而不是Haskell的双冒号 ``::`` "
+"）。一些自然数算术函数可以定义如下，同样取自标准库："
 
 #: ../../source/tutorial/typesfuns.rst:133 1f494f35a2f0475c9b6662e759d0cafa
 msgid ""
@@ -134,12 +172,19 @@ msgid ""
 "By convention, however, data types and constructor names typically begin "
 "with a capital letter. We can test these functions at the Idris prompt:"
 msgstr ""
+"标准的算术运算符 ``+`` 和 ``*`` 也被重载，供 ``Nat`` 使用，并用上述函数实现。"
+"与 Haskell 不同，对函数名是否必须以大写字母开头没有任何限制。函数名 (上面的 "
+"``plus`` 和 ``mult`` )、数据构造函数 ( ``Z``, ``S``, ``Nil`` 和 ``::``) "
+"和类型构造函数 ( ``Nat`` 和 ``List``) 都属于同一个命名空间。然而，根据惯例，"
+"数据类型和构造函数名称通常以大写字母开头。我们可以在 Idris "
+"提示下测试这些函数："
 
 #: ../../source/tutorial/typesfuns.rst:150 0e433ef1748e4ccfa3d405f7ea757724
 msgid ""
 "Like arithmetic operations, integer literals are also overloaded using "
 "interfaces, meaning that we can also test the functions as follows:"
-msgstr ""
+msgstr "和算术运算一样，整数字面量也是使用接口重载的，这意味着我们也可以按如下方式测"
+"试函数："
 
 #: ../../source/tutorial/typesfuns.rst:160 388493f95afc4f7aa137be463c8bc4e7
 msgid ""
@@ -153,10 +198,16 @@ msgid ""
 "numbers. This means it can optimise the representation, and functions "
 "such as ``plus`` and ``mult``."
 msgstr ""
+"顺便说一下，你可能会想知道，既然我们的计算机已经内置了完美的整数运算，为什么"
+"我们还有一进制自然数。原因主要是一进制自然数有一个非常方便的结构，容易推理，"
+"而且容易与其他数据结构联系起来，我们将在后面看到。尽管如此，我们并不希望这种"
+"方便是以牺牲效率为代价的。幸运的是， Idris 知道 ``Nat`` "
+"（和类似的结构化类型）和数字之间的关系。这意味着它可以优化表示，以及诸如 "
+"``plus`` 和 ``mult`` 等函数。"
 
 #: ../../source/tutorial/typesfuns.rst:171 b06d281c2e83484abf4d56d2d9088c9b
 msgid "``where`` clauses"
-msgstr ""
+msgstr "``where`` 从句"
 
 #: ../../source/tutorial/typesfuns.rst:173 22a0dbd0944645e19fc8fdcd8d27b2e1
 msgid ""
@@ -165,16 +216,18 @@ msgid ""
 "auxiliary function which accumulates the new, reversed list, and which "
 "does not need to be visible globally:"
 msgstr ""
+"也可以使用 ``where`` 从句在 *本地* 定义函数。例如，为了定义一个反转列表的函数"
+"，我们可以使用一个辅助函数来累积新的反转后的列表，而这个函数不需要全局可见："
 
 #: ../../source/tutorial/typesfuns.rst:186 0f4accfaf6af48ad82667cc58c65272a
 msgid ""
 "Indentation is significant — functions in the ``where`` block must be "
 "indented further than the outer function."
-msgstr ""
+msgstr "缩进是很重要的 -- ``where`` 块中的函数必须比外部函数有更深的缩进层次。"
 
 #: ../../source/tutorial/typesfuns.rst:189 69176313a1c14c33b241efbbfb304f82
 msgid "Scope"
-msgstr ""
+msgstr "作用域"
 
 #: ../../source/tutorial/typesfuns.rst:191 ba6fa22c1ea24ebc932069ff305e51f2
 msgid ""
@@ -183,24 +236,30 @@ msgid ""
 "A name which appears in the type will be in scope in the ``where`` "
 "clause."
 msgstr ""
+"任何在外层作用域中可见的名字在 ``where`` "
+"从句中也是可见的（除非它们被重新定义，例如这里的 ``xs`` ）。"
+"在类型声明中出现的名字也将在 ``where`` 从句的作用域内。"
 
 #: ../../source/tutorial/typesfuns.rst:196 817faac30e224b868853486c3f0e0ddb
 msgid ""
 "As well as functions, ``where`` blocks can include local data "
 "declarations, such as the following where ``MyLT`` is not accessible "
 "outside the definition of ``foo``:"
-msgstr ""
+msgstr "除了函数， ``where`` 块也可以包括本地数据类型声明，比如下面的 ``MyLT`` 在 "
+"``foo`` 的定义之外不能访问："
 
 #: ../../source/tutorial/typesfuns.rst:212 bd5bbff2377a4403b904204e744c1f97
 msgid ""
 "Functions defined in a ``where`` clause need a type declaration just like"
 " any top level function. Here is another example of how this works in "
 "practice:"
-msgstr ""
+msgstr "在 ``where`` 从句中定义的函数需要一个类型声明，就像任何顶层函数一样。下面是另"
+"一个例子，说明这在实践中是如何工作的："
 
 #: ../../source/tutorial/typesfuns.rst:238 f790cba5c9694329aa72a3ba5f819e66
+#, fuzzy
 msgid "Totality and Covering"
-msgstr ""
+msgstr "整体性和覆盖性"
 
 #: ../../source/tutorial/typesfuns.rst:240 d7635c8fb8c546b1b96db92b526cdba6
 msgid ""
@@ -208,16 +267,19 @@ msgid ""
 "be patterns which cover all possible values of the inputs types. For "
 "example, the following definition will give an error:"
 msgstr ""
+"默认情况下，Idris 的函数必须是 ``covering`` 。也就是说，必须有涵盖输入类型的"
+"所有可能值的模式。例如，下面的定义将给出一个错误："
 
 #: ../../source/tutorial/typesfuns.rst:249 9319ddde3f194c4caf8c2b1e756af37b
 msgid ""
 "This gives an error because ``fromMaybe Nothing`` is not defined. Idris "
 "reports:"
-msgstr ""
+msgstr "这给出了一个错误，因为 ``fromMaybe Nothing`` 没有定义。Idris会输出报告："
 
 #: ../../source/tutorial/typesfuns.rst:257 eb8e98e2c6e1412fb9b185ae56b14e64
+#, fuzzy
 msgid "You can override this with a ``partial`` annotation:"
-msgstr ""
+msgstr "你可以用 ``partial`` 注释来覆盖这一点。"
 
 #: ../../source/tutorial/typesfuns.rst:264 d7408089ceb2472fbd6864f5645114ed
 msgid ""
@@ -1190,4 +1252,3 @@ msgid ""
 "total functions will be evaluated during type checking. Partial functions"
 " can still be used in types, but will not be evaluated further."
 msgstr ""
-
