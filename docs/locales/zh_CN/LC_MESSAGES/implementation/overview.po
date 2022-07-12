@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-12 05:11+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/implementationoverview/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/implementation/overview.rst:3 737d254ef9464680ae33f0d422fb6468
@@ -31,7 +34,7 @@ msgstr ""
 
 #: ../../source/implementation/overview.rst:11 e3ecd98a843241db9373686476418e58
 msgid "Introduction"
-msgstr ""
+msgstr "简介"
 
 #: ../../source/implementation/overview.rst:13 9fbf90e0444f4ae188081923e23a5ba0
 msgid ""
@@ -788,4 +791,3 @@ msgid ""
 "expect (i.e. it's safe as long as all of the fields are updated at the "
 "same time consistently)."
 msgstr ""
-
