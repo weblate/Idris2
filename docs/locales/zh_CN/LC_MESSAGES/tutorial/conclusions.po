@@ -3,29 +3,32 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: 2022-07-12 03:11+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/tutorialconclusions/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/tutorial/conclusions.rst:5 396dfe16cf1d4692b04c25f64279eab2
 msgid "Further Reading"
-msgstr ""
+msgstr "延伸阅读"
 
 #: ../../source/tutorial/conclusions.rst:7 aa7e1d8cd44b4844b89e778eecfb21a0
 msgid ""
 "Further information about Idris programming, and programming with "
 "dependent types in general, can be obtained from various sources:"
-msgstr ""
+msgstr "有关 Idris 编程和一般依赖类型编程的更多信息，可以从各种来源获得："
 
 #: ../../source/tutorial/conclusions.rst:10 69b4746bf23749229899dee125d827cb
 msgid ""
@@ -33,12 +36,15 @@ msgid ""
 "driven-development-with-idris>`_ by Edwin Brady, available from `Manning "
 "<https://www.manning.com>`_."
 msgstr ""
+"`使用 Idris 进行类型驱动开发 <https://www.manning.com/books/type-driven-"
+"development-with-idris>`_ 作者 Edwin Brady，可从`Manning <https://"
+"www.manning.com >`获得_。"
 
 #: ../../source/tutorial/conclusions.rst:13 96eb1f1c337c4e73afc804d8beef9f6e
 msgid ""
 "The Idris web site (https://www.idris-lang.org/) and by asking questions "
 "on the mailing list."
-msgstr ""
+msgstr "Idris网站（https://www.idris-lang.org/）和通过在邮件列表中提问。"
 
 #: ../../source/tutorial/conclusions.rst:16 eceab04b8a2147338ab5f25eaf85bb99
 msgid ""
@@ -112,4 +118,3 @@ msgid ""
 "297-308. DOI=10.1145/1863543.1863587 "
 "https://doi.acm.org/10.1145/1863543.1863587"
 msgstr ""
-
