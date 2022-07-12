@@ -1,0 +1,410 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/tutorial/theorems.rst:5 2254aadf28af48b2a13b066b7ef7146b
+msgid "Theorem Proving"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:8 6b8c42aad6b246528aef2984ce8240a5
+msgid "Equality"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:10 3fd6e96a291f4e24b0fb27c011ec6382
+msgid ""
+"Idris allows propositional equalities to be declared, allowing theorems "
+"about programs to be stated and proved. An equality type is defined as "
+"follows in the Prelude:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:19 26a8f1f4db044c64bd9a8625b5b29a27
+msgid ""
+"As a notational convenience, ``Equal x y`` can be written as ``x = y``. "
+"Equalities can be proposed between any values of any types, but the only "
+"way to construct a proof of equality is if values actually are equal. For"
+" example:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:32 bd63fe569b8941a5b9239d4bffd721ae
+msgid "If we try..."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:39 132a6148ea5b458088176173f4a0a295
+msgid "...then we'll get an error:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:53 d9499aece9874787b64c9a3db2b7e5a4
+msgid "The Empty Type"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:55 f1f0602ef4804178b46f23d89bb73fb4
+msgid ""
+"There is an empty type, ``Void``, which has no constructors. It is "
+"therefore impossible to construct a canonical element of the empty type. "
+"We can therefore use the empty type to prove that something is "
+"impossible, for example zero is never equal to a successor:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:69 7d08900f06c440dd832d60f2b54c783a
+msgid ""
+"Don't worry if you don't get all the details of how this works just yet -"
+" essentially, it applies the library function ``replace``, which uses an "
+"equality proof to transform a predicate. Here we use it to transform a "
+"value of a type which can exist, the empty tuple, to a value of a type "
+"which can’t, by using a proof of something which can’t exist."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:75 d2b568ba7a5d451f81daf593db112c3e
+msgid ""
+"Once we have an element of the empty type, we can prove anything. "
+"``void`` is defined in the library, to assist with proofs by "
+"contradiction."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:84 a3333c10c32a4ab9b8ab1f7db53f143a
+msgid "Proving Theorems"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:86 f5cd15835ded44e593c75587ab4cf939
+msgid ""
+"When type checking dependent types, the type itself gets *normalised*. So"
+" imagine we want to prove the following theorem about the reduction "
+"behaviour of ``plus``:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:94 163745eba7134003bbac12b19e88a128
+msgid ""
+"We’ve written down the statement of the theorem as a type, in just the "
+"same way as we would write the type of a program. In fact there is no "
+"real distinction between proofs and programs. A proof, as far as we are "
+"concerned here, is merely a program with a precise enough type to "
+"guarantee a particular property of interest."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:100 c2abda40c8b642c09c0384604a4d576c
+msgid ""
+"We won’t go into details here, but the Curry-Howard correspondence "
+"[#Timothy]_ explains this relationship. The proof itself is immediate, "
+"because ``plus Z n`` normalises to ``n`` by the definition of ``plus``:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:108 07e34b9bb5a040eca20a18f7f9020aae
+msgid ""
+"It is slightly harder if we try the arguments the other way, because plus"
+" is defined by recursion on its first argument. The proof also works by "
+"recursion on the first argument to ``plus``, namely ``n``."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:118 e6a695b45dfe421e8443135803cf0c83
+msgid ""
+"``cong`` is a function defined in the library which states that equality "
+"respects function application:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:125 1492514c4a89461989950ad8ffe136dc
+msgid ""
+"To see more detail on what's going on, we can replace the recursive call "
+"to ``plusReducesZ`` with a hole:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:132 072829c11ee748fb9ef4d0ce64236365
+msgid "Then inspecting the type of the hole at the REPL shows us:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:141 7fc13882b4314d1395bf32415bdd472a
+msgid "We can do the same for the reduction behaviour of plus on successors:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:149 01fdba95b039461fb635be060cf5b271
+msgid ""
+"Even for small theorems like these, the proofs are a little tricky to "
+"construct in one go. When things get even slightly more complicated, it "
+"becomes too much to think about to construct proofs in this “batch mode”."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:154 738e85ee286b403eb976e01df50c5ada
+msgid ""
+"Idris provides interactive editing capabilities, which can help with "
+"building proofs. For more details on building proofs interactively in an "
+"editor, see :ref:`proofs-index`."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:161 511c473b08004d91a65b7057d32aefe6
+msgid "Theorems in Practice"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:163 794584ceb0e54fa4be37f008025d0e82
+msgid ""
+"The need to prove theorems can arise naturally in practice. For example, "
+"previously (:ref:`sec-views`) we implemented ``natToBin`` using a "
+"function ``parity``:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:171 09c84876f05f4c9b813ce02f3c67b41c
+msgid ""
+"We provided a definition for ``parity``, but without explanation.  We "
+"might have hoped that it would look something like the following:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:183 851bf6854d2b49a0986c8ff58cc20c79
+msgid "Unfortunately, this fails with a type error:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:193 94a88c61c3744573946b0b9bb781b93d
+msgid ""
+"The problem is that normalising ``S j + S j``, in the type of ``Even`` "
+"doesn't result in what we need for the type of the right hand side of "
+"``Parity``. We know that ``S (S (plus j j))`` is going to be equal to ``S"
+" j + S j``, but we need to explain it to Idris with a proof. We can begin"
+" by adding some *holes* (see :ref:`sect-holes`) to the definition:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:210 2205748d6913479486002a657e57d496
+msgid ""
+"Checking the type of ``helpEven`` shows us what we need to prove for the "
+"``Even`` case:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:220 e1fde16041844baa8bc0654d2e42b5ef
+msgid ""
+"We can therefore write a helper function to *rewrite* the type to the "
+"form we need:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:228 ffda0b8aa8fa44c596c8384cf27ae914
+msgid ""
+"The ``rewrite ... in`` syntax allows you to change the required type of "
+"an expression by rewriting it according to an equality proof. Here, we "
+"have used ``plusSuccRightSucc``, which has the following type:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:236 c233f4d3a10c4649a71365e901949b99
+msgid ""
+"We can see the effect of ``rewrite`` by replacing the right hand side of "
+"``helpEven`` with a hole, and working step by step. Beginning with the "
+"following:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:244 c10f9ccb392241908e1c0117fbdc7779
+msgid "We can look at the type of ``helpEven_rhs``:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:253 899e30d8d60b4b258b725126be8ef908
+msgid ""
+"Then we can ``rewrite`` by applying ``plusSuccRightSucc j j``, which "
+"gives an equation ``S (j + j) = j + S j``, thus replacing ``S (j + j)`` "
+"(or, in this case, ``S (plus j j)`` since ``S (j + j)`` reduces to that) "
+"in the type with ``j + S j``:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:263 5efe029159b84ba299f77489797cc49d
+msgid ""
+"Checking the type of ``helpEven_rhs`` now shows what has happened, "
+"including the type of the equation we just used (as the type of "
+"``_rewrite_rule``):"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:274 45d8786935874abc8b5997e9fdcf7a0b
+msgid ""
+"Using ``rewrite`` and another helper for the ``Odd`` case, we can "
+"complete ``parity`` as follows:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:292 9d01363b755f45c787065de0f925cc03
+msgid ""
+"Full details of ``rewrite`` are beyond the scope of this introductory "
+"tutorial, but it is covered in the theorem proving tutorial (see :ref"
+":`proofs-index`)."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:298 2173c199f017451381dd41742884a984
+msgid "Totality Checking"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:300 f3b52e2bad134e5e9f76103a3771fb9e
+msgid ""
+"If we really want to trust our proofs, it is important that they are "
+"defined by *total* functions — that is, a function which is defined for "
+"all possible inputs and is guaranteed to terminate. Otherwise we could "
+"construct an element of the empty type, from which we could prove "
+"anything:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:318 13cbff04be4142e8be081636f3fc3280
+msgid ""
+"Internally, Idris checks every definition for totality, and we can check "
+"at the prompt with the ``:total`` command. We see that neither of the "
+"above definitions is total:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:329 2c782317530e4bd8b0258c3a27eec4c6
+msgid ""
+"Note the use of the word “possibly” — a totality check can never be "
+"certain due to the undecidability of the halting problem. The check is, "
+"therefore, conservative. It is also possible (and indeed advisable, in "
+"the case of proofs) to mark functions as total so that it will be a "
+"compile time error for the totality check to fail:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:340 a0c7a0e80eb84b5eb3345bf0e95f8418
+msgid ""
+"Reassuringly, our proof in Section :ref:`sect-empty` that the zero and "
+"successor constructors are disjoint is total:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:348 cc70c3987edd47a8922157929003a33d
+msgid ""
+"The totality check is, necessarily, conservative. To be recorded as "
+"total, a function ``f`` must:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:351 386629ec1bcd456c8c124641e412358a
+msgid "Cover all possible inputs"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:353 97200f074f904ed2a0912f66da78d1ed
+msgid ""
+"Be *well-founded* — i.e. by the time a sequence of (possibly mutually) "
+"recursive calls reaches ``f`` again, it must be possible to show that one"
+" of its arguments has decreased."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:357 dc398b182f3e42139d7bc514b015e041
+msgid "Not use any data types which are not *strictly positive*"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:359 23cd3d78adfe499e99c2c826bd9b47c3
+msgid "Not call any non-total functions"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:362 0e325a0101854bac9ea1ac4d3174f439
+msgid "Directives and Compiler Flags for Totality"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:366 bb2cfa3f18384a158ff63bcfdf5224f9
+msgid "Not all of this is implemented yet for Idris 2"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:368 76ac2175ae8b4d979ce2301806e09637
+msgid ""
+"By default, Idris allows all well-typed definitions, whether total or "
+"not. However, it is desirable for functions to be total as far as "
+"possible, as this provides a guarantee that they provide a result for all"
+" possible inputs, in finite time. It is possible to make total functions "
+"a requirement, either:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:373 7df7105989f749efbdbd918e79220d3b
+msgid "By using the ``--total`` compiler flag."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:375 c1210e8950104fc2972007472e4b7fcd
+#, python-format
+msgid ""
+"By adding a ``%default total`` directive to a source file. All "
+"definitions after this will be required to be total, unless explicitly "
+"flagged as ``partial``."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:379 2fa90114bb754081823685eae4800a63
+#, python-format
+msgid ""
+"All functions *after* a ``%default total`` declaration are required to be"
+" total. Correspondingly, after a ``%default partial`` declaration, the "
+"requirement is relaxed."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:383 db340c4ff56d4e1ba261cbe65e73be7b
+msgid ""
+"Finally, the compiler flag ``--warnpartial`` causes to print a warning "
+"for any undeclared partial function."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:387 a8cc5c93020d48c28cf05f7632abf957
+msgid "Totality checking issues"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:389 2a4fff106b2544a9a38a492ffe785634
+msgid ""
+"Please note that the totality checker is not perfect! Firstly, it is "
+"necessarily conservative due to the undecidability of the halting "
+"problem, so many programs which *are* total will not be detected as such."
+" Secondly, the current implementation has had limited effort put into it "
+"so far, so there may still be cases where it believes a function is total"
+" which is not. Do not rely on it for your proofs yet!"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:397 7791a86932b14d1aacb2999083ca6085
+msgid "Hints for totality"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:399 dbbadf6d74fd4e658f5c92a455588cd5
+msgid ""
+"In cases where you believe a program is total, but Idris does not agree, "
+"it is possible to give hints to the checker to give more detail for a "
+"termination argument. The checker works by ensuring that all chains of "
+"recursive calls eventually lead to one of the arguments decreasing "
+"towards a base case, but sometimes this is hard to spot. For example, the"
+" following definition cannot be checked as ``total`` because the checker "
+"cannot decide that ``filter (< x) xs`` will always be smaller than ``(x "
+":: xs)``:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:415 03218c5f732d4f2b921a5653665c5a0a
+msgid ""
+"The function ``assert_smaller``, defined in the prelude, is intended to "
+"address this problem:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:423 327e14b0c9744a0a85fb27e1f1da9635
+msgid ""
+"It simply evaluates to its second argument, but also asserts to the "
+"totality checker that ``y`` is structurally smaller than ``x``. This can "
+"be used to explain the reasoning for totality if the checker cannot work "
+"it out itself. The above example can now be written as:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:437 ad2bde793b9045ac971acf00ef2d32b6
+msgid ""
+"The expression ``assert_smaller (x :: xs) (filter (<= x) xs)`` asserts "
+"that the result of the filter will always be smaller than the pattern "
+"``(x :: xs)``."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:441 9a3c7bb8da6e444ca5296f8b3b196ec1
+msgid ""
+"In more extreme cases, the function ``assert_total`` marks a "
+"subexpression as always being total:"
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:449 5d1a4d8b81a44c00ad391e7f94ecab32
+msgid ""
+"In general, this function should be avoided, but it can be very useful "
+"when reasoning about primitives or externally defined functions (for "
+"example from a C library) where totality can be shown by an external "
+"argument."
+msgstr ""
+
+#: ../../source/tutorial/theorems.rst:455 dfad999e68c84403bfe6777494c9b105
+msgid ""
+"Timothy G. Griffin. 1989. A formulae-as-type notion of control. In "
+"Proceedings of the 17th ACM SIGPLAN-SIGACT symposium on Principles of "
+"programming languages (POPL '90). ACM, New York, NY, USA, 47-58. "
+"DOI=10.1145/96709.96714 https://doi.acm.org/10.1145/96709.96714"
+msgstr ""
+

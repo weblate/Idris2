@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/tutorial/windows.rst:4 79485a47e73141fc857d8e0712a3b189
+msgid "Prerequisites for Windows"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:7 905d50bc8ada4624a1a5f9b86d44bdba
+msgid "MSYS2"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:9 9e54532203054c24ae5c0e81b5249d51
+msgid ""
+"To build Idris 2 on Windows, an Unix-like environment is needed for all "
+"the utilities used during the build. `MSYS2 <https://www.msys2.org>`_ "
+"provides that for us."
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:12 6493dd8c54844252b25ec54acb31047f
+msgid "Download the latest version of MSYS2"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:13 b91de8ed75264405bbbc67c4f3db1b47
+msgid ""
+"Run the installer. Don't install it under Program files as it needs to "
+"write files (the \"unix\" home directory lies under there, for example)"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:16 59ec49155162436b8ef65844b7116c39
+msgid ""
+"In the directory where you installed MSYS2, find the file ``mingw64.ini``"
+" and add the line ``MSYS2_PATH_TYPE=inherit``. This adds the normal "
+"windows PATH to the shell in MSYS2."
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:19 49c0b3cd67134398ad4a92e149f5fdbd
+msgid ""
+"Start MSYS2 (click on mingw64.exe, as the icon in the start menu won't "
+"pick up the MSYS2_PATH_TYPE from the ini, it can be added to the system "
+"settings)"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:22 f4212aa674e045a1982f8288d9fb8e88
+msgid "Update the installation with the latest releases with ``pacman -Syu``"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:24 136f2cba79294954b395dfbe9468a639
+msgid "Install the programs that the build needs with::"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:30 57df4e8834f442b9b7675665ce65c98d
+msgid "Chez Scheme"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:32 c88c090c614f49e6b9d8d3649000fad3
+msgid ""
+"Chez Scheme has a ready-made installer at `GitHub "
+"<https://github.com/cisco/ChezScheme/releases>`_"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:34 405529323bc8444daa9ee4b260e81dfc
+msgid ""
+"Download the installer and run it, do not install it in a path with "
+"spaces, currently Idris2 has trouble with them."
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:36 d328ffe125e441d39bfda1a4a18c23b8
+msgid ""
+"Add the threaded 64-bit scheme to the PATH. It is the ``\\bin\\ta6nt`` "
+"subdirectory to where Chez Scheme was installed. So if you used "
+"\"C:\\Chez\" it will be in ``C:\\Chez\\bin\\ta6nt``"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:41 6a3d95c22bb24645b366d5dca91d5175
+msgid "Building"
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:43 af0d822dc7ed4a08be21a4fc6bdea59d
+msgid ""
+"Start a fresh MSYS2 shell so that it knows about your modified PATH (it's"
+" important to use Mingw64 to get access to the right compilers)."
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:46 41a9119e0f5a4e40ac18d50783353f68
+msgid "Navigate to the Idris2 directory."
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:47 7ef2be9df82c471cb7727507e328ae76
+msgid ""
+"Set the SCHEME environment variable that Idris2 needs ``export "
+"SCHEME=scheme``. This can be set permanently in the bash profile file or "
+"the Windows settings."
+msgstr ""
+
+#: ../../source/tutorial/windows.rst:50 fb28bffc1f6e4d03bd469dbc1859dd6d
+msgid ""
+"Now ``make bootstrap && make install`` should build Idris2 and install it"
+" in ``home/<username>/.idris2/bin`` under your MSYS2 installation. If you"
+" add that to the PATH in Windows settings it will be usable from any "
+"command line (including Powershell or DOS), that you open."
+msgstr ""
+

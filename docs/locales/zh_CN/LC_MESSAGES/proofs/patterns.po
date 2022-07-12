@@ -1,0 +1,354 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/proofs/patterns.rst:3 f725fa2b8e7344f49965ff6336d964cc
+msgid "Pattern Matching Proofs"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:5 495ed94c609042f89c30bb76f0d392c0
+msgid ""
+"In this section, we will provide a proof of ``plus_commutes`` directly, "
+"by writing a pattern matching definition. We will use interactive editing"
+" features extensively, since it is significantly easier to produce a "
+"proof when the machine can give the types of intermediate values and "
+"construct components of the proof itself. The commands we will use are "
+"summarised below. Where we refer to commands directly, we will use the "
+"Vim version, but these commands have a direct mapping to Emacs commands."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:15 564fb047b4c449258be516f203f49306
+msgid "Command"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:15 a263f08ce72a49e8a27ca824120abf40
+msgid "Vim binding"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:15 172d1924925848c6ac34afc366249ff7
+msgid "Emacs binding"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:15 dde0bbdd6e384fb8ba6461720996cf38
+msgid "Explanation"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:17 e0f8fce991f040afb6da2e6f9449a30a
+msgid "Check type"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:17 730fef2e99924f0db6bfc42fa5ace360
+msgid "``\\t``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:17 b1019fd26dd04773868bb632c51b21e9
+msgid "``C-c C-t``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:17 e2385a2194924ce1b11dbcae7ccac34d
+msgid "Show type of identifier or hole under the cursor."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:19 f2231dc06ab444c391dd780d8030f819
+msgid "Proof search"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:19 4084126273de4ce18460f3a3d9f5bc6b
+msgid "``\\s``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:19 2c1454c11eec4afeaeeefd99639d635c
+msgid "``C-c C-a``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:19 22104bea303d40b69b5e182dcc0c761c
+msgid "Attempt to solve hole under the cursor by applying simple proof search."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:21 322857da689b44d985b837ae42a77a99
+msgid "Make new definition"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:21 b901ca9e2839452981cf6266231ccc84
+msgid "``\\a``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:21 9f6c7ebb417845f99a8071006f3bfe27
+msgid "``C-c C-s``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:21 74e41b7b040c442284e6caaefb4cab1e
+msgid "Add a template definition for the type defined under the cursor."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:23 6c9c1e53f0934c448eb363937efde50e
+msgid "Make lemma"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:23 4ace47eabcf84dd5aa8f7626161ad5f5
+msgid "``\\l``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:23 ca5aa0d5c262410b926aff3079ab10f0
+msgid "``C-c C-e``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:23 718478b628ba40c4b0dc356065d3bbe6
+msgid ""
+"Add a top level function with a type which solves the hole under the "
+"cursor."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:25 d7136a59daec4595830dfd49d522deba
+msgid "Split cases"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:25 193a8d02d113458999926b7d01d55446
+msgid "``\\c``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:25 e9193fd1ae034f5bb442af265c833f56
+msgid "``C-c C-c``"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:25 90b10204aec34b04836d58ed1f80c680
+msgid ""
+"Create new constructor patterns for each possible case of the variable "
+"under the cursor."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:30 47a3ccabcaef49acab1d6236200dbdbe
+msgid "Creating a Definition"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:32 923c1f8ddd834e0aa1d7de13c90a7d9f
+msgid ""
+"To begin, create a file ``pluscomm.idr`` containing the following type "
+"declaration:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:39 550301f911834f9bbd35af8602a72721
+msgid ""
+"To create a template definition for the proof, press ``\\a`` (or the "
+"equivalent in your editor of choice) on the line with the type "
+"declaration. You should see:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:48 127abdd42e1642bc9cabb88516bbecbd
+msgid ""
+"To prove this by induction on ``n``, as we sketched in Section :ref"
+":`sect-inductive`, we begin with a case split on ``n`` (press ``\\c`` "
+"with the cursor over the ``n`` in the definition.) You should see:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:59 cba76e5db4524527926f5ed53b7dbcdb
+msgid ""
+"If we inspect the types of the newly created holes, "
+"``plus_commutes_rhs_1`` and ``plus_commutes_rhs_2``, we see that the type"
+" of each reflects that ``n`` has been refined to ``Z`` and ``S k`` in "
+"each respective case. Pressing ``\\t`` over ``plus_commutes_rhs_1`` "
+"shows:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:71 395c620cf4a343f5906eb5636212a3f4
+msgid "Similarly, for ``plus_commutes_rhs_2``:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:80 0abb6eba4928420e8bd0fc172aa4f5b6
+msgid "It is a good idea to give these slightly more meaningful names:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:89 5d44361e01e945c9ab66afc815c1b275
+msgid "Base Case"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:91 663c8c35b10646759612116ecb34d659
+msgid ""
+"We can create a separate lemma for the base case interactively, by "
+"pressing ``\\l`` with the cursor over ``plus_commutes_Z``. This yields:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:103 5ba64c3068bc43fbb34ab77220143060
+msgid ""
+"That is, the hole has been filled with a call to a top level function "
+"``plus_commutes_Z``, applied to the variable in scope ``m``."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:106 897745adce69447493126f290d4638c2
+msgid ""
+"Unfortunately, we cannot prove this lemma directly, since ``plus`` is "
+"defined by matching on its *first* argument, and here ``plus m Z`` has a "
+"concrete value for its *second argument* (in fact, the left hand side of "
+"the equality has been reduced from ``plus Z m``.) Again, we can prove "
+"this by induction, this time on ``m``."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:112 8cc907589fdd4193be8fb5857b4ba4e2
+msgid "First, create a template definition with ``\\d``:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:119 63e7d63c7ae640d29d67bd6006b53376
+msgid "Now, case split on ``m`` with ``\\c``:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:127 176ee185f9e243be83b93bae13a528e0
+msgid ""
+"Checking the type of ``plus_commutes_Z_rhs_1`` shows the following, which"
+" is provable by ``Refl``:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:135 bef09eee2f994f4caaf9a1e4080d565f
+msgid ""
+"For such immediate proofs, we can let write the proof automatically by "
+"pressing ``\\s`` with the cursor over ``plus_commutes_Z_rhs_1``. This "
+"yields:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:145 49f49b9c08804f04a6ba83872a04df21
+msgid "For ``plus_commutes_Z_rhs_2``, we are not so lucky:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:153 2806308101d249fda6f40e8828751d94
+msgid ""
+"Inductively, we should know that ``k = plus k Z``, and we can get access "
+"to this inductive hypothesis by making a recursive call on k, as follows:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:165 d886d26bbf904d46b97d99e054c8dd71
+msgid "For ``plus_commutes_Z_rhs_2``, we now see:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:174 6d3eff24199b4992a03b65beb564c387
+msgid ""
+"So we know that ``k = plus k Z``, but how do we use this to update the "
+"goal to ``S k = S k``?"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:177 4c41b019cc9a4e2c93e15f9c6bb49961
+msgid ""
+"To achieve this, Idris provides a ``replace`` function as part of the "
+"prelude:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:185 c810ccb946fc4230811ea904fee4af06
+msgid ""
+"Given a proof that ``x = y``, and a property ``p`` which holds for ``x``,"
+" we can get a proof of the same property for ``y``, because we know ``x``"
+" and ``y`` must be the same. Note the multiplicity on ``rule`` means that"
+" it's guaranteed to be erased at run time. In practice, this function can"
+" be a little tricky to use because in general the implicit argument ``p``"
+" can be hard to infer by unification, so Idris provides a high level "
+"syntax which calculates the property and applies ``replace``:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:198 f145b5a6b0ea44e8ad1539404c0b257d
+msgid ""
+"If we have ``prf : x = y``, and the required type for ``expr`` is some "
+"property of ``x``, the ``rewrite ... in`` syntax will search for all "
+"occurrences of ``x`` in the required type of ``expr`` and replace them "
+"with ``y``. We want to replace ``plus k Z`` with ``k``, so we need to "
+"apply our rule ``rec`` in reverse, which we can do using ``sym`` from the"
+" Prelude"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:210 4a2f12cbc4b74433842eee67403ea9e1
+msgid "Concretely, in our example, we can say:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:218 c770a70c8f604c33b6ff039808ccc5c2
+msgid "Checking the type of ``plus_commutes_Z_rhs_2`` now gives:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:227 53ae01b2800b4e0baa0f59b46c6ec0f5
+msgid ""
+"Using the rewrite rule ``rec``, the goal type has been updated with "
+"``plus k Z`` replaced by ``k``."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:230 419639022bf6433d80d6170fcd3c58d7
+msgid "We can use proof search (``\\s``) to complete the proof, giving:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:240 b5d20d1bd1754596bec0e5cf1b0d719b
+msgid "The base case of ``plus_commutes`` is now complete."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:243 b23636bba1944076be8d785594ebe41f
+msgid "Inductive Step"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:245 fa70c9590cee42fcb6459d50a175456e
+msgid ""
+"Our main theorem, ``plus_commutes`` should currently be in the following "
+"state:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:254 4bb4974cf44b4b63b08721ffe9542336
+msgid "Looking again at the type of ``plus_commutes_S``, we have:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:263 66a0fb2aeac149e0afaedebb0ecb1c27
+msgid ""
+"Conveniently, by induction we can immediately tell that ``plus k m = plus"
+" m k``, so let us rewrite directly by making a recursive call to "
+"``plus_commutes``. We add this directly, by hand, as follows:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:274 6754fc7ab5ce44868b11f47ed82bcc6f
+msgid "Checking the type of ``plus_commutes_S`` now gives:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:283 85f86311f589451e8182188fea4101b9
+msgid ""
+"The good news is that ``m`` and ``k`` now appear in the correct order. "
+"However, we still have to show that the successor symbol ``S`` can be "
+"moved to the front in the right hand side of this equality. This "
+"remaining lemma takes a similar form to the ``plus_commutes_Z``; we begin"
+" by making a new top level lemma with ``\\l``. This gives:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:293 17dd71b10a2d4137ae6c8083991a7a29
+msgid "Again, we make a template definition with ``\\a``:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:300 e958ec42d1eb4be5845aeab53e7e4827
+msgid ""
+"Like ``plus_commutes_Z``, we can define this by induction over ``m``, "
+"since ``plus`` is defined by matching on its first argument. The complete"
+" definition is:"
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:311 a98892b115ba46a5b4622ec3befe8a57
+msgid "All holes have now been solved."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:313 84209c6bb89741f6bcd963fc5551a8f5
+msgid ""
+"The ``total`` annotation means that we require the final function to pass"
+" the totality checker; i.e. it will terminate on all possible well-typed "
+"inputs. This is important for proofs, since it provides a guarantee that "
+"the proof is valid in *all* cases, not just those for which it happens to"
+" be well-defined."
+msgstr ""
+
+#: ../../source/proofs/patterns.rst:319 d100538bc67143038a70ab906c98e5b5
+msgid ""
+"Now that ``plus_commutes`` has a ``total`` annotation, we have completed "
+"the proof of commutativity of addition on natural numbers."
+msgstr ""
+

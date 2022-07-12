@@ -1,0 +1,240 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/app/linear.rst:2 05aae197a82c4f6abf549e1d499d796c
+msgid "Linear Resources"
+msgstr ""
+
+#: ../../source/app/linear.rst:4 1d2983742ab6447db1b22167d1b91a8b
+msgid ""
+"We have introduced ``App`` for writing interactive programs, using "
+"interfaces to constrain which operations are permitted, but have not yet "
+"seen the ``Path`` parameter in action. Its purpose is to constrain when "
+"programs can throw exceptions, to know where linear resource usage is "
+"allowed. The bind operator for ``App`` is defined as follows (not via "
+"``Monad``):"
+msgstr ""
+
+#: ../../source/app/linear.rst:20 ddcc593ca7f14eb0b4346227e0a2e069
+msgid ""
+"The intuition behind this type is that, when sequencing two ``App`` "
+"programs:"
+msgstr ""
+
+#: ../../source/app/linear.rst:23 63f66c4a951042be821be80620f7afd6
+msgid ""
+"if the first action might throw an exception, then the whole program "
+"might throw."
+msgstr ""
+
+#: ../../source/app/linear.rst:25 9ad803f09456400b81636f90299832ff
+msgid ""
+"if the first action cannot throw an exception, the second action can "
+"still throw, and the program as a whole can throw."
+msgstr ""
+
+#: ../../source/app/linear.rst:27 64c3d3a7acb1431896cb1f53d13af448
+msgid ""
+"if neither action can throw an exception, the program as a whole cannot "
+"throw."
+msgstr ""
+
+#: ../../source/app/linear.rst:30 e19978da59af4d2bb8a0785de29398f5
+msgid ""
+"The reason for the detail in the type is that it is useful to be able to "
+"sequence programs with a different ``Path``, but in doing so, we must "
+"calculate the resulting ``Path`` accurately. Then, if we want to sequence"
+" subprograms with linear variables, we can use an alternative bind "
+"operator which guarantees to run the continuation exactly once:"
+msgstr ""
+
+#: ../../source/app/linear.rst:42 2eb1ec98e36a43c59a2f4cacdcfbe9e9
+msgid ""
+"To illustrate the need for ``bindL``, we can try writing a program which "
+"tracks the state of a secure data store, which requires logging in before"
+" reading the data."
+msgstr ""
+
+#: ../../source/app/linear.rst:47 03bc4604c7ab4e258c125b8cb33e1f31
+msgid "Example: a data store requiring a login"
+msgstr ""
+
+#: ../../source/app/linear.rst:49 98902f46bed24c4e92c5f1ac91389233
+msgid ""
+"Many software components rely on some form of state, and there may be "
+"operations which are only valid in specific states. For example, consider"
+" a secure data store in which a user must log in before getting access to"
+" some secret data. This system can be in one of two states:"
+msgstr ""
+
+#: ../../source/app/linear.rst:54 cfd8cba812c94f80bf5e5a24c7a93e34
+msgid "``LoggedIn``, in which the user is allowed to read the secret"
+msgstr ""
+
+#: ../../source/app/linear.rst:55 ea190ec7e017452aa50cdc53bbd7e88a
+msgid "``LoggedOut``, in which the user has no access to the secret"
+msgstr ""
+
+#: ../../source/app/linear.rst:57 806cfc625acd49db8348b325dd4e58a8
+msgid ""
+"We can provide commands to log in, log out, and read the data, as "
+"illustrated in the following diagram:"
+msgstr ""
+
+#: ../../source/app/linear.rst:60 a7ea37399a1e4b27992d5ca80ef72423
+msgid "|login|"
+msgstr ""
+
+#: ../../source/app/linear.rst:126 0520ba755a4b4dd8a6fe1acc49380cbd
+#: 670a935e9bf64b95a973ea630f08d582
+msgid "login"
+msgstr ""
+
+#: ../../source/app/linear.rst:62 773e5fa47d414e62b07447a417e8ade7
+msgid ""
+"The ``login`` command, if it succeeds, moves the overall system state "
+"from ``LoggedOut`` to ``LoggedIn``. The ``logout`` command moves the "
+"state from ``LoggedIn`` to ``LoggedOut``. Most importantly, the "
+"``readSecret`` command is only valid when the system is in the "
+"``LoggedIn`` state."
+msgstr ""
+
+#: ../../source/app/linear.rst:67 dc26885f17d24d0587be97e5d0a76ef4
+msgid ""
+"We can represent the state transitions using functions with linear types."
+" To begin, we define an interface for connecting to and disconnecting "
+"from a store:"
+msgstr ""
+
+#: ../../source/app/linear.rst:78 9f9f53c3de07492aa2668be76ec4dfe7
+msgid ""
+"Neither ``connect`` nor ``disconnect`` throw, as shown by generalising "
+"over ``l``. Once we have a connection, we can use the following functions"
+" to access the resource directly:"
+msgstr ""
+
+#: ../../source/app/linear.rst:94 48fbd0f07c804a8a9ad8c34808178f95
+msgid ""
+"``Res`` is defined in the Prelude, since it is commonly useful.  It is a "
+"dependent pair type, which associates a value with a linear resource. "
+"We'll leave the other definitions abstract, for the purposes of this "
+"introductory example."
+msgstr ""
+
+#: ../../source/app/linear.rst:99 d9771539666f4c07949b3900a92129bc
+msgid ""
+"The following listing shows a complete program accessing the store, which"
+" reads a password, accesses the store if the password is correct and "
+"prints the secret data. It uses ``let (>>=) = bindL`` to redefine "
+"``do``-notation locally."
+msgstr ""
+
+#: ../../source/app/linear.rst:119 631fa9dcd59442838b76d81027bad196
+msgid ""
+"If we omit the ``let (>>=) = bindL``, it will use the default ``(>>=)`` "
+"operator, which allows the continuation to be run multiple times, which "
+"would mean that ``s`` is not guaranteed to be accessed linearly, and "
+"``storeProg`` would not type check. We can safely use ``getStr`` and "
+"``putStr`` because they are guaranteed not to throw by the ``Path`` "
+"parameter in their types."
+msgstr ""
+
+#: ../../source/app/linear.rst:130 448f5534bada43108deee160d08201c5
+msgid "App1: Linear Interfaces"
+msgstr ""
+
+#: ../../source/app/linear.rst:132 69a77a3249294bd080bd30ec6d168e97
+msgid ""
+"Adding the ``bindL`` function to allow locally rebinding the ``(>>=)`` "
+"operator allows us to combine existing linear resource programs with "
+"operations in ``App`` - at least, those that don't throw. It would "
+"nevertheless be nice to interoperate more directly with ``App``. One "
+"advantage of defining interfaces is that we can provide multiple "
+"implementations for different contexts, but our implementation of the "
+"data store uses primitive functions (which we left undefined in any case)"
+" to access the store."
+msgstr ""
+
+#: ../../source/app/linear.rst:141 218a6e95cd4f43c5b2d1957efcb2cf07
+msgid ""
+"To allow control over linear resources, ``Control.App`` provides an "
+"alternative parameterised type ``App1``:"
+msgstr ""
+
+#: ../../source/app/linear.rst:149 8c9300634edb41f68f0cb633c3cd0960
+msgid ""
+"There is no need for a ``Path`` argument, since linear programs can never"
+" throw. The ``Usage`` argument states whether the value returned is to be"
+" used once, or has unrestricted usage, with the default in ``App1`` being"
+" to use once:"
+msgstr ""
+
+#: ../../source/app/linear.rst:158 136bb8d20e2c4f9d8c3af412665cae61
+msgid ""
+"The main difference from ``App`` is the ``(>>=)`` operator, which has a "
+"different multiplicity for the variable bound by the continuation "
+"depending on the usage of the first action:"
+msgstr ""
+
+#: ../../source/app/linear.rst:171 336d2b3480434f28bfef132a09583dd2
+msgid ""
+"``Cont1Type`` returns a continuation which uses the argument linearly, if"
+" the first ``App1`` program has usage ``One``, otherwise it returns a "
+"continuation where argument usage is unrestricted. Either way, because "
+"there may be linear resources in scope, the continuation is run exactly "
+"once and there can be no exceptions thrown."
+msgstr ""
+
+#: ../../source/app/linear.rst:177 851526c2d2714f19bc88eb0e649f100f
+msgid ""
+"Using ``App1``, we can define all of the data store operations in a "
+"single interface, as shown in the following listing. Each operation other"
+" than ``disconnect`` returns a `linear` resource."
+msgstr ""
+
+#: ../../source/app/linear.rst:193 5087c6d86d4e4ca6a8e20377a8a07459
+msgid "We can explicitly move between ``App`` and ``App1``:"
+msgstr ""
+
+#: ../../source/app/linear.rst:200 921f5773691c46529c3a4b844eff3238
+msgid ""
+"We can run an ``App`` program using ``app``, inside ``App1``, provided "
+"that it is guaranteed not to throw. Similarly, we can run an ``App1`` "
+"program using ``app1``, inside ``App``, provided that the value it "
+"returns has unrestricted usage. So, for example, we can write:"
+msgstr ""
+
+#: ../../source/app/linear.rst:214 447779c5f78d4d87acf5f338b1214cf2
+msgid ""
+"This uses ``app1`` to state that the body of the program is linear, then "
+"``app`` to state that the ``putStr`` operation is in ``App``. We can see "
+"that ``connect`` returns a linear resource by inspecting the hole "
+"``what_next``, which also shows that we are running inside ``App1``:"
+msgstr ""
+
+#: ../../source/app/linear.rst:227 3e20e003f01f4b32b01662c73e2148cb
+msgid ""
+"For completeness, one way to implement the interface is as follows, with "
+"hard coded password and internal data:"
+msgstr ""
+
+#: ../../source/app/linear.rst:247 9816661e8f1a41b29c878128f8d832c3
+msgid "Then we can run it in ``main``:"
+msgstr ""
+

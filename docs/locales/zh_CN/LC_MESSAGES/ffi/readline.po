@@ -1,0 +1,257 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/ffi/readline.rst:5 62043a9fb0d9490e893415d4974a6090
+msgid "Example: Minimal Readline Bindings"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:7 7f41e6020b5a453385b30475ceb30508
+msgid ""
+"In this section, we'll see how to create bindings for a C library (the "
+"`GNU Readline <https://tiswww.case.edu/php/chet/readline/rltop.html>`_ "
+"library) in Idris, and make them available in a package. We'll only "
+"create the most minimal bindings, but nevertheless they demonstrate some "
+"of the trickier problems in creating bindings to a C library, in that "
+"they need to handle memory allocation of ``String``."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:14 6aea1cbab25645b08197a5ba07aa8597
+msgid ""
+"You can find the example in full in the Idris 2 source repository, in "
+"`samples/FFI-readline "
+"<https://github.com/edwinb/Idris2/tree/master/samples/FFI-readline>`_. As"
+" a minimal example, this can be used as a starting point for other C "
+"library bindings."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:20 54aec9b8a182450b9428648ff28f0000
+msgid ""
+"We are going to provide bindings to the following functions in the "
+"Readline API, available via ``#include <readline/readline.h>``:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:28 c6c7b5dd60754dd88fd59ead72b7f2e9
+msgid ""
+"Additionally, we are going to support tab completion, which in the "
+"Readline API is achieved by setting a global variable to a callback "
+"function (see Section :ref:`sect-callbacks`) which explains how to handle"
+" the completion:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:38 0aaf4a4cf716452f9b9bdb7d49e10ffa
+msgid ""
+"A completion function takes a ``String``, which is the text to complete, "
+"and an ``Int``, which is the number of times it has asked for a "
+"completion so far. In Idris, this could be a function ``complete : String"
+" -> Int -> IO String``. So, for example, if the text so far is "
+"``\"id\"``, and the possible completions are ``idiomatic`` and ``idris``,"
+" then ``complete \"id\" 0`` would produce the string ``\"idiomatic\"`` "
+"and ``complete \"id\" 1`` would produce ``\"idris\"``."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:45 9a1172beff374211bb6d7c4f8352db57
+msgid ""
+"We will define *glue* functions in a C file ``idris_readline.c``, which "
+"compiles to a shared object ``libidrisreadline``, so we write a function "
+"for locating the C functions:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:54 acf9e148d5e247c48865ed37b9293ed9
+#, python-format
+msgid ""
+"Each of the foreign bindings will have a ``%foreign`` specifier which "
+"locates functions via ``rlib``."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:58 39f92893cc12464288decab690ec3ebf
+msgid "Basic behaviour: Reading input, and history"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:60 d27754106cfc47a3a55d1b0de8e57a1e
+msgid ""
+"We can start by writing a binding for ``readline`` directly. It's "
+"interactive, so needs to return a ``PrimIO``:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:68 18db07695f8d40a5a68b346b57b9f36d
+msgid "Then, we can write an ``IO`` wrapper:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:75 c5f155d8c2814fd0a32e18b23569d53d
+msgid ""
+"Unfortunately, this isn't quite good enough! The C ``readline`` function "
+"returns a ``NULL`` string if there is no input due to encountering an end"
+" of file. So, we need to handle that - if we don't, we'll get a crash on "
+"encountering end of file (remember: it's the Idris programmer's "
+"responsibility to give an appropriate type to the C binding!)"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:81 9df70f7d53094703a8760c99e5f2a2bd
+msgid ""
+"Instead, we need to use a ``Ptr`` to say that it might be a ``NULL`` "
+"pointer (see Section :ref:`sect-ffi-string`):"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:89 7a738f8e7d0140708431a7af7187524c
+msgid ""
+"We also need to provide a way to check whether the returned ``Ptr "
+"String`` is ``NULL``. To do so, we'll write some glue code to convert "
+"back and forth between ``Ptr String`` and ``String``, in a file "
+"``idris_readline.c`` and a corresponding header ``idris_readline.h``. In "
+"``idris_readline.h`` we have:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:101 647395ae083145f38e4290db2b56ca4d
+msgid "Correspondingly, in ``idris_readline.c``:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:121 45500b935c224375b4c84d2c8ecc11f5
+msgid ""
+"Now, we can use ``prim__readline`` as follows, with a safe API, checking "
+"whether the result it returns is ``NULL`` or a concrete ``String``:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:141 96c946f04d1b45728c72b511498c3ed2
+msgid ""
+"We'll need ``nullString`` and ``mkString`` later, for dealing with "
+"completions."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:143 6566faa07c9c4c5a8e371ffa8d8d0e0e
+msgid ""
+"Once we've read a string, we'll want to add it to the input history. We "
+"can provide a binding to ``add_history`` as follows:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:155 9fac6d2aa80e4d058181bd4e68df824a
+msgid ""
+"In this case, since Idris is in control of the ``String``, we know it's "
+"not going to be ``NULL``, so we can add it directly."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:158 e1d85a00cd0d43558cc3e0a9dd3b8919
+msgid ""
+"A small ``readline`` program that reads input, and echoes it, recording "
+"input history for non-empty inputs, can be written as follows:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:173 70ac327901bf49faa645995274fc8244
+msgid ""
+"This gives us command history, and command line editing, but Readline "
+"becomes much more useful when we add tab completion. The default tab "
+"completion, which is available even in the small example above, is to tab"
+" complete file names in the current working directory. But for any "
+"realistic application, we probably want to tab complete other commands, "
+"such as function names, references to local data, or anything that is "
+"appropriate for the application."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:181 bf1696672140490dbf1af5d4692580f9
+msgid "Completions"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:183 bd5fca324a124d0bafe0361bd1f72af2
+msgid ""
+"Readline has a large API, with several ways of supporting tab completion,"
+" typically involving setting a global variable to an appropriate "
+"completion function. We'll use the following:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:192 511a4d4a5ec54e229cc0828e6eca8f40
+msgid ""
+"The completion function takes the prefix of the completion, and the "
+"number of times it has been called so far on this prefix, and returns the"
+" next completion, or ``NULL`` if there are no more completions. An Idris "
+"equivalent would therefore have the following type:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:201 2c0aa04aad1742d1a040660966a34c4e
+msgid ""
+"The function returns ``Nothing`` if there are no more completions, or "
+"``Just str`` for some ``str`` if there is another one for the current "
+"input."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:205 26f8fcb3fb324da5a70bba7b68582887
+msgid ""
+"We might hope that it's a matter of defining a function to assign the "
+"completion function..."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:214 ef6778ec65f342b6a30939b80699afc8
+msgid ""
+"...then defining the Idris binding, which needs to take into account that"
+" the Readline library expects ``NULL`` when there are no more "
+"completions:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:231 dec1c4cc13fa416dab117a51ae97d83d
+msgid ""
+"So, we turn ``Nothing`` into ``nullString`` and ``Just str`` into "
+"``mkString str``. Unfortunately, this doesn't quite work. To see what "
+"goes wrong, let's try it for the most basic completion function that "
+"returns one completion no matter what the input:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:242 dfeac7174c1e430c995c0eb401ee5cb0
+msgid ""
+"We'll try this in a small modification of ``echoLoop`` above, setting a "
+"completion function first:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:251 e7e47e3b7368496bb0fe3f180ab2c0c8
+msgid ""
+"We see that there is a problem when we try running it, and hitting TAB "
+"before entering anything:"
+msgstr ""
+
+#: ../../source/ffi/readline.rst:259 44bf59c0b9f341008586886b12dcdf49
+msgid ""
+"The Idris code which sets up the completion is fine, but there is a "
+"problem with the memory allocation in the C glue code."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:262 b64b3ec4dfdb4ca48150d7276698b1ae
+msgid ""
+"This problem arises because we haven't thought carefully enough about "
+"which parts of our program are responsible for allocating and freeing "
+"strings. When Idris calls a foreign function that returns a string, it "
+"copies the string to the Idris heap and frees it immediately. But, if the"
+" foreign library also frees the string, it ends up being freed twice. "
+"This is what's happening here: the callback passed to "
+"``prim__setCompletion`` frees the string and puts it onto the Idris heap,"
+" but Readline also frees the string returned by ``prim__setCompletion`` "
+"once it has processed it. We can solve this problem by writing a wrapper "
+"for the completion function which reallocates the string, and using that "
+"in ``idrisrl_setCompletion`` instead."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:296 a8b768b30e264891aa688eee0a136dc7
+msgid ""
+"So, we define the completion function in C, which calls the Idris "
+"completion function then makes sure the string returned by the Idris "
+"function is copied to the C heap."
+msgstr ""
+
+#: ../../source/ffi/readline.rst:300 c3d2dd3705d845b38dfab8621cfd8368
+msgid ""
+"We now have a primitive API that covers the most fundamental features of "
+"the readline API:"
+msgstr ""
+

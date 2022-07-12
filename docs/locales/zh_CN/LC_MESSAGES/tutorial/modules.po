@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/tutorial/modules.rst:5 4cd30548c9e84b5ab150a1b6b5bfcfdb
+msgid "Modules and Namespaces"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:7 ca58abd499004d58bbc9022b0378a4ce
+msgid ""
+"An Idris program consists of a collection of modules. Each module "
+"includes an optional ``module`` declaration giving the name of the "
+"module, a list of ``import`` statements giving the other modules which "
+"are to be imported, and a collection of declarations and definitions of "
+"types, interfaces and functions. For example, the listing below gives a "
+"module which defines a binary tree type ``BTree`` (in a file "
+"``BTree.idr``):"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:39 846418393ed941b5baa9963431c175fd
+msgid ""
+"The modifiers ``export`` and ``public export`` say which names are "
+"visible from other namespaces. These are explained further below."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:42 227c0912b0a547edb5c1295180e50311
+msgid ""
+"Then, this gives a main program (in a file ``bmain.idr``) which uses the "
+"``BTree`` module to sort a list:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:55 00dcfe5d767c4fe69bc771e61b9962be
+msgid ""
+"The same names can be defined in multiple modules: names are *qualified* "
+"with the name of the module. The names defined in the ``BTree`` module "
+"are, in full:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:58 965b714cc9124ebbba4cfb7e38334a17
+msgid "``BTree.BTree``"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:59 933fa4c8587b4112af3f2b094ca072fb
+msgid "``BTree.Leaf``"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:60 d190086bb4fc4832bb0fd63d5f821968
+msgid "``BTree.Node``"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:61 d368c47e5a0a4a92b489f4ef38c2ab7d
+msgid "``BTree.insert``"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:62 45caf90b908a4021aa4597c3d1830a1f
+msgid "``BTree.toList``"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:63 d3c94d549ea248cdb01b9f970fc78c68
+msgid "``BTree.toTree``"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:65 9c49c226a35a486abcdead6a527e3979
+msgid ""
+"If names are otherwise unambiguous, there is no need to give the fully "
+"qualified name. Names can be disambiguated either by giving an explicit "
+"qualification, using the ``with`` keyword, or according to their type."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:69 68ae813f87ba4b8697351496324efd19
+msgid "The ``with`` keyword in expressions comes in two variants:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:71 8884f0a59ce94bc1a95be3bc19931523
+msgid "``with BTree.insert (insert x empty)`` for one name"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:72 c1567caeed534b6b83b9ff7cb4557f5f
+msgid "``with [BTree.insert, BTree.empty] (insert x empty)`` for multiple names"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:74 62dec57757174af8a682f9a6a38c4e18
+msgid ""
+"This is particularly useful with ``do`` notation, where it can often "
+"improve error messages: ``with MyModule.(>>=) do ...``"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:77 22bbbcb5805446e992746c5d5522472f
+msgid ""
+"There is no formal link between the module name and its filename, "
+"although it is generally advisable to use the same name for each. An "
+"``import`` statement refers to a filename, using dots to separate "
+"directories. For example, ``import foo.bar`` would import the file "
+"``foo/bar.idr``, which would conventionally have the module declaration "
+"``module foo.bar``. The only requirement for module names is that the "
+"main module, with the ``main`` function, must be called ``Main`` — "
+"although its filename need not be ``Main.idr``."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:87 b45d6f08916c4b93aa70572e7dca51a0
+msgid "Export Modifiers"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:89 1fc92a97c1ba4c8b99428cf6faf23e3d
+msgid ""
+"Idris allows for fine-grained control over the visibility of a "
+"namespace's contents. By default, all names defined in a namespace are "
+"kept private.  This aids in specification of a minimal interface and for "
+"internal details to be left hidden. Idris allows for functions, types, "
+"and interfaces to be marked as: ``private``, ``export``, or ``public "
+"export``. Their general meaning is as follows:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:96 de6be199f868443ea588a9ad3fc18f50
+msgid "``private`` meaning that it is not exported at all. This is the default."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:98 be186db0e5d84d5993254584f9291644
+msgid "``export`` meaning that its top level type is exported."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:100 f5c78b42eee04245b70ba32f48ea1487
+msgid "``public export`` meaning that the entire definition is exported."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:102 20b9c36a58ec421db61d1ceed7e26284
+msgid ""
+"A further restriction in modifying the visibility is that definitions "
+"must not refer to anything within a lower level of visibility. For "
+"example, ``public export`` definitions cannot use ``private`` or "
+"``export`` names, and ``export`` types cannot use ``private`` names. This"
+" is to prevent private names leaking into a module's interface."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:109 523ca8196eb6404fbd7fa5168e63ffee
+msgid "Meaning for Functions"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:111 7ec24b8cdd2f40a78814ee10e6d92dfd
+msgid "``export`` the type is exported"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:113 718d723884014821bd7f1ec9a52d5541
+msgid ""
+"``public export`` the type and definition are exported, and the "
+"definition can be used after it is imported. In other words, the "
+"definition itself is considered part of the module's interface. The long "
+"name ``public export`` is intended to make you think twice about doing "
+"this."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:121 1333ffd1a3394e2abbace645bac016cf
+msgid ""
+"Type synonyms in Idris are created by writing a function. When setting "
+"the visibility for a module, it is usually a good idea to ``public "
+"export`` all type synonyms if they are to be used outside the module. "
+"Otherwise, Idris won't know what the synonym is a synonym for."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:127 56492fbe48de41eba0457a8a38dbba6c
+msgid ""
+"Since ``public export`` means that a function's definition is exported, "
+"this effectively makes the function definition part of the module's API. "
+"Therefore, it's generally a good idea to avoid using ``public export`` "
+"for functions unless you really mean to export the full definition."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:133 a71e0128e850480d9267abafc402579d
+msgid ""
+"*For beginners*: If the function needs to be accessed only at runtime, "
+"use ``export``. However, if it's also meant to be used at *compile* time "
+"(e.g. to prove a theorem), use ``public export``. For example, consider "
+"the function ``plus : Nat -> Nat -> Nat`` discussed previously, and the "
+"following theorem: ``thm : plus Z m = m``. In order to prove it, the type"
+" checker needs to reduce ``plus Z m`` to ``m`` (and hence obtain ``thm : "
+"m = m``). To achieve this, it will need access to the *definition* of "
+"``plus``, which includes the equation ``plus Z m = m``. Therefore, in "
+"this case, ``plus`` has to be marked as ``public export``."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:146 c7c95c1cfbd14eeabf4ab53f02cd85e2
+msgid "Meaning for Data Types"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:148 0ae74172e834431492907bc9849efe97
+msgid "For data types, the meanings are:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:150 e8f6395b9a154598a732b6306a4b3147
+msgid "``export`` the type constructor is exported"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:152 9ff212f00ff74cb8af168b0719f9e4e9
+msgid "``public export`` the type constructor and data constructors are exported"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:156 ada294347eb446029890ca28a3fa6aba
+msgid "Meaning for Interfaces"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:158 19132d2b4a06466c8f1d155a87d18af5
+msgid "For interfaces, the meanings are:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:160 7a6b04e2eab0461b8b3feea6e8d4cf2b
+msgid "``export`` the interface name is exported"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:162 00d85560a01d4512a3c49a381748b842
+msgid ""
+"``public export`` the interface name, method names and default "
+"definitions are exported"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:166 5e5ca84f242d4d12aa86748aa311eddf
+msgid "Propagating Inner Module API's"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:168 78980aaf1fbd46ea8dbfc8ed9a44eae9
+msgid ""
+"Additionally, a module can re-export a module it has imported, by using "
+"the ``public`` modifier on an ``import``. For example:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:178 543d0e2766ef49abbf0cc3f1c0ef8455
+msgid ""
+"The module ``A`` will export the name ``a``, as well as any public or "
+"abstract names in module ``C``, but will not re-export anything from "
+"module ``B``."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:183 6d4ff773c1c14d7d825b3e12546cc7a6
+msgid "Renaming imports"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:185 fb5ea5d94d6d4e118ac86ebd04750daf
+msgid ""
+"Sometimes it is convenient to be able to access the names in another "
+"module via a different namespace (typically, a shorter one). For this, "
+"you can use `import...as`. For example:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:195 ced4cae00245408cb6f7c19979dacd56
+msgid ""
+"This module ``A`` has access to the exported names from module "
+"``Data.List``, but can also explicitly access them via the module name "
+"``L``. ``import...as`` can also be combined with ``import public`` to "
+"create a module which exports a larger API from other sub-modules:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:207 567f56f845cb4c2b949a62939b521be9
+msgid ""
+"Here, any module which imports ``Books`` will have access to the exported"
+" interfaces of ``Books.Hardback`` and ``Books.Comic`` both under the "
+"namespace ``Books``."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:212 447572c8ac62497581ec505519217652
+msgid "Explicit Namespaces"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:214 1fc7b09c2d594bafa34cd60dc8314584
+msgid ""
+"Defining a module also defines a namespace implicitly. However, "
+"namespaces can also be given *explicitly*. This is most useful if you "
+"wish to overload names within the same module:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:232 3e73a62325e641afa3e8edf54577919b
+msgid ""
+"This (admittedly contrived) module defines two functions with fully "
+"qualified names ``Foo.X.test`` and ``Foo.Y.test``, which can be "
+"disambiguated by their types:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:243 4d48df8f83e04e4084c272752f512cb6
+msgid ""
+"The export rules, ``public export`` and ``export``, are *per namespace*, "
+"not *per file*, so the two ``test`` definitions above need the ``export``"
+" flag to be visible outside their own namespaces."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:248 a169235f17814604bc57cdcd858d2aaa
+msgid "Parameterised blocks"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:250 80ab107ee735428eaab7a248808efaf0
+msgid ""
+"Groups of functions can be parameterised over a number of arguments using"
+" a ``parameters`` declaration, for example:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:259 ecabf2092e8941549584dc08c6b025d3
+msgid ""
+"The effect of a ``parameters`` block is to add the declared parameters to"
+" every function, type and data constructor within the block. "
+"Specifically, adding the parameters to the front of the argument list. "
+"Outside the block, the parameters must be given explicitly. The "
+"``addAll`` function, when called from the REPL, will thus have the "
+"following type signature."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:271 155164971fef41f6879b5b26eb251887
+msgid "and the following definition."
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:278 fd0ba5d8ad86471e851db1dc1e161ad9
+msgid ""
+"Parameters blocks can be nested, and can also include data declarations, "
+"in which case the parameters are added explicitly to all type and data "
+"constructors. They may also be dependent types with implicit arguments:"
+msgstr ""
+
+#: ../../source/tutorial/modules.rst:291 f824afd16da3496b95e119aee8888065
+msgid ""
+"To use ``Vects`` or ``append`` outside the block, we must also give the "
+"``xs`` and ``y`` arguments. Here, we can use placeholders for the values "
+"which can be inferred by the type checker:"
+msgstr ""
+

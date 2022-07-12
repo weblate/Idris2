@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/backends/chez.rst:3 22dff21e9a3647b79d47bc50d9428427
+msgid "Chez Scheme Code Generator"
+msgstr ""
+
+#: ../../source/backends/chez.rst:5 4bd77a307add4640934efa67c02baa2c
+msgid ""
+"The Chez Scheme code generator is the default, or it can be accessed via "
+"a REPL command:"
+msgstr ""
+
+#: ../../source/backends/chez.rst:12 1834601035554b3bbe28b51c805adb0f
+msgid ""
+"By default, therefore, to run Idris programs you will need to install "
+"`Chez Scheme <https://www.scheme.com/>`_. Chez Scheme is open source, and"
+" available via most OS package managers."
+msgstr ""
+
+#: ../../source/backends/chez.rst:16 fe7fd7a7dc424e45b4165a0990b24d69
+msgid ""
+"You can compile an expression ``expr`` of type ``IO ()`` to an executable"
+" as follows, at the REPL:"
+msgstr ""
+
+#: ../../source/backends/chez.rst:23 d9fe9f4934e143099d8dde14821a2dd0
+msgid ""
+"...where ``execname`` is the name of the executable file. This will "
+"generate the following:"
+msgstr ""
+
+#: ../../source/backends/chez.rst:26 5815655079fc4c95b526a2c7a5e8d8be
+msgid "A shell script ``build/exec/execname`` which invokes the program"
+msgstr ""
+
+#: ../../source/backends/chez.rst:27 3a7d49dbb45f4ed6939bcdb163489299
+msgid ""
+"A subdirectory ``build/exec/execname_app`` which contains all the data "
+"necessary to run the program. This includes the Chez Scheme source "
+"(``execname.ss``), the compiled Chez Scheme code (``execname.so``) and "
+"any shared libraries needed for foreign function definitions."
+msgstr ""
+
+#: ../../source/backends/chez.rst:32 322a102603e443f699ef8f0e213a499d
+msgid ""
+"The executable ``execname`` is relocatable to any subdirectory, provided "
+"that ``execname_app`` is also in the same subdirectory."
+msgstr ""
+
+#: ../../source/backends/chez.rst:35 9b298a2fd55b4e2d8706e3492734d95f
+msgid "You can also execute an expression directly:"
+msgstr ""
+
+#: ../../source/backends/chez.rst:41 cbce0e3300e9470eb41ac423e3f95590
+msgid ""
+"Again, ``expr`` must have type ``IO ()``. This will generate a temporary "
+"executable script ``_tmpchez`` in the ``build/exec`` directory, and "
+"execute that."
+msgstr ""
+
+#: ../../source/backends/chez.rst:45 415dd6e08eb14e87b55cd2807093706e
+msgid ""
+"Chez Scheme is the default code generator, so if you invoke ``idris2`` "
+"with the ``-o execname`` flag, it will generate an executable script "
+"``build/exec/execname``, again with support files in "
+"``build/exec/execname_app``."
+msgstr ""
+
+#: ../../source/backends/chez.rst:51 d0b005aabdaf45c1be962efa99508684
+msgid "Chez Directives"
+msgstr ""
+
+#: ../../source/backends/chez.rst:53 56c2463bca3d44c9ba006f1ab91c2547
+msgid "``--directive extraRuntime=<path>``"
+msgstr ""
+
+#: ../../source/backends/chez.rst:55 8834fc3c14554e20940ef5d9779a35e1
+msgid ""
+"Embed Scheme source from ``<path>`` directly into generated output. Can "
+"be specified more than once, in which case all given files will be "
+"included in the order specified."
+msgstr ""
+
+#: ../../source/backends/chez.rst:76 f1dbf2a31c194568ac7b65e74ae2dc34
+msgid "Making a freestanding executable"
+msgstr ""
+
+#: ../../source/backends/chez.rst:78 fb79377c53694c2888e2ac7476e272aa
+msgid ""
+"It's possible to embed the Chez Scheme system and the built Idris2 "
+"program into a freestanding executable with `chez-exe "
+"<https://github.com/gwatt/chez-exe>`_."
+msgstr ""
+
+#: ../../source/backends/chez.rst:80 eef5415bc0eb46d2ba229ad2d8f248b2
+msgid ""
+"Build and install the ``compile-chez-program-tool`` by running the "
+"configuration script and then make:"
+msgstr ""
+
+#: ../../source/backends/chez.rst:87 a8a4b6f434fe4889986e109a730c4396
+msgid ""
+"where ``<bootpath`` is the path to where the Chez Scheme bootfiles "
+"(``petite.boot`` and ``scheme.boot``) and ``scheme.h`` are. More "
+"configuration is described in the chez-exe installation instructions."
+msgstr ""
+
+#: ../../source/backends/chez.rst:90 5ca075d11ebb44ebb7c7f7e8c4fa5ac2
+msgid "Invoke ``compile-chez-program``:"
+msgstr ""
+
+#: ../../source/backends/chez.rst:96 7184c26bceae48faa60bf73b857ab547
+msgid ""
+"Note that it can only use the ``.ss``-file and not the ``.so``-file. To "
+"embed the full Chez Scheme system including the compiler add the "
+"``--full-chez`` option."
+msgstr ""
+
+#: ../../source/backends/chez.rst:99 da7adf090ed742a5aef21d5b9aaa8359
+msgid ""
+"The finished executable still requires the libidris_support shared "
+"library. It's possible to also eliminate that dependency by linking with "
+"it statically."
+msgstr ""
+

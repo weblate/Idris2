@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/reference/builtins.rst:5 aa037f98bc1344e7a57582e1ebd9bd57
+msgid "Builtins"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:11 de2e191a6ffe454a988e0a34267640f6
+msgid "Natural numbers"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:13 6c84e6268fff4c82b73faa85d8f0e954
+msgid ""
+"Idris2 supports an optimized runtime representation of natural numbers "
+"(non-negative integers). This optimization is automatic, however it only "
+"works when natural numbers are represented in a specific way"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:17 6d275c5eadd74edbab29913854c27add
+msgid "Here is an example of a natural number that would be optimized:"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:25 0b47082770a846a8b0e53b949a340b08
+msgid ""
+"Natural numbers are generally represented as either zero or the successor"
+" (1 more than) of another natural number. These are called Peano numbers."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:28 987135ec57034b5da1ad230a9dc9199b
+msgid ""
+"At runtime, Idris2 will automatically represent this the same as the "
+"``Integer`` type. This will massively reduce the memory usage."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:31 62419b51227a41d0810ceb589b0cd742
+msgid "There are a few rules governing when this optimization occures:"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:33 69c7313025ce430ea289fa4d94ccf249
+msgid "The data type must have 2 constructors"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:35 38551b733d004e63984794b6cf4c3705
+msgid ""
+"After erasure of runtime irrelevant arguments + One must have no "
+"arguments + One must have exactly 1 argument (called ``Succ``)"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:39 9ce38ded02274e0e8577455096fa96ab
+msgid ""
+"The type of the argument to ``Succ`` must have the same type constructor "
+"as the parent type. This means indexed data types, like ``Fin``, can be "
+"optimised."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:41 6b06e3aced5046d9b910f86ebae2f66d
+msgid "The argument to ``Succ`` must be strict, ie not ``Lazy Natural``"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:43 9030595308804f05a6cebdd03371e6ea
+msgid ""
+"To ensure that a type is optimized to an ``Integer``, use ``%builtin "
+"Natural`` ie"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:54 6b7a8a98588747a5bf45b98af24bc57b
+msgid "Casting between natural numbers and integer"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:56 45b2908167274f388c8e94c4803d6cb2
+msgid ""
+"Idris optimizes functions which convert between natural numbers and "
+"integers, so that it takes constant time rather than linear time."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:59 d8eed3bd4b434e999e0182ed0dcef43b
+msgid ""
+"Such functions must be written in a specific way, so that idris can "
+"detect that it can be optimised."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:62 1eca8d54e40d480c94310e1d3d49c10d
+msgid "Here is an example of a natural to ``Integer`` function."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:70 b5bd4f6b3a9d46a2a1bf928507b8deea
+msgid ""
+"This optimization is applied late in the compilation process, so it may "
+"be sensitive to seemingly insignificant changes."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:73 6b396c469f164cdba77ab8bae78e0a22
+msgid "However here are roughly the rules governing this optimisation:"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:75 5d476ba82f5f435e897a49e03af1a3c0
+msgid ""
+"Exactly one argument must be pattern matched on (any other forced or "
+"dotted patterns are allowed)"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:77 f579ea4b13954e03b2971d3c11511765
+msgid "The right hand side of the 'Zero' case must be ``0``"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:78 7ca48132fbca477a8ae88bb53b019541
+msgid ""
+"The right hand side of the 'Succ' case must be ``1 + cast k`` where ``k``"
+" is the predecessor of the pattern matched argument"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:81 4d37c23c7b5e425dbb0239ae6329182c
+msgid "Casting from an ``Integer`` to a natural is a little more complex."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:93 db0b8d5e8e354004ae68658f11f564fc
+msgid "For now you must manually check the given integer is non-negative."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:95 29e09f1333bf41b0a84d3850c4366a00
+msgid ""
+"If you are using an indexed data type it may be very hard to write your "
+"``Integer`` to natural cast in such a way, so you can use ``%builtin "
+"IntegerToNatural`` to assert to the compiler that a function is correct. "
+"It is your responsibility to make sure this is correct."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:122 a319ce47193747fcb066e2efa6f80e8f
+msgid "Other operations"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:124 9d88488323444270bd8268e53e8479c7
+msgid ""
+"This can be used with ``%transform`` to allow many other operations to be"
+" O(1) too."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:142 c4db7366d5204027affa094f5f455b3f
+msgid "Compilation"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:144 fc30256156eb40a096f41dd7695bceb4
+msgid ""
+"Here are the details of how natural numbers are compiled to ``Integer`` "
+"s. Note: a numeric literal here is an ``Integer``."
+msgstr ""
+
+#: ../../source/reference/builtins.rst:147 82192a3b8fe64f3f8b813317c59f5a14
+msgid "``Zero`` => ``0``"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:149 2909f1e877eb4ed09f917b7f14329418
+msgid "``Succ k`` => ``1 + k``"
+msgstr ""
+
+#: ../../source/reference/builtins.rst:157 deca3b739f3c453b8d6b2439cdc76a1e
+msgid "=>"
+msgstr ""
+

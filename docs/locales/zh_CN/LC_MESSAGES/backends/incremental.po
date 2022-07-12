@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/backends/incremental.rst:3 a177065fe33846c78b57db6682e6fbea
+msgid "Incremental Code Generation"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:5 2f66d2d7ca454ec4bd14e4f3ccb296b2
+msgid ""
+"By default, Idris 2 is a whole program compiler - that is, it finds all "
+"the necessary function definitions and compiles them only when you build "
+"an executable. This gives plenty of optimisation opportunities, but can "
+"also be slow for rebuilding. However, if the backend supports it, you can"
+" build modules and executables *incrementally*. To do so, you can either:"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:11 d6fee067c83844d1b231ed1a6284cb08
+msgid ""
+"Set the ``--inc <backend>`` flag at the command line, for each backend "
+"you want to use incrementally."
+msgstr ""
+
+#: ../../source/backends/incremental.rst:13 e1b2946894bb4be591643c15bf7e2c56
+msgid ""
+"Set the ``IDRIS2_INC_CGS`` environment variable with a comma separated "
+"list of backends to use incrementally."
+msgstr ""
+
+#: ../../source/backends/incremental.rst:16 710d25e599834515a7bc23a9b9fa446e
+msgid "At the moment, only the Chez backend supports incremental builds."
+msgstr ""
+
+#: ../../source/backends/incremental.rst:19 31d26cc5b8a043499935e185e81fd0e6
+msgid "Building modules incrementally"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:21 83a34fb6587746998b9fa6effdb75a94
+msgid ""
+"If either of the above are set, building a module will produce compiled "
+"binary code for all of the definitions in the module, as well as the "
+"usual checked TTC file. e.g.:"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:30 b211bbc21cdd4e94b21cd01f3ad1f6f2
+msgid ""
+"On successful type checking, each of these will produce a Chez Scheme "
+"file (``Foo.ss``) and compiled code for it (``Foo.so``) as well as the "
+"usual ``Foo.ttc``, in the same build directory as ``Foo.ttc``."
+msgstr ""
+
+#: ../../source/backends/incremental.rst:34 1a4b4c2c85814f30bb3c5a963e3043bd
+msgid ""
+"In incremental mode, you will see a warning for any holes in the module, "
+"even if those holes will be defined in a different module."
+msgstr ""
+
+#: ../../source/backends/incremental.rst:38 27e5a336b53440e5994f78c4c7f555e9
+msgid "Building executables incrementally"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:40 037122ba035a4aa4ab1a62d7f0d47178
+msgid ""
+"If either ``--inc`` is used or ``IDRIS2_INC_CGS`` is set, compiling to an"
+" executable will attempt to link all of the compiled modules together, "
+"rather than generating code for all of the functions at once. For this to"
+" work, all the imported modules *must* have been built with incremental "
+"compilation for the current back end (Idris will revert to whole program "
+"compilation if any are missing, and you will see a warning.)"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:47 1a08e88703fe47cbb26eaf1af99bd5cf
+msgid ""
+"Therefore, all packages used by the executable must also have been built "
+"incrementally for the current back end. The ``prelude``, ``base``, "
+"``contrib``, ``network`` and ``test`` packages are all built with "
+"incremental compilation support for Chez by default."
+msgstr ""
+
+#: ../../source/backends/incremental.rst:52 9418e3b98bea4df1b3d52827ddd2a03a
+msgid ""
+"When switching between incremental and whole program compilation, it is "
+"recommended that you remove the ``build`` directory first. This is "
+"particularly important when switching to incremental compilation, since "
+"there may be stale object files that Idris does not currently detect!"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:59 36da9ac9c51e498a8a645b2fe7407bf5
+msgid "Overriding incremental compilation"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:61 3d76bcc26a6644c6a4ab9c81f4f889d0
+msgid ""
+"The ``--whole-program`` flag overrides any incremental compilation "
+"settings when building an executable."
+msgstr ""
+
+#: ../../source/backends/incremental.rst:65 101a4d032bb542fca91ea2eef5ceeed1
+msgid "Performance note"
+msgstr ""
+
+#: ../../source/backends/incremental.rst:67 35df0afab31945b6acbef3e6d34f4115
+msgid ""
+"Incremental compilation means that executables are generated much "
+"quicker, especially when only a small proportion of modules have changed."
+" However, it means that there are fewer optimisation opportunities, so "
+"the resulting executable will not perform as well. For deployment, "
+"``--whole-program`` compilation is recommended."
+msgstr ""
+

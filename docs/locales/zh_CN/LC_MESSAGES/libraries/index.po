@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/libraries/index.rst:2 759fc56a532a4292918c6746f6cdc2ba
+msgid "Where To Find Libraries"
+msgstr ""
+
+#: ../../source/libraries/index.rst:4 307d19ed2db14fc5882650099f0bf4ac
+msgid ""
+"You can find a canonical source of Idris libraries on the wiki on github:"
+" https://github.com/idris-lang/Idris2/wiki/1-%5BLanguage%5D-Libraries"
+msgstr ""
+
+#: ../../source/libraries/index.rst:7 e3527daa1be249189f3338d925c045c9
+msgid ""
+"Please feel free to contribute your own libraries there! Eventually, we "
+"aim to have a package manager for managing libraries and dependencies. We"
+" do not yet have an official one, but there are (at least) two in "
+"development:"
+msgstr ""
+
+#: ../../source/libraries/index.rst:11 0e4fc94e5f2647e6946710c7741a56df
+msgid "Inigo: https://github.com/idris-community/inigo"
+msgstr ""
+
+#: ../../source/libraries/index.rst:12 e0b6389f3aa44f1f8b72e0b637b41c5f
+msgid "sae: https://github.com/DoctorRyner/sae"
+msgstr ""
+

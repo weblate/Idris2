@@ -1,0 +1,649 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/tutorial/multiplicities.rst:5 b2504f798300447692832e30e0c6d9be
+msgid "Multiplicities"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:7 5d309e098cec49988d5b5c1c07e768c8
+msgid ""
+"Idris 2 is based on `Quantitative Type Theory (QTT) <https://bentnib.org"
+"/quantitative-type-theory.html>`_, a core language developed by Bob Atkey"
+" and Conor McBride. In practice, this means that every variable in Idris "
+"2 has a *quantity* associated with it. A quantity is one of:"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:13 e2b51037596c431db7b01e3d8020182f
+msgid "``0``, meaning that the variable is *erased* at run time"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:14 0904fe127bc84bc9b7d356cd69af13fd
+msgid "``1``, meaning that the variable is used *exactly once* at run time"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:15 24c5c22d59464cb994ea428315059b59
+msgid "*Unrestricted*, which is the same behaviour as Idris 1"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:17 99527dca93724932a50945a34f0d1270
+msgid ""
+"We can see the multiplicities of variables by inspecting holes. For "
+"example, if we have the following skeleton definition of ``append`` on "
+"vectors..."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:25 d705f5b4d2984543b0156a1057185bae
+msgid "...we can look at the hole ``append_rhs``:"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:38 16cba7180adf4453a2f0164e9aead6f6
+msgid ""
+"The ``0`` next to ``m``, ``a`` and ``n`` mean that they are in scope, but"
+" there will be ``0`` occurrences at run-time. That is, it is "
+"**guaranteed** that they will be erased at run-time."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:42 b003ab0e604f4b9da59b2b1a1c08e494
+msgid "Multiplicities can be explicitly written in function types as follows:"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:44 daaefa9116434025a39bfc663fe47560
+msgid ""
+"``ignoreN : (0 n : Nat) -> Vect n a -> Nat`` - this function cannot look "
+"at ``n`` at run time"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:46 cb455fbd4d7047c7869ba0386e31d120
+msgid ""
+"``duplicate : (1 x : a) -> (a, a)`` - this function must use ``x`` "
+"exactly once (so good luck implementing it, by the way. There is no "
+"implementation because it would need to use ``x`` twice!)"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:50 2d096c90031f4fe5ab4c6052f803b7b1
+msgid ""
+"If there is no multiplicity annotation, the argument is unrestricted. If,"
+" on the other hand, a name is implicitly bound (like ``a`` in both "
+"examples above) the argument is erased. So, the above types could also be"
+" written as:"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:54 864074a7848b40baa968615440bd703d
+msgid "``ignoreN : {0 a : _} -> (0 n : Nat) -> Vect n a -> Nat``"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:55 c5bc54c1661c49afb963d8719f30bacb
+msgid "``duplicate : {0 a : _} -> (1 x : a) -> (a, a)``"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:57 3b5a174e980e4c68b730a5043c7f79cc
+msgid ""
+"This section describes what this means for your Idris 2 programs in "
+"practice, with several examples. In particular, it describes:"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:60 e7bc5d2afa2a4cbcaacb668276ddd932
+msgid ""
+":ref:`sect-erasure` - how to know what is relevant at run time and what "
+"is erased"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:61 4c6b44a84f6a480988436dcb78377efb
+msgid ""
+":ref:`sect-linearity` - using the type system to encode *resource usage "
+"protocols*"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:62 03ee3b4834284871be2baba1655462c0
+msgid ":ref:`sect-pmtypes` - truly first class types"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:64 4342b083828f4a12b94cb3c4a8a4cf05
+msgid ""
+"The most important of these for most programs, and the thing you'll need "
+"to know about if converting Idris 1 programs to work with Idris 2, is "
+"erasure_. The most interesting, however, and the thing which gives Idris "
+"2 much more expressivity, is linearity_, so we'll start there."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:72 0dd88f601d1b4aa79c8fbd2edcc2e61d
+msgid "Linearity"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:74 ee6acc43413449e7b680abf8d2d770b8
+msgid ""
+"The ``1`` multiplicity expresses that a variable must be used exactly "
+"once. By \"used\" we mean either:"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:77 21e98cc6f7c64ddf8caefc7daab34711
+msgid ""
+"if the variable is a data type or primitive value, it is pattern matched "
+"against, ex. by being the subject of a *case* statement, or a function "
+"argument that is pattern matched against, etc.,"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:78 d2a1b58c852a4dda87fc25d4b7258f0d
+msgid ""
+"if the variable is a function, that function is applied (i.e. ran with an"
+" argument)"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:80 5d256c6a9d9841d4a42e30f7b86eaec9
+msgid ""
+"First, we'll see how this works on some small examples of functions and "
+"data types, then see how it can be used to encode `resource protocols`_."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:83 a89e0a5ce2774819acfef170566076e9
+msgid ""
+"Above, we saw the type of ``duplicate``. Let's try to write it "
+"interactively, and see what goes wrong. We'll start by giving the type "
+"and a skeleton definition with a hole"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:92 5246020125384f9e8d8e758390104140
+msgid ""
+"Checking the type of a hole tells us the multiplicity of each variable in"
+" scope. If we check the type of ``?help`` we'll see that we can't use "
+"``a`` at run time, and we have to use ``x`` exactly once::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:102
+#: d9432d31798f405e92850729b5e17eef
+msgid "If we use ``x`` for one part of the pair..."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:109
+#: 0fe9aa3226634197b58934938a3b06f6
+msgid ""
+"...then the type of the remaining hole tells us we can't use it for the "
+"other::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:117
+#: 1c4f61739cb04dfd8d32e06ffede5362
+msgid ""
+"The same happens if we try defining ``duplicate x = (?help, x)`` (try "
+"it!)."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:119
+#: b68cf9da290b4f24afdeb005c90a32d1
+msgid ""
+"In order to avoid parsing ambiguities, if you give an explicit "
+"multiplicity for a variable as with the argument to ``duplicate``, you "
+"need to give it a name too. But, if the name isn't used in the scope of "
+"the type, you can use ``_`` instead of a name, as follows:"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:128
+#: 993159280b9a4bf98ff1d8da194b779c
+msgid ""
+"The intution behind multiplicity ``1`` is that if we have a function with"
+" a type of the following form..."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:135
+#: 6ff242e3b8274e36a1fcdf7f219177a6
+msgid ""
+"...then the guarantee given by the type system is that *if* ``f x`` *is "
+"used exactly once, then* ``x`` *is used exactly once*. So, if we insist "
+"on trying to define ``duplicate``...::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:141
+#: 941bf052ebc745f1b97d68ebd5714ef1
+msgid "...then Idris will complain::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:146
+#: b89aa982dcba4f9e92acbe9e5dd8e36a
+msgid ""
+"A similar intuition applies for data types. Consider the following types,"
+" ``Lin`` which wraps an argument that must be used once, and ``Unr`` "
+"which wraps an argument with unrestricted use"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:158
+#: 6acc65eff6a842e2a1daafd7f9c396ef
+msgid ""
+"If ``MkLin x`` is used once, then ``x`` is used once. But if ``MkUnr x`` "
+"is used once, there is no guarantee on how often ``x`` is used. We can "
+"see this a bit more clearly by starting to write projection functions for"
+" ``Lin`` and ``Unr`` to extract the argument"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:171
+#: 2c57cc9844f243eeb29e0a8e4f6fda3a
+msgid ""
+"Checking the types of the holes shows us that, for ``getLin``, we must "
+"use ``x`` exactly once (Because the ``val`` argument is used once, by "
+"pattern matching on it as ``MkLin x``, and if ``MkLin x`` is used once, "
+"``x`` must be used once)::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:182
+#: 6b943b1aa7124f1e85d199c7812f7698
+msgid ""
+"For ``getUnr``, however, we still have to use ``val`` once, again by "
+"pattern matching on it, but using ``MkUnr x`` once doesn't place any "
+"restrictions on ``x``. So, ``x`` has unrestricted use in the body of "
+"``getUnr``::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:192
+#: b4e8706cbb0b4805b8405ec4be3a1bb2
+msgid "If ``getLin`` has an unrestricted argument..."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:199
+#: e2ef7a2fe6174b859634eca21ad5cf5a
+msgid "...then ``x`` is unrestricted in ``howmanyLin``::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:207
+#: 072bb2824c72407caef8c0cf95df59d9
+msgid ""
+"Remember the intuition from the type of ``MkLin`` is that if ``MkLin x`` "
+"is used exactly once, ``x`` is used exactly once. But, we didn't say that"
+" ``MkLin x`` would be used exactly once, so there is no restriction on "
+"``x``."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:212
+#: dcce899522e14f56afe7ecc08432524d
+msgid "Resource protocols"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:214
+#: 5d8b1331ffbd4a37836027d82b468404
+msgid ""
+"One way to take advantage of being able to express linear usage of an "
+"argument is in defining resource usage protocols, where we can use "
+"linearity to ensure that any unique external resource has only one "
+"instance, and we can use functions which are linear in their arguments to"
+" represent state transitions on that resource. A door, for example, can "
+"be in one of two states, ``Open`` or ``Closed``"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:228
+#: 247376f924c2499991a1b48fa04bbc3e
+msgid ""
+"(Okay, we're just pretending here - imagine the ``doorId`` is a reference"
+" to an external resource!)"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:231
+#: 91e8d891f92a4b518405912949d5df68
+msgid ""
+"We can define functions for opening and closing the door which explicitly"
+" describe how they change the state of a door, and that they are linear "
+"in the door"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:240
+#: e8eb7dac37c24d3bad4d8432a39c3683
+msgid ""
+"Remember, the intuition is that if ``openDoor d`` is used exactly once, "
+"then ``d`` is used exactly once. So, provided that a door ``d`` has "
+"multiplicity ``1`` when it's created, we *know* that once we call "
+"``openDoor`` on it, we won't be able to use ``d`` again. Given that ``d``"
+" is an external resource, and ``openDoor`` has changed it's state, this "
+"is a good thing!"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:247
+#: 00097ff8a22044e59cd38955a43a8c6a
+msgid ""
+"We can ensure that any door we create has multiplicity ``1`` by creating "
+"them with a ``newDoor`` function with the following type"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:254
+#: 5ffa4f26e9e148d08ca62a3845f3fa0f
+msgid ""
+"That is, ``newDoor`` takes a function, which it runs exactly once. That "
+"function takes a door, which is used exactly once. We'll run it in ``IO``"
+" to suggest that there is some interaction with the outside world going "
+"on when we create the door. Since the multiplicity ``1`` means the door "
+"has to be used exactly once, we need to be able to delete the door when "
+"we're finished"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:265
+#: e8e523a0b9be46a28540976cc8ee8abe
+msgid "So an example correct door protocol usage would be"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:276
+#: e1e828fa52de4ff9b2f09c2b0d05b256
+msgid ""
+"It's instructive to build this program interactively, with holes along "
+"the way, and see how the multiplicities of ``d``, ``d'`` etc change. For "
+"example"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:288
+#: 0ccde87948bf4802ae0d687e5da3404c
+msgid ""
+"Checking the type of ``?whatnow`` shows that ``d`` is now spent, but we "
+"still have to use ``d'`` exactly once::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:297
+#: 39aed3c0652b431584b55c30621cb559
+msgid ""
+"Note that the ``0`` multiplicity for ``d`` means that we can still *talk*"
+" about it - in particular, we can still reason about it in types - but we"
+" can't use it again in a relevant position in the rest of the program. "
+"It's also fine to shadow the name ``d`` throughout"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:311
+#: a217cb7fc3e7429998e91b33203838bc
+msgid ""
+"If we don't follow the protocol correctly - create the door, open it, "
+"close it, then delete it - then the program won't type check. For "
+"example, we can try not to delete the door before finishing"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:324
+#: 604398ebafa549c890417d53707c8a75
+msgid "This gives the following error::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:329
+#: 753438f01a2d44cd99accd35f0383881
+msgid ""
+"There's a lot more to be said about the details here! But, this shows at "
+"a high level how we can use linearity to capture resource usage protocols"
+" at the type level. If we have an external resource which is guaranteed "
+"to be used linearly, like ``Door``, we don't need to run operations on "
+"that resource in an ``IO`` monad, since we're already enforcing an "
+"ordering on operations and don't have access to any out of date resource "
+"states. This is similar to the way interactive programs work in `the "
+"Clean programming language <https://clean.cs.ru.nl/Clean>`_, and in fact "
+"is how ``IO`` is implemented internally in Idris 2, with a special "
+"``%World`` type for representing the state of the outside world that is "
+"always used linearly"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:351
+#: 3db6bc6e52e44c5198a0a894d06e581a
+msgid ""
+"Having multiplicities in the type system raises several interesting "
+"questions, such as:"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:354
+#: 690ec2e0799c4ad1866c677ccb547693
+msgid ""
+"Can we use linearity information to inform memory management and, for "
+"example, have type level guarantees about functions which will not need "
+"to perform garbage collection?"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:357
+#: 2aab9b69bfa342e28e38df600b8d7a87
+msgid ""
+"How should multiplicities be incorporated into interfaces such as "
+"``Functor``, ``Applicative`` and ``Monad``?"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:359
+#: beaf5ace097b4824a34f010f77240774
+msgid ""
+"If we have ``0``, and ``1`` as multiplicities, why stop there? Why not "
+"have ``2``, ``3`` and more (like `Granule <https://granule-"
+"project.github.io/granule.html>`_)"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:362
+#: 3f33669c9f8b4fd2b9face0a97f0eb7b
+msgid ""
+"What about multiplicity polymorphism, as in the `Linear Haskell proposal "
+"<https://arxiv.org/abs/1710.09756>`_?"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:363
+#: 120a08061bce41ba91b6249f106430c6
+msgid "Even without all of that, what can we do *now*?"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:368
+#: 9a0c662528634076a4235a38a861cd68
+msgid "Erasure"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:370
+#: 28d9275fe9f6434885e9c15f8c7c726c
+msgid ""
+"The ``1`` multiplicity give us many possibilities in the kinds of "
+"properties we can express. But, the ``0`` multiplicity is perhaps more "
+"important in that it allows us to be precise about which values are "
+"relevant at run time, and which are compile time only (that is, which are"
+" erased). Using the ``0`` multiplicity means a function's type now tells "
+"us exactly what it needs at run time."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:377
+#: 2af3cbef66204995b50a53615637daee
+msgid "For example, in Idris 1 you could get the length of a vector as follows"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:384
+#: a5d2f32b2968486384b19d8ac7ad6c3a
+msgid ""
+"This is fine, since it runs in constant time, but the trade off is that "
+"``n`` has to be available at run time, so at run time we always need the "
+"length of the vector to be available if we ever call ``vlen``. Idris 1 "
+"can infer whether the length is needed, but there's no easy way for a "
+"programmer to be sure."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:389
+#: e944fcdb26e244f3b5d6c43370ec7f9e
+msgid "In Idris 2, we need to state explicitly that ``n`` is needed at run time"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:396
+#: 19a2f049003c44b69568dad7e3962eff
+msgid ""
+"(Incidentally, also note that in Idris 2, names bound in types are also "
+"available in the definition without explicitly rebinding them.)"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:399
+#: 2f762f307e774896a230bd37232e69e4
+msgid ""
+"This also means that when you call ``vlen``, you need the length "
+"available. For example, this will give an error"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:407
+#: 1a8350a3fe5240e0b15335ea79d8b5c0
+msgid "Idris 2 reports::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:412
+#: fddca8755c414215b0f44222d17850d5
+msgid ""
+"This means that it needs to use ``m`` as an argument to pass to ``vlen "
+"xs``, where it needs to be available at run time, but ``m`` is not "
+"available in ``sumLengths`` because it has multiplicity ``0``."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:416
+#: 359a52a45dba4836b5df45e82d375690
+msgid ""
+"We can see this more clearly by replacing the right hand side of "
+"``sumLengths`` with a hole..."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:424
+#: 6ab8fb1eded04bb285fdf514b2bdfeb9
+msgid "...then checking the hole's type at the REPL::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:435
+#: ca27d62cd5004e04868f7c2645b500e9
+msgid ""
+"Instead, we need to give bindings for ``m`` and ``n`` with unrestricted "
+"multiplicity"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:443
+#: 5c8837dc28e4486bbe0cd102c26140f6
+msgid ""
+"Remember that giving no multiplicity on a binder, as with ``m`` and ``n``"
+" here, means that the variable has unrestricted usage."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:446
+#: 44ee9fdd47f84ab3ae90663a2b22a565
+msgid ""
+"If you're converting Idris 1 programs to work with Idris 2, this is "
+"probably the biggest thing you need to think about. It is important to "
+"note, though, that if you have bound implicits, such as..."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:454
+#: 33fac3ad147d463f97dc2067eaf0c9b2
+msgid ""
+"...then it's a good idea to make sure ``t`` really is needed, or "
+"performance might suffer due to the run time building the instance of "
+"``t`` unnecessarily!"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:457
+#: bfd443df02d04fd5b03fdd305f7d671e
+msgid ""
+"One final note on erasure: it is an error to try to pattern match on an "
+"argument with multiplicity ``0``, unless its value is inferrable from "
+"elsewhere. So, the following definition is rejected"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:467
+#: d9027473cd7a47e8b1c84d765c29886b
+msgid "This is rejected with the error::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:472
+#: 4375be6628da407b82a05ad86083ffb9
+msgid ""
+"The following, however, is fine, because in ``sNot``, even though we "
+"appear to match on the erased argument ``x``, its value is uniquely "
+"inferrable from the type of the second argument"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:486
+#: 0c1e60a532f04c9caf7a6e431c083080
+msgid ""
+"Experience with Idris 2 so far suggests that, most of the time, as long "
+"as you're using unbound implicits in your Idris 1 programs, they will "
+"work without much modification in Idris 2. The Idris 2 type checker will "
+"point out where you require an unbound implicit argument at run time - "
+"sometimes this is both surprising and enlightening!"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:495
+#: fdcbc1b58b04471eb58590541fd89805
+msgid "Pattern Matching on Types"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:497
+#: ac103138a66a468ba197145e985b4cdd
+msgid ""
+"One way to think about dependent types is to think of them as \"first "
+"class\" objects in the language, in that they can be assigned to "
+"variables, passed around and returned from functions, just like any other"
+" construct. But, if they're truly first class, we should be able to "
+"pattern match on them too! Idris 2 allows us to do this. For example"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:510
+#: dc2d5e6eff4c4608a7f439d1238ce4da
+msgid "We can try this as follows::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:519
+#: ba8291d2ecb6472181ba620e94819f69
+msgid ""
+"Pattern matching on function types is interesting, because the return "
+"type may depend on the input value. For example, let's add a case to "
+"``showType``"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:527
+#: f5b985ccd2754e3ab3621ca9ab3117a6
+msgid "Inspecting the type of ``help`` tells us::"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:534
+#: a2c6f9924cfa47168c33d587a0222bca
+msgid ""
+"So, the return type ``a`` depends on the input value of type ``Nat``, and"
+" we'll need to come up with a value to use ``a``, for example"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:541
+#: e4fdd23db8764678a96994510b3fae2c
+msgid ""
+"Note that multiplicities on the binders, and the ability to pattern match"
+" on *non-erased* types mean that the following two types are distinct"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:549
+#: a6019af2fad24338906ff2a4a2b1ca3c
+msgid ""
+"In the case of ``notId``, we can match on ``a`` and get a function which "
+"is certainly not the identity function"
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:564
+#: cfa1197f9e3642bf8f925452cb07e5ac
+msgid ""
+"There is an important consequence of being able to distinguish between "
+"relevant and irrelevant type arguments, which is that a function is "
+"*only* parametric in ``a`` if ``a`` has multiplicity ``0``. So, in the "
+"case of ``notId``, ``a`` is *not* a parameter, and so we can't draw any "
+"conclusions about the way the function will behave because it is "
+"polymorphic, because the type tells us it might pattern match on ``a``."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:571
+#: 01cd5df4c417452590f90cabcc1aecf2
+msgid ""
+"On the other hand, it is merely a coincidence that, in non-dependently "
+"typed languages, types are *irrelevant* and get erased, and values are "
+"*relevant* and remain at run time. Idris 2, being based on QTT, allows us"
+" to make the distinction between relevant and irrelevant arguments "
+"precise. Types can be relevant, values (such as the ``n`` index to "
+"vectors) can be irrelevant."
+msgstr ""
+
+#: ../../source/tutorial/multiplicities.rst:577
+#: 3accd998175548ee90e8e6850851814d
+msgid ""
+"For more details on multiplicities, see `Idris 2: Quantitative Type "
+"Theory in Action <https://www.type-driven.org.uk/edwinb/idris-2"
+"-quantitative-type-theory-in-action.html>`_."
+msgstr ""
+

@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/reference/pragmas.rst:3 eb081aeb4a574f708609a541c69a2a51
+msgid "Pragmas"
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:8 53802201b0f84ceb959ed9b0f2118649
+msgid ""
+"Idris2 supports a number of pragmas (identifiable by the `%` prefix). "
+"Some pragmas change compiler behavior until the behavior is changed back "
+"using the same pragma while others apply to the following declaration. A "
+"small niche of pragmas apply directly to one or more arguments instead of"
+" the code following the pragma (like the `%name` pragma described below)."
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:14 ed51e23b888845b19503b85ecb380aa2
+msgid ""
+"This page is a work in progress. If you know about a pragma that is not "
+"described yet, please consider submitting a pull request!"
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:19 8c5258f0ca8346a2a52c6d4a7e11c715
+msgid "``%builtin``"
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:21 6c7e5dcf839a45a6bfcb4f0f8bf2b84c
+msgid ""
+"The ``%builtin Natural`` pragma converts recursive/unary representations "
+"of natural numbers into primitive ``Integer`` representations."
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:24 1b485bd6aed141ee86b3a95cfa831958
+msgid ""
+"This pragma is explained in detail on its own page. For more, see "
+":ref:`builtins`."
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:27 cd6e01bf6bf74b8288e9eb9eb1ed9c43
+#, python-format
+msgid "``%deprecate``"
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:29 aa7941640d6c4698b182fe4240e4a1e9
+msgid ""
+"Mark the following definition as deprecated. Whenever the function is "
+"used, Idris will show a deprecation warning."
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:45 a90d019e20f24ee2aeb0e30bf91c91e4
+msgid ""
+"You can use code documentation (triple vertical bar `||| docs`) to "
+"suggest a strategy for removing the deprecated function call and that "
+"documentation will be displayed alongside the warning."
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:64 c753efb7a154488c9d8b7d32f058af3e
+#, python-format
+msgid "``%inline``"
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:66 1632462081934cb2bc4bc554094bcad4
+msgid ""
+"Instruct the compiler to inline the following definition when it is "
+"applied. It is generally best to let the compiler and the backend you are"
+" using optimize code based on its predetermined rules, but if you want to"
+" force a function to be inlined when it is called, this pragma will force"
+" it."
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:77 076e44dc574b46dab5bf06f8625fcd3b
+msgid "``%noinline``"
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:79 35754fcdc4bb4b958a58dcd92dceb800
+msgid ""
+"Instruct the compiler _not_ to inline the following definition when it is"
+" applied. It is generally best to let the compiler and the backend you "
+"are using optimize code based on its predetermined rules, but if you want"
+" to force a function to never be inlined when it is called, this pragma "
+"will force it."
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:90 9a58e89e172c4682aac71f591a6dd6c0
+msgid "``%name``"
+msgstr ""
+
+#: ../../source/reference/pragmas.rst:92 93d3e226e2754bba8fb103ca6901aefc
+msgid ""
+"Give the compiler some suggested names to use for a particular type when "
+"it is asked to generate names for values. You can specify any number of "
+"suggested names; they will be used in-order when more than one is needed "
+"for a single definition."
+msgstr ""
+

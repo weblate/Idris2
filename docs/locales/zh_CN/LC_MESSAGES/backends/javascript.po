@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/backends/javascript.rst:3 e49190e8fb914548a2ad5f831076de90
+msgid "Javascript and Node Code Generators"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:5 5f4181db4f4c4075ba1bfa74902ca749
+msgid ""
+"There are two javascript code generators, ``node`` and ``javascript``. "
+"There are two differences between the two: the ``javascript`` code "
+"generator when called to output an HTML file will also generate a basic "
+"HTML document with the generated code inside a ``<script>`` tag; the "
+"other distinction is on the ffi that will be explained below."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:13 0c9ccec23c5e4488bab5b7c9a2746977
+msgid "Javascript FFI Specifiers"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:15 4c6e2d15fd9546b5b50fbc132a77b0ac
+msgid ""
+"There are three main kinds of javascript ffi specifiers ``javascript``, "
+"``node`` and ``browser``. ``javascript`` is for foreigns that are "
+"available on node and the browser, ``node`` for foreigns that are only "
+"available on node and ``browser`` for browser only foreigns."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:20 06e236c5e9884beba599204f30b008a5
+msgid "For ``node`` there are two ways of defining a foreign:"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:27 734f63861edb46ffaa368a8a1f3e5985
+msgid ""
+"here ``lambda`` means that we are providing the definition as a lambda "
+"expression."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:36 b8dbb32aa0614673b93a29fe7f72f9bf
+msgid "``require`` can be used to import javascript modules."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:38 074ccbcb2e824b1b83ee5c9ae892496b
+msgid ""
+"For completion below an example of a foreign available only with "
+"``browser`` codegen:"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:47 3173da2f19dc4fc2a182b06961694d8e
+msgid "Short Example"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:49 3f0ff840e0bb408db95c7b463eeee973
+msgid "An interesting example is creating a foreign for the setTimeout function:"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:59 ba41a7e471e74bbf8b7e819375c443f9
+msgid ""
+"Note: Previous versions of the javascript backends treated ``Int`` as a "
+"64 bit signed integer represented by ``BigInt`` in javascript land. This "
+"is no longer the case: ``Int`` is now treated as a 32 bit signed integer "
+"represented by ``Number``. This should facilitate interop between Idris2 "
+"and the backend."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:64 c901b00f2e7e4ce3b6accd890f061d2b
+msgid ""
+"However, unless you have good reasons to do otherwise, consider using one"
+" of the other fixed precision integral types. They are supposed to behave"
+" the same across all backends. All signed and unsigned integrals of up to"
+" 32 bit precision (``Int8``, ``Int16``, ``Int32``, ``Bits8``, ``Bits16``,"
+" and ``Bits32``) are represented by ``Number`` while ``Int64``, "
+"``Bits64``, and ``Integer`` are represented by ``BigInt``. The example "
+"above could therefore be improved by using ``Int32`` instad of ``Int``:"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:81 fad4c4f466ed45fa838056e473a4edbf
+msgid "Browser Example"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:83 80f7f9c081474fd1883aaa583dbdcad9
+msgid ""
+"To build JavaScript aimed to use in the browser, the code must be "
+"compiled with the javascript codegen option. The compiler produces a "
+"JavaScript or an HTML file. The browser needs an HTML file to load. This "
+"HTML file can be created in two ways"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:87 f6e763b387264782837535d266e5840e
+msgid ""
+"If the ``.html`` suffix is given to the output file the compiler "
+"generates an HTML file which includes a wrapping around the generated "
+"JavaScript."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:89 44f8935a6fe1438db5370482191377d2
+msgid ""
+"If *no* ``.html`` suffix is given, the generated file only contains the "
+"JavaScript code. In this case manual wrapping is needed."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:92 c7e6ca6b49bc463081fa54d742c121d5
+msgid "Example of the wrapper HTML:"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:105 3c6678d1189a4750b36dd55df83ad6a7
+msgid ""
+"As our intention is to develop something that runs in the browser "
+"questions naturally arise:"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:107 fe60c86fe8b347cb98ccb7ac6e72fae3
+msgid "How to interact with HTML elements?"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:108 cfd85d3688504f8c8cbaf3f3ddf70ac1
+msgid "More importantly, when does the generated Idris code start?"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:111 8baada67b096435bab2d5bca4802763c
+msgid "Starting point of the Idris generated code"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:113 c497b1ee4ac94663a62e6351ddfd8b6d
+msgid ""
+"The generated JavaScript for your program contains an entry point. The "
+"``main`` function is compiled to a JavaScript top-level expression, which"
+" will be evaluated during the loading of the ``script`` tag and that is "
+"the entry point for Idris generated program starting in the browser."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:118 42d4394c56f14280b7218e0e35a07a63
+msgid "Interaction with HTML elements"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:120 803309f0b78f455b9e5c75572857898a
+#, python-format
+msgid ""
+"As sketched in the Short Example section, the FFI must be used when "
+"interaction happens between Idris generated code and the rest of the "
+"Browser/JS ecosystem. Information handled by the FFI is separated into "
+"two categories. Primitive types in Idris FFI, such as Int, and everything"
+" else. The everything else part is accessed via AnyPtr. The ``%foreign`` "
+"construction should be used to give implementation on the JavaScript "
+"side. And an Idris function declaration  to give ``Type`` declaration on "
+"the Idris side. The syntax is ``%foreign \"browser:lambda:js-lambda-"
+"expression\"`` . On the Idris side, primitive types and ``PrimIO t`` "
+"types should be used as parameters, when defining ``%foreign``. This "
+"declaration is a helper function which needs to be called behind the "
+"``primIO`` function. More on this can be found in the FFI chapter."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:131 390bb2ed899a47b7ae68b376ac51b267
+msgid "Examples for JavaScript FFI"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:134 99ef92e9c78b4776ad382ad555859e5b
+msgid "console.log"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:144 deb9bfe0eb4f457ab68c03889a1b86c3
+msgid ""
+"String is a primitive type in Idris and it is represented as a JavaScript"
+" String. There is no need for any conversion between the Idris and the "
+"JavaScript."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:148 a69370123f944422bd34f64b30fe9a1d
+msgid "setInterval"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:158 4b866331ec124f119a319caf6ba7676e
+msgid ""
+"The ``setInterval`` JavaScript function executes the given function in "
+"every ``x`` millisecond. We can use Idris generated functions in the "
+"callback as far as they have the type ``IO ()`` ."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:162 5b6060c97fa443a38614bd261377a5be
+msgid "HTML Dom elements"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:164 8fe005566ac742c985d515a0f6aed0a0
+msgid ""
+"Lets turn our attention to the Dom elements and events. As said above, "
+"anything that is not a primitive type should be handled via the "
+"``AnyPtr`` type in the FFI. Anything complex that is returned by a "
+"JavaScript function should be captured in an ``AnyPtr`` value. It is "
+"advisory to separate the ``AnyPtr`` values into categories."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:179 8d674253d144458192e03ef08f28375d
+msgid ""
+"We create a ``DomNode`` type which holds an ``AnyPtr``. The "
+"``prim__body`` function wraps a lambda function with no parameters. In "
+"the Idris function ``body`` we pass an extra ``()`` parameter and the we "
+"wrap the result in the ``DomNode`` type using the ``MkNode`` data "
+"constructor."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:184 838159838e264a26bfcdb9b5a36d4786
+msgid "Primitive values originated in JavaScript"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:186 a0abb758c95848f3872dd0322dc91c68
+msgid ""
+"As a countinuation of the previous example, the ``width`` attribute of a "
+"DOM element can be retrieved via the FFI."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:198 b9f44539b85642d392f5be6b533497c3
+msgid "Handling JavaScript events"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:212 b82584c2e1fa4fe7ad040a2a9034c9c8
+msgid ""
+"In this example shows how to attach an event handler to a particular DOM "
+"element. Values of events are also associated with ``AnyPtr`` on the "
+"Idris side. To seperate ``DomNode`` form ``DomEvent`` we create two "
+"different types. Also it demonstrates how a simple callback function "
+"defined in Idris can be used on the JavaScript side."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:218 3e05591a4f1b4420836318f27589152a
+msgid "Directives"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:220 2a3ad8d52b1b4eec99ae8bb9d1d4505e
+msgid ""
+"The javascript code generators accepts three different directives about "
+"how compact and obfusacted the generated code should be. The following "
+"examples show the code generated for the ``putStr`` function from the "
+"prelude for each of the three directives. (``--cg node`` is used in the "
+"examples below, but the behavior is the same when generating code to be "
+"run in browsers with ``--cg javascript``)."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:227 d16691a3f57243f0bc2d306380012863
+msgid ""
+"With ``idris2 --cg node --directive pretty`` (the default, if no "
+"directive is given), a basic pretty printer is used to generate properly "
+"indented javascript code."
+msgstr ""
+
+#: ../../source/backends/javascript.rst:237 b0aee48884094a8b9b8922f038af4e4e
+msgid ""
+"With ``idris2 --cg node --directive compact``, every toplevel function is"
+" declared on a single line, and unneeded spaces are removed:"
+msgstr ""
+
+#: ../../source/backends/javascript.rst:244 74913796c16f4f01aa51d2e6f806d20b
+msgid ""
+"Finally, with ``idris2 --cg node --directive minimal``, toplevel function"
+" names are (with a few exceptions like the ones from the static preamble)"
+" obfuscated to reduce the size of the generated javascript file:"
+msgstr ""
+

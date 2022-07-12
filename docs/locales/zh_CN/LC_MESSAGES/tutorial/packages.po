@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/tutorial/packages.rst:5 747a9ba4e3a641b5952bf8d851340b69
+msgid "Packages"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:7 66729ea49fec451aa4bf9da02c42fcf2
+msgid ""
+"Idris includes a simple build system for building packages and "
+"executables from a named package description file. These files can be "
+"used with the Idris compiler to manage the development process."
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:12 c02853d69ae24cc2b3ff96d47f19edb9
+msgid "Package Descriptions"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:14 f5805cd532a94b4ebb14f52e81ae35f5
+msgid "A package description includes the following:"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:16 db94c772c72b43dfb095169b0a2a289d
+msgid ""
+"A header, consisting of the keyword ``package`` followed by a package "
+"name. Package names can be any valid Idris identifier. The iPKG format "
+"also takes a quoted version that accepts any valid filename."
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:20 f6bd2585c90e4e74ae277ef6aeea2d6c
+msgid "Fields describing package contents, ``<field> = <value>``."
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:22 3b5908474f554167acb637f8330670c3
+msgid ""
+"At least one field must be the modules field, where the value is a comma "
+"separated list of modules. For example, given an idris package ``maths`` "
+"that has modules ``Maths.idr``, ``Maths.NumOps.idr``, "
+"``Maths.BinOps.idr``, and ``Maths.HexOps.idr``, the corresponding package"
+" file would be:"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:37 a16e74ffb64543d9aab50818f120867b
+msgid ""
+"Running ``idris2 --init`` will interactively create a new package file in"
+" the current directory. The generated pacakge file lists all configurable"
+" fields with a brief description."
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:39 93c98d5855d84e818b9290ae46f598e8
+msgid ""
+"Other examples of package files can be found in the ``libs`` directory of"
+" the main Idris repository, and in `third-party libraries "
+"<https://github.com/idris-lang/Idris-dev/wiki/Libraries>`_."
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:45 440c41f6665b4913add41b745ac53851
+msgid "Using Package files"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:47 6a0929343e3e4a44b51ae3ed8a6f9788
+msgid ""
+"Idris itself is aware about packages, and special commands are available "
+"to help with, for example, building packages, installing packages, and "
+"cleaning packages.  For instance, given the ``maths`` package from "
+"earlier we can use Idris as follows:"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:52 4c905d8484ed487baaa781b2e7923d07
+msgid "``idris2 --build maths.ipkg`` will build all modules in the package"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:54 bc90a1a6d0d0493f8b3476c1e02f5c53
+msgid ""
+"``idris2 --install maths.ipkg`` will install the package, making it "
+"accessible by other Idris libraries and programs."
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:57 9e87f7004bf34d02a75f426531a474b7
+msgid ""
+"``idris2 --clean maths.ipkg`` will delete all intermediate code and "
+"executable files generated when building."
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:60 560a96e6040648bdbb1297b3f95966d4
+msgid ""
+"Once the maths package has been installed, the command line option "
+"``--package maths`` makes it accessible (abbreviated to ``-p maths``). "
+"For example:"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:69 235972d9e9d840ba8f1ff83b081d267c
+msgid "Package Dependencies Using Atom"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:71 3e09db28e3764d71a67a66c21fd2d98c
+msgid ""
+"If you are using the Atom editor and have a dependency on another "
+"package, corresponding to for instance ``import Lightyear`` or ``import "
+"Pruviloj``, you need to let Atom know that it should be loaded. The "
+"easiest way to accomplish that is with a .ipkg file. The general contents"
+" of an ipkg file will be described in the next section of the tutorial, "
+"but for now here is a simple recipe for this trivial case:"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:78 931af2c8d24a4404a2b89dde3b9caf83
+msgid "Create a folder myProject."
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:80 1da718668d694ddbb813d19ad2b952c1
+msgid "Add a file myProject.ipkg containing just a couple of lines:"
+msgstr ""
+
+#: ../../source/tutorial/packages.rst:88 af8b4e0f6a5c4803a46fa08cbb9116e1
+msgid "In Atom, use the File menu to Open Folder myProject."
+msgstr ""
+
