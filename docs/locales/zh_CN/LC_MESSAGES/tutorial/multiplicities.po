@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/multiplicities.rst:5 b2504f798300447692832e30e0c6d9be
+#: ../../source/tutorial/multiplicities.rst:5 a3f001782e864dfd825050aa93641cd0
 msgid "Multiplicities"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:7 5d309e098cec49988d5b5c1c07e768c8
+#: ../../source/tutorial/multiplicities.rst:7 1749cde5c67947758d1a8ea62ed9d130
 msgid ""
 "Idris 2 is based on `Quantitative Type Theory (QTT) <https://bentnib.org"
 "/quantitative-type-theory.html>`_, a core language developed by Bob Atkey"
@@ -29,54 +29,54 @@ msgid ""
 "2 has a *quantity* associated with it. A quantity is one of:"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:13 e2b51037596c431db7b01e3d8020182f
+#: ../../source/tutorial/multiplicities.rst:13 d39f359e67c54f89a2d6321ff2206540
 msgid "``0``, meaning that the variable is *erased* at run time"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:14 0904fe127bc84bc9b7d356cd69af13fd
+#: ../../source/tutorial/multiplicities.rst:14 b8ec3a8096d7450f883db7e1df0a1f25
 msgid "``1``, meaning that the variable is used *exactly once* at run time"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:15 24c5c22d59464cb994ea428315059b59
+#: ../../source/tutorial/multiplicities.rst:15 305156110468493b9f7029ec17168399
 msgid "*Unrestricted*, which is the same behaviour as Idris 1"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:17 99527dca93724932a50945a34f0d1270
+#: ../../source/tutorial/multiplicities.rst:17 0cc2ac2b04d948a09f0a9d3d0829e1ae
 msgid ""
 "We can see the multiplicities of variables by inspecting holes. For "
 "example, if we have the following skeleton definition of ``append`` on "
 "vectors..."
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:25 d705f5b4d2984543b0156a1057185bae
+#: ../../source/tutorial/multiplicities.rst:25 52a77d10680c4f71bf9e5e55e1f5b183
 msgid "...we can look at the hole ``append_rhs``:"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:38 16cba7180adf4453a2f0164e9aead6f6
+#: ../../source/tutorial/multiplicities.rst:38 9f168e2f10974ca4ab852432754e9b71
 msgid ""
 "The ``0`` next to ``m``, ``a`` and ``n`` mean that they are in scope, but"
 " there will be ``0`` occurrences at run-time. That is, it is "
 "**guaranteed** that they will be erased at run-time."
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:42 b003ab0e604f4b9da59b2b1a1c08e494
+#: ../../source/tutorial/multiplicities.rst:42 6fa7f9a0682e4db6b8f315688b0c8d7f
 msgid "Multiplicities can be explicitly written in function types as follows:"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:44 daaefa9116434025a39bfc663fe47560
+#: ../../source/tutorial/multiplicities.rst:44 a7c6e390cf114e9f8965768c9ff979f1
 msgid ""
 "``ignoreN : (0 n : Nat) -> Vect n a -> Nat`` - this function cannot look "
 "at ``n`` at run time"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:46 cb455fbd4d7047c7869ba0386e31d120
+#: ../../source/tutorial/multiplicities.rst:46 c70f5b5ec36b40cb8574a37c17ed2012
 msgid ""
 "``duplicate : (1 x : a) -> (a, a)`` - this function must use ``x`` "
 "exactly once (so good luck implementing it, by the way. There is no "
 "implementation because it would need to use ``x`` twice!)"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:50 2d096c90031f4fe5ab4c6052f803b7b1
+#: ../../source/tutorial/multiplicities.rst:50 326c10dda0b249b883daf75e305d74b9
 msgid ""
 "If there is no multiplicity annotation, the argument is unrestricted. If,"
 " on the other hand, a name is implicitly bound (like ``a`` in both "
@@ -84,37 +84,37 @@ msgid ""
 " written as:"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:54 864074a7848b40baa968615440bd703d
+#: ../../source/tutorial/multiplicities.rst:54 7073272ab70d4da3ac8c7c71d1c78952
 msgid "``ignoreN : {0 a : _} -> (0 n : Nat) -> Vect n a -> Nat``"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:55 c5bc54c1661c49afb963d8719f30bacb
+#: ../../source/tutorial/multiplicities.rst:55 038ef3c27acc4e47a1a80d7574a592db
 msgid "``duplicate : {0 a : _} -> (1 x : a) -> (a, a)``"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:57 3b5a174e980e4c68b730a5043c7f79cc
+#: ../../source/tutorial/multiplicities.rst:57 b91e2ed5c72a40deb9c37db979711395
 msgid ""
 "This section describes what this means for your Idris 2 programs in "
 "practice, with several examples. In particular, it describes:"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:60 e7bc5d2afa2a4cbcaacb668276ddd932
+#: ../../source/tutorial/multiplicities.rst:60 83622fe8e59a4bc397a70c5323ae5c32
 msgid ""
 ":ref:`sect-erasure` - how to know what is relevant at run time and what "
 "is erased"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:61 4c6b44a84f6a480988436dcb78377efb
+#: ../../source/tutorial/multiplicities.rst:61 5af9c8bcfd2346a09b2a36e0134886cc
 msgid ""
 ":ref:`sect-linearity` - using the type system to encode *resource usage "
 "protocols*"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:62 03ee3b4834284871be2baba1655462c0
+#: ../../source/tutorial/multiplicities.rst:62 dbd6b0948f144b43b6c5ffac899142d6
 msgid ":ref:`sect-pmtypes` - truly first class types"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:64 4342b083828f4a12b94cb3c4a8a4cf05
+#: ../../source/tutorial/multiplicities.rst:64 602c1d7127744f9a850f757d7fc8e2ed
 msgid ""
 "The most important of these for most programs, and the thing you'll need "
 "to know about if converting Idris 1 programs to work with Idris 2, is "
@@ -122,43 +122,43 @@ msgid ""
 "2 much more expressivity, is linearity_, so we'll start there."
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:72 0dd88f601d1b4aa79c8fbd2edcc2e61d
+#: ../../source/tutorial/multiplicities.rst:72 9e11a811d0214e4b83384f092577ea4f
 msgid "Linearity"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:74 ee6acc43413449e7b680abf8d2d770b8
+#: ../../source/tutorial/multiplicities.rst:74 868a4573bbd547c597f32c34109be382
 msgid ""
 "The ``1`` multiplicity expresses that a variable must be used exactly "
 "once. By \"used\" we mean either:"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:77 21e98cc6f7c64ddf8caefc7daab34711
+#: ../../source/tutorial/multiplicities.rst:77 c02111966a7044059836348c651d22b3
 msgid ""
 "if the variable is a data type or primitive value, it is pattern matched "
 "against, ex. by being the subject of a *case* statement, or a function "
 "argument that is pattern matched against, etc.,"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:78 d2a1b58c852a4dda87fc25d4b7258f0d
+#: ../../source/tutorial/multiplicities.rst:78 3bb59b97f412411ba8a3713a5f4b5df2
 msgid ""
 "if the variable is a function, that function is applied (i.e. ran with an"
 " argument)"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:80 5d256c6a9d9841d4a42e30f7b86eaec9
+#: ../../source/tutorial/multiplicities.rst:80 0df185dc750543cb9ebcd3bb321a2099
 msgid ""
 "First, we'll see how this works on some small examples of functions and "
 "data types, then see how it can be used to encode `resource protocols`_."
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:83 a89e0a5ce2774819acfef170566076e9
+#: ../../source/tutorial/multiplicities.rst:83 f88c0a0000664adea44cc4f037dabb35
 msgid ""
 "Above, we saw the type of ``duplicate``. Let's try to write it "
 "interactively, and see what goes wrong. We'll start by giving the type "
 "and a skeleton definition with a hole"
 msgstr ""
 
-#: ../../source/tutorial/multiplicities.rst:92 5246020125384f9e8d8e758390104140
+#: ../../source/tutorial/multiplicities.rst:92 f2037d7224d3477187444ab51c2a9ae9
 msgid ""
 "Checking the type of a hole tells us the multiplicity of each variable in"
 " scope. If we check the type of ``?help`` we'll see that we can't use "
@@ -166,26 +166,26 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:102
-#: d9432d31798f405e92850729b5e17eef
+#: 7812c7a732154aafa97edf427c193ccb
 msgid "If we use ``x`` for one part of the pair..."
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:109
-#: 0fe9aa3226634197b58934938a3b06f6
+#: 20527bff63b24ae3bb60422b145bab8c
 msgid ""
 "...then the type of the remaining hole tells us we can't use it for the "
 "other::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:117
-#: 1c4f61739cb04dfd8d32e06ffede5362
+#: f6b9e20601ff48be86231ab0648ce252
 msgid ""
 "The same happens if we try defining ``duplicate x = (?help, x)`` (try "
 "it!)."
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:119
-#: b68cf9da290b4f24afdeb005c90a32d1
+#: 3f6989a603b14943a02c09eea04427c2
 msgid ""
 "In order to avoid parsing ambiguities, if you give an explicit "
 "multiplicity for a variable as with the argument to ``duplicate``, you "
@@ -194,14 +194,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:128
-#: 993159280b9a4bf98ff1d8da194b779c
+#: 08b6876bf77c4466b649b294de39a0f0
 msgid ""
 "The intution behind multiplicity ``1`` is that if we have a function with"
 " a type of the following form..."
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:135
-#: 6ff242e3b8274e36a1fcdf7f219177a6
+#: 39b5ba81865845129680fb9a714aa166
 msgid ""
 "...then the guarantee given by the type system is that *if* ``f x`` *is "
 "used exactly once, then* ``x`` *is used exactly once*. So, if we insist "
@@ -209,12 +209,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:141
-#: 941bf052ebc745f1b97d68ebd5714ef1
+#: cb4c104c595f4facbcf320b042694f25
 msgid "...then Idris will complain::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:146
-#: b89aa982dcba4f9e92acbe9e5dd8e36a
+#: 267f91621faf4371a45462bf0a98b6a6
 msgid ""
 "A similar intuition applies for data types. Consider the following types,"
 " ``Lin`` which wraps an argument that must be used once, and ``Unr`` "
@@ -222,7 +222,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:158
-#: 6acc65eff6a842e2a1daafd7f9c396ef
+#: 821f0686461e4b9790e65c2357c4358e
 msgid ""
 "If ``MkLin x`` is used once, then ``x`` is used once. But if ``MkUnr x`` "
 "is used once, there is no guarantee on how often ``x`` is used. We can "
@@ -231,7 +231,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:171
-#: 2c57cc9844f243eeb29e0a8e4f6fda3a
+#: 88e34141cc9c42afba03359a11c181a4
 msgid ""
 "Checking the types of the holes shows us that, for ``getLin``, we must "
 "use ``x`` exactly once (Because the ``val`` argument is used once, by "
@@ -240,7 +240,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:182
-#: 6b943b1aa7124f1e85d199c7812f7698
+#: aeeda3d0c23347b49e0f37eba5f66a1b
 msgid ""
 "For ``getUnr``, however, we still have to use ``val`` once, again by "
 "pattern matching on it, but using ``MkUnr x`` once doesn't place any "
@@ -249,17 +249,17 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:192
-#: b4e8706cbb0b4805b8405ec4be3a1bb2
+#: f087e0272bf34e39b0c671cc48153f5b
 msgid "If ``getLin`` has an unrestricted argument..."
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:199
-#: e2ef7a2fe6174b859634eca21ad5cf5a
+#: 788aaedfcd1a407ba0406717dcbb046f
 msgid "...then ``x`` is unrestricted in ``howmanyLin``::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:207
-#: 072bb2824c72407caef8c0cf95df59d9
+#: 511ebb166f694239b77c9aadd13076d7
 msgid ""
 "Remember the intuition from the type of ``MkLin`` is that if ``MkLin x`` "
 "is used exactly once, ``x`` is used exactly once. But, we didn't say that"
@@ -268,12 +268,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:212
-#: dcce899522e14f56afe7ecc08432524d
+#: 60d6df5b7f76411bb70eee0ad458b1f0
 msgid "Resource protocols"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:214
-#: 5d8b1331ffbd4a37836027d82b468404
+#: d2c071f093894d1f9339c8bcdc721ccf
 msgid ""
 "One way to take advantage of being able to express linear usage of an "
 "argument is in defining resource usage protocols, where we can use "
@@ -284,14 +284,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:228
-#: 247376f924c2499991a1b48fa04bbc3e
+#: 909f9053664847228624f4d6f3c4c079
 msgid ""
 "(Okay, we're just pretending here - imagine the ``doorId`` is a reference"
 " to an external resource!)"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:231
-#: 91e8d891f92a4b518405912949d5df68
+#: eaae02d262be4b00be4c68f881dd0c4d
 msgid ""
 "We can define functions for opening and closing the door which explicitly"
 " describe how they change the state of a door, and that they are linear "
@@ -299,7 +299,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:240
-#: e8eb7dac37c24d3bad4d8432a39c3683
+#: dadaa1f8336a475d8bc25c605901da5a
 msgid ""
 "Remember, the intuition is that if ``openDoor d`` is used exactly once, "
 "then ``d`` is used exactly once. So, provided that a door ``d`` has "
@@ -310,14 +310,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:247
-#: 00097ff8a22044e59cd38955a43a8c6a
+#: b002c434e46d4d52a519d22c784631a2
 msgid ""
 "We can ensure that any door we create has multiplicity ``1`` by creating "
 "them with a ``newDoor`` function with the following type"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:254
-#: 5ffa4f26e9e148d08ca62a3845f3fa0f
+#: 120b7c78b2e547919fe4d1cce6b343f0
 msgid ""
 "That is, ``newDoor`` takes a function, which it runs exactly once. That "
 "function takes a door, which is used exactly once. We'll run it in ``IO``"
@@ -328,12 +328,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:265
-#: e8e523a0b9be46a28540976cc8ee8abe
+#: ff708f3ffcbe4229ba8827caf450c524
 msgid "So an example correct door protocol usage would be"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:276
-#: e1e828fa52de4ff9b2f09c2b0d05b256
+#: c31ebd9d9bf24aac8ca09b0038851331
 msgid ""
 "It's instructive to build this program interactively, with holes along "
 "the way, and see how the multiplicities of ``d``, ``d'`` etc change. For "
@@ -341,14 +341,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:288
-#: 0ccde87948bf4802ae0d687e5da3404c
+#: bcdff38c3bba428aacdc3f98e369a571
 msgid ""
 "Checking the type of ``?whatnow`` shows that ``d`` is now spent, but we "
 "still have to use ``d'`` exactly once::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:297
-#: 39aed3c0652b431584b55c30621cb559
+#: d65b99d853254fdfa3dff8d2ec3d8487
 msgid ""
 "Note that the ``0`` multiplicity for ``d`` means that we can still *talk*"
 " about it - in particular, we can still reason about it in types - but we"
@@ -357,7 +357,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:311
-#: a217cb7fc3e7429998e91b33203838bc
+#: 95a8d69a4dce4aaeb948371060390080
 msgid ""
 "If we don't follow the protocol correctly - create the door, open it, "
 "close it, then delete it - then the program won't type check. For "
@@ -365,12 +365,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:324
-#: 604398ebafa549c890417d53707c8a75
+#: f1093089e9eb4299966c04241bad2be5
 msgid "This gives the following error::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:329
-#: 753438f01a2d44cd99accd35f0383881
+#: 8f31c124a3fd4e60bcd417abcf79911a
 msgid ""
 "There's a lot more to be said about the details here! But, this shows at "
 "a high level how we can use linearity to capture resource usage protocols"
@@ -386,14 +386,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:351
-#: 3db6bc6e52e44c5198a0a894d06e581a
+#: 7d960812eb6f47089256e8dbadea0230
 msgid ""
 "Having multiplicities in the type system raises several interesting "
 "questions, such as:"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:354
-#: 690ec2e0799c4ad1866c677ccb547693
+#: 9ee0fabff47943389361e1933e89f3e5
 msgid ""
 "Can we use linearity information to inform memory management and, for "
 "example, have type level guarantees about functions which will not need "
@@ -401,14 +401,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:357
-#: 2aab9b69bfa342e28e38df600b8d7a87
+#: 1f23539793ff4d63871340058bdbb989
 msgid ""
 "How should multiplicities be incorporated into interfaces such as "
 "``Functor``, ``Applicative`` and ``Monad``?"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:359
-#: beaf5ace097b4824a34f010f77240774
+#: 884d41ae924845beaf022b69e1acea24
 msgid ""
 "If we have ``0``, and ``1`` as multiplicities, why stop there? Why not "
 "have ``2``, ``3`` and more (like `Granule <https://granule-"
@@ -416,24 +416,24 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:362
-#: 3f33669c9f8b4fd2b9face0a97f0eb7b
+#: fef5f20047e343249badc63b2ee4e828
 msgid ""
 "What about multiplicity polymorphism, as in the `Linear Haskell proposal "
 "<https://arxiv.org/abs/1710.09756>`_?"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:363
-#: 120a08061bce41ba91b6249f106430c6
+#: 7a85e4d317f149c7a41ac72b58d70c32
 msgid "Even without all of that, what can we do *now*?"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:368
-#: 9a0c662528634076a4235a38a861cd68
+#: b81d0c0cf9c74864a7aa507dbfe8f337
 msgid "Erasure"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:370
-#: 28d9275fe9f6434885e9c15f8c7c726c
+#: f486e354874c4d19a612f92e7b212f1b
 msgid ""
 "The ``1`` multiplicity give us many possibilities in the kinds of "
 "properties we can express. But, the ``0`` multiplicity is perhaps more "
@@ -444,12 +444,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:377
-#: 2af3cbef66204995b50a53615637daee
+#: 008b54ae120842b8be80d3ae5aa8f0d1
 msgid "For example, in Idris 1 you could get the length of a vector as follows"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:384
-#: a5d2f32b2968486384b19d8ac7ad6c3a
+#: 6b70e89c67214d739870bfc3246d87f2
 msgid ""
 "This is fine, since it runs in constant time, but the trade off is that "
 "``n`` has to be available at run time, so at run time we always need the "
@@ -459,31 +459,31 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:389
-#: e944fcdb26e244f3b5d6c43370ec7f9e
+#: 1a05463be1724a6db618fa6bc0f53ecb
 msgid "In Idris 2, we need to state explicitly that ``n`` is needed at run time"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:396
-#: 19a2f049003c44b69568dad7e3962eff
+#: cd12e29ffca74781994bc8c92739eb91
 msgid ""
 "(Incidentally, also note that in Idris 2, names bound in types are also "
 "available in the definition without explicitly rebinding them.)"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:399
-#: 2f762f307e774896a230bd37232e69e4
+#: ac1a2598ac1442db81c71eda4d4c73df
 msgid ""
 "This also means that when you call ``vlen``, you need the length "
 "available. For example, this will give an error"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:407
-#: 1a8350a3fe5240e0b15335ea79d8b5c0
+#: 9c31721b22fd496eb0eafa58710dcae1
 msgid "Idris 2 reports::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:412
-#: fddca8755c414215b0f44222d17850d5
+#: b35fa09b5e4c43369c9f6258c684f095
 msgid ""
 "This means that it needs to use ``m`` as an argument to pass to ``vlen "
 "xs``, where it needs to be available at run time, but ``m`` is not "
@@ -491,33 +491,33 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:416
-#: 359a52a45dba4836b5df45e82d375690
+#: edc41bab28fc448780037711975b368f
 msgid ""
 "We can see this more clearly by replacing the right hand side of "
 "``sumLengths`` with a hole..."
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:424
-#: 6ab8fb1eded04bb285fdf514b2bdfeb9
+#: 56e6294c43ec4c2998c76674697bad5e
 msgid "...then checking the hole's type at the REPL::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:435
-#: ca27d62cd5004e04868f7c2645b500e9
+#: 7616051aed5b40579e3e154cc34e5ddc
 msgid ""
 "Instead, we need to give bindings for ``m`` and ``n`` with unrestricted "
 "multiplicity"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:443
-#: 5c8837dc28e4486bbe0cd102c26140f6
+#: c283b6f8173e457aa77d0063bcb48227
 msgid ""
 "Remember that giving no multiplicity on a binder, as with ``m`` and ``n``"
 " here, means that the variable has unrestricted usage."
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:446
-#: 44ee9fdd47f84ab3ae90663a2b22a565
+#: b665d0fc243d46b9bb090aefcdf80f7e
 msgid ""
 "If you're converting Idris 1 programs to work with Idris 2, this is "
 "probably the biggest thing you need to think about. It is important to "
@@ -525,7 +525,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:454
-#: 33fac3ad147d463f97dc2067eaf0c9b2
+#: b555e3d861274531b65af53d80e8f8d7
 msgid ""
 "...then it's a good idea to make sure ``t`` really is needed, or "
 "performance might suffer due to the run time building the instance of "
@@ -533,7 +533,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:457
-#: bfd443df02d04fd5b03fdd305f7d671e
+#: 14edfe0c835d4219b1fba344ea37741a
 msgid ""
 "One final note on erasure: it is an error to try to pattern match on an "
 "argument with multiplicity ``0``, unless its value is inferrable from "
@@ -541,12 +541,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:467
-#: d9027473cd7a47e8b1c84d765c29886b
+#: 8d394af3fd324cafb44e95e78e908eba
 msgid "This is rejected with the error::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:472
-#: 4375be6628da407b82a05ad86083ffb9
+#: b1aa110a3ef049efab999e78fbdc1074
 msgid ""
 "The following, however, is fine, because in ``sNot``, even though we "
 "appear to match on the erased argument ``x``, its value is uniquely "
@@ -554,7 +554,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:486
-#: 0c1e60a532f04c9caf7a6e431c083080
+#: c025dabff7284ec3986057d856faf37d
 msgid ""
 "Experience with Idris 2 so far suggests that, most of the time, as long "
 "as you're using unbound implicits in your Idris 1 programs, they will "
@@ -564,12 +564,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:495
-#: fdcbc1b58b04471eb58590541fd89805
+#: bb25b757f663479fbbb9c8fbc7435079
 msgid "Pattern Matching on Types"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:497
-#: ac103138a66a468ba197145e985b4cdd
+#: 4434fa6c8fac4468a55643a8cf99aa2c
 msgid ""
 "One way to think about dependent types is to think of them as \"first "
 "class\" objects in the language, in that they can be assigned to "
@@ -579,12 +579,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:510
-#: dc2d5e6eff4c4608a7f439d1238ce4da
+#: 21f70368b8a241f2b4c053b698413760
 msgid "We can try this as follows::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:519
-#: ba8291d2ecb6472181ba620e94819f69
+#: 576beffcac98491da8c0bd7dcffc7dea
 msgid ""
 "Pattern matching on function types is interesting, because the return "
 "type may depend on the input value. For example, let's add a case to "
@@ -592,33 +592,33 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:527
-#: f5b985ccd2754e3ab3621ca9ab3117a6
+#: 333b43713cfc4f30a9f4dbb37662aa6a
 msgid "Inspecting the type of ``help`` tells us::"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:534
-#: a2c6f9924cfa47168c33d587a0222bca
+#: 5ce808b8dcba4e99aba0fe9558511c4b
 msgid ""
 "So, the return type ``a`` depends on the input value of type ``Nat``, and"
 " we'll need to come up with a value to use ``a``, for example"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:541
-#: e4fdd23db8764678a96994510b3fae2c
+#: 77426465138348fdb389342b3a7c0781
 msgid ""
 "Note that multiplicities on the binders, and the ability to pattern match"
 " on *non-erased* types mean that the following two types are distinct"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:549
-#: a6019af2fad24338906ff2a4a2b1ca3c
+#: 6d74a832076f423fb326d868f2c0d552
 msgid ""
 "In the case of ``notId``, we can match on ``a`` and get a function which "
 "is certainly not the identity function"
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:564
-#: cfa1197f9e3642bf8f925452cb07e5ac
+#: b011381f38f1423cb99fa7cfa097f455
 msgid ""
 "There is an important consequence of being able to distinguish between "
 "relevant and irrelevant type arguments, which is that a function is "
@@ -629,7 +629,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:571
-#: 01cd5df4c417452590f90cabcc1aecf2
+#: 1a092d737b4c401d8afe080ae56d5bfa
 msgid ""
 "On the other hand, it is merely a coincidence that, in non-dependently "
 "typed languages, types are *irrelevant* and get erased, and values are "
@@ -640,7 +640,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/multiplicities.rst:577
-#: 3accd998175548ee90e8e6850851814d
+#: 68316e95b5584d6997cf43184a55871b
 msgid ""
 "For more details on multiplicities, see `Idris 2: Quantitative Type "
 "Theory in Action <https://www.type-driven.org.uk/edwinb/idris-2"

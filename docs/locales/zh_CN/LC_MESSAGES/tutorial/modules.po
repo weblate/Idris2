@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/modules.rst:5 4cd30548c9e84b5ab150a1b6b5bfcfdb
+#: ../../source/tutorial/modules.rst:5 a61b170945894f5f9fc9a2c1132792f0
 msgid "Modules and Namespaces"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:7 ca58abd499004d58bbc9022b0378a4ce
+#: ../../source/tutorial/modules.rst:7 49c43a743f814d2caf06c53fae12fb48
 msgid ""
 "An Idris program consists of a collection of modules. Each module "
 "includes an optional ``module`` declaration giving the name of the "
@@ -32,75 +32,75 @@ msgid ""
 "``BTree.idr``):"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:39 846418393ed941b5baa9963431c175fd
+#: ../../source/tutorial/modules.rst:39 a57a3014abc14bbfb28e6970dcd49ef0
 msgid ""
 "The modifiers ``export`` and ``public export`` say which names are "
 "visible from other namespaces. These are explained further below."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:42 227c0912b0a547edb5c1295180e50311
+#: ../../source/tutorial/modules.rst:42 577963264d014dd18a03fc55a4b14859
 msgid ""
 "Then, this gives a main program (in a file ``bmain.idr``) which uses the "
 "``BTree`` module to sort a list:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:55 00dcfe5d767c4fe69bc771e61b9962be
+#: ../../source/tutorial/modules.rst:55 008e21737b4241d381044da9f73bb94a
 msgid ""
 "The same names can be defined in multiple modules: names are *qualified* "
 "with the name of the module. The names defined in the ``BTree`` module "
 "are, in full:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:58 965b714cc9124ebbba4cfb7e38334a17
+#: ../../source/tutorial/modules.rst:58 8c061dda1c8b4f36914e79859da1a06e
 msgid "``BTree.BTree``"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:59 933fa4c8587b4112af3f2b094ca072fb
+#: ../../source/tutorial/modules.rst:59 48097d8975bf436ca25b373b8e3319af
 msgid "``BTree.Leaf``"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:60 d190086bb4fc4832bb0fd63d5f821968
+#: ../../source/tutorial/modules.rst:60 f8438582e7cb4268a9d06d8e291d0132
 msgid "``BTree.Node``"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:61 d368c47e5a0a4a92b489f4ef38c2ab7d
+#: ../../source/tutorial/modules.rst:61 ffeffb5910bf452aada4629ffba70128
 msgid "``BTree.insert``"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:62 45caf90b908a4021aa4597c3d1830a1f
+#: ../../source/tutorial/modules.rst:62 42ea9dad6ecb45a4990d6f84f28b3a7a
 msgid "``BTree.toList``"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:63 d3c94d549ea248cdb01b9f970fc78c68
+#: ../../source/tutorial/modules.rst:63 780a137448294737b7ab1574a8037eea
 msgid "``BTree.toTree``"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:65 9c49c226a35a486abcdead6a527e3979
+#: ../../source/tutorial/modules.rst:65 c63cb6750b90411ba9e772a39b7f6833
 msgid ""
 "If names are otherwise unambiguous, there is no need to give the fully "
 "qualified name. Names can be disambiguated either by giving an explicit "
 "qualification, using the ``with`` keyword, or according to their type."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:69 68ae813f87ba4b8697351496324efd19
+#: ../../source/tutorial/modules.rst:69 5ac34d1576494b9fb70bbfa2ddab7cd2
 msgid "The ``with`` keyword in expressions comes in two variants:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:71 8884f0a59ce94bc1a95be3bc19931523
+#: ../../source/tutorial/modules.rst:71 9dba68a523f84629b1f8a33f2f146867
 msgid "``with BTree.insert (insert x empty)`` for one name"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:72 c1567caeed534b6b83b9ff7cb4557f5f
+#: ../../source/tutorial/modules.rst:72 e8d0ee80151944ac9311a12e4c34c42b
 msgid "``with [BTree.insert, BTree.empty] (insert x empty)`` for multiple names"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:74 62dec57757174af8a682f9a6a38c4e18
+#: ../../source/tutorial/modules.rst:74 558fc24df93341638dc06259d2408ec8
 msgid ""
 "This is particularly useful with ``do`` notation, where it can often "
 "improve error messages: ``with MyModule.(>>=) do ...``"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:77 22bbbcb5805446e992746c5d5522472f
+#: ../../source/tutorial/modules.rst:77 950a150dbd5c41998bfeefe9d92baafa
 msgid ""
 "There is no formal link between the module name and its filename, "
 "although it is generally advisable to use the same name for each. An "
@@ -112,11 +112,11 @@ msgid ""
 "although its filename need not be ``Main.idr``."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:87 b45d6f08916c4b93aa70572e7dca51a0
+#: ../../source/tutorial/modules.rst:87 58dde4602c0543339eace11496201932
 msgid "Export Modifiers"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:89 1fc92a97c1ba4c8b99428cf6faf23e3d
+#: ../../source/tutorial/modules.rst:89 70ef82d614ea4487841452d7dea1d0eb
 msgid ""
 "Idris allows for fine-grained control over the visibility of a "
 "namespace's contents. By default, all names defined in a namespace are "
@@ -126,19 +126,19 @@ msgid ""
 "export``. Their general meaning is as follows:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:96 de6be199f868443ea588a9ad3fc18f50
+#: ../../source/tutorial/modules.rst:96 150e8eb5417b427fb7cc0fd3afe07077
 msgid "``private`` meaning that it is not exported at all. This is the default."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:98 be186db0e5d84d5993254584f9291644
+#: ../../source/tutorial/modules.rst:98 33455184f9844b9f91bbb6d7313efbc9
 msgid "``export`` meaning that its top level type is exported."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:100 f5c78b42eee04245b70ba32f48ea1487
+#: ../../source/tutorial/modules.rst:100 f221ad4d2907409397f0b209964fd1a2
 msgid "``public export`` meaning that the entire definition is exported."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:102 20b9c36a58ec421db61d1ceed7e26284
+#: ../../source/tutorial/modules.rst:102 cd2430cbb7084ea893a39f8308a4b1cc
 msgid ""
 "A further restriction in modifying the visibility is that definitions "
 "must not refer to anything within a lower level of visibility. For "
@@ -147,15 +147,15 @@ msgid ""
 " is to prevent private names leaking into a module's interface."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:109 523ca8196eb6404fbd7fa5168e63ffee
+#: ../../source/tutorial/modules.rst:109 f80ecc4dceec4fdbb388b5139fac6db2
 msgid "Meaning for Functions"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:111 7ec24b8cdd2f40a78814ee10e6d92dfd
+#: ../../source/tutorial/modules.rst:111 da0f4795844c435f948d4ce255b66441
 msgid "``export`` the type is exported"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:113 718d723884014821bd7f1ec9a52d5541
+#: ../../source/tutorial/modules.rst:113 4248c482a71e4eb88e89ec61946d25f2
 msgid ""
 "``public export`` the type and definition are exported, and the "
 "definition can be used after it is imported. In other words, the "
@@ -164,7 +164,7 @@ msgid ""
 "this."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:121 1333ffd1a3394e2abbace645bac016cf
+#: ../../source/tutorial/modules.rst:121 094cad4ae6ab456a86e2d1098227b1cd
 msgid ""
 "Type synonyms in Idris are created by writing a function. When setting "
 "the visibility for a module, it is usually a good idea to ``public "
@@ -172,7 +172,7 @@ msgid ""
 "Otherwise, Idris won't know what the synonym is a synonym for."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:127 56492fbe48de41eba0457a8a38dbba6c
+#: ../../source/tutorial/modules.rst:127 b7ac5458996a41eeaf72b0cf37d6b9d0
 msgid ""
 "Since ``public export`` means that a function's definition is exported, "
 "this effectively makes the function definition part of the module's API. "
@@ -180,7 +180,7 @@ msgid ""
 "for functions unless you really mean to export the full definition."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:133 a71e0128e850480d9267abafc402579d
+#: ../../source/tutorial/modules.rst:133 cd522525c8c44c948bee5853d0cef988
 msgid ""
 "*For beginners*: If the function needs to be accessed only at runtime, "
 "use ``export``. However, if it's also meant to be used at *compile* time "
@@ -193,69 +193,69 @@ msgid ""
 "this case, ``plus`` has to be marked as ``public export``."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:146 c7c95c1cfbd14eeabf4ab53f02cd85e2
+#: ../../source/tutorial/modules.rst:146 a35aa5bd1ff44acebaa67b4aed759d76
 msgid "Meaning for Data Types"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:148 0ae74172e834431492907bc9849efe97
+#: ../../source/tutorial/modules.rst:148 53a4b2b00fd14755898ee4fae8e3518f
 msgid "For data types, the meanings are:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:150 e8f6395b9a154598a732b6306a4b3147
+#: ../../source/tutorial/modules.rst:150 ffdb6c54d0264f1d8cec73a56fb60fe8
 msgid "``export`` the type constructor is exported"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:152 9ff212f00ff74cb8af168b0719f9e4e9
+#: ../../source/tutorial/modules.rst:152 5078b0a0d1474085a6312f10a7aee7da
 msgid "``public export`` the type constructor and data constructors are exported"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:156 ada294347eb446029890ca28a3fa6aba
+#: ../../source/tutorial/modules.rst:156 9b7687c2c49941b3b233e249fb42e3cf
 msgid "Meaning for Interfaces"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:158 19132d2b4a06466c8f1d155a87d18af5
+#: ../../source/tutorial/modules.rst:158 3a3255c6482840a8ad68c0ec46d3a79b
 msgid "For interfaces, the meanings are:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:160 7a6b04e2eab0461b8b3feea6e8d4cf2b
+#: ../../source/tutorial/modules.rst:160 4f6503fafca94db5af6cf4e8045841c1
 msgid "``export`` the interface name is exported"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:162 00d85560a01d4512a3c49a381748b842
+#: ../../source/tutorial/modules.rst:162 a743b968a53b418992c5a40776ad092b
 msgid ""
 "``public export`` the interface name, method names and default "
 "definitions are exported"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:166 5e5ca84f242d4d12aa86748aa311eddf
+#: ../../source/tutorial/modules.rst:166 97e7f4f6dd5e47f2a966867b0113b470
 msgid "Propagating Inner Module API's"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:168 78980aaf1fbd46ea8dbfc8ed9a44eae9
+#: ../../source/tutorial/modules.rst:168 5295d9e60bfc4d63a659ea0e2c5d6b7a
 msgid ""
 "Additionally, a module can re-export a module it has imported, by using "
 "the ``public`` modifier on an ``import``. For example:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:178 543d0e2766ef49abbf0cc3f1c0ef8455
+#: ../../source/tutorial/modules.rst:178 c0a8f872fcf84816a410ffd19bbe605a
 msgid ""
 "The module ``A`` will export the name ``a``, as well as any public or "
 "abstract names in module ``C``, but will not re-export anything from "
 "module ``B``."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:183 6d4ff773c1c14d7d825b3e12546cc7a6
+#: ../../source/tutorial/modules.rst:183 d2e135a95aeb4ba88ee05070d123e678
 msgid "Renaming imports"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:185 fb5ea5d94d6d4e118ac86ebd04750daf
+#: ../../source/tutorial/modules.rst:185 2619ba40ad2746af8fdf82e0a76ddb1b
 msgid ""
 "Sometimes it is convenient to be able to access the names in another "
 "module via a different namespace (typically, a shorter one). For this, "
 "you can use `import...as`. For example:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:195 ced4cae00245408cb6f7c19979dacd56
+#: ../../source/tutorial/modules.rst:195 9dba00e17367400e815c6f73f09d53d9
 msgid ""
 "This module ``A`` has access to the exported names from module "
 "``Data.List``, but can also explicitly access them via the module name "
@@ -263,49 +263,49 @@ msgid ""
 "create a module which exports a larger API from other sub-modules:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:207 567f56f845cb4c2b949a62939b521be9
+#: ../../source/tutorial/modules.rst:207 8fbcb029836c4d27b021e14f509443fc
 msgid ""
 "Here, any module which imports ``Books`` will have access to the exported"
 " interfaces of ``Books.Hardback`` and ``Books.Comic`` both under the "
 "namespace ``Books``."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:212 447572c8ac62497581ec505519217652
+#: ../../source/tutorial/modules.rst:212 739752078d6c42caa2f2cd62328e2767
 msgid "Explicit Namespaces"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:214 1fc7b09c2d594bafa34cd60dc8314584
+#: ../../source/tutorial/modules.rst:214 758d3a928bd84ad7ab85b6d637c5198a
 msgid ""
 "Defining a module also defines a namespace implicitly. However, "
 "namespaces can also be given *explicitly*. This is most useful if you "
 "wish to overload names within the same module:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:232 3e73a62325e641afa3e8edf54577919b
+#: ../../source/tutorial/modules.rst:232 063f8818d3cb407c8a6cfc2fe23a0f59
 msgid ""
 "This (admittedly contrived) module defines two functions with fully "
 "qualified names ``Foo.X.test`` and ``Foo.Y.test``, which can be "
 "disambiguated by their types:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:243 4d48df8f83e04e4084c272752f512cb6
+#: ../../source/tutorial/modules.rst:243 22b1ef81baa442169e41dfeb15a63500
 msgid ""
 "The export rules, ``public export`` and ``export``, are *per namespace*, "
 "not *per file*, so the two ``test`` definitions above need the ``export``"
 " flag to be visible outside their own namespaces."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:248 a169235f17814604bc57cdcd858d2aaa
+#: ../../source/tutorial/modules.rst:248 2918fda26abf4d9199f452446203bc6b
 msgid "Parameterised blocks"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:250 80ab107ee735428eaab7a248808efaf0
+#: ../../source/tutorial/modules.rst:250 cd6e4bb5f0014767986c0518aec62f8d
 msgid ""
 "Groups of functions can be parameterised over a number of arguments using"
 " a ``parameters`` declaration, for example:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:259 ecabf2092e8941549584dc08c6b025d3
+#: ../../source/tutorial/modules.rst:259 ff8ac0c9dff543c0bfbcc6d5d0d1c3cf
 msgid ""
 "The effect of a ``parameters`` block is to add the declared parameters to"
 " every function, type and data constructor within the block. "
@@ -315,18 +315,18 @@ msgid ""
 "following type signature."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:271 155164971fef41f6879b5b26eb251887
+#: ../../source/tutorial/modules.rst:271 185dc391a4e74144a7eb5babf340b769
 msgid "and the following definition."
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:278 fd0ba5d8ad86471e851db1dc1e161ad9
+#: ../../source/tutorial/modules.rst:278 a81494a3e1064656a63c1b30fb8871bc
 msgid ""
 "Parameters blocks can be nested, and can also include data declarations, "
 "in which case the parameters are added explicitly to all type and data "
 "constructors. They may also be dependent types with implicit arguments:"
 msgstr ""
 
-#: ../../source/tutorial/modules.rst:291 f824afd16da3496b95e119aee8888065
+#: ../../source/tutorial/modules.rst:291 0025d14812af472e9a10700cafda136d
 msgid ""
 "To use ``Vects`` or ``append`` outside the block, we must also give the "
 "``xs`` and ``y`` arguments. Here, we can use placeholders for the values "

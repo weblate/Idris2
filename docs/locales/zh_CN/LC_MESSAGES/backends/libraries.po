@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,28 +17,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/backends/libraries.rst:3 dab44c999789405aa019ff6317018a42
+#: ../../source/backends/libraries.rst:3 f46bb98d92064fc59fee5698e72795a8
 msgid "Libraries"
 msgstr ""
 
-#: ../../source/backends/libraries.rst:5 4bc9f935534c445699d57a8bd889982a
+#: ../../source/backends/libraries.rst:5 230298ce176343c099442d585eb61516
 msgid "This pragma tells the backend what name to use for a given function."
 msgstr ""
 
-#: ../../source/backends/libraries.rst:13 b8dd975a5d144fc9813b8392a0a113eb
+#: ../../source/backends/libraries.rst:13 bc198b7d64f24205b6bbf680232e47e6
 msgid ""
 "On backends that support this feature, the function will be called "
 "``foo`` rather than being mangled, with the namespace."
 msgstr ""
 
-#: ../../source/backends/libraries.rst:16 2c252937c07243cca378c02252933068
+#: ../../source/backends/libraries.rst:16 fcc140d33bf24b30b4e47d852263c6a7
 msgid ""
 "If the name you want to use isn't a valid idris identifier, you can use a"
 " different name for the idris name and name that appears in the compiled "
 "code, e.g."
 msgstr ""
 
-#: ../../source/backends/libraries.rst:25 d93eed041284420cb1e51e03a0c49b9b
+#: ../../source/backends/libraries.rst:25 9752960e7a4c4dc58680d7e24f9e3f8f
 #, python-format
 msgid ""
 "You can also specificy different names for different backends, in a "

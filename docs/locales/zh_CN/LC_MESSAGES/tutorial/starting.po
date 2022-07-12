@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/starting.rst:5 962fd9ba054247859ebece0ba2e3b82c
+#: ../../source/tutorial/starting.rst:5 56ede7444c7a4132bb95c6eb5444d935
 msgid "Getting Started"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:8 45d3ec57c4d6458b9a5ec975b9cec16b
+#: ../../source/tutorial/starting.rst:8 e7b309b3eaca43bf8dac2a610efd176d
 msgid "Installing from Source"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:16 dafa3d7010dd4cb8952782632f8fd7d7
+#: ../../source/tutorial/starting.rst:16 642e8e24de4248c1b6fc2cbcbc3a71e3
 msgid "Prerequisites"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:18 1e21840c31ed4d40956b9e2e9420777d
+#: ../../source/tutorial/starting.rst:18 abbf1c8b46f54c08bfae95fc89ec7424
 msgid ""
 "Idris 2 is implemented in Idris 2 itself, so to bootstrap it you can "
 "build from generated Scheme sources. To do this, you need either Chez "
@@ -37,33 +37,33 @@ msgid ""
 "Racket. You can get one of these from:"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:23 f7ef37909f4c45ddbd1ba95df74904fb
+#: ../../source/tutorial/starting.rst:23 630a2047ee5f4f54811209c965c729d0
 msgid "`Chez Scheme <https://cisco.github.io/ChezScheme/>`_"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:24 df89931350ae42b694ca868bc0196aa9
+#: ../../source/tutorial/starting.rst:24 0290c94828d143e498c550edb8e6b324
 msgid "`Racket <https://download.racket-lang.org/>`_"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:26 83a51d4b4af5470db6691dd7c14e3572
+#: ../../source/tutorial/starting.rst:26 7bb47c4833164c8bad1a0dfb7984952e
 msgid ""
 "Both are also available from MacPorts/Homebrew and all major Linux "
 "distributions. Windows requires some further prerequisites, see :ref"
 ":`windows-install`."
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:29 f66c39fcdfd14ae193b666cc290ff6be
+#: ../../source/tutorial/starting.rst:29 13c134449c944035bfa7f693d38aa3c3
 msgid ""
 "**Note**: If you install Chez Scheme from source files, building it "
 "locally, make sure you run ``./configure --threads`` to build "
 "multithreading support in."
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:33 feb81038cfaf423dbf4c84866e5abc7f
+#: ../../source/tutorial/starting.rst:33 d5568c5b59e94f10a049496ae647dadd
 msgid "Downloading and Installing"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:35 f97d3581b0b14fa8bf3271a0233c7374
+#: ../../source/tutorial/starting.rst:35 9b60e751fd0d4b6490cf7cc7677c6f8a
 msgid ""
 "You can download the Idris 2 source from the `Idris web site <https://www"
 ".idris-lang.org/pages/download.html>`_ or get the latest development "
@@ -73,7 +73,7 @@ msgid ""
 "it as follows::"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:44 ba8f1bc71ffe4531bc0bf00ae7e4a956
+#: ../../source/tutorial/starting.rst:44 e7a4acf95b1a4c7abc26c4d699f23403
 msgid ""
 "Where `chez` is the executable name of the Chez Scheme compiler. This "
 "will vary from system to system, but is often one of ``scheme``, "
@@ -81,7 +81,7 @@ msgid ""
 " can install it as follows::"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:51 bd9b3466d41a4c19980564a50bcef891
+#: ../../source/tutorial/starting.rst:51 7b80e1753bb7496980568617a38aeee5
 msgid ""
 "Once you've successfully bootstrapped with any of the above commands, you"
 " can install with the command ``make install``.  This will, by default, "
@@ -90,32 +90,32 @@ msgid ""
 "you can edit the ``IDRIS2_PREFIX`` as follows::"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:60 bf3d4194e773467fa00642ec17ffff8d
+#: ../../source/tutorial/starting.rst:60 fbffa663acc0436e8afe96e028e97df9
 msgid "Installing from a Package Manager"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:63 5b4dcd92d3da4698863b02091edd3c28
+#: ../../source/tutorial/starting.rst:63 15eecddb6d7b4cdcb9681afdf8f254f8
 msgid "Installing Using Homebrew"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:65 0d706731441a4ca6883d49c2dea12498
+#: ../../source/tutorial/starting.rst:65 9a6ab23a70c845a58c04c29d9f33bbb8
 msgid ""
 "If you are Homebrew user you can install Idris 2 together with all the "
 "requirements by running following command::"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:71 9b2e815c192b45deadbfb6e4bbb07aad
+#: ../../source/tutorial/starting.rst:71 aa79d9de3d0c46678c4b5e462ca4871e
 msgid "Checking Installation"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:73 272e8ae601214b1aa5f2e73de7613c6c
+#: ../../source/tutorial/starting.rst:73 bcbb9f81724448939e0bc75cc82f1a8b
 msgid ""
 "To check that installation has succeeded, and to write your first Idris "
 "program, create a file called ``hello.idr`` containing the following "
 "text:"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:84 46c60828a43a4b8cbfe21aa35de82f8f
+#: ../../source/tutorial/starting.rst:84 dd7f7f146cfb47f1823b2df94d0042ab
 msgid ""
 "If you are familiar with Haskell, it should be fairly clear what the "
 "program is doing and how it works, but if not, we will explain the "
@@ -126,49 +126,49 @@ msgid ""
 " which you can run:"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:98 373070ac162d46019e40b2a5782ca8c6
+#: ../../source/tutorial/starting.rst:98 e0a1cb388b684e0592e3291fe824f24b
 msgid ""
 "Please note that the dollar sign ``$`` indicates the shell prompt! Some "
 "useful options to the Idris command are:"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:101 9d247c60e5a14725902a19cf83017bca
+#: ../../source/tutorial/starting.rst:101 8f83c22f45a440fcb81f409ee2a45b3f
 msgid "``-o prog`` to compile to an executable called ``prog``."
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:103 ebc7c7869b3341a1b04687fc78f91772
+#: ../../source/tutorial/starting.rst:103 3cdda8737e3e4921b7af45c04762ac31
 msgid ""
 "``--check`` type check the file and its dependencies without starting the"
 " interactive environment."
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:105 a33fffb025304b5a918e473b25d3843a
+#: ../../source/tutorial/starting.rst:105 563c93150a7a47628ef8db60b23dc39e
 msgid ""
 "``--package pkg`` add package as dependency, e.g. ``--package contrib`` "
 "to make use of the contrib package."
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:107 642fd0dd5ca142b19c2f00bbf62e812e
+#: ../../source/tutorial/starting.rst:107 ccd480acce884184b401900900ab0a52
 msgid "``--help`` display usage summary and command line options."
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:109 5bd1cd1880af4f188694b651eb4ff640
+#: ../../source/tutorial/starting.rst:109 f3aaa5961e30448f846221dfa6335994
 msgid ""
 "You can find out more about compiling to executables in Section :ref"
 ":`sect-execs`."
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:113 20f37569b5f340288ac0e2a26a2dceeb
+#: ../../source/tutorial/starting.rst:113 d900f11b86a74d46bacedf0e277742ab
 msgid "The Interactive Environment"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:115 b8c976fa1229434a89753f65a55121b0
+#: ../../source/tutorial/starting.rst:115 d53487f94afe49b7a56b13e2f4c98cf5
 msgid ""
 "Entering ``idris2`` at the shell prompt starts up the interactive "
 "environment. You should see something like the following:"
 msgstr ""
 
-#: ../../source/tutorial/starting.rst:120 2d415542cfb44b3d99a940ec1f087dca
+#: ../../source/tutorial/starting.rst:120 71f0a10adcb94de191dd27d226150d1b
 msgid ""
 "This gives a ``ghci`` style interface which allows evaluation of, as well"
 " as type checking of, expressions; theorem proving, compilation; editing;"

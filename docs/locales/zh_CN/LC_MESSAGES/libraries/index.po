@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/libraries/index.rst:2 759fc56a532a4292918c6746f6cdc2ba
+#: ../../source/libraries/index.rst:2 ac5cb3d7157d4c85bd390534d689e713
 msgid "Where To Find Libraries"
 msgstr ""
 
-#: ../../source/libraries/index.rst:4 307d19ed2db14fc5882650099f0bf4ac
+#: ../../source/libraries/index.rst:4 c0fe124c654c407eb262aef88a099237
 msgid ""
 "You can find a canonical source of Idris libraries on the wiki on github:"
 " https://github.com/idris-lang/Idris2/wiki/1-%5BLanguage%5D-Libraries"
 msgstr ""
 
-#: ../../source/libraries/index.rst:7 e3527daa1be249189f3338d925c045c9
+#: ../../source/libraries/index.rst:7 207b942ee2494c5cb1b6c96ce996ff57
 msgid ""
 "Please feel free to contribute your own libraries there! Eventually, we "
 "aim to have a package manager for managing libraries and dependencies. We"
@@ -35,11 +35,11 @@ msgid ""
 "development:"
 msgstr ""
 
-#: ../../source/libraries/index.rst:11 0e4fc94e5f2647e6946710c7741a56df
+#: ../../source/libraries/index.rst:11 dbee9ee878d14bb292a2e831f6fb1717
 msgid "Inigo: https://github.com/idris-community/inigo"
 msgstr ""
 
-#: ../../source/libraries/index.rst:12 e0b6389f3aa44f1f8b72e0b637b41c5f
+#: ../../source/libraries/index.rst:12 0a7ab10332c248de8be32704f33af867
 msgid "sae: https://github.com/DoctorRyner/sae"
 msgstr ""
 

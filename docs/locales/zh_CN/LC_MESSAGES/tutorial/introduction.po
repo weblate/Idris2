@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/introduction.rst:5 f7207029c58e445faf3ee7d023f9c281
+#: ../../source/tutorial/introduction.rst:5 5702ba2615e04e0bb8e7b7b131976084
 msgid "Introduction"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:7 6bc3287d04024e01b5d1d25dab58e707
+#: ../../source/tutorial/introduction.rst:7 9192669ece764e44994c384b5bdf7cb3
 msgid ""
 "In conventional programming languages, there is a clear distinction "
 "between *types* and *values*. For example, in `Haskell "
@@ -30,21 +30,21 @@ msgid ""
 "respectively:"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:13 46f39011f42b45f984aa60aa1c0eab1f
+#: ../../source/tutorial/introduction.rst:13 91042eafb2434b19bbd4092702c8d9dc
 msgid "``Int``, ``Char``, ``[Char]``, ``[a]``"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:15 737cd33dde9a465c943f54783417f1cb
+#: ../../source/tutorial/introduction.rst:15 d6c659cdef7f40e49557ef72444050de
 msgid ""
 "Correspondingly, the following values are examples of inhabitants of "
 "those types:"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:18 1f987e1d7ed0454d8d70a228b34057ba
+#: ../../source/tutorial/introduction.rst:18 efc04a7f8d764901b53396694510a8e6
 msgid "``42``, ``’a’``, ``\"Hello world!\"``, ``[2,3,4,5,6]``"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:20 e3000b37fe2d4cb68e5473bfd67d72dd
+#: ../../source/tutorial/introduction.rst:20 559d7948a0bd4b10bcbab8caa81920c9
 msgid ""
 "In a language with *dependent types*, however, the distinction is less "
 "clear. Dependent types allow types to “depend” on values — in other "
@@ -54,7 +54,7 @@ msgid ""
 " type and ``n`` is the length of the list and can be an arbitrary term."
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:27 d324402d49574614a385a758ac1d4971
+#: ../../source/tutorial/introduction.rst:27 c8f53a8a42a94c5aadb021ee98eaddbf
 msgid ""
 "When types can contain values, and where those values describe "
 "properties, for example the length of a list, the type of a function can "
@@ -65,7 +65,7 @@ msgid ""
 "vectors:"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:39 652697965c3a4c31b530939617794904
+#: ../../source/tutorial/introduction.rst:39 9b6bec8e37774cb0b8e0f4e30c1335c7
 msgid ""
 "This tutorial introduces Idris, a general purpose functional programming "
 "language with dependent types. The goal of the Idris project is to build "
@@ -75,11 +75,11 @@ msgid ""
 "function interface which allows easy interaction with external libraries."
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:48 e3a5b68dd9e342139b926d554ebb6442
+#: ../../source/tutorial/introduction.rst:48 4d3fc6bb232845429b981a01b123d66d
 msgid "Intended Audience"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:50 fa6a4d242209417299225058ec171b78
+#: ../../source/tutorial/introduction.rst:50 50f15d30c52f4f32983c21af483989bb
 msgid ""
 "This tutorial is intended as a brief introduction to the language, and is"
 " aimed at readers already familiar with a functional language such as "
@@ -90,7 +90,7 @@ msgid ""
 " writing and verifying software."
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:58 911aeba0cc4347c49b3b9567219834a5
+#: ../../source/tutorial/introduction.rst:58 338d8d6a8141458d8d5669ddfffe12c6
 msgid ""
 "For a more in-depth introduction to Idris, which proceeds at a much "
 "slower pace, covering interactive program development, with many more "
@@ -99,11 +99,11 @@ msgid ""
 "Edwin Brady, available from `Manning <https://www.manning.com>`_."
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:64 d7944a245f2a4301b168eba2bbcd3a92
+#: ../../source/tutorial/introduction.rst:64 c078d9f200c845f6ab2a1d51f1fa7f7e
 msgid "Example Code"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:66 f4cebaffb992442e8da0cf8ceeec312b
+#: ../../source/tutorial/introduction.rst:66 97c04fa36cf540a086b256eadcbb5741
 msgid ""
 "This tutorial includes some example code, which has been tested against "
 "Idris 2. These files are available with the Idris 2 distribution, so that"
@@ -112,11 +112,11 @@ msgid ""
 "than simply loading and reading them."
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:73 b80b616bac194813b9f52d625312ad2c
+#: ../../source/tutorial/introduction.rst:73 b2b8199b5337428d9adedd78117d87a5
 msgid "Footnotes"
 msgstr ""
 
-#: ../../source/tutorial/introduction.rst:74 e126a7b47bd54fffad35fa7b0ab6c050
+#: ../../source/tutorial/introduction.rst:74 d42d0120d86443b7b1e6e0090c7289c2
 msgid ""
 "Typically, and perhaps confusingly, referred to in the dependently typed "
 "programming literature as \"vectors\"."

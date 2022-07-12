@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/proofs/index.rst:5 020bd5a4c37e428cbf49604679d39ed3
+#: ../../source/proofs/index.rst:5 cca300e7db0542909a0fcbcf15441fc1
 msgid "Theorem Proving"
 msgstr ""
 
-#: ../../source/proofs/index.rst:7 dac39b750b5f42a79ab54b2c9ee0f007
+#: ../../source/proofs/index.rst:7 8f3d7d2e89b342c48301e70f68d462e4
 msgid "A tutorial on theorem proving in Idris 2."
 msgstr ""
 
-#: ../../source/proofs/index.rst:11 78da5e7a5c434fa3a527a1898aca028f
+#: ../../source/proofs/index.rst:11 34acdfec3249498c8ab925f5804433b7
 msgid ""
 "The documentation for Idris has been published under the Creative Commons"
 " CC0 License. As such to the extent possible under law, *The Idris "
@@ -33,7 +33,7 @@ msgid ""
 "Documentation for Idris."
 msgstr ""
 
-#: ../../source/proofs/index.rst:16 871467695aa34e9c87b6db5b745554de
+#: ../../source/proofs/index.rst:16 c12f885bd3a9434e92c30b54b5177e97
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "http://creativecommons.org/publicdomain/zero/1.0/"

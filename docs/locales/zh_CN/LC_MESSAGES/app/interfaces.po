@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/app/interfaces.rst:2 86a028ab2e1e4f60a6efe7482e413e0d
+#: ../../source/app/interfaces.rst:2 bbb3800959114ebf8791eac1ee7ca44d
 msgid "Defining Interfaces"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:4 dd534837e3504fada0d248e1d7f9eeff
+#: ../../source/app/interfaces.rst:4 8a28779b90494f6baa92db0a186de4d0
 msgid ""
 "The only way provided by ``Control.App`` to run an ``App`` is via the "
 "``run`` function, which takes a concrete list of errors ``Init``. All "
@@ -32,17 +32,17 @@ msgid ""
 "collections of operations which work in a specific list of errors."
 msgstr ""
 
-#: ../../source/app/interfaces.rst:14 17425284b33541bda4b17b13b4cee92b
+#: ../../source/app/interfaces.rst:14 e5e22ecd503642e6ba64a48aafef553d
 msgid "Example: Console I/O"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:16 1deb44314b104705b03afa84e3101932
+#: ../../source/app/interfaces.rst:16 0d44675b4a38447195ff6a2d215916a8
 msgid ""
 "We have seen an initial example using the ``Console`` interface, which is"
 " declared as follows, in ``Control.App.Console``:"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:27 9f57b467974e49a0aea76d80fe391fb5
+#: ../../source/app/interfaces.rst:27 9c36069bd5694a3780dc318b8df1ac31
 msgid ""
 "It provides primitives for writing to and reading from the console, and "
 "generalising the path parameter to ``l`` means that neither can throw an "
@@ -50,14 +50,14 @@ msgid ""
 "``MayThrow`` contexts."
 msgstr ""
 
-#: ../../source/app/interfaces.rst:32 fcf9ce9c6d764f8386530dc804f2ed1f
+#: ../../source/app/interfaces.rst:32 274c4049cdc3445fb51747430af97823
 msgid ""
 "To implement this for use in a top level ``IO`` program, we need access "
 "to primitive ``IO`` operations. The ``Control.App`` library defines a "
 "primitive interface for this:"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:42 89d96960f8f7477696b2d7951e472dea
+#: ../../source/app/interfaces.rst:42 6194bc979fa2468fbf9b38fd5baf301a
 msgid ""
 "We use ``primIO`` to invoke an ``IO`` function. We also have a ``fork`` "
 "primitive, which starts a new thread in a new list of errors supporting "
@@ -65,7 +65,7 @@ msgid ""
 "that states are only available in a single thread."
 msgstr ""
 
-#: ../../source/app/interfaces.rst:47 600eb9b0c9f244feaa59e0b986ba3532
+#: ../../source/app/interfaces.rst:47 891bcfa43d6640748f00eec67146c32b
 msgid ""
 "There is an implementation of ``PrimIO`` for a list of errors which can "
 "throw the empty type as an exception. This means that if ``PrimIO`` is "
@@ -74,17 +74,17 @@ msgid ""
 "``PrimIO`` in the initial list of errors ``Init``."
 msgstr ""
 
-#: ../../source/app/interfaces.rst:57 f3f40198c4df46dc9541e92f41225822
+#: ../../source/app/interfaces.rst:57 2ffc165867f54a33b1187cd6a97c6195
 msgid ""
 "Given this, we can implement ``Console`` and run our ``hello`` program in"
 " ``IO``. It is implemented as follows in ``Control.App.Console``:"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:69 d8a5de24dde6410182d4d082b8a48aa5
+#: ../../source/app/interfaces.rst:69 2049f76c60484895a240ef95b8b2ded7
 msgid "Example: File I/O"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:71 109e5eace8f049ff8ad338c618a094e8
+#: ../../source/app/interfaces.rst:71 0871097ca06f4d17a5329242b3d2acbb
 msgid ""
 "Console I/O can be implemented directly, but most I/O operations can "
 "fail. For example, opening a file can fail for several reasons: the file "
@@ -92,7 +92,7 @@ msgid ""
 "``IO`` primitive reflects this in its type:"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:80 db43c826e1214f5e97a638a34101a303
+#: ../../source/app/interfaces.rst:80 2f9fd93b154f4790ac3ee1293187c165
 msgid ""
 "While precise, this becomes unwieldy when there are long sequences of "
 "``IO`` operations. Using ``App``, we can provide an interface which "
@@ -101,7 +101,7 @@ msgid ""
 "defining the ``FileIO`` interface, in ``Control.App.FileIO``:"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:101 b60cd358088d46bba0a5cc6e1450d19c
+#: ../../source/app/interfaces.rst:101 5a65dc11e4e947ffb62be9bbcf17d045
 msgid ""
 "We use resource bracketing - passing a function to ``withFile`` for "
 "working with the opened file - rather than an explicit ``open`` "
@@ -109,7 +109,7 @@ msgid ""
 "on completion."
 msgstr ""
 
-#: ../../source/app/interfaces.rst:106 3fed6dc42a7a4764877ad3e2d03632be
+#: ../../source/app/interfaces.rst:106 7ead812ada634b38a3708befff9f5a62
 msgid ""
 "One could also imagine an interface using a linear resource for the file,"
 " which might be appropriate in some safety critical contexts, but for "
@@ -119,24 +119,24 @@ msgid ""
 " the ``IOError`` exception. ``IOError`` is defined in ``Control.App``."
 msgstr ""
 
-#: ../../source/app/interfaces.rst:114 47aeacf5e95543ee952ca67aa45bb47e
+#: ../../source/app/interfaces.rst:114 d98eae39e0b8480db8d60e3646841e4a
 msgid ""
 "For example, we can use this interface to implement ``readFile``, "
 "throwing an exception if opening the file fails in ``withFile``:"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:130 4010ca998f9e461e863c2284aef811eb
+#: ../../source/app/interfaces.rst:130 a1606fcb81c748468e8277532619ee87
 msgid "Again, this is defined in ``Control.App.FileIO``."
 msgstr ""
 
-#: ../../source/app/interfaces.rst:132 c57a99355e8a49a69e046f3586703d16
+#: ../../source/app/interfaces.rst:132 fe4f165697bf43cbb9908bcee2fc09a4
 msgid ""
 "To implement ``FileIO``, we need access to the primitive operations via "
 "``PrimIO``, and the ability to throw exceptions if any of the operations "
 "fail. With this, we can implement ``withFile`` as follows, for example:"
 msgstr ""
 
-#: ../../source/app/interfaces.rst:148 625874455987401592c92df30123ff49
+#: ../../source/app/interfaces.rst:148 0b58f382a5bc418186abf3ce817e84ed
 msgid ""
 "Given this implementation of ``FileIO``, we can run ``readFile``, "
 "provided that we wrap it in a top level ``handle`` function to deal with "

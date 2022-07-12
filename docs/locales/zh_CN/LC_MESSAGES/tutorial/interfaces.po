@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/interfaces.rst:5 c03d120820884f7b928f5d80a9af5221
+#: ../../source/tutorial/interfaces.rst:5 81fbbe3ced404f2e958f4187a9ae2f95
 msgid "Interfaces"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:7 3b21d2330943485e8562297c5f271c68
+#: ../../source/tutorial/interfaces.rst:7 566e24c6903c4ababf8db67d773da361
 msgid ""
 "We often want to define functions which work across several different "
 "data types. For example, we would like arithmetic operators to work on "
@@ -30,7 +30,7 @@ msgid ""
 " display different types in a uniform way."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:13 0b3c77ef797e436bb5065d502dcf8633
+#: ../../source/tutorial/interfaces.rst:13 906ac8e6c8ea482dbaab2d38b7e3e8d4
 msgid ""
 "To achieve this, we use *interfaces*, which are similar to type classes "
 "in Haskell or traits in Rust. To define an interface, we provide a "
@@ -39,13 +39,13 @@ msgid ""
 "converting values to ``String``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:24 f7a93c64e24b4d8caf69dedef96c43f1
+#: ../../source/tutorial/interfaces.rst:24 fde6b8de03e0413783a2aee66143cb3f
 msgid ""
 "This generates a function of the following type (which we call a *method*"
 " of the ``Show`` interface):"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:31 42f04f5331514de8b352324ba843bc88
+#: ../../source/tutorial/interfaces.rst:31 cba4291529ca40e28dd73a3ffdf5931c
 msgid ""
 "We can read this as: “under the constraint that ``a`` has an "
 "implementation of ``Show``, take an input ``a`` and return a ``String``.”"
@@ -54,7 +54,7 @@ msgid ""
 "for ``Nat`` could be defined as:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:47 fe07962b293f4950b3208e005625dc56
+#: ../../source/tutorial/interfaces.rst:47 62533bca142b4e9abed6d18e26944f9b
 msgid ""
 "Only one implementation of an interface can be given for a type — "
 "implementations may not overlap. Implementation declarations can "
@@ -66,32 +66,32 @@ msgid ""
 "because we are going to use it to convert each element to a ``String``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:65 4036048591854e26af2d0ebf1170c7d6
+#: ../../source/tutorial/interfaces.rst:65 a671917f2d7c4d46a6389450da4ac414
 msgid ""
 "Note that we need the explicit ``forall n .`` in the ``show'`` function "
 "because otherwise the ``n`` is already in scope, and fixed to the value "
 "of the top level ``n``."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:70 1dcecbf1beef4c6992acf60d55fdf896
+#: ../../source/tutorial/interfaces.rst:70 f2c909f0a12c4e65920882c48cf9286e
 msgid "Default Definitions"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:72 d0ad9c9f933043aa99846c476f779847
+#: ../../source/tutorial/interfaces.rst:72 221f953472f842bfb4c5b1ec62393589
 msgid ""
 "The Prelude defines an ``Eq`` interface which provides methods for "
 "comparing values for equality or inequality, with implementations for all"
 " of the built-in types:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:82 33eb347a650248d1825d49b9d5e53ee6
+#: ../../source/tutorial/interfaces.rst:82 f99cd84e47694bdd9061ba3f78a42dd9
 msgid ""
 "To declare an implementation for a type, we have to give definitions of "
 "all of the methods. For example, for an implementation of ``Eq`` for "
 "``Nat``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:95 e9d6c50997ae4f29884e318df7b1548b
+#: ../../source/tutorial/interfaces.rst:95 58a43c45e21b4d71adb87f5cfeacc471
 msgid ""
 "It is hard to imagine many cases where the ``/=`` method will be anything"
 " other than the negation of the result of applying the ``==`` method. It "
@@ -99,7 +99,7 @@ msgid ""
 "the interface declaration, in terms of the other method:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:109 e041ee4f9d64474bb0d475b0cc4229a3
+#: ../../source/tutorial/interfaces.rst:109 ce304bb0625d4388bef25f8373ccdecd
 msgid ""
 "A minimal complete implementation of ``Eq`` requires either ``==`` or "
 "``/=`` to be defined, but does not require both. If a method definition "
@@ -107,11 +107,11 @@ msgid ""
 " used instead."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:115 1e82f74e48544bb18ee6586946d2993a
+#: ../../source/tutorial/interfaces.rst:115 c46b0c29e4514f89af1e9c203d480876
 msgid "Extending Interfaces"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:117 b6c4579fc479417a87a6b7b9f932cb20
+#: ../../source/tutorial/interfaces.rst:117 12b1417231224d8ca6a3de8b93de86db
 msgid ""
 "Interfaces can also be extended. A logical next step from an equality "
 "relation ``Eq`` is to define an ordering relation ``Ord``. We can define "
@@ -119,7 +119,7 @@ msgid ""
 "defining some of its own:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:138 d01dd0219f7245e18c508ae7dd8b82e3
+#: ../../source/tutorial/interfaces.rst:138 3a0e24c5a63248c8ac8505d74cd56767
 msgid ""
 "The ``Ord`` interface allows us to compare two values and determine their"
 " ordering. Only the ``compare`` method is required; every other method "
@@ -130,30 +130,30 @@ msgid ""
 "the function type to the right of the fat arrow:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:150 4f3d6773f09a4211b722aa1f570cec80
+#: ../../source/tutorial/interfaces.rst:150 d722f474afa449bf85af6b4514a9c712
 msgid ""
 "Functions, interfaces and implementations can have multiple constraints. "
 "Multiple constraints are written in brackets in a comma separated list, "
 "for example:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:159 fef3d15932374e3fa65e9b7982d9757d
+#: ../../source/tutorial/interfaces.rst:159 e89d437d9a504e94875bbcfa43f112e5
 msgid ""
 "Constraints are, like types, first class objects in the language. You can"
 " see this at the REPL:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:167 a08d93e8f71d4a0f9c54bab7dba79846
+#: ../../source/tutorial/interfaces.rst:167 fad2cba11f6542229ed53bc8d23efc77
 msgid ""
 "So, ``(Ord a, Show a)`` is an ordinary pair of ``Types``, with two "
 "constraints as the first and second element of the pair."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:171 74d9bf040ca54fc1aa1f73ea4d940f20
+#: ../../source/tutorial/interfaces.rst:171 0cd32f24e362491ab5b3101ca157e2c9
 msgid "Note: Interfaces and ``mutual`` blocks"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:173 e9274d5194c546c3a24bdf92961eec7a
+#: ../../source/tutorial/interfaces.rst:173 a087799745c7400eaab97bdbd6e3fed1
 msgid ""
 "Idris is strictly \"define before use\", except in ``mutual`` blocks. In "
 "a ``mutual`` block, Idris elaborates in two passes: types on the first "
@@ -163,11 +163,11 @@ msgid ""
 "default definitions on the second pass."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:181 e19e564778a942d586687055e0d669bb
+#: ../../source/tutorial/interfaces.rst:181 a32915be6a044927b1d9945f195854bd
 msgid "Quantities for Parameters"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:183 0d847f76f98d499ea1af0dead3317ee0
+#: ../../source/tutorial/interfaces.rst:183 ded9ef99e3034d5abc1ed3f233d6b4ec
 msgid ""
 "By default parameters that are not explicitly ascribed a type in an "
 "``interface`` declaration are assigned the quantity ``0``. This means "
@@ -175,13 +175,13 @@ msgid ""
 "definitions."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:187 cd9d9b471c6148ba828827243cb5e39a
+#: ../../source/tutorial/interfaces.rst:187 f19074a07efa4ca29601314ccbef3a9e
 msgid ""
 "For instance, ``Show a`` gives rise to a ``0``-quantified type variable "
 "``a`` in the type of the ``show`` method:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:196 da637494ca244595b71bbde724208a24
+#: ../../source/tutorial/interfaces.rst:196 ae85e4217a964e8db905f7288755cee6
 msgid ""
 "However some use cases require that some of the parameters are available "
 "at runtime. We may for instance want to declare an interface for "
@@ -189,7 +189,7 @@ msgid ""
 "store values of type ``a`` in a ``Buffer`` in exactly ``size`` bytes."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:201 2094bfa1f5824756a5e00764f45a1c84
+#: ../../source/tutorial/interfaces.rst:201 069ddb0da6cd4c3db5ebf897a3ab65c4
 msgid ""
 "If the user provides a method to read a value for such a type ``a`` at a "
 "given offset, then we can read the ``k`` th element stored in the buffer "
@@ -199,7 +199,7 @@ msgid ""
 "parameter ``size``."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:219 df2bd973ae6040698d4090aeb722ec9a
+#: ../../source/tutorial/interfaces.rst:219 e2b0bdcfcf774c0688b57fc7e92633fd
 msgid ""
 "Note that ``a`` is explicitly marked as runtime irrelevant so that it is "
 "erased by the compiler. Equivalently we could have written ``interface "
@@ -207,11 +207,11 @@ msgid ""
 ":ref:`DeterminingParameters`."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:225 89a046d2391649faa72db9d8a3d03f2d
+#: ../../source/tutorial/interfaces.rst:225 ebf30f75c5b54c04a97cdba5a01637e7
 msgid "Functors and Applicatives"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:227 7045e4655b1345f7892c1f8edc59fa13
+#: ../../source/tutorial/interfaces.rst:227 bc7fccbb6e0e458999fbec8556596edb
 msgid ""
 "So far, we have seen single parameter interfaces, where the parameter is "
 "of type ``Type``. In general, there can be any number of parameters (even"
@@ -220,23 +220,23 @@ msgid ""
 "For example, the ``Functor`` interface is defined in the prelude:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:240 841013a750d44170923868aaa06c9d16
+#: ../../source/tutorial/interfaces.rst:240 181134a62ae04fc7b7c21815ea9122df
 msgid ""
 "A functor allows a function to be applied across a structure, for example"
 " to apply a function to every element in a ``List``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:254 fcea4512050d4412a9e3a680e30bf6ad
+#: ../../source/tutorial/interfaces.rst:254 423c2b3b3c804eef92deb0fcd907b7fa
 msgid ""
 "Having defined ``Functor``, we can define ``Applicative`` which abstracts"
 " the notion of function application:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:268 672c33127205413ca615e7593fafafa3
+#: ../../source/tutorial/interfaces.rst:268 307e973a6baf4a62be4d79b0846e7daf
 msgid "Monads and ``do``-notation"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:270 b41610bb50994a8eafa74cd99d5492ed
+#: ../../source/tutorial/interfaces.rst:270 ae6ef1d127834140b68d9d43985b8759
 msgid ""
 "The ``Monad`` interface allows us to encapsulate binding and computation,"
 " and is the basis of ``do``-notation introduced in Section :ref:`sect-"
@@ -244,42 +244,42 @@ msgid ""
 "follows:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:280 714c3b2ff6744499afa20f0435b84b47
+#: ../../source/tutorial/interfaces.rst:280 1399f771dbaa478fba0cbe31846bb244
 msgid "There is also a non-binding sequencing operator, defined for ``Monad`` as:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:286 823f7440c315456e9226b66852847858
+#: ../../source/tutorial/interfaces.rst:286 e6eea63f4b3b4c7c90dd9efec2834d1d
 msgid ""
 "Inside a ``do`` block, the following syntactic transformations are "
 "applied:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:289 4ea85b0a168c438c9bfc7d25baae362c
+#: ../../source/tutorial/interfaces.rst:289 d300beded1f14630b1b405d8c66bee01
 msgid "``x <- v; e`` becomes ``v >>= (\\x => e)``"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:291 738b68553e024fffab45d6a027560c46
+#: ../../source/tutorial/interfaces.rst:291 3f8f4e38bd154b89aaa14dfe4969849e
 msgid "``v; e`` becomes ``v >> e``"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:293 164f4c6862584a90bb3bf5d2f753a2c8
+#: ../../source/tutorial/interfaces.rst:293 a5afb6c9805a4bb49712cc38b37f8a2a
 msgid "``let x = v; e`` becomes ``let x = v in e``"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:295 ce4ff388ada8427c9815552336dab346
+#: ../../source/tutorial/interfaces.rst:295 89a88ee3fa2a41858215e02d6a9542ce
 msgid ""
 "``IO`` has an implementation of ``Monad``, defined using primitive "
 "functions. We can also define an implementation for ``Maybe``, as "
 "follows:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:304 f737c60cc6f14cbb910fde4c081226e5
+#: ../../source/tutorial/interfaces.rst:304 36f9312460c04e4dbf0481f3a69fca43
 msgid ""
 "Using this we can, for example, define a function which adds two ``Maybe "
 "Int``, using the monad to encapsulate the error handling:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:314 dc9f1ea6c4814d58aa2f4d927ac91b53
+#: ../../source/tutorial/interfaces.rst:314 60519b1a5083484a9d634a762ae528ef
 msgid ""
 "This function will extract the values from ``x`` and ``y``, if they are "
 "both available, or return ``Nothing`` if one or both are not (\"fail "
@@ -287,7 +287,7 @@ msgid ""
 "operator, hidden by the ``do`` notation."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:326 d982511622214334a8c8f837f98949c3
+#: ../../source/tutorial/interfaces.rst:326 7f4a5136b74540b093dc791088c09078
 msgid ""
 "The translation of ``do`` notation is entirely syntactic, so there is no "
 "need for the ``(>>=)`` and ``(>>)`` operators to be the operator defined "
@@ -296,17 +296,17 @@ msgid ""
 "qualified do notation, for example:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:340 d429e5d066d84136aeb1e7ebe20aa34e
+#: ../../source/tutorial/interfaces.rst:340 10499e87429a4ba0b16ea45a305b31a3
 msgid ""
 "The ``Prelude.do`` means that Idris will use the ``(>>=)`` and ``(>>)`` "
 "operators defined in the ``Prelude``."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:344 f5e6a0b5b64a422c831f9d2ba27b7b60
+#: ../../source/tutorial/interfaces.rst:344 7aee92002658430193635000c4f410a3
 msgid "Pattern Matching Bind"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:346 6f3e67fbb3fc45589bc3933c8648b6e0
+#: ../../source/tutorial/interfaces.rst:346 025d801000d44b7eb9119c9e87b3ce4c
 msgid ""
 "Sometimes we want to pattern match immediately on the result of a "
 "function in ``do`` notation. For example, let's say we have a function "
@@ -314,14 +314,14 @@ msgid ""
 "of the form ``Just x`` if the number is valid, or ``Nothing`` otherwise:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:362 6e160be0590147208ba9468997155bd1
+#: ../../source/tutorial/interfaces.rst:362 6c7bc2681cc744dfbb59c3db5c2860b7
 msgid ""
 "If we then use it to write a function to read two numbers, returning "
 "``Nothing`` if neither are valid, then we would like to pattern match on "
 "the result of ``readNumber``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:378 548447297bf64b05a38c56b1fe6bf464
+#: ../../source/tutorial/interfaces.rst:378 3b5ab2f4927f4e61864506487c3cc3ca
 msgid ""
 "If there's a lot of error handling, this could get deeply nested very "
 "quickly! So instead, we can combine the bind and the pattern match in one"
@@ -329,14 +329,14 @@ msgid ""
 "``Just x_ok``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:390 22f620039edb4b01bf1787f9bf1c2837
+#: ../../source/tutorial/interfaces.rst:390 80a04eed40434f3ebb64bb48827d5b83
 msgid ""
 "There is still a problem, however, because we've now omitted the case for"
 " ``Nothing`` so ``readNumbers`` is no longer total! We can add the "
 "``Nothing`` case back as follows:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:404 c3b186a407ab47f6a9747c782f95e1b6
+#: ../../source/tutorial/interfaces.rst:404 4e35b0e17db944a5b500e27d7c024d04
 msgid ""
 "The effect of this version of ``readNumbers`` is identical to the first "
 "(in fact, it is syntactic sugar for it and directly translated back into "
@@ -346,11 +346,11 @@ msgid ""
 "alternative bindings, of which there may be more than one."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:412 4a537dc92f6141869415da69d4b0f102
+#: ../../source/tutorial/interfaces.rst:412 c205e892b58644a5b1e5bdea5b32d829
 msgid "``!``-notation"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:414 dde8cf4d956344ceb4961c6848b9f546
+#: ../../source/tutorial/interfaces.rst:414 bd46d0a105504a2faf90c8bc5f1816d8
 msgid ""
 "In many cases, using ``do``-notation can make programs unnecessarily "
 "verbose, particularly in cases such as ``m_add`` above where the value "
@@ -358,14 +358,14 @@ msgid ""
 "version, as follows:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:424 6453065789284b0ca92b0170d8fb97c5
+#: ../../source/tutorial/interfaces.rst:424 65bbba0f39ff4a8cb1e2b14b13efe45a
 msgid ""
 "The notation ``!expr`` means that the expression ``expr`` should be "
 "evaluated and then implicitly bound. Conceptually, we can think of ``!`` "
 "as being a prefix function with the following type:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:432 40876ae5e67649ef83e3f6abde99a861
+#: ../../source/tutorial/interfaces.rst:432 08b78155de284f53ad320f60c6ed327a
 msgid ""
 "Note, however, that it is not really a function, merely syntax! In "
 "practice, a subexpression ``!expr`` will lift ``expr`` as high as "
@@ -376,71 +376,71 @@ msgid ""
 "monadic."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:440 1e884719d0a14e559eefb945f4f7ee62
+#: ../../source/tutorial/interfaces.rst:440 c2cb7425acd443979d6141a05963d348
 msgid "For example, the expression:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:446 6c97fc1e880545349fce1a071ba42c9a
+#: ../../source/tutorial/interfaces.rst:446 0bfc477745244d0793c1023d4ce90899
 msgid "is lifted to:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:456 c22f5d270146408c9fec4bbd670e85b6
+#: ../../source/tutorial/interfaces.rst:456 cbf17c7ee1a54f37853dab45fd2587fd
 msgid "Monad comprehensions"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:458 3521a9310a764e32b35caa2b9c949b51
+#: ../../source/tutorial/interfaces.rst:458 c8fed3127e524a75a158836517cefd3d
 msgid ""
 "The list comprehension notation we saw in Section :ref:`sect-more-expr` "
 "is more general, and applies to anything which has an implementation of "
 "both ``Monad`` and ``Alternative``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:468 394046e43d6a418bae222f8c5270b294
+#: ../../source/tutorial/interfaces.rst:468 80a4cd37176b40d5b61be397ba5374d0
 msgid ""
 "In general, a comprehension takes the form ``[ exp | qual1, qual2, …, "
 "qualn ]`` where ``quali`` can be one of:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:471 2dd6ae5d89924b748f1b95592ef29c72
+#: ../../source/tutorial/interfaces.rst:471 e38801720f384c8a946492d0b8761513
 msgid "A generator ``x <- e``"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:473 efd4d478168741ae8ab7c1da27bff977
+#: ../../source/tutorial/interfaces.rst:473 1752ddd62ab4444cbb475c6c0b83ad00
 msgid "A *guard*, which is an expression of type ``Bool``"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:475 8588344c84a64bd081f1f510b6b31b02
+#: ../../source/tutorial/interfaces.rst:475 3aca342faabd47d88d89ae795dd3c7ba
 msgid "A let binding ``let x = e``"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:477 733d13ac9b3b433b97eeb30ed15fe1ab
+#: ../../source/tutorial/interfaces.rst:477 f16893c568c2479fb186528e9c41e48f
 msgid ""
 "To translate a comprehension ``[exp | qual1, qual2, …, qualn]``, first "
 "any qualifier ``qual`` which is a *guard* is translated to ``guard "
 "qual``, using the following function:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:485 682a7955088241488a61efaf71160854
+#: ../../source/tutorial/interfaces.rst:485 458eef3eb89d4ab8bfb122405f7473a2
 msgid "Then the comprehension is converted to ``do`` notation:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:491 46e31a7e7d6f45c192305bd7e300ad9a
+#: ../../source/tutorial/interfaces.rst:491 a4f838b9a8404e3e824feef2bc195a01
 msgid ""
 "Using monad comprehensions, an alternative definition for ``m_add`` would"
 " be:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:500 8bc2c76a5e2e454ab271fc398be39107
+#: ../../source/tutorial/interfaces.rst:500 3640d3d3d16c41419cd3d2c22cd17cbb
 msgid "Interfaces and IO"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:502 cb0df6ea532148bc9adcdf870ec8c71d
+#: ../../source/tutorial/interfaces.rst:502 32e5a6e0e04a456d9f5d010a4b9af39d
 msgid ""
 "In general, ``IO`` operations in the libraries aren't written using "
 "``IO`` directly, but rather via the ``HasIO`` interface:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:510 7079584589ac4d6a849585cb59510b0b
+#: ../../source/tutorial/interfaces.rst:510 e6d32ed7c79643f292239d5bab5b8855
 msgid ""
 "``HasIO`` explains, via ``liftIO``, how to convert a primitive ``IO`` "
 "operation to an operation in some underlying type, as long as that type "
@@ -449,11 +449,11 @@ msgid ""
 "giving direct access to ``IO`` primitives."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:517 273d6970fe2843a9829b7f2df7ab6c5f
+#: ../../source/tutorial/interfaces.rst:517 71d1f6bb991641ffad850fbfe18ef0f3
 msgid "Idiom brackets"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:519 a61e5d669322401a8b8b77b2e0b6bc47
+#: ../../source/tutorial/interfaces.rst:519 42e699b9d169438aa39bda2eff8ee85b
 msgid ""
 "While ``do`` notation gives an alternative meaning to sequencing, idioms "
 "give an alternative meaning to *application*. The notation and larger "
@@ -461,21 +461,21 @@ msgid ""
 "paper “Applicative Programming with Effects” [#ConorRoss]_."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:524 aaf9870af1284bd0bac6a493e19921d4
+#: ../../source/tutorial/interfaces.rst:524 f23ee8f7139a42878688702848cdb4bc
 msgid ""
 "First, let us revisit ``m_add`` above. All it is really doing is applying"
 " an operator to two values extracted from ``Maybe Int``. We could "
 "abstract out the application:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:534 7a0cca9433524e10a3bf48aee278da30
+#: ../../source/tutorial/interfaces.rst:534 df6c67324f794cdab45bd14fe305245c
 msgid ""
 "Using this, we can write an alternative ``m_add`` which uses this "
 "alternative notion of function application, with explicit calls to "
 "``m_app``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:543 94b5dbf30b854ff9afb8c53995eb6b7b
+#: ../../source/tutorial/interfaces.rst:543 f32f68f7f47a479797404b97b91c327a
 msgid ""
 "Rather than having to insert ``m_app`` everywhere there is an "
 "application, we can use idiom brackets to do the job for us. To do this, "
@@ -484,39 +484,39 @@ msgid ""
 "defined in the Idris library):"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:557 386434db5a2e4a3091c07ed53d5d3e76
+#: ../../source/tutorial/interfaces.rst:557 70dedcf94e73405b953ba88f03fde493
 msgid ""
 "Using ``<*>`` we can use this implementation as follows, where a function"
 " application ``[| f a1 …an |]`` is translated into ``pure f <*> a1 <*> … "
 "<*> an``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:567 486a7132aa8f42639c860f683133fa18
+#: ../../source/tutorial/interfaces.rst:567 98c8feb8cb6d4d58ad4297549d70444e
 msgid "An error-handling interpreter"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:569 c9735cee3e10451f925d3f5bc2b405a1
+#: ../../source/tutorial/interfaces.rst:569 5bfe6fce5aea4766a4ae475fe5e5cd8d
 msgid ""
 "Idiom notation is commonly useful when defining evaluators. McBride and "
 "Paterson describe such an evaluator [#ConorRoss]_, for a language similar"
 " to the following:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:579 23a9774dd78c4f9d89f7e1a48dbd43a7
+#: ../../source/tutorial/interfaces.rst:579 945077148afb43fdaac6c256bc9b0124
 msgid ""
 "Evaluation will take place relative to a context mapping variables "
 "(represented as ``String``\\s) to ``Int`` values, and can possibly fail. "
 "We define a data type ``Eval`` to wrap an evaluator:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:588 b8644b9953f74ea0838d53389ced1f16
+#: ../../source/tutorial/interfaces.rst:588 43d8aa22651c4e4d89fbf57439e41eab
 msgid ""
 "Wrapping the evaluator in a data type means we will be able to provide "
 "implementations of interfaces for it later. We begin by defining a "
 "function to retrieve values from the context during evaluation:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:602 df42638305a6453ca92e8051e6c47373
+#: ../../source/tutorial/interfaces.rst:602 b7c058ac22064ea9a8bd2a387aba7c4f
 msgid ""
 "When defining an evaluator for the language, we will be applying "
 "functions in the context of an ``Eval``, so it is natural to give "
@@ -525,21 +525,21 @@ msgid ""
 " an implementation of ``Functor``:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:621 b75f75e74596415b942c75ec5619a628
+#: ../../source/tutorial/interfaces.rst:621 1d899f91135f4ebb992bf22c1e03e161
 msgid ""
 "Evaluating an expression can now make use of the idiomatic application to"
 " handle errors:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:635 f92823f01ec14f138b25350729906d99
+#: ../../source/tutorial/interfaces.rst:635 db05884c4fb04c7ebbd305cfd63915d7
 msgid "For example:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:645 b7c238d97e59449ca6a94cb2039ac1e5
+#: ../../source/tutorial/interfaces.rst:645 8e92b68cc29c4e1e9a0449c54f9943ce
 msgid "Named Implementations"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:647 61817e4287f64299b788f2d2d96fb6cd
+#: ../../source/tutorial/interfaces.rst:647 a47a1e3e76074607a23d04dc781e6d24
 msgid ""
 "It can be desirable to have multiple implementations of an interface for "
 "the same type, for example to provide alternative methods for sorting or "
@@ -547,7 +547,7 @@ msgid ""
 "follows:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:659 08d20463be1a4d14801952e8759269a3
+#: ../../source/tutorial/interfaces.rst:659 34209e8462844c2088e068fb8c1fe24d
 msgid ""
 "This declares an implementation as normal, but with an explicit name, "
 "``myord``. The syntax ``compare @{myord}`` gives an explicit "
@@ -556,32 +556,32 @@ msgid ""
 "of ``Nat`` in reverse. Given the following list:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:670 26ef776a277443868a7e4225148aaaa2
+#: ../../source/tutorial/interfaces.rst:670 09570ce79d0344049489bbb27844d96e
 msgid ""
 "We can sort it using the default ``Ord`` implementation, by using the "
 "``sort`` function available with ``import Data.List``, then we can try "
 "with the named implementation ``myord`` as follows, at the Idris prompt:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:681 98eb13b714054f8881fe7798a37a3a62
+#: ../../source/tutorial/interfaces.rst:681 49557cdb09d341b58b35f90e5df0f381
 msgid ""
 "Sometimes, we also need access to a named parent implementation. For "
 "example, the prelude defines the following ``Semigroup`` interface:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:689 94c060f9681f4a71b334740cc54fa264
+#: ../../source/tutorial/interfaces.rst:689 3fb53545ba9f416b84785698337e5b83
 msgid ""
 "Then it defines ``Monoid``, which extends ``Semigroup`` with a “neutral” "
 "value:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:697 ef0faca0799f491e9c709f656196a80b
+#: ../../source/tutorial/interfaces.rst:697 0425bcbb85684dea977abb3f8c476a37
 msgid ""
 "We can define two different implementations of ``Semigroup`` and "
 "``Monoid`` for ``Nat``, one based on addition and one on multiplication:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:708 4d72ace481954f048f0e76914c7c9051
+#: ../../source/tutorial/interfaces.rst:708 bf0794ee96c142a5967cd547345fe166
 msgid ""
 "The neutral value for addition is ``0``, but the neutral value for "
 "multiplication is ``1``. It's important, therefore, that when we define "
@@ -590,38 +590,38 @@ msgid ""
 "implementation as follows:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:721 65d68970113340c2bf29d23e158a5041
+#: ../../source/tutorial/interfaces.rst:721 dd69e50300124dad9dec7903d81f5475
 msgid ""
 "The ``using PlusNatSemi`` clause indicates that ``PlusNatMonoid`` should "
 "extend ``PlusNatSemi`` specifically."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:727 3cee4bd095ab4f67a8c8ccdcacaaae07
+#: ../../source/tutorial/interfaces.rst:727 186f671c6c5845e7bfe8795d9d22fbc7
 msgid "Interface Constructors"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:729 7025b69344ad4d25965f82f8a4f52bb6
+#: ../../source/tutorial/interfaces.rst:729 f697ec2c2b394fe283c0af8e1eed83e6
 msgid ""
 "Interfaces, just like records, can be declared with a user-defined "
 "constructor."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:741 5e9ebe7c89654c71b849617b0f6e9eff
+#: ../../source/tutorial/interfaces.rst:741 ed15701e4b0d4f018578eaaa02490e76
 msgid "Then ``MkB : A t => t -> B t``."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:746 e0b8a3794d83455cbf86620f8cabb884
+#: ../../source/tutorial/interfaces.rst:746 7554788d615a40158845f6a04abe1d0b
 msgid "Determining Parameters"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:748 0f5be02ae850491a927b22652c21c7b0
+#: ../../source/tutorial/interfaces.rst:748 e2eeeb462ec5474a892fa8d4457065e1
 msgid ""
 "When an interface has more than one parameter, it can help resolution if "
 "the parameters used to find an implementation are restricted. For "
 "example:"
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:757 16dff1cc5e5140c48cdc34f1d8145673
+#: ../../source/tutorial/interfaces.rst:757 385da1a30dd44954b326326da76bbe96
 msgid ""
 "In this interface, only ``m`` needs to be known to find an implementation"
 " of this interface, and ``s`` can then be determined from the "
@@ -633,7 +633,7 @@ msgid ""
 "<https://wiki.haskell.org/Functional_dependencies>`_."
 msgstr ""
 
-#: ../../source/tutorial/interfaces.rst:764 f26756c1201945e79c843ae2e1d432d2
+#: ../../source/tutorial/interfaces.rst:764 80536cee5caf4ba492536a5e1c840645
 msgid ""
 "Conor McBride and Ross Paterson. 2008. Applicative programming with "
 "effects. J. Funct. Program. 18, 1 (January 2008), 1-13. "

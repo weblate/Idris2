@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/packages.rst:5 747a9ba4e3a641b5952bf8d851340b69
+#: ../../source/tutorial/packages.rst:5 0430ef70f0ee419aad11ace9b642561d
 msgid "Packages"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:7 66729ea49fec451aa4bf9da02c42fcf2
+#: ../../source/tutorial/packages.rst:7 63bb917da5654ff78872feef2678771e
 msgid ""
 "Idris includes a simple build system for building packages and "
 "executables from a named package description file. These files can be "
 "used with the Idris compiler to manage the development process."
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:12 c02853d69ae24cc2b3ff96d47f19edb9
+#: ../../source/tutorial/packages.rst:12 938566aa238043939def72fb085ec259
 msgid "Package Descriptions"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:14 f5805cd532a94b4ebb14f52e81ae35f5
+#: ../../source/tutorial/packages.rst:14 80d07fdaea8441a79a11114a70311cf5
 msgid "A package description includes the following:"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:16 db94c772c72b43dfb095169b0a2a289d
+#: ../../source/tutorial/packages.rst:16 50ad51910c8645e1929cb94c3446a8e3
 msgid ""
 "A header, consisting of the keyword ``package`` followed by a package "
 "name. Package names can be any valid Idris identifier. The iPKG format "
 "also takes a quoted version that accepts any valid filename."
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:20 f6bd2585c90e4e74ae277ef6aeea2d6c
+#: ../../source/tutorial/packages.rst:20 91f7984e4cf84bea931fef10447faaa0
 msgid "Fields describing package contents, ``<field> = <value>``."
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:22 3b5908474f554167acb637f8330670c3
+#: ../../source/tutorial/packages.rst:22 7180b5144aa54335b80da70294f66252
 msgid ""
 "At least one field must be the modules field, where the value is a comma "
 "separated list of modules. For example, given an idris package ``maths`` "
@@ -56,25 +56,25 @@ msgid ""
 " file would be:"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:37 a16e74ffb64543d9aab50818f120867b
+#: ../../source/tutorial/packages.rst:37 1c7d564ed50c430e9d3d3d95fdde628f
 msgid ""
 "Running ``idris2 --init`` will interactively create a new package file in"
 " the current directory. The generated pacakge file lists all configurable"
 " fields with a brief description."
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:39 93c98d5855d84e818b9290ae46f598e8
+#: ../../source/tutorial/packages.rst:39 de128ce9cd724370b6882384050ca981
 msgid ""
 "Other examples of package files can be found in the ``libs`` directory of"
 " the main Idris repository, and in `third-party libraries "
 "<https://github.com/idris-lang/Idris-dev/wiki/Libraries>`_."
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:45 440c41f6665b4913add41b745ac53851
+#: ../../source/tutorial/packages.rst:45 ecde70c4ca5d4afdba7607daf6eb8f20
 msgid "Using Package files"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:47 6a0929343e3e4a44b51ae3ed8a6f9788
+#: ../../source/tutorial/packages.rst:47 5858aa5700404030a40c2fcd27897262
 msgid ""
 "Idris itself is aware about packages, and special commands are available "
 "to help with, for example, building packages, installing packages, and "
@@ -82,34 +82,34 @@ msgid ""
 "earlier we can use Idris as follows:"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:52 4c905d8484ed487baaa781b2e7923d07
+#: ../../source/tutorial/packages.rst:52 337b0d7dbed94ccda428b600f026c796
 msgid "``idris2 --build maths.ipkg`` will build all modules in the package"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:54 bc90a1a6d0d0493f8b3476c1e02f5c53
+#: ../../source/tutorial/packages.rst:54 4bf6d8e840dd4656b7c7164493ed80bf
 msgid ""
 "``idris2 --install maths.ipkg`` will install the package, making it "
 "accessible by other Idris libraries and programs."
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:57 9e87f7004bf34d02a75f426531a474b7
+#: ../../source/tutorial/packages.rst:57 ddaaf849f2ba473788b9538881b65945
 msgid ""
 "``idris2 --clean maths.ipkg`` will delete all intermediate code and "
 "executable files generated when building."
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:60 560a96e6040648bdbb1297b3f95966d4
+#: ../../source/tutorial/packages.rst:60 5e1cab2d4de2420e80e77d91089ef3dc
 msgid ""
 "Once the maths package has been installed, the command line option "
 "``--package maths`` makes it accessible (abbreviated to ``-p maths``). "
 "For example:"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:69 235972d9e9d840ba8f1ff83b081d267c
+#: ../../source/tutorial/packages.rst:69 3acaa79f3e1841658f92877e2823a3f1
 msgid "Package Dependencies Using Atom"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:71 3e09db28e3764d71a67a66c21fd2d98c
+#: ../../source/tutorial/packages.rst:71 7acb108795604535aea0e92ff16c9ee3
 msgid ""
 "If you are using the Atom editor and have a dependency on another "
 "package, corresponding to for instance ``import Lightyear`` or ``import "
@@ -119,15 +119,15 @@ msgid ""
 "but for now here is a simple recipe for this trivial case:"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:78 931af2c8d24a4404a2b89dde3b9caf83
+#: ../../source/tutorial/packages.rst:78 cd866389b9f54b60b8681d72387d8a32
 msgid "Create a folder myProject."
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:80 1da718668d694ddbb813d19ad2b952c1
+#: ../../source/tutorial/packages.rst:80 e11aa68646674262b5446213c3dc848b
 msgid "Add a file myProject.ipkg containing just a couple of lines:"
 msgstr ""
 
-#: ../../source/tutorial/packages.rst:88 af8b4e0f6a5c4803a46fa08cbb9116e1
+#: ../../source/tutorial/packages.rst:88 2e06fb60ec9c4c648e51fb9e7e83313e
 msgid "In Atom, use the File menu to Open Folder myProject."
 msgstr ""
 

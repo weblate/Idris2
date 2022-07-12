@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/reference/pragmas.rst:3 eb081aeb4a574f708609a541c69a2a51
+#: ../../source/reference/pragmas.rst:3 16db4fca1c4f48328039a6f6ec6cb99d
 msgid "Pragmas"
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:8 53802201b0f84ceb959ed9b0f2118649
+#: ../../source/reference/pragmas.rst:8 b88c8ccb447e4a05bc5490698563c96b
 msgid ""
 "Idris2 supports a number of pragmas (identifiable by the `%` prefix). "
 "Some pragmas change compiler behavior until the behavior is changed back "
@@ -30,52 +30,52 @@ msgid ""
 " the code following the pragma (like the `%name` pragma described below)."
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:14 ed51e23b888845b19503b85ecb380aa2
+#: ../../source/reference/pragmas.rst:14 03a7d9dc8b884874bcc88998536f6c2d
 msgid ""
 "This page is a work in progress. If you know about a pragma that is not "
 "described yet, please consider submitting a pull request!"
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:19 8c5258f0ca8346a2a52c6d4a7e11c715
+#: ../../source/reference/pragmas.rst:19 99800c9797084edeae6dfe617c1fb000
 msgid "``%builtin``"
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:21 6c7e5dcf839a45a6bfcb4f0f8bf2b84c
+#: ../../source/reference/pragmas.rst:21 6e9e38ea13e14a4f9fedabeb937dddf9
 msgid ""
 "The ``%builtin Natural`` pragma converts recursive/unary representations "
 "of natural numbers into primitive ``Integer`` representations."
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:24 1b485bd6aed141ee86b3a95cfa831958
+#: ../../source/reference/pragmas.rst:24 293a323dc65749cdb199e869564c8aa4
 msgid ""
 "This pragma is explained in detail on its own page. For more, see "
 ":ref:`builtins`."
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:27 cd6e01bf6bf74b8288e9eb9eb1ed9c43
+#: ../../source/reference/pragmas.rst:27 1b7bf7c5c4ea4a31b155dd131c647f96
 #, python-format
 msgid "``%deprecate``"
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:29 aa7941640d6c4698b182fe4240e4a1e9
+#: ../../source/reference/pragmas.rst:29 d4fb54c50a9f44429b36317d2d1b6b20
 msgid ""
 "Mark the following definition as deprecated. Whenever the function is "
 "used, Idris will show a deprecation warning."
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:45 a90d019e20f24ee2aeb0e30bf91c91e4
+#: ../../source/reference/pragmas.rst:45 1c5023ce97fc44b6a373791d26af58cb
 msgid ""
 "You can use code documentation (triple vertical bar `||| docs`) to "
 "suggest a strategy for removing the deprecated function call and that "
 "documentation will be displayed alongside the warning."
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:64 c753efb7a154488c9d8b7d32f058af3e
+#: ../../source/reference/pragmas.rst:64 4c44530d298d4751b463a1069300ce33
 #, python-format
 msgid "``%inline``"
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:66 1632462081934cb2bc4bc554094bcad4
+#: ../../source/reference/pragmas.rst:66 a9a64736cfb34f0188d17080233747c8
 msgid ""
 "Instruct the compiler to inline the following definition when it is "
 "applied. It is generally best to let the compiler and the backend you are"
@@ -84,11 +84,11 @@ msgid ""
 " it."
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:77 076e44dc574b46dab5bf06f8625fcd3b
+#: ../../source/reference/pragmas.rst:77 6b05b3443c2d4d85adf78ca4449ee42a
 msgid "``%noinline``"
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:79 35754fcdc4bb4b958a58dcd92dceb800
+#: ../../source/reference/pragmas.rst:79 68f23af87a7d421784caf4d1b0ffb579
 msgid ""
 "Instruct the compiler _not_ to inline the following definition when it is"
 " applied. It is generally best to let the compiler and the backend you "
@@ -97,11 +97,11 @@ msgid ""
 "will force it."
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:90 9a58e89e172c4682aac71f591a6dd6c0
+#: ../../source/reference/pragmas.rst:90 8df1f4a3bb0849ac8625cfdda60a81e2
 msgid "``%name``"
 msgstr ""
 
-#: ../../source/reference/pragmas.rst:92 93d3e226e2754bba8fb103ca6901aefc
+#: ../../source/reference/pragmas.rst:92 84b4a865a9da4816b823cce6bacee4bd
 msgid ""
 "Give the compiler some suggested names to use for a particular type when "
 "it is asked to generate names for values. You can specify any number of "

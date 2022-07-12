@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,83 +17,83 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/proofs/definitional.rst:1 225f2e7ca5574732828c4c87f4de074d
+#: ../../source/proofs/definitional.rst:1 f6f8dfd46afb4e2cba81ec195789a19a
 msgid ""
 "Before we discuss the details of theorem proving in Idris, we will "
 "describe some fundamental concepts:"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:4 c52616a18fa54db7b1dca960d2071ab2
+#: ../../source/proofs/definitional.rst:4 620529d98dc34f97a6ab592de3ac3bbf
 msgid "Propositions and judgments"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:5 fa7acee9334a436f97430f16bcfabfc1
+#: ../../source/proofs/definitional.rst:5 f4c7566a4bb64ba383e233cb5c180606
 msgid "Boolean and constructive logic"
 msgstr ""
 
 #: ../../source/proofs/definitional.rst:6
-#: ../../source/proofs/definitional.rst:57 44cc6936aba144dca8103da65cf61260
-#: e01a6d6b4eb645de913bfd344470df51
+#: ../../source/proofs/definitional.rst:57 38875790dbb94dddac5b9e7278e9470e
+#: c533ee7284584452a0ee48eb4fede9f9
 msgid "Curry-Howard correspondence"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:7 582b823a7ee14d8b92a672ffc5356f05
+#: ../../source/proofs/definitional.rst:7 10031a688ade4ab6901b826162a3aadd
 msgid "Definitional and propositional equalities"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:8 065e88c1e6fc4921b63f233209062e9a
+#: ../../source/proofs/definitional.rst:8 e3ff19029b2a435c832dd1df912a9c27
 msgid "Axiomatic and constructive approaches"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:11 a03d4c9ea89a4fabba49b822ac2937eb
+#: ../../source/proofs/definitional.rst:11 3a01729242ac4424bacd651bc6f157c6
 msgid "Propositions and Judgments"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:13 81d15fd7ac304c079695ea6901b0b571
+#: ../../source/proofs/definitional.rst:13 3a9f2d71e22343098b4fe1bb1623f473
 msgid ""
 "Propositions are the subject of our proofs. Before the proof, we can't "
 "formally say if they are true or not. If the proof is successful then the"
 " result is a 'judgment'.  For instance, if the ``proposition`` is,"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:18 5601193929bb496ca9858b05b1e43d76
+#: ../../source/proofs/definitional.rst:18 bf094d0eacfc4fb4a061c094584a3851
 msgid "1+1=2"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:21 b181c535eb834a57a1da97ddcf463ffd
+#: ../../source/proofs/definitional.rst:21 0cddb9cba6e94b77acc788edf60204c2
 msgid "When we prove it, the ``judgment`` is,"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:24 9f1eb9af56bb47039ceb334e540f8d2a
+#: ../../source/proofs/definitional.rst:24 7821d580569a49bd9cc8a78c16fdf790
 msgid "1+1=2 true"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:27 7a8a2fab8e2846908d2170fc0f9bcba5
+#: ../../source/proofs/definitional.rst:27 f09529d209f0435796d561e77dd719e5
 msgid "Or if the ``proposition`` is,"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:30 a71eb6021a91441ab0e8f6e4b9ae1514
+#: ../../source/proofs/definitional.rst:30 bcb5e0e6ed8d448897a729952d6dd2b9
 msgid "1+1=3"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:33 2b402774a3bf472db6afb8a2d36d099f
+#: ../../source/proofs/definitional.rst:33 7806e113331b4d5082e05da8e7916ab2
 msgid ""
 "we can't prove it is true, but it is still a valid proposition and "
 "perhaps we can prove it is false so the ``judgment`` is,"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:37 6f602a01041647d19163928ad181e8f5
+#: ../../source/proofs/definitional.rst:37 4d0031857013424db3bae132d8458102
 msgid "1+1=3 false"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:40 84c5336a343140b883583a8f923a503d
+#: ../../source/proofs/definitional.rst:40 259bf285701b47d9816cdef1c163d883
 msgid ""
 "This may seem a bit pedantic but it is important to be careful: in "
 "mathematics not every proposition is true or false. For instance, a "
 "proposition may be unproven or even unprovable."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:44 974452efbb144bfdb947ab0a13faec4d
+#: ../../source/proofs/definitional.rst:44 cdfb8afc6ed74df2b4b3783a051837d2
 msgid ""
 "So the logic here is different from the logic that comes from boolean "
 "algebra. In that case what is not true is false and what is not false is "
@@ -101,20 +101,20 @@ msgid ""
 "Excluded Middle\", so we cannot use it."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:49 2c6ed25995bd48108cc748d1096f782a
+#: ../../source/proofs/definitional.rst:49 d0b232d5142b4347a63ce634cd74396f
 msgid ""
 "A false proposition is taken to be a contradiction and if we have a "
 "contradiction then we can prove anything, so we need to avoid this. Some "
 "languages, used in proof assistants, prevent contradictions."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:53 bf8b48e3478b44cdb491fa5c9fa9a584
+#: ../../source/proofs/definitional.rst:53 e5ce5917881244e0908d1602337f97b2
 msgid ""
 "The logic we are using is called constructive (or sometimes intuitional) "
 "because we are constructing a 'database' of judgments."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:59 215c88e05a8443c99111738b2a3c7895
+#: ../../source/proofs/definitional.rst:59 b81882f85aba4c039dbf0539e4f659c0
 msgid ""
 "So how do we relate these proofs to Idris programs? It turns out that "
 "there is a correspondence between constructive logic and type theory. "
@@ -122,17 +122,17 @@ msgid ""
 " two notations."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:63 6bace47ff1ab400ba34a16019b4cca29
+#: ../../source/proofs/definitional.rst:63 0e7aee9ced4d497d8205c960e6eebc17
 msgid "The way that this works is that a proposition is a type so..."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:73 c8fe41956d3e4fcfbccb1036832063c1
+#: ../../source/proofs/definitional.rst:73 fc427e37d8a94e918bad5d868ff7a439
 msgid ""
 "...is a proposition and it is also a type. The following will also "
 "produce an equality type:"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:82 b383a3cfa79b4514b8c3cbd6f461b865
+#: ../../source/proofs/definitional.rst:82 7c8cf53371b24ffa8892db31f9286f98
 msgid ""
 "Both of these are valid propositions so both are valid equality types. "
 "But how do we represent a true judgment? That is, how do we denote 1+1=2 "
@@ -141,112 +141,112 @@ msgid ""
 "proof of 1+1=2 is"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:92 005e6d49d49d4113bf25d9307476541e
+#: ../../source/proofs/definitional.rst:92 6cbca1ceec184b12ab1c3cf3a1afde95
 msgid ""
 "Now that we can represent propositions as types other aspects of "
 "propositional logic can also be translated to types as follows:"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:96 a15916c3628c4a0fa8195ca04b1593cb
+#: ../../source/proofs/definitional.rst:96 a49dd4708ca74b28a4523b319be37bea
 msgid "propositions"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:96 52929ba26b074821931261bba3877aa7
+#: ../../source/proofs/definitional.rst:96 35260c373a6348c68a3924dcd57c231b
 msgid "example of possible type"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:98 95332fc9acfb40b0bf79770d3f5625d6
+#: ../../source/proofs/definitional.rst:98 dfacef07cd4241c9a13a52897f69ac87
 msgid "A"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:98 c4b611be1ce942d9a751687c407edabf
+#: ../../source/proofs/definitional.rst:98 268911e8f1c84a4998fbc6cd527752ee
 msgid "x=y"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:100 09966a9ede774553b19e2d8a69ef60af
+#: ../../source/proofs/definitional.rst:100 46a547d5706f489782882ab654db4957
 msgid "B"
 msgstr ""
 
 #: ../../source/proofs/definitional.rst:100
 #: ../../source/proofs/definitional.rst:108
-#: ../../source/proofs/definitional.rst:110 af35d9de11394b7c938117c1e18afa26
-#: ccca735d08614d5bbd703209436ed886 ea8bde7860ba4814bc96e7bf6435263c
+#: ../../source/proofs/definitional.rst:110 bb2f7ec4478c4ac3a1c24a3ce57a7c1e
+#: c1005b01c177496ea2d9fc4d16f7f0a4 e82f1b6eeed74bb486808bb2fa34b330
 msgid "y=z"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:102 6a62857694e147deb7af27a5db78aa35
+#: ../../source/proofs/definitional.rst:102 562d62907ed2459fa6dd3c56eefe5427
 msgid "and"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:102 0319445486db43849b615cd1e73e1281
+#: ../../source/proofs/definitional.rst:102 294af761b83545f4854f039721d9190f
 msgid "A /\\\\ B"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:102 1425167b198442918488b0137e654f5e
+#: ../../source/proofs/definitional.rst:102 58c62ce0dfbd478ebc43e06fd892c4ed
 msgid "Pair(x=y,y=z)"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:104 cc2b58004acc4635a4bd8d67e6415491
+#: ../../source/proofs/definitional.rst:104 f2d4bdc0bf9e4159adfc6a0ba3ffd81a
 msgid "or"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:104 b7b8545c62f34fa0a0f43d4e801aeb91
+#: ../../source/proofs/definitional.rst:104 ad932ba63aa8442c95c66a016ef6a5c1
 msgid "A \\\\/ B"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:104 98e6475bb49b44fabe68404199e1e217
+#: ../../source/proofs/definitional.rst:104 174d118d1c954b1abac24a58d90c796b
 msgid "Either(x=y,y=z)"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:106 4557b39fba0b4334b70ff370c2ea9f1c
+#: ../../source/proofs/definitional.rst:106 c21becdedfc74404b84069f9d74a08d4
 msgid "implies"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:106 33ccdc6b3b4e430c93af9d8addf9c092
+#: ../../source/proofs/definitional.rst:106 ff3fb70105174921a7bb9d03b33b910f
 msgid "A -> B"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:106 17913f0e3fe7487f99bd4d785eb0e3c3
+#: ../../source/proofs/definitional.rst:106 fc88669447164d0bb2907e76e9d40e89
 msgid "(x=y) -> (y=z)"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:108 cf31f4a016ae45daae7636b05a2f605b
+#: ../../source/proofs/definitional.rst:108 5811d85d8a7e456b975b085ed8846877
 msgid "for all"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:110 af13358a66fc4b758b1168fdfdac81d3
+#: ../../source/proofs/definitional.rst:110 81dc51647d6f4677990f2063bb2d134e
 msgid "exists"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:115 7bbc07e70d204721b1084ad18fa92d8e
+#: ../../source/proofs/definitional.rst:115 f6bf7276a84943fe86622d048bfb0700
 msgid "And (conjunction)"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:117 8c60fd9714df45648e766d407edc090e
+#: ../../source/proofs/definitional.rst:117 9a225b67a2d84866b5289de398016e08
 msgid "We can have a type which corresponds to conjunction:"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:123 4f722ea4d8ff45af8235b8d67be3efd4
+#: ../../source/proofs/definitional.rst:123 8178c23badeb432da29b5c06e7b80ca6
 msgid "There is a built in type called 'Pair'."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:126 de4e222172a84ad8853dc56f1cae0b00
+#: ../../source/proofs/definitional.rst:126 24e42d019ad24fb9b2fb8e9f7870b56d
 msgid "Or (disjunction)"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:128 27bddea6e58d4059acbad370b15247d1
+#: ../../source/proofs/definitional.rst:128 b665b1b6b2bd4e3bb863e51b4dd4cf37
 msgid "We can have a type which corresponds to disjunction:"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:136 af8ece2a729a4fdfa4d98ff1a1647c21
+#: ../../source/proofs/definitional.rst:136 5d87c1fad23b479089160591c507a1f5
 msgid "There is a built in type called 'Either'."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:139 3061d6721f294fc9b894db29a26c6308
+#: ../../source/proofs/definitional.rst:139 3b3bb764f181430193671e0f80ed2566
 msgid "Definitional and Propositional Equalities"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:141 260dd6e5d5d24e9ea1c1789ac2c48c5e
+#: ../../source/proofs/definitional.rst:141 f3d61f7b22b54cf39af5545825edb74b
 msgid ""
 "We have seen that  we can 'prove' a type by finding a way to construct a "
 "term. In the case of equality types there is only one constructor which "
@@ -255,19 +255,19 @@ msgid ""
 "*definitionally equal* like this:"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:151 4280315d0c5547bd94d3a4a9c896d5e1
+#: ../../source/proofs/definitional.rst:151 f57acf4932bd4b02b02e79efd02e301e
 msgid ""
 "Both sides of this equation normalise to 2 and so Refl matches and the "
 "proposition is proved."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:154 ed615642a4ec451a9d43e5ff851fb53a
+#: ../../source/proofs/definitional.rst:154 4eb6be3ec9a449df82fa70c152d8ba77
 msgid ""
 "We don't have to stick to terms; we can also use symbolic parameters so "
 "the following type checks:"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:162 e9d590c86fbe45a7b249227975bb73ff
+#: ../../source/proofs/definitional.rst:162 83a82d9af1514d9a90818dc08f59a5be
 msgid ""
 "If a proposition/equality type is not definitionally equal but is still "
 "true then it is *propositionally equal*. In this case we may still be "
@@ -276,7 +276,7 @@ msgid ""
 "to a proof."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:167 b5ae500a0abc44e4ad124cd3686bea53
+#: ../../source/proofs/definitional.rst:167 160c5adaa3e3408bb970392676f0d020
 msgid ""
 "Especially when working with equalities containing variable terms (inside"
 " functions) it can be hard to know which equality types are "
@@ -285,35 +285,35 @@ msgid ""
 "equal*). The only difference between them is the order of the operands."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:181 a31751245647435fb342ab723240e2ce
+#: ../../source/proofs/definitional.rst:181 d11d1307dd7b4bed8092395215a228c2
 msgid "Checking ``plusReducesR`` gives the following error:"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:192 61583a85a88c42be9b31cd44a7bd45ee
+#: ../../source/proofs/definitional.rst:192 dcc5be93813f47448bcfb53c120a6428
 msgid "So why is ``Refl`` able to prove some equality types but not others?"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:194 14f071d45d0a426c8351004716f6d1a6
+#: ../../source/proofs/definitional.rst:194 2f9c8141c9614234a5aba795d6192d0d
 msgid ""
 "The first answer is that ``plus`` is defined by recursion on its first "
 "argument. So, when the first argument is ``Z``, it reduces, but not when "
 "the second argument is ``Z``."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:198 65504f57508f41458d1b524dc0ec5daf
+#: ../../source/proofs/definitional.rst:198 bdc070b1ac2848078c038643036a5975
 msgid ""
 "If an equality type can be proved/constructed by using ``Refl`` alone it "
 "is known as a *definitional equality*. In order to be definitionally "
 "equal both sides of the equation must normalise to the same value."
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:202 a315c81073394c64942bd735f9abc828
+#: ../../source/proofs/definitional.rst:202 be721233a20e41c2985b229418dd3b5c
 msgid ""
 "So when we type ``1+1`` in Idris it is immediately reduced to 2 because "
 "definitional equality is built in"
 msgstr ""
 
-#: ../../source/proofs/definitional.rst:210 a3e334dae53e481ab539b8e36f9b918d
+#: ../../source/proofs/definitional.rst:210 9fe134edf8e04588a549030c1d59d2b2
 msgid "In the following pages we discuss how to resolve propositional equalities."
 msgstr ""
 

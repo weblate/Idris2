@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,75 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/conclusions.rst:5 476425b4baba4f6c93c3211da77ee653
+#: ../../source/tutorial/conclusions.rst:5 396dfe16cf1d4692b04c25f64279eab2
 msgid "Further Reading"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:7 bd69f564a48c41db9aa03a22fde4021a
+#: ../../source/tutorial/conclusions.rst:7 aa7e1d8cd44b4844b89e778eecfb21a0
 msgid ""
 "Further information about Idris programming, and programming with "
 "dependent types in general, can be obtained from various sources:"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:10 76738b03375d4e4b96e586fe0231b7d0
+#: ../../source/tutorial/conclusions.rst:10 69b4746bf23749229899dee125d827cb
 msgid ""
 "`Type-Driven Development with Idris <https://www.manning.com/books/type-"
 "driven-development-with-idris>`_ by Edwin Brady, available from `Manning "
 "<https://www.manning.com>`_."
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:13 4454caab42fe4d8d8fab2a5c768c0189
+#: ../../source/tutorial/conclusions.rst:13 96eb1f1c337c4e73afc804d8beef9f6e
 msgid ""
 "The Idris web site (https://www.idris-lang.org/) and by asking questions "
 "on the mailing list."
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:16 f69b78a5c4a245a0975520e5d22ccf28
+#: ../../source/tutorial/conclusions.rst:16 eceab04b8a2147338ab5f25eaf85bb99
 msgid ""
 "The IRC channel ``#idris``, on `webchat.freenode.net "
 "<https://webchat.freenode.net/>`__."
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:19 16a235a4b0454f54ab51321a0881df4d
+#: ../../source/tutorial/conclusions.rst:19 12c58d455e694a32ac95509dc0208a5a
 msgid ""
 "The wiki (https://github.com/idris-lang/Idris-dev/wiki/) has further user"
 " provided information, in particular:"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:22 46174a051aec461ba1bae4a49495b0cf
+#: ../../source/tutorial/conclusions.rst:22 6470a2d0f0b8423390ceaf21657f8cac
 msgid "https://github.com/idris-lang/Idris-dev/wiki/Manual"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:24 903859c6724645b48bd81d23d35443be
+#: ../../source/tutorial/conclusions.rst:24 8ee28beb8b3e4919918011dd78413343
 msgid "https://github.com/idris-lang/Idris-dev/wiki/Language-Features"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:26 62f6cfb7eda742ef80f7c1135d3c9462
+#: ../../source/tutorial/conclusions.rst:26 5ac9027aa30d4b7387bffc531434181c
 msgid ""
 "Examining the prelude and exploring the ``samples`` in the distribution. "
 "The Idris 2 source can be found online at:"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:29 e2ef2cc46e8246578119d06de7f18f8a
+#: ../../source/tutorial/conclusions.rst:29 11ba2deeed7c4d788b53fcc48493e7e5
 msgid "https://github.com/edwinb/Idris2."
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:31 dc1fc081f31c4dbbb8219d0205d779a1
+#: ../../source/tutorial/conclusions.rst:31 1ff9dfbe06ed409883d70c7bdce6b2ba
 msgid "Existing projects on the ``Idris Hackers`` web space:"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:33 2226e1fa636745af8ae1fc09864e4a0c
+#: ../../source/tutorial/conclusions.rst:33 e90b3577599f41d1ac64edc883ba8762
 msgid "https://idris-hackers.github.io."
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:35 f403cda5024845958ee8dc5cd32f4ad7
+#: ../../source/tutorial/conclusions.rst:35 5ef794e9bbac4482b3ed3a5426553d07
 msgid ""
 "Various papers (e.g. [#BradyHammond2012]_, [#Brady]_, and "
 "[#BradyHammond2010]_).  Although these mostly describe older versions of "
 "Idris."
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:38 d4cff65692464c06b40b2baa281e03dd
+#: ../../source/tutorial/conclusions.rst:38 469f1e40710f4c48a23d9858551754f5
 msgid ""
 "Edwin Brady and Kevin Hammond. 2012. Resource-Safe systems programming "
 "with embedded domain specific languages. In Proceedings of the 14th "
@@ -95,7 +95,7 @@ msgid ""
 "https://dx.doi.org/10.1007/978-3-642-27694-1_18"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:46 6b5db7c02c224e26b20662ee1647dfd4
+#: ../../source/tutorial/conclusions.rst:46 58223fe4446f4477aa7baa07774bc82c
 msgid ""
 "Edwin C. Brady. 2011. IDRIS ---: systems programming meets full dependent"
 " types. In Proceedings of the 5th ACM workshop on Programming languages "
@@ -103,7 +103,7 @@ msgid ""
 "DOI=10.1145/1929529.1929536 https://doi.acm.org/10.1145/1929529.1929536"
 msgstr ""
 
-#: ../../source/tutorial/conclusions.rst:53 104456dfc44e41f097df594060736a88
+#: ../../source/tutorial/conclusions.rst:53 f583c508a13b4bc9b900bc654822c24e
 msgid ""
 "Edwin C. Brady and Kevin Hammond. 2010. Scrapping your inefficient "
 "engine: using partial evaluation to improve domain-specific language "

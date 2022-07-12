@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/reference/overloadedlit.rst:2 5d754c830d1847a995132548f7dacf84
+#: ../../source/reference/overloadedlit.rst:2 f23f66fa6bd2415394adfb1c13b8d866
 msgid "Overloaded literals"
 msgstr ""
 
-#: ../../source/reference/overloadedlit.rst:7 421886fd0d644f81b130adfe95910bcd
+#: ../../source/reference/overloadedlit.rst:7 f5ccee24e772439dbb27716dd629554e
 #, python-format
 msgid ""
 "The compiler provides directives for literals overloading, respectively "
@@ -31,18 +31,18 @@ msgid ""
 "``fromString`` and ``fromInteger``."
 msgstr ""
 
-#: ../../source/reference/overloadedlit.rst:12 9c39f4e52fd3435aa27dcd151c7dc4e1
+#: ../../source/reference/overloadedlit.rst:12 60aeba8237244472a3b9e14227f301eb
 msgid ""
 "The interface ``FromString ty`` provides the ``fromString : String -> "
 "ty`` function, while the ``Num ty`` interface provides the ``fromInteger "
 ": Integer -> ty`` function for all numerical types."
 msgstr ""
 
-#: ../../source/reference/overloadedlit.rst:17 f05015af9e1645908c2f7486ca87f966
+#: ../../source/reference/overloadedlit.rst:17 ce2a74bc1e764d939719bd30f1adac5b
 msgid "Restricted overloads"
 msgstr ""
 
-#: ../../source/reference/overloadedlit.rst:18 5377762c7409426296cab973d8715c09
+#: ../../source/reference/overloadedlit.rst:18 f9e4589535a74c639a953a2c7a49e33b
 msgid ""
 "Although the overloading of literals can be achieved by implementing the "
 "interfaces described above, in principle only a function with the correct"
@@ -55,7 +55,7 @@ msgid ""
 "implementation of ``fromInteger`` for ``Fin n``."
 msgstr ""
 
-#: ../../source/reference/overloadedlit.rst:36 b5a4a1c4b0fb4ebf8f6a103d1e35687b
+#: ../../source/reference/overloadedlit.rst:36 038a8895bb074b539daccf5a203b3519
 msgid ""
 "The ``prf`` auto implicit is an automatically constructed proof (if "
 "possible) that the literal is suitable for the ``Fin n`` type. The "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/cookbook/index.rst:4 ee9fe005ec324db6af41c30f98dd214b
+#: ../../source/cookbook/index.rst:4 dee9d2916dbb4f4f8c1bd5fb58b67645
 msgid "Cookbook"
 msgstr ""
 
-#: ../../source/cookbook/index.rst:6 978ad674d9a141d5920a7b7728542132
+#: ../../source/cookbook/index.rst:6 c43fbb932231463a8dff11871fafb456
 msgid ""
 "The cookbook provides common recipes for common patterns and applications"
 " in Idris 2."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/ffi/ffi.rst:3 ef99513f27dd46a292a53dd4cb3ea283
+#: ../../source/ffi/ffi.rst:3 8b2b2ab17d6d4d9d807d6c974c0e2756
 msgid "FFI Overview"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:5 f8dd41c99136407ea3b2dae3fb932982
+#: ../../source/ffi/ffi.rst:5 de20f731242d40b498020c99d6220fd2
 #, python-format
 msgid ""
 "Foreign functions are declared with the ``%foreign`` directive, which "
 "takes the following general form:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:13 fb83feb3207043abb03d851d7b0df41c
+#: ../../source/ffi/ffi.rst:13 3fb9068bcf0b4957b366d9ed2b5b1fb5
 msgid ""
 "The specifier is an Idris ``String`` which says in which language the "
 "foreign function is written, what it's called, and where to find it. "
@@ -38,7 +38,7 @@ msgid ""
 "form \"Language:name,library\". For example, in C:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:25 f71d71bebeee45518ca01cd256003af2
+#: ../../source/ffi/ffi.rst:25 5ca0ee53676c476e997b406dc16dca3b
 msgid ""
 "It is up to specific code generators to decide how to locate the function"
 " and the library. In this document, we will assume the default Chez "
@@ -46,15 +46,15 @@ msgid ""
 "code generator) and that the foreign language is C."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:31 246747fcdb3546ed920ffdf05fb615f6
+#: ../../source/ffi/ffi.rst:31 babe4ee8ab144af79d176f9ce2506df4
 msgid "Scheme Sidenote"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:33 9099b544cfee4e8c828a5f4c73b71d8c
+#: ../../source/ffi/ffi.rst:33 3fe1b1abac7c4e019dbc2cbb349c6c07
 msgid "Scheme foreign specifiers can be written to target particular flavors."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:35 fb4842621132490f99d674b7de138e9c
+#: ../../source/ffi/ffi.rst:35 1a3c6c1a83fe432b8a2b26c4ac747518
 msgid ""
 "The following example shows a foreign declaration that allocates memory "
 "in a way specific to the choice of code generator. In this example there "
@@ -62,56 +62,56 @@ msgid ""
 "``scheme:foo``, so it  will only match the specific flavors listed:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:48 5c4141073de34ab68e7eccba8d52404e
+#: ../../source/ffi/ffi.rst:48 a61c2af6a03c43b99476bc2f3187d7fa
 msgid ""
 "If your backend (code generator) is not specified but defines a C FFI it "
 "will be able to make use of the ``C:malloc,libc`` specifier."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:52 0f5a393c3c444a569d409c16ba8b4385
+#: ../../source/ffi/ffi.rst:52 822d7ca2605d4cf69a5a7fbbdec55eea
 msgid "C Sidenote"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:54 33f1952d65f1473fab17c692f9e49fdb
+#: ../../source/ffi/ffi.rst:54 5044468481df4b0a99ab0c1139208a85
 msgid ""
 "The ``C`` language specifier is used for common functions that may be "
 "used by any backend which can, in turn, FFI out to C. For example, "
 "Scheme."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:57 bdf90ad1e6384dba975147392e051eaf
+#: ../../source/ffi/ffi.rst:57 71f51eb9877d43b3a924e3a870028376
 msgid ""
 "The common C functions do no automatic memory management, deferring that "
 "to the individual backends."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:60 a9e102d9536044f0be28c646fb0355f3
+#: ../../source/ffi/ffi.rst:60 f2ed6a086b614f6984bbba0838d7e8e5
 msgid ""
 "The standard C backend is known as \"RefC\", and uses the ``RefC`` "
 "language specifier."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:64 bbfa6e28756744a3bfe8a49659e132df
+#: ../../source/ffi/ffi.rst:64 3a28cf2c8ade45659656358d199e2f3e
 msgid "FFI Example"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:66 a96494578d6e49f0bcf9b7ff5440ae25
+#: ../../source/ffi/ffi.rst:66 111314fe5907460ea6d262be58d798c7
 msgid ""
 "As a running example, we are going to work with a small C file. Save the "
 "following content to a file ``smallc.c``"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:82 25614991584b45e58a372ee38e239349
+#: ../../source/ffi/ffi.rst:82 42b4e9801aa246abaee76b3bee5daf26
 msgid "Then, compile it to a shared library with::"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:86 efd4af646cc649319b3227636aa678fe
+#: ../../source/ffi/ffi.rst:86 c46882a217ac4be0a25ad9b78d6e4b5c
 msgid ""
 "We can now write an Idris program which calls each of these. First, we'll"
 " write a small program which uses ``add`` to add two integers:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:97 e15ea83424b84196ac36c71224f17ccc
+#: ../../source/ffi/ffi.rst:97 3adabfefc04344b9a0a57e0a9cc8c9cb
 #, python-format
 msgid ""
 "The ``%foreign`` declaration states that ``add`` is written in C, with "
@@ -120,7 +120,7 @@ msgid ""
 "directory and the system library paths) we can run this at the REPL:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:107 7f32946ff5454ee08772eb525750d1ce
+#: ../../source/ffi/ffi.rst:107 1187d619a29a46bfa2eed7b76eb55c8a
 msgid ""
 "Note that it is the programmer's responsibility to make sure that the "
 "Idris function and C function have corresponding types. There is no way "
@@ -128,7 +128,7 @@ msgid ""
 "unpredictable behaviour."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:112 bd18d2ca5bea4d7f9816820934cce92c
+#: ../../source/ffi/ffi.rst:112 44199a5984cf42c6af133d5d5a45896e
 msgid ""
 "Since ``add`` has no side effects, we've given it a return type of "
 "``Int``. But what if the function has some effect on the outside world, "
@@ -136,7 +136,7 @@ msgid ""
 "it returns a primitive IO action:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:122 21ccd1775b9641b992c9f73ee53cff8b
+#: ../../source/ffi/ffi.rst:122 6f09486b1d8344d292e97f99c11f156e
 msgid ""
 "Internally, ``PrimIO Int`` is a function which takes the current (linear)"
 " state of the world, and returns an ``Int`` with an updated state of the "
@@ -145,32 +145,32 @@ msgid ""
 "operation to one usable in ``HasIO`` using ``primIO``:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:132 593fb523ffc14355b77d0b3ce8a362b5
+#: ../../source/ffi/ffi.rst:132 5e571bd9f7a045908ccdca4437e61c22
 msgid "So, we can extend our program as follows:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:145 d5fcd35aeedc49ee952898fa34dc5dc9
+#: ../../source/ffi/ffi.rst:145 2a4fe88785364e1ca429b567b51911c1
 msgid ""
 "It is up to the programmer to declare which functions are pure, and which"
 " have side effects, via ``PrimIO``. Executing this gives:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:154 cbba5b33fd964c91967d9bd20382bfd8
+#: ../../source/ffi/ffi.rst:154 ebc60877ac6f49d4b23eacde8c522f12
 msgid "We have seen two specifiers for foreign functions:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:161 541078067bac4729825307930be0e217
+#: ../../source/ffi/ffi.rst:161 cc03d56393d44d3b8a224091f1240f31
 msgid ""
 "These both have the same form: ``\"C:[name],libsmall\"`` so instead of "
 "writing the concrete ``String``, we write a function to compute the "
 "specifier, and use that instead:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:179 268dd5cd01ca4df2bd6908dfcdf885e8
+#: ../../source/ffi/ffi.rst:179 42d9bc57b2c34f7c8d39cb54b6082763
 msgid "Primitive FFI Types"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:181 0c2895061acf4b92ab97a9dee5c026dc
+#: ../../source/ffi/ffi.rst:181 6b701e38b6cc40bb94d44b1d4491def1
 msgid ""
 "The types which can be passed to and returned from foreign functions are "
 "restricted to those which it is reasonable to assume any back end can "
@@ -180,97 +180,97 @@ msgid ""
 msgstr ""
 
 #: ../../source/ffi/ffi.rst:186 ../../source/ffi/ffi.rst:414
-#: 2261786196a54070aa02ca56e24744a8 fe5f7034b9154d9d9d90ede821d65fa2
+#: 8a7e915e721d4d0ab99455b81ff23e55 a82993c0f6fc47c0bf82823397deae62
 msgid "``Int``"
 msgstr ""
 
 #: ../../source/ffi/ffi.rst:187 ../../source/ffi/ffi.rst:415
-#: bb2a8fee1b2240f3b92cfd33dad6d4a9 d3daead2f3d7478a9fba8ce8e3e43f8e
+#: 43e0a4e9f00d40d7978dc5f89456bdc6 9eb2650a68a84c22add726988b123af0
 msgid "``Char``"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:188 a6e4d6ec66f944c4ae0413984bb7650d
+#: ../../source/ffi/ffi.rst:188 4ebfcdaf19494beeb2422ce8ef78db36
 msgid "``Double`` (as ``double`` in C)"
 msgstr ""
 
 #: ../../source/ffi/ffi.rst:189 ../../source/ffi/ffi.rst:417
-#: a13d86ca65b244e883762eaeb9b5204f eedea8d2ca9d44578e0b7ef2a38e5b85
+#: 095f2bdbcd424b9fbeb69400f2ec077e 98ed3abb17ca4ec1a1da81c458ebc07d
 msgid "``Bits8``"
 msgstr ""
 
 #: ../../source/ffi/ffi.rst:190 ../../source/ffi/ffi.rst:418
-#: 231ff8cce1cd4d00bd7ae5ceef478a57 f247d76bf27b4ef6a272123742f50de4
+#: 494538a8cf744b78b32c943a444cfb67 fa18660ee456416c86e250e023653752
 msgid "``Bits16``"
 msgstr ""
 
 #: ../../source/ffi/ffi.rst:191 ../../source/ffi/ffi.rst:419
-#: adf226adb0564f169f1f4d19b9eee143 c10ab3f5fc4a4b4d95a91d3a32f2fc8a
+#: 54c2cde2a8e54a189b83bf42dfb7e643 d9d3f5f841684a6bbe9980efaf7f8cb3
 msgid "``Bits32``"
 msgstr ""
 
 #: ../../source/ffi/ffi.rst:192 ../../source/ffi/ffi.rst:420
-#: 98d2719f1f9d4d9db733c0c716a60a50 e587463204c74fd8a0cde0da19823f6f
+#: 30b2d87492d6498eb39e7f382b62567e 828ad2b43ef348ddaf91d4b9ebe6ce3b
 msgid "``Bits64``"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:193 976967121b0d45ffb82ac83e5d4bd01f
+#: ../../source/ffi/ffi.rst:193 82b7da281ab044d687750291d05cce38
 msgid "``String`` (as ``char*`` in C)"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:194 ce567316540b48e9800971a8ab138a8a
+#: ../../source/ffi/ffi.rst:194 dae55b5e2d1e46bab8b2b5addc9b80c2
 msgid "``Ptr t`` and ``AnyPtr`` (both as ``void*`` in C)"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:196 e1b1b9cec9ef4f98aa32784149e2ff32
+#: ../../source/ffi/ffi.rst:196 3def3e414f9043e2b91647c5c14a79b3
 msgid "Return types can be any of the above, plus:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:198 7cdda3bcc1ab4ffdaedac0f08c2cf9c6
+#: ../../source/ffi/ffi.rst:198 79044e130d7943e092bb1bb879fd13ae
 msgid "``()``"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:199 129a685d86704a91868bd175c2855983
+#: ../../source/ffi/ffi.rst:199 002d9a8b2d244162bf6b518a762492dc
 msgid "``PrimIO t``, where ``t`` is a valid return type other than a ``PrimIO``."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:201 40bd98b3e96d4e64be166bd46a1d61a4
+#: ../../source/ffi/ffi.rst:201 b46dee8d58d34273b9633b30acd10451
 msgid "Handling ``String`` leads to some complications, for a number of reasons:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:203 376c7a2b12934562b784770fcd11a17a
+#: ../../source/ffi/ffi.rst:203 42df1a5594ea46b4a26185f043d84bd3
 msgid ""
 "Strings can have multiple encodings. In the Idris run time, Strings are "
 "encoded as UTF-8, but C makes no assumptions."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:205 8528fb48820548ebb275fd4c8ca245b6
+#: ../../source/ffi/ffi.rst:205 733d54b1778c438dacf603c949b2b65b
 msgid ""
 "It is not always clear who is responsible for freeing a ``String`` "
 "allocated by a C function."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:207 f20ce011bd6f4863b675034f20276b6b
+#: ../../source/ffi/ffi.rst:207 1c3ffd927ef04c8883f1656e0e59508b
 msgid "In C, strings can be ``NULL``, but Idris strings always have a value."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:209 ba736ae79ffb46d289ce4b2e94d6000b
+#: ../../source/ffi/ffi.rst:209 8d30736b176c4d8284ac701f49ddb4fd
 msgid "So, when passing ``String`` to and from C, remember the following:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:211 088e4d55e5e1490c926a65a1feac72aa
+#: ../../source/ffi/ffi.rst:211 e7f757a811544705be64d9547aece6d4
 msgid ""
 "A ``char*`` returned by a C function will be copied to the Idris heap, "
 "and the Idris run time immediately calls ``free`` with the returned "
 "``char*``."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:213 7a48dc09fa014b318328aa53866914c0
+#: ../../source/ffi/ffi.rst:213 f1ada0c3f4f645b380f19ed10acefdaa
 msgid ""
 "If a ``char*`` might be ``NULL`` in ``C``, use ``Ptr String`` rather than"
 " ``String``."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:216 e1c7d2fe721b444cae34abc7cfbd7682
+#: ../../source/ffi/ffi.rst:216 c7de7bdce9bd43fba64b2546b3d79ae6
 msgid ""
 "When using ``Ptr String``, the value will be passed as a ``void*``, and "
 "therefore not accessible directly by Idris code. This is to protect "
@@ -279,21 +279,21 @@ msgid ""
 "functions of the following form:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:236 8811a1efdb8a43daae0c603f66282ca2
+#: ../../source/ffi/ffi.rst:236 349fd3127e7d4ed0beca25506c0ca3e9
 msgid "For an example, see the sample :ref:`sect-readline` bindings."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:238 4c602fa5fec44cc38a7988b1f076f63b
+#: ../../source/ffi/ffi.rst:238 237f53c7b6e14a1b982a53bb0f6ec87a
 msgid ""
 "Additionally, foreign functions can take *callbacks*, and take and return"
 " C ``struct`` pointers."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:244 92879fce9f3e47eaae4b50a2e8013649
+#: ../../source/ffi/ffi.rst:244 397afea80bd74873a440c98a1cfd5b8f
 msgid "Callbacks"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:246 017a2c49d91e473984cc19caa086753f
+#: ../../source/ffi/ffi.rst:246 b398be0ec94c43159a5c8986f4219442
 msgid ""
 "It is often useful in C for a function to take a *callback*, that is a "
 "function which is called after doing some work. For example, we can write"
@@ -301,7 +301,7 @@ msgid ""
 "and returns a ``char*``, in C, as follows (added to ``smallc.c`` above):"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:260 bc817510309b435ea7a1b17390d36b53
+#: ../../source/ffi/ffi.rst:260 14a0dae8f2904b1f938fb647e36a56b3
 #, python-format
 msgid ""
 "Then, we can access this from Idris by declaring it as a ``%foreign`` "
@@ -309,38 +309,38 @@ msgid ""
 "calling the Idris function as the callback:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:273 81114675e5df40f19a398281019dee49
+#: ../../source/ffi/ffi.rst:273 72953f46a82b4992a0fda6bc1910cfdb
 msgid "For example, we can try this as follows:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:291 8c9a675aeeb14cdb928f68cdfb753f4c
+#: ../../source/ffi/ffi.rst:291 f964a0cbfa2d47208afb57a062e64a20
 msgid "As a variant, the callback could have a side effect:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:299 86d97d05e0e44dffab4b74f23e0d5c16
+#: ../../source/ffi/ffi.rst:299 7315e5a8680e4b5994f27c1a8ea40e02
 msgid ""
 "This is a little more fiddly to lift to a ``HasIO`` function, due to the "
 "callback, but we can do so using ``toPrim : IO a -> PrimIO a``:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:308 6e283d3c6ce343b4b95cb091681023a4
+#: ../../source/ffi/ffi.rst:308 7231860f0251479798521e5af4f3baf5
 msgid ""
 "Note that the callback is explicitly in ``IO`` here, since ``HasIO`` "
 "doesn't have a general method for extracting the primitive ``IO`` "
 "operation."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:311 ad1e047443e3416ca6b5ee1c40706832
+#: ../../source/ffi/ffi.rst:311 f6f8c2c64f424e53bcb97f627f0a4c92
 msgid ""
 "For example, we can extend the above ``pluralise`` example to print a "
 "message in the callback:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:332 65fc3e3e6bdc478199a2c0e4038041db
+#: ../../source/ffi/ffi.rst:332 1f2ade0ead39474eaf96275e3c057ee6
 msgid "Structs"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:334 9ec59e8257db406bbf2816eb7b3acac9
+#: ../../source/ffi/ffi.rst:334 7701d42d91c149ff8ad882da97de5d4e
 msgid ""
 "Many C APIs pass around more complex data structures, as a ``struct``. We"
 " do not aim to be completely general in the C types we support, because "
@@ -350,19 +350,19 @@ msgid ""
 "``smallc.c``, and rebuild ``libsmall.so``:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:361 ebe356378f4c4ef38ccf39bab2addad8
+#: ../../source/ffi/ffi.rst:361 363a670256db45649280e731bdc32db8
 msgid ""
 "We can define a type for accessing ``point`` in Idris by importing "
 "``System.FFI`` and using the ``Struct`` type, as follows:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:378 03f3fd8826f74ed3b3dd6e32994ffe4d
+#: ../../source/ffi/ffi.rst:378 0750ebc2bc914418950bff1628fcfd98
 msgid ""
 "The ``Point`` type in Idris now corresponds to ``point*`` in C. Fields "
 "can be read and written using the following, also from ``System.FFI``:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:388 48fd322267cc4ca2a8ceb4eb0a607287
+#: ../../source/ffi/ffi.rst:388 0f21e9889bbb4b7880a96b8d5f720fe3
 msgid ""
 "Notice that fields are accessed by name, and must be available in the "
 "struct, given the constraint ``FieldType n ty fs``, which states that the"
@@ -370,29 +370,29 @@ msgid ""
 " can display a ``Point`` as follows by accessing the fields directly:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:401 5c2ecbcb55594ed48f3896d70c1d3172
+#: ../../source/ffi/ffi.rst:401 79bea6bb300e497594a1e087d2270a0a
 msgid ""
 "And, as a complete example, we can initialise, update, display and delete"
 " a ``Point`` as follows:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:412 79752790cf9f41d98eaedc68b8988e0f
+#: ../../source/ffi/ffi.rst:412 ba6e5ccf6e7d4d0da89809078240a3f7
 msgid "The field types of a ``Struct`` can be any of the following:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:416 48d0a4a3d3d344d69ec3cd6fafc56e01
+#: ../../source/ffi/ffi.rst:416 5991b1dd90ea4bbc9654fb4f399cf1c7
 msgid "``Double`` (``double`` in C)"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:421 4e9063f6cd25478f91ffdae63d1b0142
+#: ../../source/ffi/ffi.rst:421 34493a122006475a9515623955336dd2
 msgid "``Ptr a`` or ``AnyPtr`` (``void*`` in C)"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:422 eb746a3da57b44efa0969ea233ebd5c5
+#: ../../source/ffi/ffi.rst:422 fdb215c213994a1b9aca68cf157b1d0d
 msgid "Another ``Struct``, which is a pointer to a ``struct`` in C"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:424 1813402a04bc401b87249eba6a8be392
+#: ../../source/ffi/ffi.rst:424 ee92a8690eac47ff83bdda91e3586faf
 msgid ""
 "Note that this doesn't include ``String`` or function types! This is "
 "primarily because these aren't directly supported by the Chez back end. "
@@ -400,25 +400,25 @@ msgid ""
 "assuming you have, in C:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:435 237594ca83504dde9636cf5f55adcead
+#: ../../source/ffi/ffi.rst:435 1bd4a26748ed42a7a0eb4afaf92a9cb3
 msgid "You can represent this in Idris as:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:445 fb27a55bc7b142ebbe6c1ccfcc730cd6
+#: ../../source/ffi/ffi.rst:445 87e2ae172e664458990d0e3d33ba1fc8
 msgid ""
 "That is, using a ``Ptr String`` instead of a ``String`` directly. Then "
 "you can convert between a ``void*`` and a ``char*`` in C:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:454 74231630a4dd4fba8f1deb41aff1d3b2
+#: ../../source/ffi/ffi.rst:454 dd3487978c7b4d5d9f41562e109a97b2
 msgid "...and use this to convert to a ``String`` in Idris:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:463 1505f9137377434db9fc623b6776f1bf
+#: ../../source/ffi/ffi.rst:463 6919b29eb1a046259fc700c2c1de72ff
 msgid "Finalisers"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:465 1c49cc9703c24dc1966d95d9b1030591
+#: ../../source/ffi/ffi.rst:465 6b81d4b3c0fe48b89e2106998591d59f
 msgid ""
 "In some libraries, a foreign function creates a pointer and the caller is"
 " responsible for freeing it. In this case, you can make an explicit "
@@ -428,7 +428,7 @@ msgid ""
 "(or its typeless variant ``onCollectAny``) defined in the Prelude:"
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:477 99ee236998484944b6de71eed75d3f4c
+#: ../../source/ffi/ffi.rst:477 e0a55287651c4d6db0ac2759e02ed66f
 msgid ""
 "A ``GCPtr t`` behaves exactly like ``Ptr t`` when passed to a foreign "
 "function (and, similarly, ``GCAnyPtr`` behaves like ``AnyPtr``). A "
@@ -436,13 +436,13 @@ msgid ""
 "no longer assume the pointer is completely managed by the Idris run-time."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:482 a7b0b366626f4e559661711c1de63cb7
+#: ../../source/ffi/ffi.rst:482 e8d9ee7a77c547efba713b7d7b8e6461
 msgid ""
 "The finaliser is called either when the garbage collector determines that"
 " the pointer is no longer accessible, or at the end of execution."
 msgstr ""
 
-#: ../../source/ffi/ffi.rst:485 fda2e184bc474ddf81f79f383d1828d3
+#: ../../source/ffi/ffi.rst:485 dc8da7bbba76412391d746a301d1652a
 msgid ""
 "Note that finalisers might not be supported by all back ends, since they "
 "depend on the facilities offered by a specific back end's run time "

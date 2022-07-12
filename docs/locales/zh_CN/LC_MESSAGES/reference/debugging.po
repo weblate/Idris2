@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/reference/debugging.rst:3 1c524d631e3048e3b944107ac894a80d
+#: ../../source/reference/debugging.rst:3 0bb9b82deebd4112976e8f47aa312117
 msgid "Debugging The Compiler"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:6 20c0e52d89604d128a48a7aedee8324c
+#: ../../source/reference/debugging.rst:6 c7793b4ab9a4435d8bdadf5d0a9823a8
 msgid "Performance"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:8 36753cea26714f9e92a4d70af894e8aa
+#: ../../source/reference/debugging.rst:8 299e10e5deb34c4788cc8ea2cad4ac14
 msgid ""
 "The compiler has the ``--timing`` flag to dump timing information "
 "collected during operation."
 msgstr ""
 
-#: ../../source/reference/debugging.rst:10 978d1a6775404bfba026c384cca89497
+#: ../../source/reference/debugging.rst:10 5f29ac16a1a741df9312bbc516a33b8b
 msgid ""
 "The output documents, in reverse chronological order, the cumulative time"
 " taken for the operation (and sub operations) to complete. Sub levels are"
 " indicated by successive repetitions of ``+``."
 msgstr ""
 
-#: ../../source/reference/debugging.rst:15 b582032dc8034186a593f0364edeb242
+#: ../../source/reference/debugging.rst:15 52f95abc9d9a402a9008ac4ebc350b1d
 msgid "Logging"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:17 ce1ff721c6a64c02ae150c9ea61b5496
+#: ../../source/reference/debugging.rst:17 eb4283f7c9504f95b3a466a8009c0c1a
 msgid ""
 "The compiler logs various categories of information during operation at "
 "various levels."
 msgstr ""
 
-#: ../../source/reference/debugging.rst:19 9e6763c985594d579c303b001102ce57
+#: ../../source/reference/debugging.rst:19 c24889c1d727439ea88b83361add5842
 msgid "Log levels are characterised by two things:"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:21 353d556fb84643c790180cb929035596
+#: ../../source/reference/debugging.rst:21 bf362ce4e7774da298f95e1fa2fb6e41
 msgid "a dot-separated path of ever finer topics of interest e.g. scope.let"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:22 ed9c459c20064afb9b92906fc8ca3696
+#: ../../source/reference/debugging.rst:22 6d4efbe2db7f4b48ac156b0b0ce55374
 msgid "a natural number corresponding to the verbosity level e.g. 5"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:24 62b24de414ca4a91b9f3f46da3d4b282
+#: ../../source/reference/debugging.rst:24 85d0f4f204e94942b92fc25a77e0febb
 msgid "If the user asks for some logs by writing::"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:28 01b71ca423dc418295fc2d297e97ebf3
+#: ../../source/reference/debugging.rst:28 9dd52fd1362647aba712712b0267b37e
 msgid ""
 "they will get all of the logs whose path starts with `scope` and whose "
 "verbosity level is less or equal to `5`. By combining different logging "
@@ -73,194 +73,194 @@ msgid ""
 "they want to get a lot of information about. For instance:::"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:37 1b44ac60e9c44d9b922ecd728e848cd9
+#: ../../source/reference/debugging.rst:37 8de05f9723a04367876790427a931b85
 msgid ""
 "will deliver basic information about the various phases the compiler goes"
 " through and deliver a lot of information about scope-checking let "
 "binders."
 msgstr ""
 
-#: ../../source/reference/debugging.rst:41 2101905a0cb047019842155bdf20fbaa
+#: ../../source/reference/debugging.rst:41 94e2e97ce2b749a4bcf534bbffd6a8f8
 msgid "You can set the logging level at the command line using::"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:45 dc0579f08e8e4e078508ca255de6ae55
+#: ../../source/reference/debugging.rst:45 50f6168dea3e4a93a5ac379b9aa61535
 msgid "and through the REPL using::"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:51 819320b239984746bb173263bd0cfd01
+#: ../../source/reference/debugging.rst:51 aab535f252754bc8b8bf867ba8eadb3b
 msgid ""
 "The supported logging categories can be found using the command line "
 "flag::"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:56 84da5646f7fd4d4b8cec0afd13e1752e
+#: ../../source/reference/debugging.rst:56 be1c6b926c8b46eb939b373c8a6bf5fe
 msgid "REPL Commands"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:58 30218a9787ce479e887dfe84beed1137
+#: ../../source/reference/debugging.rst:58 2f2008b893e4413c96f3590f1bf8b6e1
 msgid ""
 "To see more debug information from the REPL there are several options one"
 " can set."
 msgstr ""
 
 #: ../../source/reference/debugging.rst:60
-#: ../../source/reference/debugging.rst:72 afcf8dca383644a78a465819ddf1d159
-#: f589b6dc5c14495cb3e2771dc2127682
+#: ../../source/reference/debugging.rst:72 26cae0dfbe2c4760b28ff7fad07012a9
+#: 95fe4a9170cb497fb0ebaedb07bc6e71
 msgid "Logging Categories"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 0dfa2394c3ea4c1180acfe3635260fe0
-#: d5e86a8317f54597b74a65dea78b5305
+#: ../../source/reference/debugging.rst:1 662bef0a771b498eba732328839a92a0
+#: 85a02b111cfa4c439382fad2cc19644d
 msgid "command"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 0ae2e252bbff44f89357356cbd0f32e2
-#: 849ef67cad0a4225b8de0d3888b8c8b2 948033de03e9423a952be695f4630172
+#: ../../source/reference/debugging.rst:1 06124a9d4fdb42d6adb6430ad8541c19
+#: 2a6337326a9d4939ab46ec65d2f9248b de1ee21ec4b242e7b113a039b349f01a
 msgid "description"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 93889a0bb7f74a2684f3a8ffe88b9cd2
+#: ../../source/reference/debugging.rst:1 ac80fb52f7714d0bafe7aae3ee776518
 msgid "``:di <name>``"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 cb774069eccd4bca8cbe01fbee85b43a
+#: ../../source/reference/debugging.rst:1 33697df803af4569bd7d2d0eb8d20e7b
 msgid "show debugging information for a name"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 d4e2df2f81a14c488e538136037a84e1
+#: ../../source/reference/debugging.rst:1 5de3bfa7071c40b1bb7a9e3403485f65
 msgid "``:set showimplicits``"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 7ac2ab8759b948a29fa3bf06ef535479
+#: ../../source/reference/debugging.rst:1 71f4d232a6e049e9918fce9fd9a02f7b
 msgid "show values of implicit arguments"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:68 22a8aaa3de254ca89c0abce28f0d49eb
+#: ../../source/reference/debugging.rst:68 f2d9171263d045bbaac7f7e567a92eec
 msgid "Compiler Flags"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:70 5a11649b5d4f40e38861bd226a534b36
+#: ../../source/reference/debugging.rst:70 401a21f5975e42e5bbc23cbf08189a35
 msgid ""
 "There are several 'hidden' compiler flags that can help expose Idris' "
 "inner workings."
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 33e14ceb351c4d1fb8ff34686c6cbce0
+#: ../../source/reference/debugging.rst:1 96c5cf8da5c3436da48dc1246a85827a
 msgid "``--dumpcases <file>``"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 da6d96cda25749fe8ffeb1020a4eda2f
+#: ../../source/reference/debugging.rst:1 3e480401559c4e6888fc161ab9409d9d
 msgid "dump case trees to the given file"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 c04c3e176fc5409b86854b0242eacc20
+#: ../../source/reference/debugging.rst:1 4a6fd58d75e1469085420d48a751740c
 msgid "``--dumplifted <file>``"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 b5c6f294b992456882d5f7df11ff6b24
+#: ../../source/reference/debugging.rst:1 0eb30777fb3143568aaa42c67781c9a5
 msgid "dump lambda lifted trees to the given file"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 9a7ee6e76c1848a6ab268ba85b006806
+#: ../../source/reference/debugging.rst:1 95ea76d037f34556a5764a30dc6adfe0
 msgid "``--dumpanf <file>``"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 5e324b22e3354b549092f57053c791d4
+#: ../../source/reference/debugging.rst:1 de46d36fa2e14522b871f4108b86c22b
 msgid "dump ANF to the given file"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 096edfd239bb471a8d470c783b191818
+#: ../../source/reference/debugging.rst:1 3aa6752f982c4ae89d6f0ff91e214dd3
 msgid "``--dumpvmcode <file>``"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 6423cada04dc44a1b5fb553c1ab696e3
+#: ../../source/reference/debugging.rst:1 0541fca599ee4541bcf8c6fd82884c47
 msgid "dump VM Code to the given file"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 bb354981ffe74cd39a78853234b95cf2
+#: ../../source/reference/debugging.rst:1 2cb8324d0c824b30a75049e0add53633
 msgid "``--debug-elab-check``"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 af5534396e10461d901ce8c49a9b763c
+#: ../../source/reference/debugging.rst:1 5b2b40e0da0d4a75899e3e09c46e8e94
 msgid "do more elaborator checks (currently conversion in LinearCheck)"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:84 7624fbbbb65c4b938e42b0ebf5efa813
+#: ../../source/reference/debugging.rst:84 2867ac18641b45c5b2c4b217bfcbee31
 msgid "Output Formats"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:87 68ec384baf624906b78a7f6e03d907ae
+#: ../../source/reference/debugging.rst:87 03baefbef677478eaa7f55812a17469b
 msgid "Debug Output"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:89 a96eb40e86b44e4eb52ce2e09ce6d399
+#: ../../source/reference/debugging.rst:89 e00b01b08026493fb73a001eec0e58d2
 msgid ""
 "Calling ``:di <name>`` dumps debugging information about the selected "
 "term. Specifically dumped are:"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:92 156dbb00f2f4489994a7aa8b89fe2b91
+#: ../../source/reference/debugging.rst:92 bec0bf05a6f24916af1bb2cfe13a771b
 msgid "Debugging Information"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 13b3fcde465c425fae416be1c1d81006
+#: ../../source/reference/debugging.rst:1 fce56a113377447e8098efb14c697aa4
 msgid "topic"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 b0cb4f4c04994eed95bedf7302042eca
+#: ../../source/reference/debugging.rst:1 2cc3e08bb7434cc8b57a94ae174be67d
 msgid "Full Name(s)"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 d8bf276c55bd4c33a76f11b34b4522cf
+#: ../../source/reference/debugging.rst:1 a6c84d2db7e4460a9d58280b75c988f3
 msgid "The fully qualified name of the term."
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 b320a354f03d40e884abb40dacdb9c41
+#: ../../source/reference/debugging.rst:1 9436c1b40c2045228217a21d57eca0b7
 msgid "Multiplicity"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 ae32cd92755d48e6b04600b0a478b95f
+#: ../../source/reference/debugging.rst:1 692f4da0bbf5422282844baaf6d145f6
 msgid "The terms multiplicity."
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 58561320e27342e3b6fc9b14ed394191
+#: ../../source/reference/debugging.rst:1 61ff6d4f210441f8b4b742e75e234263
 msgid "Erasable Arguments"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 c206cf8146b64323978d91e577d023ed
+#: ../../source/reference/debugging.rst:1 1558dfc10ae740df81d6d7cbe70bbd12
 msgid "Things that are erased."
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 e8d9881d01214cce9a389eef33b4728e
+#: ../../source/reference/debugging.rst:1 b189be9305804dd3bf7fe45a9282c91f
 msgid "Detaggable argument types"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 b9df62604529484ab426b668955d3574
+#: ../../source/reference/debugging.rst:1 4a7f7c9685874497a297fadb923c2302
 msgid "Specialised arguments"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 dddc1c0a95c64678a34e4bec6e4503e5
+#: ../../source/reference/debugging.rst:1 30f0038e92c74d4798f84c608e9c313b
 msgid "Inferrable arguments"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 f2ac974c36474e32a62a51216b34dd87
+#: ../../source/reference/debugging.rst:1 21a7ec8ce82f4f3caf83814c159be548
 msgid "Compiled version"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 5ef42d7c7f1444debae76a257c8c2014
+#: ../../source/reference/debugging.rst:1 d42a58bd29974d7285971e27f09a94fc
 msgid "Compile time linked terms"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 4963f90234c74d0aab4876c4ec7497a0
+#: ../../source/reference/debugging.rst:1 d2bdac1abac447018a888c5520a5d50f
 msgid "Runtime linked terms"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 917cb95b7fbf48d7963e7f648519877e
+#: ../../source/reference/debugging.rst:1 988ead6b272349fdb82b0dc0d49e2efb
 msgid "Flags"
 msgstr ""
 
-#: ../../source/reference/debugging.rst:1 86e70c1eaaa54af284355805593225d7
+#: ../../source/reference/debugging.rst:1 b2c9ac9b0c3e4f2993950e56c60f1a57
 msgid "Size change graph"
 msgstr ""
 

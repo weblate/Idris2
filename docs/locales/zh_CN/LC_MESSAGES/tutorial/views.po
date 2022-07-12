@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/views.rst:5 a08a88bf43a9433d91a56458ffdeb1c6
+#: ../../source/tutorial/views.rst:5 8d71b0bfe211421e8a982f1f2e08deff
 msgid "Views and the “``with``” rule"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:9 6ce9cc2cc17f4387865455e1bee749fc
+#: ../../source/tutorial/views.rst:9 140ba6d02eed449b88aa69a45d904b73
 msgid "NOT UPDATED FOR IDRIS 2 YET"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:12 c60888086feb4b9c920a6f942998eaa6
+#: ../../source/tutorial/views.rst:12 5bf831f7b1eb4ff0b27c4abcf93b3e31
 msgid "Dependent pattern matching"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:14 2d2686e12d2d4ced91fd7c5b1d09ea0e
+#: ../../source/tutorial/views.rst:14 bdc5f9e00656461999b53b7d6e97db23
 msgid ""
 "Since types can depend on values, the form of some arguments can be "
 "determined by the value of others. For example, if we were to write down "
@@ -37,17 +37,17 @@ msgid ""
 "length argument was determined by whether the vector was empty or not:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:26 3873b6bd2bcc40abb8ca2aab2e70b103
+#: ../../source/tutorial/views.rst:26 8508ecd324ee413b8176eddc5a87cbeb
 msgid ""
 "If ``n`` was a successor in the ``[]`` case, or zero in the ``::`` case, "
 "the definition would not be well typed."
 msgstr ""
 
-#: ../../source/tutorial/views.rst:32 450d1aa493cf4d4284080e058b738ad5
+#: ../../source/tutorial/views.rst:32 bc541418c5434382a71473889e7a6e6d
 msgid "The ``with`` rule — matching intermediate values"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:34 f4bb051bcad944838b6dabdff7b45ed3
+#: ../../source/tutorial/views.rst:34 4612912a42f14f6491d78d64adef664c
 msgid ""
 "Very often, we need to match on the result of an intermediate "
 "computation. Idris provides a construct for this, the ``with`` rule, "
@@ -58,13 +58,13 @@ msgid ""
 "defined."
 msgstr ""
 
-#: ../../source/tutorial/views.rst:42 b41650142bf745659fe96472ef5e2257
+#: ../../source/tutorial/views.rst:42 d2d98b0468e64e4fa34039a44244e422
 msgid ""
 "We have already seen a vector filter function. This time, we define it "
 "using ``with`` as follows:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:52 1e8b77af191b41758d98108297de4b6c
+#: ../../source/tutorial/views.rst:52 a091569e098c4ecab40ed8e18dc773f7
 msgid ""
 "Here, the ``with`` clause allows us to deconstruct the result of ``filter"
 " p xs``. The view refined argument pattern ``filter p (x :: xs)`` goes "
@@ -75,18 +75,18 @@ msgid ""
 "with an underscore ``_``:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:65 1ae5cb44d4fe4bc19476889b2d029c30
+#: ../../source/tutorial/views.rst:65 480da19e15aa4b92b84e5ced7dfeab6f
 msgid "``with`` clauses can also be nested:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:76 26ff13df3c3e435a8d6d7791deb65a11
+#: ../../source/tutorial/views.rst:76 9b6c2d2f6b2240b9afee1cb75eededb6
 msgid ""
 "and left hand sides that are the same as their parent's can be skipped by"
 " using ``_`` to focus on the patterns for the most local ``with``. "
 "Meaning that the above ``foo`` can be rewritten as follows:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:89 3a693cc1396d4a66b2ad0029a8c54e20
+#: ../../source/tutorial/views.rst:89 37c7442ff6384e9c9deb2e421dbabe94
 msgid ""
 "If the intermediate computation itself has a dependent type, then the "
 "result can affect the forms of other arguments — we can learn the form of"
@@ -96,7 +96,7 @@ msgid ""
 "the sum of two equal ``Nat`` plus one:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:102 1131ac8959644d239a5f1546b1f8938f
+#: ../../source/tutorial/views.rst:102 9240fbeed1ec4facb1b2f062d44af13c
 msgid ""
 "We say ``Parity`` is a *view* of ``Nat``. It has a *covering function* "
 "which tests whether it is even or odd and constructs the predicate "
@@ -104,14 +104,14 @@ msgid ""
 "so although it's an implicit argument, it has unrestricted multiplicity."
 msgstr ""
 
-#: ../../source/tutorial/views.rst:111 a3aae1743fa045dbb5764c5a2bda8bb5
+#: ../../source/tutorial/views.rst:111 8808feb6094045f38dcbfa78d833c05a
 msgid ""
 "We’ll come back to the definition of ``parity`` shortly. We can use it to"
 " write a function which converts a natural number to a list of binary "
 "digits (least significant first) as follows, using the ``with`` rule:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:124 0e4337506aee4bb3a9ddf17ad19aea08
+#: ../../source/tutorial/views.rst:124 9fad21ed748b407198ef5a1b754d1fa2
 msgid ""
 "The value of ``parity k`` affects the form of ``k``, because the result "
 "of ``parity k`` depends on ``k``. So, as well as the patterns for the "
@@ -120,7 +120,7 @@ msgid ""
 "of the ``|``. That is:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:130 b7b5f840bf3e452699121d52d5532501
+#: ../../source/tutorial/views.rst:130 992efffd82e144ce9bc59029eedc32be
 msgid ""
 "When ``parity k`` evaluates to ``Even``, we can refine the original "
 "argument ``k`` to a refined pattern ``(j + j)`` according to ``Parity (n "
@@ -130,7 +130,7 @@ msgid ""
 "used on the right side of the ``=`` sign."
 msgstr ""
 
-#: ../../source/tutorial/views.rst:138 fe6e28d554d7442daa314c813bd964fb
+#: ../../source/tutorial/views.rst:138 c40205b531c54888adc131080c6455a9
 msgid ""
 "Otherwise, when ``parity k`` evaluates to ``Odd``, the original argument "
 "``k`` is refined to ``S (j + j)`` according to ``Parity (S (n + n))`` "
@@ -139,31 +139,31 @@ msgid ""
 "right side of the ``=`` sign."
 msgstr ""
 
-#: ../../source/tutorial/views.rst:144 6b6fd7355bbc4510a30c0248e3fc0eea
+#: ../../source/tutorial/views.rst:144 41c8ecd3dc8046d7b2100cfb70d4f43e
 msgid ""
 "Note that there is a function in the patterns (``+``) and repeated "
 "occurrences of ``j`` - this is allowed because another argument has "
 "determined the form of these patterns."
 msgstr ""
 
-#: ../../source/tutorial/views.rst:149 1e2d4a6fb52c466181c190d9031b29ab
+#: ../../source/tutorial/views.rst:149 758e3368d24649e5bcc31d22a2537bdd
 msgid "Defining ``parity``"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:151 07e38a61ce9f4bf0b61ee0acda087699
+#: ../../source/tutorial/views.rst:151 7acf80386ba64cc298895e7b3ee60718
 msgid ""
 "The definition of ``parity`` is a little tricky, and requires some "
 "knowledge of theorem proving (see Section :ref:`sect-theorems`), but for "
 "completeness, here it is:"
 msgstr ""
 
-#: ../../source/tutorial/views.rst:166 4cd65c813f5f4d61becd33dd7ed46d24
+#: ../../source/tutorial/views.rst:166 4900f7e3019347b282d55e6d3e5e942d
 msgid ""
 "For full details on ``rewrite`` in particular, please refer to the "
 "theorem proving tutorial, in Section :ref:`proofs-index`."
 msgstr ""
 
-#: ../../source/tutorial/views.rst:169 3cf17cea363b487ca087b44428292dcb
+#: ../../source/tutorial/views.rst:169 ea0cd852e03f40a8b4cfb5094051eead
 msgid ""
 "Conor McBride and James McKinna. 2004. The view from the left. J. Funct. "
 "Program. 14, 1 (January 2004), 69-111. "

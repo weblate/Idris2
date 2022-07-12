@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/interp.rst:5 eae184d790fa45af85fc79cc10900fe9
+#: ../../source/tutorial/interp.rst:5 3ebe9d4d7cef4b9fa94850e3b7ed91c0
 msgid "Example: The Well-Typed Interpreter"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:7 0336b82327ce422f914dea40c91221ed
+#: ../../source/tutorial/interp.rst:7 efd20f4d19634f3d8b1b49e7258ff883
 msgid ""
 "In this section, we’ll use the features we’ve seen so far to write a "
 "larger example, an interpreter for a simple functional programming "
@@ -30,24 +30,24 @@ msgid ""
 "ensure that any programs which can be represented are well-typed."
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:15 0f41db889dd044fb8a0da270f0439926
+#: ../../source/tutorial/interp.rst:15 7582c82d21d247c2ab314a48f4eb096c
 msgid "Representing Languages"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:17 5dd773f521094ed1a31ce1880c946201
+#: ../../source/tutorial/interp.rst:17 eea60e43d9ed495d915e16d7860cebce
 msgid ""
 "First, let us define the types in the language. We have integers, "
 "booleans, and functions, represented by ``Ty``:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:24 27000a3b0b384566a4717ac00b6631d0
+#: ../../source/tutorial/interp.rst:24 4da9c371c34c4198992722e95c4cebc3
 msgid ""
 "We can write a function to translate these representations to a concrete "
 "Idris type — remember that types are first class, so can be calculated "
 "just like any other value:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:35 fa36b0a70e124404bc14bd96d57a5a62
+#: ../../source/tutorial/interp.rst:35 e9a428d9f6564747903cc8b809f72b55
 msgid ""
 "We're going to define a representation of our language in such a way that"
 " only well-typed programs can be represented. We'll index the "
@@ -57,31 +57,31 @@ msgid ""
 "our source file:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:46 3f3b7cd414174c0bab105fd31ab243eb
+#: ../../source/tutorial/interp.rst:46 b131e4e6fdba4721835190e04ba2c543
 msgid ""
 "Expressions are indexed by the types of the local variables, and the type"
 " of the expression itself:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:53 140b4e059927468f820e3415ebc3ea2b
+#: ../../source/tutorial/interp.rst:53 bfb3b10d7e634468aec433f29ea57ef6
 msgid "The full representation of expressions is:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:72 da27810ef75f454daeda968c8ac0c411
+#: ../../source/tutorial/interp.rst:72 67609ca8cf2047a683bb9ab31808cf7f
 msgid ""
 "The code above makes use of the ``Vect`` and ``Fin`` types from the base "
 "libraries. ``Fin`` is available as part of ``Data.Vect``. Throughout, "
 "``ctxt`` refers to the local variable context."
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:76 78f7fac2983f401eafdb1378c1c25fdd
+#: ../../source/tutorial/interp.rst:76 21a8ca60b604481da5f15aeecd4affe8
 msgid ""
 "Since expressions are indexed by their type, we can read the typing rules"
 " of the language from the definitions of the constructors. Let us look at"
 " each constructor in turn."
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:80 dbcc2e9221fa46169e060da5ba77a139
+#: ../../source/tutorial/interp.rst:80 2450caec92a346aca8d98bf7d63c3286
 msgid ""
 "We use a nameless representation for variables — they are *de Bruijn "
 "indexed*. Variables are represented by a proof of their membership in the"
@@ -89,7 +89,7 @@ msgid ""
 "context ``ctxt`` has type ``T``. This is defined as follows:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:91 d60d99b878db43619a23732235cb5d9b
+#: ../../source/tutorial/interp.rst:91 c2937ebff7cc47e0b0a828f8ff3298a7
 msgid ""
 "We can treat *Stop* as a proof that the most recently defined variable is"
 " well-typed, and *Pop n* as a proof that, if the ``n``\\ th most recently"
@@ -99,7 +99,7 @@ msgid ""
 "constructor:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:102 45af1625c9d84756a8976b67f55d98ba
+#: ../../source/tutorial/interp.rst:102 615ff27786e44df5a0a42876c06d17e8
 msgid ""
 "So, in an expression ``\\x. \\y. x y``, the variable ``x`` would have a "
 "de Bruijn index of 1, represented as ``Pop Stop``, and ``y 0``, "
@@ -107,41 +107,41 @@ msgid ""
 "between the definition and the use."
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:107 b639743b249c4d1f95dff1f68fa16ea8
+#: ../../source/tutorial/interp.rst:107 3d09c78f5b0146e2aeb301797ceff173
 msgid "A value carries a concrete representation of an integer:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:113 27ed1990a6d54ea6be62159cca4a8e86
+#: ../../source/tutorial/interp.rst:113 c35ed0480c0c4aa5813ad391b6ad7ea7
 msgid ""
 "A lambda creates a function. In the scope of a function of type ``a -> "
 "t``, there is a new local variable of type ``a``, which is expressed by "
 "the context index:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:121 e98465f2dcdf426d9aa05f422574a06d
+#: ../../source/tutorial/interp.rst:121 f5f755c5983c48bca7a66f2d4a70fc26
 msgid ""
 "Function application produces a value of type ``t`` given a function from"
 " ``a`` to ``t`` and a value of type ``a``:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:128 70c0f212e4964b90a4a33204e400aed5
+#: ../../source/tutorial/interp.rst:128 b416886980da492e896e54ff98b9f802
 msgid ""
 "We allow arbitrary binary operators, where the type of the operator "
 "informs what the types of the arguments must be:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:136 3cadbac97a20421881b18ec7246b57cb
+#: ../../source/tutorial/interp.rst:136 25ef61455236417fbbc9ab7461c8c295
 msgid ""
 "Finally, ``If`` expressions make a choice given a boolean. Each branch "
 "must have the same type, and we will evaluate the branches lazily so that"
 " only the branch which is taken need be evaluated:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:148 323f23c6ced840ecb0a0a8c1e92ee4cb
+#: ../../source/tutorial/interp.rst:148 4139887e9e3a4dfbac192bd7fd3c0e6d
 msgid "Writing the Interpreter"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:150 cb6cca663aeb444fba4594bd3509c009
+#: ../../source/tutorial/interp.rst:150 3e0f4f541ba14cfb8a7edd18e7a84725
 msgid ""
 "When we evaluate an ``Expr``, we'll need to know the values in scope, as "
 "well as their types. ``Env`` is an environment, indexed over the types in"
@@ -152,45 +152,45 @@ msgid ""
 "context, we can then produce a value from the environment:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:169 d201561f7b5247c387026dde7c0e8d09
+#: ../../source/tutorial/interp.rst:169 cb0e4f7ab6b84bd1b34383755db3a3b0
 msgid ""
 "Given this, an interpreter is a function which translates an ``Expr`` "
 "into a concrete Idris value with respect to a specific environment:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:177 29c1ad21fac94162b7f65367b603f258
+#: ../../source/tutorial/interp.rst:177 eb097f6973434891b9e8f2de8a680e0c
 msgid ""
 "The complete interpreter is defined as follows, for reference. For each "
 "constructor, we translate it into the corresponding Idris value:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:190 5e3b7c3615d546f29e353978d8c6c9ab
+#: ../../source/tutorial/interp.rst:190 8659e4d366534996af138b56224600f1
 msgid ""
 "Let us look at each case in turn. To translate a variable, we simply look"
 " it up in the environment:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:197 3dbed05d7d664257bfa44b2f13359712
+#: ../../source/tutorial/interp.rst:197 8adb63c4892a47d1bc43e471c7d1ccaa
 msgid ""
 "To translate a value, we just return the concrete representation of the "
 "value:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:204 0a2bcb3a419247a6b724c2b2565f354b
+#: ../../source/tutorial/interp.rst:204 2f0012840fc3488dafd06660f50fabb0
 msgid ""
 "Lambdas are more interesting. In this case, we construct a function which"
 " interprets the scope of the lambda with a new value in the environment. "
 "So, a function in the object language is translated to an Idris function:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:213 9fec60380cf54ad395aa186b4c04566d
+#: ../../source/tutorial/interp.rst:213 fed8bf1a7b204c29a182b40c4ca204c7
 msgid ""
 "For an application, we interpret the function and its argument and apply "
 "it directly. We know that interpreting ``f`` must produce a function, "
 "because of its type:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:221 848eba73c8d0403fa2c66b6afff380fc
+#: ../../source/tutorial/interp.rst:221 2fa6ae31ee89427092ec3547a727e93a
 msgid ""
 "Operators and conditionals are, again, direct translations into the "
 "equivalent Idris constructs. For operators, we apply the function to its "
@@ -198,33 +198,33 @@ msgid ""
 "``if...then...else`` construct directly."
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:233 0708fb28c5a3441f86fec25e4690af7a
+#: ../../source/tutorial/interp.rst:233 e41935b305b4496f804af9c95204dcbe
 msgid "Testing"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:235 02247a9238144e1288b48b79d5db4367
+#: ../../source/tutorial/interp.rst:235 11743793f0ab4a4ab331002e65348dce
 msgid ""
 "We can make some simple test functions. Firstly, adding two inputs ``\\x."
 " \\y. y + x`` is written as follows:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:243 3c696d358e434d9e8f69a40e24b5b6a9
+#: ../../source/tutorial/interp.rst:243 e0fec2ea17084542836b0b19875927a4
 msgid ""
 "More interestingly, a factorial function ``fact`` (e.g. ``\\x. if (x == "
 "0) then 1 else (fact (x-1) * x)``), can be written as:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:256 882b6d1ec6bd4d20823bc30987a17c06
+#: ../../source/tutorial/interp.rst:256 3f399bcf5b87455f9e8e793332ed75de
 msgid "Running"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:258 7aedb02ce0d74d65a5d20274deee786a
+#: ../../source/tutorial/interp.rst:258 c68aab351e384304a6435144e069f6d8
 msgid ""
 "To finish, we write a ``main`` program which interprets the factorial "
 "function on user input:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:268 4e59caac6c13489bb4787eefe7d73d90
+#: ../../source/tutorial/interp.rst:268 1b0b6916a08d421a81d911120af29428
 msgid ""
 "Here, ``cast`` is an overloaded function which converts a value from one "
 "type to another if possible. Here, it converts a string to an integer, "
@@ -232,17 +232,17 @@ msgid ""
 "Idris interactive environment is:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:278 ee03c3e790344f28bbc84776f3ac888e
+#: ../../source/tutorial/interp.rst:278 fe4c471ec1374316bd1ddb2693e90c8a
 msgid "Aside: ``cast``"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:280 e6f31b41130f4f94b8f567f9c4dfa087
+#: ../../source/tutorial/interp.rst:280 13f720bf167e4910a77084ba59c947ab
 msgid ""
 "The prelude defines an interface ``Cast`` which allows conversion between"
 " types:"
 msgstr ""
 
-#: ../../source/tutorial/interp.rst:288 0ac24b5c020241ceb145422d80132b8b
+#: ../../source/tutorial/interp.rst:288 2c25062e8e424ecb98a4730f5bfc386c
 msgid ""
 "It is a *multi-parameter* interface, defining the source type and object "
 "type of the cast. It must be possible for the type checker to infer "

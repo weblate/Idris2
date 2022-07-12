@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/app/linear.rst:2 05aae197a82c4f6abf549e1d499d796c
+#: ../../source/app/linear.rst:2 413b52abaeea46e3a7ee3be7976228b6
 msgid "Linear Resources"
 msgstr ""
 
-#: ../../source/app/linear.rst:4 1d2983742ab6447db1b22167d1b91a8b
+#: ../../source/app/linear.rst:4 189fbdd3e5e04497908a4e2857f4a899
 msgid ""
 "We have introduced ``App`` for writing interactive programs, using "
 "interfaces to constrain which operations are permitted, but have not yet "
@@ -31,31 +31,31 @@ msgid ""
 "``Monad``):"
 msgstr ""
 
-#: ../../source/app/linear.rst:20 ddcc593ca7f14eb0b4346227e0a2e069
+#: ../../source/app/linear.rst:20 d4243b56d70245b0b36d28c00a812d3a
 msgid ""
 "The intuition behind this type is that, when sequencing two ``App`` "
 "programs:"
 msgstr ""
 
-#: ../../source/app/linear.rst:23 63f66c4a951042be821be80620f7afd6
+#: ../../source/app/linear.rst:23 44ca10062447476a88c0f7b6416f9148
 msgid ""
 "if the first action might throw an exception, then the whole program "
 "might throw."
 msgstr ""
 
-#: ../../source/app/linear.rst:25 9ad803f09456400b81636f90299832ff
+#: ../../source/app/linear.rst:25 35ab734649344ef1a6ad178a32aafc51
 msgid ""
 "if the first action cannot throw an exception, the second action can "
 "still throw, and the program as a whole can throw."
 msgstr ""
 
-#: ../../source/app/linear.rst:27 64c3d3a7acb1431896cb1f53d13af448
+#: ../../source/app/linear.rst:27 f4d274a2dc9f486da2bd1ac4a5a9fa11
 msgid ""
 "if neither action can throw an exception, the program as a whole cannot "
 "throw."
 msgstr ""
 
-#: ../../source/app/linear.rst:30 e19978da59af4d2bb8a0785de29398f5
+#: ../../source/app/linear.rst:30 bcc3d149d7294f13ac1a2ee91f00f312
 msgid ""
 "The reason for the detail in the type is that it is useful to be able to "
 "sequence programs with a different ``Path``, but in doing so, we must "
@@ -64,18 +64,18 @@ msgid ""
 "operator which guarantees to run the continuation exactly once:"
 msgstr ""
 
-#: ../../source/app/linear.rst:42 2eb1ec98e36a43c59a2f4cacdcfbe9e9
+#: ../../source/app/linear.rst:42 2c17a3392890423f8aa0219ccb047fcf
 msgid ""
 "To illustrate the need for ``bindL``, we can try writing a program which "
 "tracks the state of a secure data store, which requires logging in before"
 " reading the data."
 msgstr ""
 
-#: ../../source/app/linear.rst:47 03bc4604c7ab4e258c125b8cb33e1f31
+#: ../../source/app/linear.rst:47 db9f789a9fe94bb8b05b12107ea4340e
 msgid "Example: a data store requiring a login"
 msgstr ""
 
-#: ../../source/app/linear.rst:49 98902f46bed24c4e92c5f1ac91389233
+#: ../../source/app/linear.rst:49 07888957084b4bd8b87336b62f817979
 msgid ""
 "Many software components rely on some form of state, and there may be "
 "operations which are only valid in specific states. For example, consider"
@@ -83,30 +83,30 @@ msgid ""
 " some secret data. This system can be in one of two states:"
 msgstr ""
 
-#: ../../source/app/linear.rst:54 cfd8cba812c94f80bf5e5a24c7a93e34
+#: ../../source/app/linear.rst:54 83bb864bcd0e42008316fdba9141f6e3
 msgid "``LoggedIn``, in which the user is allowed to read the secret"
 msgstr ""
 
-#: ../../source/app/linear.rst:55 ea190ec7e017452aa50cdc53bbd7e88a
+#: ../../source/app/linear.rst:55 7a8d80382d084743aa4c0512cc111732
 msgid "``LoggedOut``, in which the user has no access to the secret"
 msgstr ""
 
-#: ../../source/app/linear.rst:57 806cfc625acd49db8348b325dd4e58a8
+#: ../../source/app/linear.rst:57 b0353d63df224090b1f24542624aea3f
 msgid ""
 "We can provide commands to log in, log out, and read the data, as "
 "illustrated in the following diagram:"
 msgstr ""
 
-#: ../../source/app/linear.rst:60 a7ea37399a1e4b27992d5ca80ef72423
+#: ../../source/app/linear.rst:60 4329f0519a9e4c568e191ef664299cc3
 msgid "|login|"
 msgstr ""
 
-#: ../../source/app/linear.rst:126 0520ba755a4b4dd8a6fe1acc49380cbd
-#: 670a935e9bf64b95a973ea630f08d582
+#: ../../source/app/linear.rst:126 17df46e2ff664fe48873c103bbbd2831
+#: 7bc51b74c4984cc88768c17f78e9a7e5
 msgid "login"
 msgstr ""
 
-#: ../../source/app/linear.rst:62 773e5fa47d414e62b07447a417e8ade7
+#: ../../source/app/linear.rst:62 bedca97c879d46ab8ace3a16677bb116
 msgid ""
 "The ``login`` command, if it succeeds, moves the overall system state "
 "from ``LoggedOut`` to ``LoggedIn``. The ``logout`` command moves the "
@@ -115,21 +115,21 @@ msgid ""
 "``LoggedIn`` state."
 msgstr ""
 
-#: ../../source/app/linear.rst:67 dc26885f17d24d0587be97e5d0a76ef4
+#: ../../source/app/linear.rst:67 930f839bc34645ff8439259c60569856
 msgid ""
 "We can represent the state transitions using functions with linear types."
 " To begin, we define an interface for connecting to and disconnecting "
 "from a store:"
 msgstr ""
 
-#: ../../source/app/linear.rst:78 9f9f53c3de07492aa2668be76ec4dfe7
+#: ../../source/app/linear.rst:78 5c35c56ea54040bbbad567c209023d74
 msgid ""
 "Neither ``connect`` nor ``disconnect`` throw, as shown by generalising "
 "over ``l``. Once we have a connection, we can use the following functions"
 " to access the resource directly:"
 msgstr ""
 
-#: ../../source/app/linear.rst:94 48fbd0f07c804a8a9ad8c34808178f95
+#: ../../source/app/linear.rst:94 1464bd038a5743dd8d2f961a5275f24e
 msgid ""
 "``Res`` is defined in the Prelude, since it is commonly useful.  It is a "
 "dependent pair type, which associates a value with a linear resource. "
@@ -137,7 +137,7 @@ msgid ""
 "introductory example."
 msgstr ""
 
-#: ../../source/app/linear.rst:99 d9771539666f4c07949b3900a92129bc
+#: ../../source/app/linear.rst:99 341317a4179a40dda101d505e0303885
 msgid ""
 "The following listing shows a complete program accessing the store, which"
 " reads a password, accesses the store if the password is correct and "
@@ -145,7 +145,7 @@ msgid ""
 "``do``-notation locally."
 msgstr ""
 
-#: ../../source/app/linear.rst:119 631fa9dcd59442838b76d81027bad196
+#: ../../source/app/linear.rst:119 862eaba8738d4ecfa2754f036cee4883
 msgid ""
 "If we omit the ``let (>>=) = bindL``, it will use the default ``(>>=)`` "
 "operator, which allows the continuation to be run multiple times, which "
@@ -155,11 +155,11 @@ msgid ""
 "parameter in their types."
 msgstr ""
 
-#: ../../source/app/linear.rst:130 448f5534bada43108deee160d08201c5
+#: ../../source/app/linear.rst:130 9e7e924a2e1740db9e5dd5a39ce5fede
 msgid "App1: Linear Interfaces"
 msgstr ""
 
-#: ../../source/app/linear.rst:132 69a77a3249294bd080bd30ec6d168e97
+#: ../../source/app/linear.rst:132 7d19ae8f02314a0d9745c5466e604647
 msgid ""
 "Adding the ``bindL`` function to allow locally rebinding the ``(>>=)`` "
 "operator allows us to combine existing linear resource programs with "
@@ -171,13 +171,13 @@ msgid ""
 " to access the store."
 msgstr ""
 
-#: ../../source/app/linear.rst:141 218a6e95cd4f43c5b2d1957efcb2cf07
+#: ../../source/app/linear.rst:141 b7448496a2ca4d5eb500d26a30355540
 msgid ""
 "To allow control over linear resources, ``Control.App`` provides an "
 "alternative parameterised type ``App1``:"
 msgstr ""
 
-#: ../../source/app/linear.rst:149 8c9300634edb41f68f0cb633c3cd0960
+#: ../../source/app/linear.rst:149 efcfde41e760494eb0223683b14705a3
 msgid ""
 "There is no need for a ``Path`` argument, since linear programs can never"
 " throw. The ``Usage`` argument states whether the value returned is to be"
@@ -185,14 +185,14 @@ msgid ""
 " to use once:"
 msgstr ""
 
-#: ../../source/app/linear.rst:158 136bb8d20e2c4f9d8c3af412665cae61
+#: ../../source/app/linear.rst:158 8e7c75c947e3480884b909d760e9edfb
 msgid ""
 "The main difference from ``App`` is the ``(>>=)`` operator, which has a "
 "different multiplicity for the variable bound by the continuation "
 "depending on the usage of the first action:"
 msgstr ""
 
-#: ../../source/app/linear.rst:171 336d2b3480434f28bfef132a09583dd2
+#: ../../source/app/linear.rst:171 107973750b144b6fbb6872fdde8ae578
 msgid ""
 "``Cont1Type`` returns a continuation which uses the argument linearly, if"
 " the first ``App1`` program has usage ``One``, otherwise it returns a "
@@ -201,18 +201,18 @@ msgid ""
 "once and there can be no exceptions thrown."
 msgstr ""
 
-#: ../../source/app/linear.rst:177 851526c2d2714f19bc88eb0e649f100f
+#: ../../source/app/linear.rst:177 f9a8b284cf0c45e3bc558bda9e50994b
 msgid ""
 "Using ``App1``, we can define all of the data store operations in a "
 "single interface, as shown in the following listing. Each operation other"
 " than ``disconnect`` returns a `linear` resource."
 msgstr ""
 
-#: ../../source/app/linear.rst:193 5087c6d86d4e4ca6a8e20377a8a07459
+#: ../../source/app/linear.rst:193 fd2023a52f5641bca3cb349d985139d4
 msgid "We can explicitly move between ``App`` and ``App1``:"
 msgstr ""
 
-#: ../../source/app/linear.rst:200 921f5773691c46529c3a4b844eff3238
+#: ../../source/app/linear.rst:200 68a1bd3ebd3b41bb9af77b63a3c8986b
 msgid ""
 "We can run an ``App`` program using ``app``, inside ``App1``, provided "
 "that it is guaranteed not to throw. Similarly, we can run an ``App1`` "
@@ -220,7 +220,7 @@ msgid ""
 "returns has unrestricted usage. So, for example, we can write:"
 msgstr ""
 
-#: ../../source/app/linear.rst:214 447779c5f78d4d87acf5f338b1214cf2
+#: ../../source/app/linear.rst:214 67342912fb674ddaade1081e83cbb329
 msgid ""
 "This uses ``app1`` to state that the body of the program is linear, then "
 "``app`` to state that the ``putStr`` operation is in ``App``. We can see "
@@ -228,13 +228,13 @@ msgid ""
 "``what_next``, which also shows that we are running inside ``App1``:"
 msgstr ""
 
-#: ../../source/app/linear.rst:227 3e20e003f01f4b32b01662c73e2148cb
+#: ../../source/app/linear.rst:227 fbaa13d95e0d44a9a56218e52aa4851e
 msgid ""
 "For completeness, one way to implement the interface is as follows, with "
 "hard coded password and internal data:"
 msgstr ""
 
-#: ../../source/app/linear.rst:247 9816661e8f1a41b29c878128f8d832c3
+#: ../../source/app/linear.rst:247 9f65588ae62942b8b9c8bbe116c008dd
 msgid "Then we can run it in ``main``:"
 msgstr ""
 

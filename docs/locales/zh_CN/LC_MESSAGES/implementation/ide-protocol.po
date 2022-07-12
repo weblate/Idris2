@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/implementation/ide-protocol.rst:3
-#: 3ba4a957c67846f8a44892b0b4ec15c6
+#: 4593c66794754bb5bbf9f7304b94e3ac
 msgid "The IDE Protocol"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:5
-#: d7dacde142ca41b78e4dd9186faf795e
+#: 81e9435a6e8941c59d14a4451e2ff30d
 msgid ""
 "The Idris REPL has two modes of interaction: a human-readable syntax "
 "designed for direct use in a terminal, and a machine-readable syntax "
@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:7
-#: e7d51a8ce4314f39b52f25f40db209a6
+#: f401e8627b7c487ba40f85ac3500bece
 msgid ""
 "The IDE-Protocol is versioned separately from the Idris compiler. The "
 "first version of Idris (written in Haskell and is at v1.3.3) implements "
@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:10
-#: eff215281bdf4feaa2a2155565fb01ff
+#: dc457a41f0494a9ebb79543c9a94b753
 msgid ""
 "The protocol and its serialisation/deserialisation routines are part of "
 "the `Protocol` submodule hierarchy and are packaged in the "
@@ -48,12 +48,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:14
-#: c29492df75ae4d82a85877fdc39e35e9
+#: 6e45dda723c74591846c1498c1cf9ea1
 msgid "Protocol Overview"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:16
-#: 6c436c3e21ce4813b56baabc9676420b
+#: 8d60d63481a24ea19f811d1b3314ba4c
 msgid ""
 "The communication protocol is of asynchronous request-reply style: a "
 "single request from the client is handled by Idris at a time. Idris waits"
@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:21
-#: 86b9580c62814cbf83dad8736ffbae6c
+#: 4549bfa6ca4341ccba12dee88238f2cb
 msgid ""
 "A reply can consist of multiple messages: any number of messages to "
 "inform the user about the progress of the request or other informational "
@@ -72,7 +72,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:23
-#: 06912903af6748888d2917f476a0bf80
+#: fbc44354d9d649c48ae0d333017a377b
 msgid ""
 "The wire format is the length of the message in characters, encoded in 6 "
 "characters hexadecimal, followed by the message encoded as S-expression "
@@ -82,14 +82,14 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:26
-#: 81286809a62048178b195d579574ca8a
+#: 39581722af964c2a87e815a77302bfb9
 msgid ""
 "An example interaction from loading the file ``/home/hannes/empty.idr`` "
 "looks as follows on the wire:::"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:34
-#: e124623fec8144aea5ce093a881974ba
+#: 9103f353e8eb4817aab0fde062c07d8e
 msgid ""
 "The first message is the request from idris-mode to load the specific "
 "file, which length is hex 2a, decimal 42 (including the newline at the "
@@ -101,7 +101,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:39
-#: 60169739e18644e48aa8461c246211b3
+#: 9ed3eb50f6f048eca5a8640418e18028
 msgid ""
 "There are three atoms in the wire language: numbers, strings, and "
 "symbols. The only compound object is a list, which is surrounded by "
@@ -109,7 +109,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:46
-#: 970909cd653f4d53b8cbf3c5255735a5
+#: 3af0322ea31840f7be7d73f8b2f502ab
 msgid ""
 "where ``NUM`` is either 0 or a positive integer, ``ALPHA`` is an "
 "alphabetical character, and ``STR`` is the contents of a string, with "
@@ -118,7 +118,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:49
-#: a83ab5b48281462986331b02a3474273
+#: f02151e32444460694da6b5143db182a
 msgid ""
 "The state of the Idris process is mainly the active file, which needs to "
 "be kept synchronised between the editor and Idris. This is achieved by "
@@ -126,12 +126,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:53
-#: cea2b5b61b8b4885ba9c72dc1669a849
+#: 52aa6dc61ef44cb1b9b44c61dddd4834
 msgid "Protocol Versioning"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:55
-#: 62e60ffb818f4ecba1d793c0114350ba
+#: d1e63e0c772441e99c11e368fe69ccfd
 msgid ""
 "When interacting with Idris through the IDE Protocol the initial message "
 "sent by the running Idris Process is the version (major and minor) of the"
@@ -139,39 +139,39 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:57
-#: e99dd6636dc84a7898ee9d3d3b0889ce
+#: d371b6c0343e466a85f3dbf951f644a1
 msgid "The expected message has the following format:"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:59
-#: ca99c7f9b2294e149e3947f19e263d07
+#: 153d950c3a314a50b11649becff81ac1
 msgid "``(:protocol-version MAJOR MINOR)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:61
-#: a854966b016e41779fa627e97123ac90
+#: 5b522eb3ee984bce9483534d6faa14da
 msgid "IDE Clients can use this to help support multiple Idris versions."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:64
-#: ba3362bd0375412394dd38bd80ef825c
+#: 182659a5eeaa4e2caff98bfd4ab90c73
 msgid "Commands"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:66
-#: 8394db2f7da948a5bbfeb20c0d1465fe
+#: 1b4d378bd1214bff80136a312043198f
 msgid ""
 "The available commands are listed below. They are compatible with Version"
 " 1 and 2.0 of the protocol unless otherwise stated."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:71
-#: 2525ae660daa4ad2a96b473b0641e3fb
+#: 4b8e1444f3214f9f9fe0056291cc1a7d
 msgid "``(:load-file FILENAME [LINE])``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:70
-#: 02c206728541464eb0db1e337998fb9d
+#: bdb619458e4648f2a63efaed0baa9aba
 msgid ""
 "Load the named file.  If a ``LINE`` number is provided, the file is only "
 "loaded up to that line.  Otherwise, the entire file is loaded. Version 2 "
@@ -180,12 +180,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:75
-#: 2ec01825ec3243c6afa0873172079f01
+#: 85b1c087f31f4ef888f7e5c2ba232045
 msgid "``(:cd FILEPATH)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:74
-#: b3453260430145e5abf105128d49dd50
+#: 3bf6f5ae2dbd4a18b5b639931ba1bc9f
 msgid ""
 "Change the working direction to the given ``FILEPATH``. Version 2 of the "
 "IDE Protocol requires that the path is quoted, as in ``(:cd \"a/b/c\")`` "
@@ -193,34 +193,34 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:78
-#: 31e45bd810c9457a949b118a6200f893
+#: df461a577348458195aa8f222e3eacf2
 msgid "``(:interpret STRING)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:78
-#: 10efe0fc5f1943149e9eb48d41c48e91
+#: f9f65b82afda4cbc91186c703b745992
 msgid "Interpret ``STRING`` at the Idris REPL, returning a highlighted result."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:82
-#: 6718d70e2704490ea5cf4b3d00614819
+#: b17fe07b14e148d288ff9d8d5ee646f5
 msgid "``(:type-of STRING)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:81
-#: ffbcb3287fa94dfcbc91c611ed2096da
+#: 10aed747909f4f5eabd3b097b0ce1f18
 msgid ""
 "Return the type of the name, written with Idris syntax in the ``STRING``."
 " The reply may contain highlighting information."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:86
-#: f038336a1c034c75965d2181cb99d799
+#: d6fb1ebb89874f34aa8c918a2db4570f
 msgid "``(:case-split LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:85
-#: 30e2f8e70eee4e48aac0aa330e5177f3
+#: 0ef199cdca6942ea88db8359b6ab2373
 msgid ""
 "Generate a case-split for the pattern variable ``NAME`` on program line "
 "``LINE``. The pattern-match cases to be substituted are returned as a "
@@ -228,12 +228,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:90
-#: 207b7bcbf6c74614b117cd8f03ed90f6
+#: 5e768affb766470fb5f01d5a943a8bae
 msgid "``(:add-clause LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:89
-#: 47d3a47135e64d8aacf4321f001012e2
+#: 9bd5c06d1fd3454caeea2835ad34840d
 msgid ""
 "Generate an initial pattern-match clause for the function declared as "
 "``NAME`` on program line ``LINE``. The initial clause is returned as a "
@@ -241,22 +241,22 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:93
-#: e846c31ee08e40159e1d32c537d53b81
+#: 74f9e8bdd4b7449597f0db2ceffb7358
 msgid "``(:add-proof-clause LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:93
-#: 97df4993792149e5b699e184ab611b09
+#: 44569e7743304ca79c5234f857f8f91b
 msgid "Add a clause driven by the ``<==`` syntax."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:97
-#: a93b2fa87c6146f9a5c9da8497910e11
+#: 4ef0ca01d2e34d949f6e81109260b1cd
 msgid "``(:add-missing LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:96
-#: d991d42dcc51451b88ae52c889f64246
+#: 1b2c6c679181402092ef2e043c30f588
 msgid ""
 "Add the missing cases discovered by totality checking the function "
 "declared as ``NAME`` on program line ``LINE``. The missing clauses are "
@@ -264,48 +264,48 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:101
-#: 352d6ed7252148a2bcd3e46daabd6b8a
+#: 103cc74d79a74b779547ad585af3313b
 msgid "``(:make-with LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:100
-#: 7a3145c9855543b3b5a9e852af86145e
+#: ec2051edfd0f4d129636eb348b55d175
 msgid ""
 "Create a with-rule pattern match template for the clause of function "
 "``NAME`` on line ``LINE``. The new code is returned with no highlighting."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:105
-#: d9154ef2c1c047068c6c4841099a248b
+#: a73fef20295a4c418e22ceaadfa4f76b
 msgid "``(:make-case LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:104
-#: 787da2d193174c7ca519d99b012c5b5e
+#: 6c2016b29d244681bb3c9c40c66cf3c1
 msgid ""
 "Create a case pattern match template for the clause of function ``NAME`` "
 "on line ``LINE``. The new code is returned with no highlighting."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:108
-#: 4aba70601d084063867c666938857ba2
+#: 27946d2becb74513abfe4c9e922c7b36
 msgid "``(:make-lemma LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:108
-#: b8eb13d27c3849d697bfd0195ca76482
+#: a0ef85580b3243aabcfcb8ffcca6622a
 msgid ""
 "Create a top level function with a type which solves the hole named "
 "``NAME`` on line ``LINE``."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:113
-#: e5bee1a9ed7640d98d8b2915f6c589ad
+#: 5ea03a4010db4b5d93334d319f5263e5
 msgid "``(:proof-search LINE NAME HINTS)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:111
-#: 034015df73f8410bb35772eae790cc86
+#: ecc2593af7bf4fc1a612a7f3c37150fc
 msgid ""
 "Attempt to fill out the hole on ``LINE`` named ``NAME`` by proof search. "
 "``HINTS`` is a possibly-empty list of additional things to try while "
@@ -314,22 +314,22 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:116
-#: 8292bf847aac48d29516baf158564423
+#: ee7fa2fe3de441efa93fa8c6dd656458
 msgid "``(:refine LINE NAME TM)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:116
-#: d7c76590f6054c9eb6d377584defd1a8
+#: d259e889d7574c959a927f5550b61a85
 msgid "Refine the hole on ``LINE`` named ``NAME`` by using the term ``TM``."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:121
-#: a0baeed3b7614f77bc3634dcd3f1f87f
+#: 382562320ed542d8849c117d3dca42d0
 msgid "``(:docs-for NAME [MODE])``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:119
-#: 24aaa97e04454b64a7b7fce5e592a600
+#: ca3db01208544dddbaa2f2700ec8bed6
 msgid ""
 "Look up the documentation for ``NAME``, and return it as a highlighted "
 "string. If ``MODE`` is ``:overview``, only the first paragraph of "
@@ -338,68 +338,68 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:124
-#: efc2796579f24af49ccfef97393ae67f
+#: a7b9bab91b24408aaf03dc42effd7ae6
 msgid "``(:apropos STRING)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:124
-#: cbcc6ab72b1841199dab0ed56f19cb70
+#: 3546abf21c8a43708cdaf2f195e1247d
 msgid ""
 "Search the documentation for mentions of ``STRING``, and return any found"
 " as a list of highlighted strings."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:127
-#: 239399cff0c945ddad56a85089a12be4
+#: 9be830181846410998c186d133ca5945
 msgid "``(:metavariables WIDTH)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:127
-#: 94031afeeb0147db9cfe29113f410071
+#: da0399c6d30f46f29575b3adc1701008
 msgid ""
 "List the currently-active holes, with their types pretty-printed in "
 "``WIDTH`` columns."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:130
-#: 5c01342b06914288a6e02f95865b9da7
+#: 472da44668ea49659c5525f2f0ef9005
 msgid "``(:who-calls NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:130
-#: ad396824473e4d9e8884e220d1325cf0
+#: a1cee0bc41784dfebcac78a4214a3ed4
 msgid "Get a list of callers of ``NAME``."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:133
-#: eac368e3a81546faba8cf04944b75a65
+#: e2a2e491e55b414d9a04f71a41e81767
 msgid "``(:calls-who NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:133
-#: 1f07e6150132488daffc321cdbb60cb6
+#: 8de30ef6d9a14f7fa7a7187fec17f1d0
 msgid "Get a list of callees of ``NAME``."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:136
-#: 4315254fcf07428e9c075a125d34052b
+#: 5e356a74f2f24776905d3c3a34992971
 msgid "``(:browse-namespace NAMESPACE)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:136
-#: 7fad4fab722d43179aaccd448371d8a7
+#: e186168af9e64f54b575fc4439b76a5b
 msgid ""
 "Return the contents of ``NAMESPACE``, like ``:browse`` at the command-"
 "line REPL."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:139
-#: b13006709a004cfc825a8e1c398176ea
+#: 2dfeac2a123f4bb4bf3f8e940b549109
 msgid "``(:normalise-term TM)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:139
-#: 3e266e19ecc448fbb2e5f5766172f7a3
+#: ee28617fa3034a22bce3e7bbb8dc155d
 msgid ""
 "Return a highlighted string consisting of the results of normalising the "
 "serialised term ``TM`` (which would previously have been sent as the "
@@ -407,12 +407,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:143
-#: 8326e910ae6b456b898ffd114b6a04a9
+#: 0403e73f008b4adcb56cbd97d18bc405
 msgid "``(:show-term-implicits TM)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:142
-#: 623d74047edf48ebad02551c2485a46e
+#: 4b4cb7b214d04f6d80bcacf422bc46d0
 msgid ""
 "Return a highlighted string, consisting of the results of making all "
 "arguments in serialised term ``TM`` explicit. The arguments in ``TM`` "
@@ -420,12 +420,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:147
-#: fab1ebbdf15d48339c40331198c8791e
+#: 71d62140780342ee8bdf57123a877d80
 msgid "``(:hide-term-implicits TM)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:146
-#: 1d8aaaa3417b42f7b12bc4d0a1c7bcad
+#: 1a0ff77c86a347c78cdf22015655499e
 msgid ""
 "Return a highlighted string, consisting of the results of making all "
 "arguments in serialised term ``TM`` follow their usual implicitness "
@@ -434,12 +434,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:151
-#: 299da0d87cd54444b2295aae39ba3e2a
+#: 5065069612dd4a29b780cb3542992270
 msgid "``(:elaborate-term TM)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:150
-#: 2a7aa172156443cbb40f2604f4551af5
+#: 37db1f9b42c04c989bad4e3ad7b59366
 msgid ""
 "Return a highlighted string, consisting of the core language term "
 "corresponding to serialised term ``TM``. The arguments in ``TM`` would "
@@ -447,125 +447,125 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:154
-#: 1038660cb3f94e87b94e8dcc53a04c28
+#: bf8a8a05d6494d3ebda1be8031c88320
 msgid "``(:print-definition NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:154
-#: b31759d324874e598fec30c3eed7789b
+#: cb18ec7d6c19451abedb7ed6510b7076
 msgid "Return the definition of ``NAME`` as a highlighted string."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:157
-#: 567b0ef5954a4111964f8af8d003b040
+#: d4e70727a8d942e38072e0a8f5065681
 msgid "``(:repl-completions NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:157
-#: 8ac3941f07b246fbab34b033ac934dc2
+#: 913b4166d39041ec9a15925b1dceec1c
 msgid ""
 "Search names, types and documentations which contain ``NAME``. Return the"
 " result of tab-completing ``NAME`` as a REPL command."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:160
-#: cf89d315e6b14548a173a8378bd9d2b4
+#: 8737af42094b4bc5bc48dc10b5e13812
 msgid "``:version``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:160
-#: 8e17d235a91c4cb698dcb899204733d1
+#: eea9d5aa48774476970cdb7121546383
 msgid "Return the version information of the Idris compiler."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:163
-#: a3604bbcca9e42db830108633fc885e7
+#: 34761838b0e04c85ba2e5caf805bd971
 msgid "New For Version 2"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:165
-#: 891ef8dd8895429d9a55f229d84009be
+#: 90d9dd307dc146fa8cc6f1c912f36911
 msgid "New in Version 2 of the protocol are:"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:168
-#: 13618edaa130465b93593d797e0ee9da
+#: 7025bdd4bb3a44b4b05daeb00871ff59
 msgid "``(:generate-def LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:168
-#: 2ad9867551df4ea59650498a86daa033
+#: 48cf1c8314494fd383467b15487b196a
 msgid "Attempt to generate a complete definition from a type."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:171
-#: 91a3abf7be824a5597b8b456eb22b8e8
+#: 837d297161dd42ee9e1e6844e07700ce
 msgid "``(:generate-def-next)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:171
-#: d8cdf95b54eb44cfb3a81ac218f9fb80
+#: 536ca0f045104fab890f901340496aba
 msgid ""
 "Replace the previous generated definition with the next generated "
 "definition."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:174
-#: 8f65ad6f9a704df08f81778a1bda6844
+#: a7284aad6aa44a2fb21789ca2194c905
 msgid "``(:proof-search-next)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:174
-#: fdd0f84b8a35408fa328ae12b46a386e
+#: 30bbc532961f432bb04edf1902d8752c
 msgid ""
 "Replace the previous proof search result with the next proof search "
 "result."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:178
-#: c7cabf4aa52943b3932e76e523190a3a
+#: 9ceaa64de7ec4d7595c3a0a593d39208
 msgid "``(:intro LINE NAME)``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:177
-#: 4b99d355011448fc820c3af885e19eda
+#: e3c4f532a01149768c5d53da1dedd411
 msgid ""
 "Returns the non-empty list of valid saturated constructors that can be "
 "used in the hole at line ``LINE`` named ``NAME``."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:181
-#: 0f7d35be9e4345a4983320ad77bf3ae6
+#: f0240bca990a48389b5c73357773db67
 msgid "Possible Replies"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:183
-#: 2545e727947d43338cbaa23a38e9c2c8
+#: 14edd45ec2a34daca96edb61f7442da8
 msgid "Possible replies include a normal final reply:::"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:188
-#: c58d15771f3f4583af6cb98ba9712e78
+#: 6f979d9a3ef74c1daf9b0815966d45bd
 msgid "A normal intermediate reply:::"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:193
-#: d86045ae228c4228b35b3e6c399c07d5
+#: fa877d74b9b943328a13d89c43934306
 msgid "Informational and/or abnormal replies:::"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:200
-#: de1ed6e224e249c7af4162adf6361be8
+#: b748745caad848a1bc50372bbc0d4892
 msgid "Warnings include compiler errors that don't cause the compiler to stop."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:203
-#: 84835d53b20f416aa9f8b74e43c950d7
+#: 257d9a52bd3d462e86d285bb9870ea7d
 msgid "Output Highlighting"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:205
-#: fb3a2b5655fd4855b6ca8276ff68de20
+#: fc062221b9304abe8cee4aeb33a2cfc6
 msgid ""
 "Idris mode supports highlighting the output from Idris. In reality, this "
 "highlighting is controlled by the Idris compiler. Some of the return "
@@ -578,7 +578,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:212
-#: 285e665cc0e442a7bec4e7b676763045
+#: a69aadadd98648dbaf32c52dc5dc948b
 msgid ""
 "A particular semantic span is a three element list. The first element of "
 "the list is the index at which the span begins, the second element is the"
@@ -589,120 +589,120 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:260
-#: c54f8925c53c470aa644f87787d514c2
+#: 127794ea5c604768a9af516ff53fb542
 msgid "The following keys are available:"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:218
-#: 1d4fa57871bd413aa7d4ab2a260a701d
+#: ae10ac6e6938470daec19370e0a24f77
 msgid "``name``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:219
-#: 3f02942d43c84cbaafccb45e514c1ae7
+#: c3ba90c49e9e44f3ad47a40960e18eaf
 msgid "gives a reference to the fully-qualified Idris name"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:220
-#: 11c4d55c7dc042e988b9b632fac1c96a
+#: de1cab95829b4d9a8f86d0289c752f22
 msgid "``implicit``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:221
-#: 700782f399ce4c4f93a0f73b37fdb8ff
+#: 93e0b9d357b94cabba3bbcca9bcdf2cd
 msgid ""
 "provides a Boolean value that is True if the region is the name of an "
 "implicit argument"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:233
-#: 71c6dca4f9f9433b870922eeac33b62d
+#: e9d1fa8203554de99cfe726966d7932f
 msgid "``decor``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:223
-#: 990991b3d54e4d6fa5511bd793dfc953
+#: f0968b9bf8224fa2a21c643e4dd10ab7
 msgid "describes the category of a token, which can be:"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:225
-#: 3d667949338b45469f5f6b75551ab878
+#: 43054a7ef43341458e93ea6d24b979a7
 msgid "``type``: type constructors"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:227
-#: 9c33ff0dec7b4afeb090a74de44c6cd9
+#: 792d7546979143d5a82f8933cb4e768a
 msgid "``function``: defined functions"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:229
-#: 7453a89351644c578c1292ca7a4d85db
+#: 5ef92ca1fea44186933ce0cef9888d73
 msgid "``data``: data constructors"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:231
-#: bd074461ea8549a78bf5bbcf22905c67
+#: c1a4e1f6e6364fa5b05efd0096ac18f9
 msgid "``bound``: bound variables, or"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:233
-#: 8d6c61a141944c53b019cddc6a6717d5
+#: d5d6afc3e2fd487abb7e92620c25caad
 msgid "``keyword``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:245
-#: 8789ffff3b0c48a49dc1b0a4322b930a
+#: 7bd1119f7581454f99eda13d1b34d7da
 msgid "``source-loc``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:236
-#: 3d8428f3f33a4163822cefc964819206
+#: 9a1ba683c1704bc1a8b5976e9f5ffc53
 msgid ""
 "states that the region refers to a source code location. Its body is a "
 "collection of key-value pairs, with the following possibilities:"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:239
-#: 931b320f9e1f4a76b179559ce905f61f
+#: 01ac4083807a44919a85c83ca3be2fc3
 msgid "``filename``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:239
-#: fbffb9a10f654be2826e80ce9b6953ab
+#: 8fe1cb50908d4bc4adc0bdc90a70aef6
 msgid "provides the filename"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:242
-#: 507a9dc27c7442fe9942c00c4fbb4ded
+#: 432604a540c94b55b2eaac9546435890
 msgid "``start``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:242
-#: b07941fc460c4a2caced62cef7825ff6
+#: 022c80281c354e3d835ec899c49284ee
 msgid ""
 "provides the line and column that the source location starts at as a two-"
 "element tail"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:245
-#: f5f97f8e598f46a9b52e029913008b84
+#: a8f448186a534377be4352253caa06de
 msgid "``end``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:245
-#: 43acca5fa42c42e6a07d73636219f93a
+#: 33c907a45cf343cd839639b6e948fca1
 msgid ""
 "provides the line and column that the source location ends at as a two-"
 "element tail"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:248
-#: 1deeb8470aa848b2b94161000ab3a93f
+#: d53bebd4caa848b096f649484127dc59
 msgid "``text-formatting``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:248
-#: ff9a375df4e04c4a9c1d0a1df84e8cf1
+#: 57ce6ecabae2420cb37a00297d8031d8
 msgid ""
 "provides an attribute of formatted text. This is for use with natural-"
 "language text, not code, and is presently emitted only from inline "
@@ -711,54 +711,54 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:251
-#: 0597f227a3494fa3bee227010256a6f2
+#: 2e918bee94344e59bc75445a2f0acc59
 msgid "``link-href``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:251
-#: 2affc651b9704dc08f3a9986d0d13e7a
+#: 081be5369ac64b2cbd072de832c47785
 msgid "provides a URL that the corresponding text is a link to."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:254
-#: cb4f8b18b6524c4094225d7ec67b0965
+#: db0eff065dfc43a9b592e2734357f551
 msgid "``quasiquotation``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:254
-#: 84a1d2ed770e418f8ef01d4e5ece7273
+#: 4497203ba88e43dda98b19557d00a53c
 msgid "states that the region is quasiquoted."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:257
-#: 86f2364df60341209021f5414e1463d5
+#: e05c2a3b839245feb01b53a8081a12b2
 msgid "``antiquotation``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:257
-#: a13b0241ba8e499d9fa8633d93ed591d
+#: 5aff5c43eca744ec82518d798019335a
 msgid "states that the region is antiquoted."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:260
-#: 315110e1c130404bb7352fd305f11f17
+#: 88a8300705424cf487de0213aef3234e
 msgid "``tt-term``"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:260
-#: 0d8fa48089d14da68d82fd5c198ee739
+#: a4740ceeae8940f1a35a6c2bc8fe244e
 msgid ""
 "A serialised representation of the Idris core term corresponding to the "
 "region of text."
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:263
-#: 66a456fb179545418ab56b8a744cd4bc
+#: 613ed1c94c624808ab2e6c93ed3fbc45
 msgid "Source Code Highlighting"
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:265
-#: 414c13371ddb442f8dd35b77e275a79e
+#: 8fd6ba9b426b4ef39d3e2d3f9cbf4582
 msgid ""
 "Idris supports instructing editors how to colour their code. When "
 "elaborating source code or REPL input, Idris will locate regions of the "
@@ -767,7 +767,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:268
-#: f34401f0982840bf94fbfc54c90c4172
+#: 134d53e6298146ac8dc3e84ab9700201
 msgid ""
 "These messages will arrive as replies to the command that caused "
 "elaboration to occur, such as ``:load-file`` or ``:interpret``. They have"
@@ -775,7 +775,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/implementation/ide-protocol.rst:273
-#: 8cd7e2594a5b4b829339c0b09cb1479d
+#: 3b47edde3ca2454e8ab9be5994ca75b4
 msgid ""
 "where ``POSNS`` is a list of positions to highlight. Each of these is a "
 "two-element list whose first element is a position (encoded as for the "

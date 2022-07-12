@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/reference/index.rst:3 8b82a4612d34405b894f684ca73ce808
+#: ../../source/reference/index.rst:3 502067074c144a1da811e41c67e92a66
 msgid "Idris2 Reference Guide"
 msgstr ""
 
-#: ../../source/reference/index.rst:7 3f5bc9c19e1a471cad52d903a3d38a78
+#: ../../source/reference/index.rst:7 a621a1ad4b6f40aa842fc70c8b4fa08f
 msgid ""
 "The documentation for Idris 2 has been published under the Creative "
 "Commons CC0 License. As such to the extent possible under law, *The Idris"
@@ -29,13 +29,13 @@ msgid ""
 " Documentation for Idris."
 msgstr ""
 
-#: ../../source/reference/index.rst:12 9c42bce494244556bafd5d574d08e844
+#: ../../source/reference/index.rst:12 3f050a839fab4cb6aaccca2b4fffd12f
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "https://creativecommons.org/publicdomain/zero/1.0/"
 msgstr ""
 
-#: ../../source/reference/index.rst:14 1a246e9110684d5d91b653ba82dc41d4
+#: ../../source/reference/index.rst:14 1d8fc92afafc4d998471684156a54cf3
 msgid "This is a placeholder, to get set up with readthedocs."
 msgstr ""
 

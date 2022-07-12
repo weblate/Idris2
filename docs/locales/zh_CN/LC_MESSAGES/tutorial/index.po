@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/index.rst:5 7e116e0a604344fe85eeb06d738e706f
+#: ../../source/tutorial/index.rst:5 5fce6a57c8324ce89ba86d4594fcaf67
 msgid "A Crash Course in Idris 2"
 msgstr ""
 
-#: ../../source/tutorial/index.rst:7 b5fc530080f84d1b8e604edb3959516a
+#: ../../source/tutorial/index.rst:7 07cd1354c8b24920827d6d98edb07f9e
 msgid ""
 "This is a crash course in Idris 2 (sort of a tutorial, but rather less "
 "gentle I'm afraid!). It provides a brief introduction to programming in "
@@ -30,13 +30,13 @@ msgid ""
 "Haskell or OCaml."
 msgstr ""
 
-#: ../../source/tutorial/index.rst:13 a6cfba2f73064e9f8adf86edf48afaf5
+#: ../../source/tutorial/index.rst:13 db546f0a1acd4318a7d0c46470e7a0f2
 msgid ""
 "This has been revised and updated from the Idris 1 tutorial. For details "
 "of changes since Idris 1, see :ref:`updates-index`."
 msgstr ""
 
-#: ../../source/tutorial/index.rst:17 cbb98e8f4e4846cd8e784086c9f84807
+#: ../../source/tutorial/index.rst:17 f84e9a34fde54bb4897c6db31f914d44
 msgid ""
 "The documentation for Idris has been published under the Creative Commons"
 " CC0 License. As such to the extent possible under law, *The Idris "
@@ -44,7 +44,7 @@ msgid ""
 "Documentation for Idris."
 msgstr ""
 
-#: ../../source/tutorial/index.rst:22 b08c388659c74029a10c1436091ce191
+#: ../../source/tutorial/index.rst:22 6336ad683a5241559dcd68e5b55fd34c
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "http://creativecommons.org/publicdomain/zero/1.0/"

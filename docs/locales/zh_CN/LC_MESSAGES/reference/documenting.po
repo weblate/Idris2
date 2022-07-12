@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/reference/documenting.rst:5 a1359bbb01654b07be5d6ed1e84363dd
+#: ../../source/reference/documenting.rst:5 6b55bdcad768410bba65c5eb1148f855
 msgid "Documenting Idris Code"
 msgstr ""
 
-#: ../../source/reference/documenting.rst:7 1151b0a53b8c4c529e584daa6edb8bf7
+#: ../../source/reference/documenting.rst:7 b76b8c70b30e4ba08463e219d7c5b998
 msgid ""
 "Idris documentation comes in two major forms: comments, which exist for a"
 " reader’s edification and are ignored by the compiler, and inline API "
@@ -31,11 +31,11 @@ msgid ""
 " Emacs, ``<LocalLeader>h`` in Vim)."
 msgstr ""
 
-#: ../../source/reference/documenting.rst:15 52a41cc339624cf3853cda86fe0f2947
+#: ../../source/reference/documenting.rst:15 70d5544078764bd2989b8a0d4f7286dd
 msgid "Comments"
 msgstr ""
 
-#: ../../source/reference/documenting.rst:17 18c093a93dc9482baccfd3cc8153378d
+#: ../../source/reference/documenting.rst:17 c6817eeee7b94d5caad080cc22b98b69
 msgid ""
 "Use comments to explain why code is written the way that it is. Idris’s "
 "comment syntax is the same as that of Haskell: lines beginning with "
@@ -45,11 +45,11 @@ msgid ""
 " of Idris code."
 msgstr ""
 
-#: ../../source/reference/documenting.rst:25 2b788667a7174a72b3655e78ece0eeb6
+#: ../../source/reference/documenting.rst:25 863e9d7ea0384dfdb0fd70fe77697c34
 msgid "Inline Documentation"
 msgstr ""
 
-#: ../../source/reference/documenting.rst:27 f2bd34733a9842fdb09aa15d6006eabf
+#: ../../source/reference/documenting.rst:27 784e0f465bf14e92b97ceb9a65c86c54
 msgid ""
 "Idris also supports a comprehensive and rich inline syntax for Idris code"
 " to be generated. This syntax also allows for named parameters and "
@@ -57,7 +57,7 @@ msgid ""
 "syntax similar to Javadoc parameter annotations."
 msgstr ""
 
-#: ../../source/reference/documenting.rst:32 da6e83560cd04999a081e4d07aa9e678
+#: ../../source/reference/documenting.rst:32 5b3960aee5324d7cb82202a0e59f4ed3
 msgid ""
 "Documentation always comes before the declaration being documented. "
 "Inline documentation applies to either top-level declarations or to "
@@ -66,7 +66,7 @@ msgid ""
 "their names."
 msgstr ""
 
-#: ../../source/reference/documenting.rst:38 fbc122629082461587520040ed99bf11
+#: ../../source/reference/documenting.rst:38 1083086a136347449be490dd3f5ccae2
 msgid ""
 "The inline documentation for a declaration is an unbroken string of "
 "lines, each of which begins with ``|||`` (three pipe symbols). The first "
@@ -80,7 +80,7 @@ msgid ""
 "Some description`` that is placed before the declaration."
 msgstr ""
 
-#: ../../source/reference/documenting.rst:50 a812cd0af721438585e710989bc23e71
+#: ../../source/reference/documenting.rst:50 c7ad3cd2e6b74e4bb52f8ca43b26fb37
 msgid ""
 "Documentation is written in Markdown, though not all contexts will "
 "display all possible formatting (for example, images are not displayed "

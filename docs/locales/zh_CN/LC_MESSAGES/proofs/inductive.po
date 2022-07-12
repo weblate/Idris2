@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/proofs/inductive.rst:5 b3c46947feb64ca8a491e9688430f42b
+#: ../../source/proofs/inductive.rst:5 29b4855a6900432694723dd55f62b2ae
 msgid "Inductive Proofs"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:7 4fcc486c77e44477ba2a03cb8aa3b8cd
+#: ../../source/proofs/inductive.rst:7 41c30213c73542c1a9c002c4520fd2db
 msgid ""
 "Before embarking on proving ``plus_commutes`` in Idris itself, let us "
 "consider the overall structure of a proof of some property of natural "
 "numbers. Recall that they are defined recursively, as follows:"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:17 b6ebd93e7f9f4167923cef8171ab8d78
+#: ../../source/proofs/inductive.rst:17 4fd4e3e57833497aaeea4622565d91ff
 msgid ""
 "A *total* function over natural numbers must both terminate, and cover "
 "all possible inputs. Idris checks functions for totality by checking that"
@@ -37,7 +37,7 @@ msgid ""
 "case). Recalling ``plus``:"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:29 7151eb0711f14c12aa24a1728cf37f88
+#: ../../source/proofs/inductive.rst:29 9ae1b609831c4e82a1e7ed125e2dbb19
 msgid ""
 "This is total because it covers all possible inputs (the first argument "
 "can only be ``Z`` or ``S k`` for some ``k``, and the second argument "
@@ -46,24 +46,24 @@ msgid ""
 " the base case ``Z`` in any sequence of recursive calls."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:35 d347eba0eaa442ed860f9ec0f59e436e
+#: ../../source/proofs/inductive.rst:35 9f3679a63e05471383a75e66a7446c95
 msgid ""
 "In some sense, this resembles a mathematical proof by induction (and this"
 " is no coincidence!). For some property ``P`` of a natural number ``x``, "
 "we can show that ``P`` holds for all ``x`` if:"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:39 db87aa96bbd646fe82ab320b82e38dee
+#: ../../source/proofs/inductive.rst:39 171f5973349d45be8fe2c492b5a8a95d
 msgid "``P`` holds for zero (the base case)."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:41 b9c430b33b174ab5a14b863769bc4bbf
+#: ../../source/proofs/inductive.rst:41 1f28628183bc41e080f332229c314169
 msgid ""
 "Assuming that ``P`` holds for ``k``, we can show ``P`` also holds for ``S"
 " k`` (the inductive step)."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:44 562c101d8892419484775cb59b1cd989
+#: ../../source/proofs/inductive.rst:44 bd777086d7704e3d852679fd332a4359
 msgid ""
 "In ``plus``, the property we are trying to show is somewhat trivial (for "
 "all natural numbers ``x``, there is a ``Nat`` which need not have any "
@@ -75,13 +75,13 @@ msgid ""
 "function capturing all such inductive definitions:"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:64 0ec11ea1e6aa46e8ac4d8f45b48f2581
+#: ../../source/proofs/inductive.rst:64 76837da8502a43d5a0ac9fb23ccd0a23
 msgid ""
 "Using ``nat_induction``, we can implement an equivalent inductive version"
 " of ``plus``:"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:77 e22dfe4dc9de466891fbb950b9141e19
+#: ../../source/proofs/inductive.rst:77 10693ea9c74f4cdb9252f409a43aa86b
 msgid ""
 "To prove that ``plus n m = plus m n`` for all natural numbers ``n`` and "
 "``m``, we can also use induction. Either we can fix ``m`` and perform "
@@ -89,53 +89,53 @@ msgid ""
 "performing induction on ``n``, we have:"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:82 bd2c2eedaa72495ea1ae0f72c2a21f5c
+#: ../../source/proofs/inductive.rst:82 6fcf363f7cd948f5bc7be9b0c8f4daca
 msgid "Property ``prop`` is ``\\x => plus x m = plus m x``."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:84 62fe86f1d9b545fe91828c73c76db368
+#: ../../source/proofs/inductive.rst:84 ba34f0ed0abe47768e09de803c7ddccc
 msgid "Show that ``prop`` holds in the base case and inductive step:"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst c617e1963c3f47aba557fc71ba513370
+#: ../../source/proofs/inductive.rst b31c52bc18464af49cbcb4f23b735dbc
 msgid "Base case: ``prop Z``, i.e."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst ef52b420771d446f8179d660c5f8d862
+#: ../../source/proofs/inductive.rst 790ddb58e9d640f5aa10e7e0f4d5d838
 msgid "``plus Z m = plus m Z``, which reduces to"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst f1b8f62a90004f22907ae00cfcc26061
+#: ../../source/proofs/inductive.rst 3ad45a525e944719a85c4d1a5afa83a7
 msgid "``m = plus m Z`` due to the definition of ``plus``."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst 7d8330fa5905468e83653859e2ff40c4
+#: ../../source/proofs/inductive.rst 96ebfec255f64229b60021b58914b2e8
 msgid ""
 "Inductive step: Inductively, we know that ``prop k`` holds for a "
 "specific, fixed ``k``, i.e."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst 6035d96d742d4b808ed5f73e94a21958
+#: ../../source/proofs/inductive.rst 05dd724b18594c57a0d5ade53c37b6c3
 msgid ""
 "``plus k m = plus m k`` (the induction hypothesis). Given this, show "
 "``prop (S k)``, i.e."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst eb99487ba7ac43eab4664bfad46674b3
+#: ../../source/proofs/inductive.rst ff3fd93f91a24b3ea7016fe79d57154d
 msgid "``plus (S k) m = plus m (S k)``, which reduces to"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst 273c440c38a04d38bc1a2eb4b94395a0
+#: ../../source/proofs/inductive.rst cbf377088e33405eb7f9ad5caff07980
 msgid ""
 "``S (plus k m) = plus m (S k)``. From the induction hypothesis, we can "
 "rewrite this to"
 msgstr ""
 
-#: ../../source/proofs/inductive.rst ad98f3790e264639ab5ae293cddb67af
+#: ../../source/proofs/inductive.rst 41eba47e6b6b4401ac403cf4bf8e2d4d
 msgid "``S (plus m k) = plus m (S k)``."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:96 80ff80a64cea45128cda3d804399e2db
+#: ../../source/proofs/inductive.rst:96 066e9680648a4bae8fdab62e0b5909dc
 msgid ""
 "To complete the proof we therefore need to show that ``m = plus m Z`` for"
 " all natural numbers ``m``, and that ``S (plus m k) = plus m (S k)`` for "
@@ -143,7 +143,7 @@ msgid ""
 "induction, this time on ``m``."
 msgstr ""
 
-#: ../../source/proofs/inductive.rst:101 dcbb53ec79704bd68dc6566c35e9ef1f
+#: ../../source/proofs/inductive.rst:101 f6575b19afcd4e509e8a985107143102
 msgid ""
 "We are now ready to embark on a proof of commutativity of ``plus`` "
 "formally in Idris."

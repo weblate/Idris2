@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/app/exceptionsstate.rst:2 fbd0ed1bd16946dda2db3d3588375387
+#: ../../source/app/exceptionsstate.rst:2 c24ef6f5c8a44b9aa2322e439cd62240
 msgid "Exceptions and State"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:4 1632089b5d144b8b8a54695ac2e535c6
+#: ../../source/app/exceptionsstate.rst:4 63a92dd8e35f4698bcab2e2b14b547dd
 msgid ""
 "``Control.App`` is primarily intended to make it easier to manage the "
 "common cases of applications with exceptions and state. We can throw and "
@@ -29,24 +29,24 @@ msgid ""
 "``App``) and introduce new global state."
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:10 d7642e625085419e86018b9025198d7d
+#: ../../source/app/exceptionsstate.rst:10 b482cf57c0c74946b2896d2d6538f6d9
 msgid "Exceptions"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:12 6f15bfb01aa04d969fcb2f418d950286
+#: ../../source/app/exceptionsstate.rst:12 33b7d41950214129aff7303f428705b2
 msgid ""
 "The ``List Error`` is a list of error types, usable via the ``Exception``"
 " interface defined in ``Control.App``:"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:21 1c31e0f760ff43c6b35bfdaddd6fb4e7
+#: ../../source/app/exceptionsstate.rst:21 936f4abddaee4b3db8d0ec36a6e5e093
 msgid ""
 "We can use ``throw`` and ``catch`` for some exception type ``err`` as "
 "long as the exception type exists in the list of errors. This is checked "
 "with the ``HasErr`` predicate, also defined in ``Control.App``:"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:33 86e4b90e69204c02815527c88e0385fd
+#: ../../source/app/exceptionsstate.rst:33 918a7b98c9f34944a5be84673ce34dc8
 msgid ""
 "Note the ``HasErr`` constraint on ``Exception``: this is one place where "
 "it is notationally convenient that the ``auto`` implicit mechanism and "
@@ -55,39 +55,39 @@ msgid ""
 "code which might throw, handling any exceptions:"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:46 6e330021b544420e9a87fc4da95ec67d
+#: ../../source/app/exceptionsstate.rst:46 103b43c6d8884529a52ee3817e392c27
 msgid "Adding State"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:48 94018515434a4b24ac3c15c3cd35a8ea
+#: ../../source/app/exceptionsstate.rst:48 ce740325955045658fead53336de061a
 msgid ""
 "Applications will typically need to keep track of state, and we support "
 "this primitively in ``App`` using a ``State`` type, defined in "
 "``Control.App``:"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:56 4673e423d7a447bc95c0a835ccbcdafa
+#: ../../source/app/exceptionsstate.rst:56 96212af10fe047879d54ae147580003d
 msgid ""
 "The ``tag`` is used purely to distinguish between different states, and "
 "is not required at run-time, as explicitly stated in the types of ``get``"
 " and ``put``, which are used to access and update a state:"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:65 cd470723d6d146729e858ee2c5258401
+#: ../../source/app/exceptionsstate.rst:65 f49836941e4048058433487f280f9e0e
 msgid ""
 "These use an ``auto``-implicit to pass around a ``State`` with the "
 "relevant ``tag`` implicitly, so we refer to states by tag alone. In "
 "``helloCount`` earlier, we used an empty type ``Counter`` as the tag:"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:74 3314f02bafcc4e089da2073298d455e2
+#: ../../source/app/exceptionsstate.rst:74 5c09a3c2d13d4c93a975c157d870c2d6
 msgid ""
 "The list of errors ``e`` is used to ensure that states are only usable in"
 " the list of errors in which they are introduced. States are introduced "
 "using ``new``:"
 msgstr ""
 
-#: ../../source/app/exceptionsstate.rst:82 e178247ced094bbdbfa579d185ffc4f6
+#: ../../source/app/exceptionsstate.rst:82 fc39cb023df948c6a51657c1fedb842f
 msgid ""
 "Note that the type tells us ``new`` runs the program with the state "
 "exactly once. Rather than using ``State`` and ``Exception`` directly, "

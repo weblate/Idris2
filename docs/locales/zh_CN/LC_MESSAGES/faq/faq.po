@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/faq/faq.rst:3 97be641d4a5e4434bc4598a6e3fe272b
+#: ../../source/faq/faq.rst:3 63c06f37e91b470f9f36b3d9eb209e77
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#: ../../source/faq/faq.rst:6 60d8b1429b4c4cbc9917c326f7128629
+#: ../../source/faq/faq.rst:6 e8b2034e031f4d7e82497257d26b12ff
 msgid "What are the aims of the Idris project?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:8 79df4fd649954b18a8eb5e9a84d1c414
+#: ../../source/faq/faq.rst:8 ee5c34ca16f2445c9e7e27aad9c71d6b
 msgid ""
 "Idris aims to make advanced type-related programming techniques "
 "accessible to software practitioners. An important philosophy that we "
@@ -34,14 +34,14 @@ msgid ""
 "them to do so."
 msgstr ""
 
-#: ../../source/faq/faq.rst:13 8a9e04d08e844b8a9534a983846e15ff
+#: ../../source/faq/faq.rst:13 6c836bb0c5c24b53b2c5c3c75a8800c5
 msgid ""
 "Many of the answers in this FAQ demonstrate this philosophy, and we "
 "always bear this in mind when making language and library design "
 "decisions."
 msgstr ""
 
-#: ../../source/faq/faq.rst:16 433b3b95d6f24eebbd809537248d07b5
+#: ../../source/faq/faq.rst:16 a6d972bd93c544beb867d9525f07fc55
 msgid ""
 "Idris is primarily a research project, led by Edwin Brady at the "
 "University of St Andrews, and has benefited from SICSA "
@@ -51,50 +51,50 @@ msgid ""
 "Nevertheless, we are still trying to make it as widely usable as we can!"
 msgstr ""
 
-#: ../../source/faq/faq.rst:24 321c0cb0d924454cb1c8f623a4da955d
+#: ../../source/faq/faq.rst:24 2f41c72ade7149e0b3c85c12d928a5b6
 msgid "Where can I find libraries? Is there a package manager?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:26 d8d28e3cfe834f25b7257ee319b9ad9c
+#: ../../source/faq/faq.rst:26 e8235262437946b5b80c7bca43b9803b
 msgid ""
 "We don't yet have a package manager, but you can still find a source of "
 "libraries on the wiki: https://github.com/idris-"
 "lang/Idris2/wiki/1-%5BLanguage%5D-Libraries"
 msgstr ""
 
-#: ../../source/faq/faq.rst:29 4d7e92a5cba64a1fb6d25dbc2d543720
+#: ../../source/faq/faq.rst:29 f7fe82c3297e4a168883daea1c52275a
 msgid ""
 "Fortunately, the dependencies are currently not that complicated, but "
 "we'd still like a package manager to help! There isn't an official one "
 "yet, but two are in development:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:33 9deb38306eef4cafbd11f4e4d0c6bf1e
+#: ../../source/faq/faq.rst:33 04af4ba5c1bd4d248ac95892d27fded6
 msgid "Inigo: https://github.com/idris-community/inigo"
 msgstr ""
 
-#: ../../source/faq/faq.rst:34 2725237b89ed4251932f23a5bebbe277
+#: ../../source/faq/faq.rst:34 e9a11953c9ab4c55aa8e9e6351b6e8e8
 msgid "sae: https://github.com/DoctorRyner/sae"
 msgstr ""
 
-#: ../../source/faq/faq.rst:37 1f921dcccfac494896c0e2e8c976c276
+#: ../../source/faq/faq.rst:37 151cd26169d24488b3290872e72bc552
 msgid "Can Idris 2 compile itself?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:39 e2483d46d9f34ac18cefe6955d1d67c5
+#: ../../source/faq/faq.rst:39 df7535d47fb84870b227fafe28c8015a
 msgid ""
 "Yes, Idris 2 is implemented in Idris 2. By default, it targets `Chez "
 "Scheme <https://cisco.github.io/ChezScheme/>`_, so you can bootstrap from"
 " the generated Scheme code, as described in Section :ref:`sect-starting`."
 msgstr ""
 
-#: ../../source/faq/faq.rst:44 c934ce3997e04d22a2a539460128b878
+#: ../../source/faq/faq.rst:44 e73eb3c9dac34fbfa0f631ca43ecce85
 msgid ""
 "Why does Idris 2 target Scheme? Surely a dynamically typed target "
 "language is going to be slow?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:46 48f738f49f8847a8a1a97dae552a59b1
+#: ../../source/faq/faq.rst:46 0e58fd6f53d8461c9782c1bdbf7753c5
 msgid ""
 "You may be surprised at how fast Chez Scheme is! `Racket "
 "<https://download.racket-lang.org/>`_, as an alternative target, also "
@@ -104,7 +104,7 @@ msgid ""
 "allows us to turn off run time checks, which we do."
 msgstr ""
 
-#: ../../source/faq/faq.rst:52 77103ef8206b4771abbc4308c3292513
+#: ../../source/faq/faq.rst:52 2dffcb42f59a468c90b0858fca993f0a
 msgid ""
 "As anecdotal evidence of the performance improvement, we compared the "
 "performance of the Idris 2 runtime with the Idris 1 runtime, using a "
@@ -113,61 +113,61 @@ msgid ""
 "with the versions of 23rd May 2020, the performance was:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:58 f3837d190cce486c9adf56fc70246fe2
+#: ../../source/faq/faq.rst:58 70cba0721f0a4241bf5ab5f3bf85ce5e
 msgid ""
 "Idris 2 (with the Chez Scheme runtime) checked its own source in 93 "
 "seconds."
 msgstr ""
 
-#: ../../source/faq/faq.rst:59 7373057425644a52ac6a796fb3d9781d
+#: ../../source/faq/faq.rst:59 8570974c68ea48a899a7852a338ac527
 msgid ""
 "The bootstrapping Idris 2 (compiled with Idris 1) checked the same source"
 " in 125s."
 msgstr ""
 
-#: ../../source/faq/faq.rst:60 1291f892ac344e99988977d4a4908911
+#: ../../source/faq/faq.rst:60 834ab497171e4754bd5d5483970fde0b
 msgid ""
 "Idris 1 checked the bootstrapping Idris 2's source (the same as the "
 "above, but with minor variations due to the syntax changes) in 768 "
 "seconds."
 msgstr ""
 
-#: ../../source/faq/faq.rst:63 484fcb476e7e4ab4952402e673a793e4
+#: ../../source/faq/faq.rst:63 38f332634cf64bf88ec12e8d211ab15e
 msgid ""
 "Unfortunately we can't repeat this experiment with the latest version, "
 "since the bootstrapping Idris 2 is no longer able to build the current "
 "version."
 msgstr ""
 
-#: ../../source/faq/faq.rst:66 186e21c1153e4071b6513d67fadf75c7
+#: ../../source/faq/faq.rst:66 dc8c1780e7f24e92806eb1af5df06f0f
 msgid ""
 "This is, nevertheless, not intended to be a long term solution, even if "
 "it is a very convenient way to bootstrap."
 msgstr ""
 
-#: ../../source/faq/faq.rst:70 8b1abf3b478d44fbb1d1b7d4ab24c5c0
+#: ../../source/faq/faq.rst:70 6ba790d1d7f3443fb645e8eb5ad3a6cd
 msgid "Can Idris 2 generate Javascript? What about plug-in code generators?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:72 8cf9a4722fa54bfcadcb3ee4836ea777
+#: ../../source/faq/faq.rst:72 f1b3bb3f486945029163c8d1f45a80ae
 msgid ""
 "Yes! A `JavaScript code generator "
 "<https://idris2.readthedocs.io/en/latest/backends/javascript.html>`_ is "
 "built in, and can target either the browser or NodeJS."
 msgstr ""
 
-#: ../../source/faq/faq.rst:75 4c83582a44bf4925bca4ce29c0215a80
+#: ../../source/faq/faq.rst:75 76ca6ed6371f457ca8628eb36e39d8aa
 msgid ""
 "Like Idris 1, Idris 2 `supports plug-in code generation "
 "<https://idris2.readthedocs.io/en/latest/backends/custom.html>`_ to allow"
 " you to write a back end for the platform of your choice."
 msgstr ""
 
-#: ../../source/faq/faq.rst:80 079e4ea7ed0b47c2a01d2e837e168d88
+#: ../../source/faq/faq.rst:80 4698e412314d42a39d43f077f298f7b3
 msgid "What are the main differences between Idris 1 and Idris 2?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:82 177a7bb940aa4674b6e0b6395aa86fe9
+#: ../../source/faq/faq.rst:82 a19051c4d0474df0a76c9d748aeedfc2
 msgid ""
 "The most important difference is that Idris 2 explicitly represents "
 "*erasure* in types, so that you can see at compile time which function "
@@ -175,27 +175,27 @@ msgid ""
 "time. You can see more details in :ref:`sect-multiplicities`."
 msgstr ""
 
-#: ../../source/faq/faq.rst:87 1b020b3ea69445b3a9be65882b4b71b2
+#: ../../source/faq/faq.rst:87 d2d966ecea28473fbdb1fcd3cb386729
 msgid ""
 "Idris 2 has significantly better type checking performance (perhaps even "
 "an order of magnitude!) and generates significantly better code."
 msgstr ""
 
-#: ../../source/faq/faq.rst:90 ff1e61bae1984ac1923ebf97f2cdc16e
+#: ../../source/faq/faq.rst:90 de3bcec3bacb4998bedf9d3b98b9a07c
 msgid ""
 "Also, being implemented in Idris, we've been able to take advantage of "
 "the type system to remove some significant sources of bugs!"
 msgstr ""
 
-#: ../../source/faq/faq.rst:93 74904626ad9f424a8cc29c6034b749dc
+#: ../../source/faq/faq.rst:93 1282ee8d0bab42fa89ffbd71dfeeacb5
 msgid "You can find more details in Section :ref:`updates-index`."
 msgstr ""
 
-#: ../../source/faq/faq.rst:96 6e863979b58046f7862b4455b41a7533
+#: ../../source/faq/faq.rst:96 8d54a5374ddc4011bb17dae41b7d9f26
 msgid "Why aren't there more linearity annotations in the library?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:98 8a9ac6e7d0a54c01b46631a9ba92bf68
+#: ../../source/faq/faq.rst:98 9ce37cc6a3d24490aa9b0dfb25594c8b
 msgid ""
 "In theory, now that Idris 2 is based on Quantitative Type Theory (see "
 "Section :ref:`sect-multiplicities`), we can write more precise types in "
@@ -204,13 +204,13 @@ msgid ""
 " would happen if we did::"
 msgstr ""
 
-#: ../../source/faq/faq.rst:107 0dc94fed260e4511830fe81f3d12e0d9
+#: ../../source/faq/faq.rst:107 a5a82ea6a2b34f008ad78ba7537a87fb
 msgid ""
 "This is definitely correct, because ``x`` is used exactly once. However, "
 "we also have::"
 msgstr ""
 
-#: ../../source/faq/faq.rst:112 e15acb947f0e440ca1f77ec389150ee1
+#: ../../source/faq/faq.rst:112 2a397c2943e04d57901344c4fbd38556
 msgid ""
 "We can't guarantee that the function passed to ``map`` is linear in its "
 "argument in general, and so we can no longer say ``map id xs`` since the "
@@ -218,7 +218,7 @@ msgid ""
 "passed to ``map``."
 msgstr ""
 
-#: ../../source/faq/faq.rst:117 af87b3c09d7645708bc99447096870c5
+#: ../../source/faq/faq.rst:117 162bc12da12a44ce9f7a07b48b9ae83f
 msgid ""
 "Eventually, we hope to extend the core language with multiplicity "
 "polymorphism which will help resolve these problems. Until then, we "
@@ -227,11 +227,11 @@ msgid ""
 "linearity, its presence mustn't impact the way you write programs."
 msgstr ""
 
-#: ../../source/faq/faq.rst:124 d86c65377e86466c8b1d3190bd4821a1
+#: ../../source/faq/faq.rst:124 c376b4e96f4a430c95aea02aae53f7c2
 msgid "How do I get command history in the Idris2 REPL?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:126 f01f8d66a66c4b9e949c877e4f8533ee
+#: ../../source/faq/faq.rst:126 ec5e02ec178c4674a21fc10f922f096b
 msgid ""
 "The Idris2 REPL does not support readline in the interest of keeping "
 "dependencies minimal. A useful work around is to install `rlwrap "
@@ -240,7 +240,7 @@ msgid ""
 "``rlwrap idris2``."
 msgstr ""
 
-#: ../../source/faq/faq.rst:132 b5ed6e250c5f4ea8b5b529b347af004f
+#: ../../source/faq/faq.rst:132 59b8aeae1ac545e79016539bc98aabf7
 msgid ""
 "The goal, eventually, is to use the IDE mode or the Idris API as the "
 "basis of an implementation of a sophisticated REPL, developed "
@@ -249,11 +249,11 @@ msgid ""
 "help you get started!"
 msgstr ""
 
-#: ../../source/faq/faq.rst:138 d9338d539958412cad21bed990cccc55
+#: ../../source/faq/faq.rst:138 077f0ea0f0de405f9d8a3a4950a2fe94
 msgid "Why does Idris use eager evaluation rather than lazy?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:140 b1aaa1a2418747149ba3e2e80fe42051
+#: ../../source/faq/faq.rst:140 434e424c98964801800ca549cf760afc
 msgid ""
 "Idris uses eager evaluation for more predictable performance, in "
 "particular because one of the longer term goals is to be able to write "
@@ -263,7 +263,7 @@ msgid ""
 " value. In a lazy language, consider a value of type ``Int``:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:151 2c23a38163ec415aaec1c9b4f9fc6c0d
+#: ../../source/faq/faq.rst:151 0f35e0695d514389a5a4d2ed08a8f631
 msgid ""
 "What is the representation of ``thing`` at run-time? Is it a bit pattern "
 "representing an integer, or is it a pointer to some code which will "
@@ -271,43 +271,43 @@ msgid ""
 "this distinction precise, in the type:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:161 ef609b975cf6402ebddaaa5db32b434f
+#: ../../source/faq/faq.rst:161 a8ff0aadf5914724945c01b164ce58f3
 msgid ""
 "Here, it is clear from the type that ``thing_val`` is guaranteed to be a "
 "concrete ``Int``, whereas ``thing_comp`` is a computation which will "
 "produce an ``Int``."
 msgstr ""
 
-#: ../../source/faq/faq.rst:166 f0abbfe09bf949709217f4deaab36545
+#: ../../source/faq/faq.rst:166 2567a91636b940beb510e587f297074a
 msgid "How can I make lazy control structures?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:168 4242f6a173564057b5d7e44a969e9189
+#: ../../source/faq/faq.rst:168 caf94d26c0dc4e41a4da7bc2cbeb6450
 msgid ""
 "You can make control structures using the special Lazy type. For example,"
 " one way to implement a non-dependent ``if...then...else...`` would be "
 "via a function named ``ifThenElse``:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:178 ec33ef6a23a84f5e8fdd7bdd59e39330
+#: ../../source/faq/faq.rst:178 e773be844ca14206a65098e0b081ff87
 msgid ""
 "The type ``Lazy a`` for ``t`` and ``e`` indicates that those arguments "
 "will only be evaluated if they are used, that is, they are evaluated "
 "lazily."
 msgstr ""
 
-#: ../../source/faq/faq.rst:181 f0f36959369541f8adce975726212f62
+#: ../../source/faq/faq.rst:181 afe14ca35bc045a582702bd6aab70fd1
 msgid ""
 "By the way: we don't actually implement ``if...then...else...`` this way "
 "in Idris 2! Rather, it is transformed to a ``case`` expression which "
 "allows dependent ``if``."
 msgstr ""
 
-#: ../../source/faq/faq.rst:186 fe0d3c3997c84c49b19872cf0d56e0d3
+#: ../../source/faq/faq.rst:186 b7590f52563e4ccd9e746b41bef5da2b
 msgid "Evaluation at the REPL doesn't behave as I expect. What's going on?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:188 de98297fd54a4f71a2cee9e4f5587358
+#: ../../source/faq/faq.rst:188 e7b59c3cb38a460780d8f2bcf0901010
 msgid ""
 "Being a fully dependently typed language, Idris has two phases where it "
 "evaluates things, compile-time and run-time. At compile-time it will only"
@@ -321,7 +321,7 @@ msgid ""
 "needed for type checking."
 msgstr ""
 
-#: ../../source/faq/faq.rst:198 75be71df28ff417d8542a7f0b0684be0
+#: ../../source/faq/faq.rst:198 a760a8e9c0374ea8acc3c6250753c17d
 msgid ""
 "The REPL, for convenience, uses the compile-time notion of evaluation. As"
 " well as being easier to implement (because we have the evaluator "
@@ -329,115 +329,115 @@ msgid ""
 " checker. So you can see the difference between:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:211 b29e54cd07cb41018c6692c0bfb4c845
+#: ../../source/faq/faq.rst:211 2a8a648b59c04cfebb89a65455844cd4
 msgid ""
 "If you want to compile and execute an expression at the REPL, you can use"
 " the ``:exec`` command. In this case, the expression must have type ``IO "
 "a`` (for any ``a``, although it won't print the result)."
 msgstr ""
 
-#: ../../source/faq/faq.rst:216 840adf9247a640f8a5da91602292b62c
+#: ../../source/faq/faq.rst:216 ab25ac8e14ac485da6a5d7b593cdcb7d
 msgid "Why can't I use a function with no arguments in a type?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:218 33325835a3094d1296184aa1e9e35f39
+#: ../../source/faq/faq.rst:218 c4463139ba1c464f88a8fe6de278fc5e
 msgid ""
 "If you use a name in a type which begins with a lower case letter, and "
 "which is not applied to any arguments, then Idris will treat it as an "
 "implicitly bound argument. For example:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:226 49516c057bfa48bba17fe07833374d3b
+#: ../../source/faq/faq.rst:226 142390b7b55f41cf84d93e6d4f033fe7
 msgid ""
 "Here, ``n``, ``m``, and ``ty`` are implicitly bound. This rule applies "
 "even if there are functions defined elsewhere with any of these names. "
 "For example, you may also have:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:235 0bd93c4ca3ee46268ea25169558dd205
+#: ../../source/faq/faq.rst:235 92a34a01f5be4013972d732f669f47fb
 msgid ""
 "Even in this case, ``ty`` is still considered implicitly bound in the "
 "definition of ``append``, rather than making the type of ``append`` "
 "equivalent to..."
 msgstr ""
 
-#: ../../source/faq/faq.rst:242 84abfb2efc674ef6bd443646c90262e0
+#: ../../source/faq/faq.rst:242 39ce0eb8a13e414c8ebb2cd43331f078
 msgid ""
 "...which is probably not what was intended!  The reason for this rule is "
 "so that it is clear just from looking at the type of ``append``, and no "
 "other context, what the implicitly bound names are."
 msgstr ""
 
-#: ../../source/faq/faq.rst:246 850337ae3c964d8d8024f0755937c778
+#: ../../source/faq/faq.rst:246 46072c9a344e468790141b4cda637da8
 msgid ""
 "If you want to use an unapplied name in a type, you have three options. "
 "You can either explicitly qualify it, for example, if ``ty`` is defined "
 "in the namespace ``Main`` you can do the following:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:254 79cf1942a55e4d0ebc83c424d5ca5a6d
+#: ../../source/faq/faq.rst:254 33f652ef69e74559bdcc5b3b9f205840
 msgid ""
 "Alternatively, you can use a name which does not begin with a lower case "
 "letter, which will never be implicitly bound:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:264 e84cc4ba8a2942d2848e5131ed6ebbb7
+#: ../../source/faq/faq.rst:264 0e25d1e286bb45e39277f3be9994891c
 msgid ""
 "As a convention, if a name is intended to be used as a type synonym, it "
 "is best for it to begin with a capital letter to avoid this restriction."
 msgstr ""
 
-#: ../../source/faq/faq.rst:267 458775329dca45d4b29c8ad0ba9dc680
+#: ../../source/faq/faq.rst:267 90bb89cf861a4f4390f3fddd4a707a38
 msgid ""
 "Finally, you can turn off the automatic binding of implicits with the "
 "directive:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:274 3e6ab992d5524313925cd5ccefd7a245
+#: ../../source/faq/faq.rst:274 6de3c9502898433f996acb709d540f99
 msgid ""
 "In this case, you can bind ``n`` and ``m`` as implicits, but not ``ty``, "
 "as follows:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:282 bf457a8a81084992a3a884cc6ddc9258
+#: ../../source/faq/faq.rst:282 0827185a0f8946249147aae0cef0246a
 msgid ""
 "Why don't the ``Functor``, ``Applicative``, ``Monad`` and other "
 "interfaces include the laws?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:284 d36097276fec448996eaffd71a413779
+#: ../../source/faq/faq.rst:284 1d9c7b8060db4520be7be874f4b7d3d7
 msgid ""
 "On the face of it, this sounds like a good idea, because the type system "
 "allows us to specify the laws. We don't do this in the prelude, though, "
 "for two main reasons:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:288 8728b428f9c740b39efe1c0a36d31038
+#: ../../source/faq/faq.rst:288 23ff765fb86b4a4fa1e50dcf270bc12b
 msgid ""
 "It goes against the philosophy (above) that Idris *allows* programmers to"
 " prove properties of their programs, but does not *require* it."
 msgstr ""
 
-#: ../../source/faq/faq.rst:290 93266726fa35408383ee9e5c51b3f9a7
+#: ../../source/faq/faq.rst:290 4e223380338b4776ad53f4762b6d00fa
 msgid ""
 "A valid, lawful, implementation may not necessarily be provably lawful "
 "within the Idris system, especially if it involves higher order "
 "functions."
 msgstr ""
 
-#: ../../source/faq/faq.rst:293 05da4ec03fec403ba4c045b4a79f0fb2
+#: ../../source/faq/faq.rst:293 f180a1b2f0a34c47a78582d1ab3242ad
 msgid ""
 "There are verified versions of the interfaces in ``Control.Algebra``, "
 "which extend interfaces with laws."
 msgstr ""
 
-#: ../../source/faq/faq.rst:297 4f5b61744961417e83ceb87345f1b451
+#: ../../source/faq/faq.rst:297 0a164b2b43de4d0f9b775276f5df1538
 msgid ""
 "I have an obviously terminating program, but Idris says it possibly isn't"
 " total. Why is that?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:299 3a1f710ece7f48da9e323ccf220b4e7a
+#: ../../source/faq/faq.rst:299 757d3dad40ca46a89fbc1ad4e74a67eb
 msgid ""
 "Idris can't decide in general whether a program is terminating due to the"
 " undecidability of the `Halting Problem "
@@ -448,17 +448,17 @@ msgid ""
 "must be at least one argument which converges to a base case."
 msgstr ""
 
-#: ../../source/faq/faq.rst:307 c2a8623a72834c58a84b2b1827ba1738
+#: ../../source/faq/faq.rst:307 567434821f8b4ce5990a704f1743c196
 msgid "Mutually recursive functions are supported"
 msgstr ""
 
-#: ../../source/faq/faq.rst:309 b1130a8a8af14876a28b72f607a296ff
+#: ../../source/faq/faq.rst:309 bb3f7e6d9a5643faa8be27efaeecc84f
 msgid ""
 "However, all functions on the path must be fully applied. In particular, "
 "higher order applications are not supported"
 msgstr ""
 
-#: ../../source/faq/faq.rst:312 5abe724bf24247fc822a7d602eafd1e2
+#: ../../source/faq/faq.rst:312 8ade815b7e5d40c08dfc4fe293557f65
 msgid ""
 "Idris identifies arguments which converge to a base case by looking for "
 "recursive calls to syntactically smaller arguments of inputs. e.g. ``k`` "
@@ -467,25 +467,25 @@ msgid ""
 "k)``."
 msgstr ""
 
-#: ../../source/faq/faq.rst:318 c07337f3aa6645f489473c19a2e43c09
+#: ../../source/faq/faq.rst:318 3392a1e63a9940208623e893b48dbcdf
 msgid ""
 "If you have a function which you believe to be terminating, but Idris "
 "does not, you can either restructure the program, or use the "
 "``assert_total`` function."
 msgstr ""
 
-#: ../../source/faq/faq.rst:323 ae18edd0227a4ca3a5be038f6a095697
+#: ../../source/faq/faq.rst:323 08cc6808df6444afbbde7c8b20854976
 msgid "Does Idris have universe polymorphism? What is the type of ``Type``?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:325 f6d02c3400f44f14a5c38f8d45b95db8
+#: ../../source/faq/faq.rst:325 5d8bea574499495c8308f03d04a1f5fa
 msgid ""
 "Idris 2 currently implements ``Type : Type``. Don't worry, this will not "
 "be the case forever! For Idris 1, the FAQ answered this question as "
 "follows:"
 msgstr ""
 
-#: ../../source/faq/faq.rst:328 e387c9fd0a3a4c8fb5c9a8b50fce2e54
+#: ../../source/faq/faq.rst:328 0835e3cbe0a94b7dacadfad4a5f27ae3
 msgid ""
 "Rather than universe polymorphism, Idris has a cumulative hierarchy of "
 "universes; ``Type : Type 1``, ``Type 1 : Type 2``, etc. Cumulativity "
@@ -495,22 +495,22 @@ msgid ""
 " will attempting to specify the universe level of any type."
 msgstr ""
 
-#: ../../source/faq/faq.rst:337 6a77ecdfdb894515906181677326d571
+#: ../../source/faq/faq.rst:337 68f26731d4d94cc29cea7019807e1f76
 msgid "What does the name “Idris” mean?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:339 201c125cf2544695953592231a81042b
+#: ../../source/faq/faq.rst:339 1681a3bfe7ef401d8eb97c64cb4c2362
 msgid ""
 "British people of a certain age may be familiar with this `singing dragon"
 " <https://www.youtube.com/watch?v=G5ZMNyscPcg>`_. If that doesn’t help, "
 "maybe you can invent a suitable acronym :-) ."
 msgstr ""
 
-#: ../../source/faq/faq.rst:344 736a0f8153244849b05f8640b392481e
+#: ../../source/faq/faq.rst:344 c6852d179a684fcab2138918899cac5b
 msgid "Where can I find the community standards for the Idris community?"
 msgstr ""
 
-#: ../../source/faq/faq.rst:346 b298809a776042308486b7f182386701
+#: ../../source/faq/faq.rst:346 0f3a6f65d4d34fa69e25bcc131e06718
 msgid ""
 "The Idris Community Standards are stated `here <https://www.idris-"
 "lang.org/pages/community-standards.html>`_"

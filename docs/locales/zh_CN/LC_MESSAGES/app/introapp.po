@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/app/introapp.rst:2 ad38466c592841feb08b3273068d0162
+#: ../../source/app/introapp.rst:2 94b2475e694d4f8c91dfa20565303ab6
 msgid "Introducing App"
 msgstr ""
 
-#: ../../source/app/introapp.rst:4 c505e753ce0d41818c32103aa2e21e6f
+#: ../../source/app/introapp.rst:4 f3699575ba6549c29747b213c438fdb0
 msgid ""
 "``App`` is declared as below, in a module ``Control.App``, which is part "
 "of the ``base`` libraries. It is parameterised by an implicit ``Path`` "
@@ -31,7 +31,7 @@ msgid ""
 "can be thrown, ``Error`` is a synonym for ``Type``):"
 msgstr ""
 
-#: ../../source/app/introapp.rst:19 8303f14220b94f0b9afdbb3011322f96
+#: ../../source/app/introapp.rst:19 f2bc8557d0664de3b52db49a8e8cdf7f
 msgid ""
 "It serves the same purpose as ``IO``, but supports throwing and catching "
 "exceptions, and allows us to define more constrained interfaces "
@@ -39,37 +39,37 @@ msgid ""
 " console IO:"
 msgstr ""
 
-#: ../../source/app/introapp.rst:29 23da3fa6871743bc950dbbadae95596e
+#: ../../source/app/introapp.rst:29 23be7801187242d8b31034967db705ed
 msgid "We can use this in a complete program as follows:"
 msgstr ""
 
-#: ../../source/app/introapp.rst:44 00095fdc907742e2a327f349426189b1
+#: ../../source/app/introapp.rst:44 a888e867d4574d6180e5b035c6f6a543
 msgid ""
 "Or, a program which supports console IO and carries an ``Int`` state, "
 "labelled ``Counter``:"
 msgstr ""
 
-#: ../../source/app/introapp.rst:58 963e58894b7e40cebe8b9901bc1f0bd5
+#: ../../source/app/introapp.rst:58 894a0e65380f4a3f824b057de8cc1173
 msgid ""
 "To run this as part of a complete program, we need to initialise the "
 "state."
 msgstr ""
 
-#: ../../source/app/introapp.rst:65 d9cd2e25f7b14de0b1f8005f96aa97d1
+#: ../../source/app/introapp.rst:65 e3bd07b8c43d41118ac0a5317f367fbe
 msgid ""
 "For convenience, we can list multiple interfaces in one go, using a "
 "function ``Has``, defined in ``Control.App``, to compute the interface "
 "constraints:"
 msgstr ""
 
-#: ../../source/app/introapp.rst:76 d0ed71228f3642e3b636b6bb1bdaaea8
+#: ../../source/app/introapp.rst:76 85ab751d2fb64dcfafc4d14eef3dd6c8
 msgid ""
 "The purpose of ``Path`` is to state whether a program can throw "
 "exceptions, so that we can know where it is safe to reference linear "
 "resources. It is declared as follows:"
 msgstr ""
 
-#: ../../source/app/introapp.rst:84 da82ac74245043259b56bfeff0a84e2b
+#: ../../source/app/introapp.rst:84 312a6cd669474e2793ee8f2742043463
 msgid ""
 "The type of ``App`` states that ``MayThrow`` is the default. We expect "
 "this to be the most common case. After all, realistically, most "
@@ -77,7 +77,7 @@ msgid ""
 "with the outside world."
 msgstr ""
 
-#: ../../source/app/introapp.rst:89 d9fc9e4e6d0542b1828e17ad0868bdfe
+#: ../../source/app/introapp.rst:89 1f6e0e2f3f924010b05817e34dcf2da6
 msgid ""
 "The ``0`` on the declaration of ``Has`` indicates that it can only be run"
 " in an erased context, so it will never be run at run-time. To run an "
@@ -85,7 +85,7 @@ msgid ""
 "that an ``Error`` is a synonym for ``Type``):"
 msgstr ""
 
-#: ../../source/app/introapp.rst:102 364ca4e885fe41eba49fd08f02b28618
+#: ../../source/app/introapp.rst:102 7a9f40ca8db04f30b4eb78bea2ee990e
 msgid ""
 "Generalising the ``Path`` parameter with ``l`` means that we can invoke "
 "``run`` for any application, whether the ``Path`` is ``NoThrow`` or "

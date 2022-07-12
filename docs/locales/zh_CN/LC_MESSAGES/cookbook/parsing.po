@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/cookbook/parsing.rst:2 ce035aa7b8ef4883b8a12636d960b4eb
+#: ../../source/cookbook/parsing.rst:2 87dbf5c419424138957bc4c8c2967f2f
 msgid "Parsing"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:4 e99b85c5dcf243a9b89228e4a8281b46
+#: ../../source/cookbook/parsing.rst:4 8fea0944fea04fc98a4c7890b5451f1b
 msgid ""
 "Idris 2 comes with a Lexing and a Parsing library built into the "
 "``contrib`` package."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:6 fc90a964d32541058c97f0c36d32974a
+#: ../../source/cookbook/parsing.rst:6 f52d389ed3a4424da8e371edeeacfa13
 msgid ""
 "For this cookbook, we will write a very simple parser for a lambda "
 "calculus parser that will accept the following language:"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:13 dcdb85294b3a424cb6681b8a36824555
+#: ../../source/cookbook/parsing.rst:13 dbb7d82b692945059bd1dbfcf011b763
 msgid ""
 "Once we write a lambda calculus parser, we will also see how we can take "
 "advantage of a powerful built in expression parser in Idris 2 to write a "
@@ -41,11 +41,11 @@ msgid ""
 "expression:"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:22 c19896601c5c4a9da4128d6398fe5c57
+#: ../../source/cookbook/parsing.rst:22 df3af786b87f4fa8821e3ae5261b7046
 msgid "Lexer"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:24 3e31b49053a241a7b405756278d3ce15
+#: ../../source/cookbook/parsing.rst:24 de406a0c0d8e4fe4af551eab21d6bfbc
 msgid ""
 "The main lexer module is under ``Text.Lexer``. This module contains "
 "``toTokenMap`` which is a function that converts a ``List (Lexer, k) -> "
@@ -55,13 +55,13 @@ msgid ""
 "like ``alphas``, ``intLit``, ``lineComment`` and ``blockComment``."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:30 9e7721c061b14a478925f886099aee70
+#: ../../source/cookbook/parsing.rst:30 19327f1a741941b5bef8f1d6cd21f503
 msgid ""
 "The ``Text.Lexer`` module also reexports ``Text.Lexer.Core``, "
 "``Text.Quantity`` and ``Text.Token``."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:32 3e836e194a0d4d3f89008fd8f84d3fd9
+#: ../../source/cookbook/parsing.rst:32 6777ab649fd74820b24dd3ecdea5c68e
 msgid ""
 "``Text.Lexer.Core`` provides the building blocks of the lexer, including "
 "a type called ``Recognise`` which is the underlying data type for the "
@@ -69,14 +69,14 @@ msgid ""
 "``lex`` which takes in a lexer and returns the tokens."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:36 a04d7628d67144c192308c67e06a3fed
+#: ../../source/cookbook/parsing.rst:36 7a7e212aae7a4459b39e8fcccf790239
 msgid ""
 "``Text.Quantity`` provides a data type ``Quantity`` which can be used "
 "with certain lexers to specify how many times something is expected to "
 "appear."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:39 61baf5580d484bf891a0c8eb66c72c97
+#: ../../source/cookbook/parsing.rst:39 fd1c3a0dd7114b6cad709d4492fd527c
 msgid ""
 "``Text.Token`` provides a data type ``Token`` that represents a parsed "
 "token, its kind and the text. This module also provides an important "
@@ -85,11 +85,11 @@ msgid ""
 "value."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:44 c8bd50e01b0449ba843e2ab869712092
+#: ../../source/cookbook/parsing.rst:44 fe65ace636dd4ba9b5194d221f464a02
 msgid "Parser"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:46 4a6eda3d7ff84958a0010b5a66ca5c40
+#: ../../source/cookbook/parsing.rst:46 4c0aa1035a8a414c82313187af2f0d7c
 msgid ""
 "The main parser module is under ``Text.Parser``. This module contains "
 "different grammar parsers, the main one being ``match`` which takes a "
@@ -98,13 +98,13 @@ msgid ""
 "we will only be using ``match``."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:50 66eca731bd454227a8ad710bdcc33c69
+#: ../../source/cookbook/parsing.rst:50 b43d7d9dc97c4a1c8114d7e56d4047c2
 msgid ""
 "The ``Text.Parser`` module reexports ``Text.Parser.Core``, "
 "``Text.Quantity`` and ``Text.Token``."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:52 d215b59170434bf39454b3e0a4c1b24d
+#: ../../source/cookbook/parsing.rst:52 4ae8ca4b8c9744e2be40c2aa12ba38e5
 msgid ""
 "``Text.Parser.Core`` provides the building blocks of the parser, "
 "including a type called ``Grammar`` which is the underlying data type for"
@@ -112,35 +112,35 @@ msgid ""
 "``parse`` which takes in a ``Grammar`` and returns the parsed expression."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:56 287037a5286d489e8be22a29cbe7aeb2
+#: ../../source/cookbook/parsing.rst:56 be85bf8a8ed147b7b57a7190f71dac9c
 msgid ""
 "We covered ``Text.Quantity`` and ``Text.Token`` in the Lexer section so "
 "we're not going to repeat what they do here."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:60 9fee2ae4fc8243b4bbd5460977af83aa
+#: ../../source/cookbook/parsing.rst:60 1bba6428a6a54fa2ba708f8631888784
 msgid "Lambda Calculus Lexer & Parser"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:62 f5ef2e5b54e94aad992800d38f34dbf2
+#: ../../source/cookbook/parsing.rst:62 4025d13075ad422a90fc8376db3eafe4
 msgid "LambdaCalculus.idr"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:231 e08fad9a107c4eb1aaabe3f650a2858d
+#: ../../source/cookbook/parsing.rst:231 f3ffa5ef7f1a4a9a92db2b0071758a8d
 msgid "Testing out our parser gives us back the following output:"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:240 85b91586fa9f419298ce3831a280ccb9
+#: ../../source/cookbook/parsing.rst:240 2036059fbe6d458481fa18a66cd8ec1e
 msgid "Expression Parser"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:242 a41c5712bac64eb7afb4adfa1433e1b3
+#: ../../source/cookbook/parsing.rst:242 1792edb69d814b429c3f89df5731a4c3
 msgid ""
 "Idris 2 also comes with a very convenient expression parser that is aware"
 " of precedence and associativity in ``Text.Parser.Expression``."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:245 c461e0bf13d94efc8a98961e69710f14
+#: ../../source/cookbook/parsing.rst:245 cb11729c8b454462b2bbea6198380b6d
 msgid ""
 "The main function called ``buildExpressionParser`` takes in an "
 "``OperatorTable`` and a ``Grammar`` that represents the terms, and "
@@ -149,7 +149,7 @@ msgid ""
 "operators, the precedence, and the associativity."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:250 9bd1ded552e64afb9e58129e3519258d
+#: ../../source/cookbook/parsing.rst:250 5723defd1b2c425d8107dfab71abe832
 msgid ""
 "An ``OperatorTable`` is a list of lists containing the ``Op`` type. The "
 "``Op`` type allows you to specify ``Prefix``, ``Postfix``, and ``Infix`` "
@@ -159,11 +159,11 @@ msgid ""
 "non-associative or ``AssocNone``."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:255 b31352c7ee424deb99be690df030ac98
+#: ../../source/cookbook/parsing.rst:255 097b4a7d186145da9b1ab4756712070b
 msgid "An example of an operator table we'll be using for the calculator is:"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:268 85c09002c4dc4a04b436b4a535bd0d7a
+#: ../../source/cookbook/parsing.rst:268 9fab47d3ef76496fa13507254c3a7535
 msgid ""
 "This table defines 4 operators for mulitiplication, division, addition "
 "and subtraction. Mulitiplication and division show up in the first table "
@@ -173,15 +173,15 @@ msgid ""
 "``AssocLeft``."
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:274 f3b0234d3b9741038834edd8bcecfdda
+#: ../../source/cookbook/parsing.rst:274 87f2a83e2df64e118f2865cddcc5576b
 msgid "Building a Calculator"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:276 d910b4fee84540eda3b9fe23b7d3f11a
+#: ../../source/cookbook/parsing.rst:276 71fdc0b0cd4a405ebd47db62f9c061a9
 msgid "Calculator.idr"
 msgstr ""
 
-#: ../../source/cookbook/parsing.rst:388 8342379b57e64e7b86a2205a70ff4369
+#: ../../source/cookbook/parsing.rst:388 7f40e8eb00844a4d84a6ec90a903fe53
 msgid "Testing out our calculator gives us back the following output:"
 msgstr ""
 

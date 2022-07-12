@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,41 +17,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/miscellany.rst:5 d76955d3c281471e9863b5e59521f4c3
+#: ../../source/tutorial/miscellany.rst:5 97410e26a99b4ca6a0c84f8f871b6208
 msgid "Miscellany"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:7 f410dfb9dba24cdfa333640e7d58f8bd
+#: ../../source/tutorial/miscellany.rst:7 73c9d82b04324fd28117f2dd95168f32
 msgid "In this section we discuss a variety of additional features:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:9 ba993c731f4c40b897cea7b566f654e9
+#: ../../source/tutorial/miscellany.rst:9 687653550b4041c68ce67a7a68063603
 msgid "auto, implicit, and default arguments;"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:10 97d3ff7c2b0c44c0afe56aa7133700c0
+#: ../../source/tutorial/miscellany.rst:10 b776e8b082074bd19e8a582168c82b1d
 msgid "literate programming; and"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:11 77b642c551df4ed4a92dd7a30aa9861d
+#: ../../source/tutorial/miscellany.rst:11 e2e9cb35e51741a5ac3a4a3fad2cb8c6
 msgid "the universe hierarchy."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:14 4024f318e3444529a3469d7aa0164cf2
+#: ../../source/tutorial/miscellany.rst:14 2221c06a0d3e4fdf8aeb0f062d2049eb
 msgid "Implicit arguments"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:16 f6e189de0ebf4748915e2d5a7a1df0a2
+#: ../../source/tutorial/miscellany.rst:16 b65e31c8d446451ba7c87cf4f6ac0623
 msgid ""
 "We have already seen implicit arguments, which allows arguments to be "
 "omitted when they can be inferred by the type checker [#IdrisType]_, e.g."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:24 645b3c2086ac48598496b0e71a6d2a3e
+#: ../../source/tutorial/miscellany.rst:24 006ead52bd1c4c45a334c4179d455a55
 msgid "Auto implicit arguments"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:26 be3aeb4370ea4854a915b8acdc7435ea
+#: ../../source/tutorial/miscellany.rst:26 0721e78cf012492ba1d2592604dded20
 msgid ""
 "In other situations, it may be possible to infer arguments not by type "
 "checking but by searching the context for an appropriate value, or "
@@ -59,7 +59,7 @@ msgid ""
 "which requires a proof that the list is non-empty:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:40 ace5ebe88d4a4f4f9ec35c43d3eee28d
+#: ../../source/tutorial/miscellany.rst:40 c08e27b201a3498eb95a950a352b28cb
 msgid ""
 "If the list is statically known to be non-empty, either because its value"
 " is known or because a proof already exists in the context, the proof can"
@@ -67,7 +67,7 @@ msgid ""
 "happen silently. We define ``head`` as follows:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:50 0542dc101a3b4f91a621e4b21d972b81
+#: ../../source/tutorial/miscellany.rst:50 299a8237bee84aeca44dd7ef13231e0a
 msgid ""
 "The ``auto`` annotation on the implicit argument means that Idris will "
 "attempt to fill in the implicit argument by searching for a value of the "
@@ -75,42 +75,42 @@ msgid ""
 "resolution works. It will try the following, in order:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:55 6e4683d00ada467d981c3772d5f017c7
+#: ../../source/tutorial/miscellany.rst:55 e98d9e71a80b44edb71bdd8579b20929
 msgid ""
 "Local variables, i.e. names bound in pattern matches or ``let`` bindings,"
 " with exactly the right type."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:57 6d56c3875e8b413a831b57f0d7723e94
+#: ../../source/tutorial/miscellany.rst:57 eb2d55035f4d4dcbb72b0d4992c3ede0
 msgid ""
 "The constructors of the required type. If they have arguments, it will "
 "search recursively up to a maximum depth of 100."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:59 e18d2a6e09be4eaabf12b6a4269ae921
+#: ../../source/tutorial/miscellany.rst:59 82cbec32ae5a4d56bc0adcc5954fdf63
 msgid ""
 "Local variables with function types, searching recursively for the "
 "arguments."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:61 bc6aa1d2c86241ab863b686770660fec
+#: ../../source/tutorial/miscellany.rst:61 1ddfdb4178bb453fbaf7589935f9da9b
 #, python-format
 msgid ""
 "Any function with the appropriate return type which is marked with the "
 "``%hint`` annotation."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:64 953eda5449e942f0a26da5d24ea84cf0
+#: ../../source/tutorial/miscellany.rst:64 cf47d5de211a4a7fbd7187209f07a583
 msgid ""
 "In the case that a proof is not found, it can be provided explicitly as "
 "normal:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:71 57f881d30f7840e7b5970e47351f79bb
+#: ../../source/tutorial/miscellany.rst:71 ed226effa3f54a889a5a45c4b370b361
 msgid "Default implicit arguments"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:73 ad38fbe130394560a718f81e88c0bb5f
+#: ../../source/tutorial/miscellany.rst:73 b0a0d793015844248755819e4724ceed
 msgid ""
 "Besides having Idris automatically find a value of a given type, "
 "sometimes we want to have an implicit argument with a specific default "
@@ -120,13 +120,13 @@ msgid ""
 "to first consider a simpler case, not involving proofs."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:79 76fcaf3e644c4d7d97ffb75537ca0a17
+#: ../../source/tutorial/miscellany.rst:79 ebc6603e4d0e498984830a551099e539
 msgid ""
 "If we want to compute the n'th fibonacci number (and defining the 0th "
 "fibonacci number as 0), we could write:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:88 9b07fb989a354e63b29e4c0a5014d26a
+#: ../../source/tutorial/miscellany.rst:88 58ea9b8039624652b83c1d7b3483b535
 msgid ""
 "After this definition, ``fibonacci 5`` is equivalent to ``fibonacci "
 "{lag=0} {lead=1} 5``, and will return the 5th fibonacci number. Note that"
@@ -135,11 +135,11 @@ msgid ""
 "``default`` is used to provide things like a custom proof search script."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:94 6aa72b1f791640168926c5d1efbc516d
+#: ../../source/tutorial/miscellany.rst:94 fc403c0ea5764f32bfc261e0323967f1
 msgid "Literate programming"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:96 07473b29cd6d4cddbd315d2b85e9e47c
+#: ../../source/tutorial/miscellany.rst:96 cb9199419e8e48b2a06c684834dbdc8b
 msgid ""
 "Like Haskell, Idris supports *literate* programming. If a file has an "
 "extension of ``.lidr`` then it is assumed to be a literate file. In "
@@ -147,32 +147,32 @@ msgid ""
 "begins with a greater than sign ``>``, for example:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:110 3d949a2906af4aa0804fc11da2f338ac
+#: ../../source/tutorial/miscellany.rst:110 184d662a8fb5441fac8fc28a9623c869
 msgid ""
 "An additional restriction is that there must be a blank line between a "
 "program line (beginning with ``>``) and a comment line (beginning with "
 "any other character)."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:115 68b6e3c8deab48f39cf900b3c81c9f95
+#: ../../source/tutorial/miscellany.rst:115 2e803ed5811944c5a6fb3f7086a3aa9c
 msgid "Cumulativity"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:119 a51d5d8102be4754a39296b0e26b7e14
+#: ../../source/tutorial/miscellany.rst:119 589699e2301242dea74c5b58923d2073
 msgid "NOT YET IN IDRIS 2"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:121 8c67e7a2226b4015b32167b3d0cc8b54
+#: ../../source/tutorial/miscellany.rst:121 cf2ca7f7b13b4c0f94761180bdd7d113
 msgid ""
 "Since values can appear in types and *vice versa*, it is natural that "
 "types themselves have types. For example:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:131 d79e6bada5754d5594f4b45f458811a6
+#: ../../source/tutorial/miscellany.rst:131 2d4b328798dc42978c3c8138838c9948
 msgid "But what about the type of ``Type``? If we ask Idris it reports:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:138 b77fc01688904c22a80b027cef4c8dac
+#: ../../source/tutorial/miscellany.rst:138 257da2032c5c4f9688e16b418050cf77
 msgid ""
 "If ``Type`` were its own type, it would lead to an inconsistency due to "
 "`Girard’s paradox "
@@ -180,7 +180,7 @@ msgid ""
 " so internally there is a *hierarchy* of types (or *universes*):"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:146 8fecca32ecf2480f82e967f7477f21bf
+#: ../../source/tutorial/miscellany.rst:146 f2ba29778a874cef887d56660044449a
 msgid ""
 "Universes are *cumulative*, that is, if ``x : Type n`` we can also have "
 "that ``x : Type m``, as long as ``n < m``. The typechecker generates such"
@@ -189,14 +189,14 @@ msgid ""
 " does prevent (contrived) programs such as the following:"
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:160 e71c8adfb2b84b48b9d1ab18f3157472
+#: ../../source/tutorial/miscellany.rst:160 97989bb34b414f28892fb7dfa332ddcc
 msgid ""
 "The application of ``myid`` to itself leads to a cycle in the universe "
 "hierarchy — ``myid``\\ ’s first argument is a ``Type``, which cannot be "
 "at a lower level than required if it is applied to itself."
 msgstr ""
 
-#: ../../source/tutorial/miscellany.rst:164 16d7c4b3ca5d47f3a01c8d0ef0c9e308
+#: ../../source/tutorial/miscellany.rst:164 0b5976f77aa94f21bda33f53f3008439
 msgid "https://github.com/david-christiansen/idris-type-providers"
 msgstr ""
 

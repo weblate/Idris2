@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/backends/refc.rst:3 ba2adffe74ac496ba206b6758a7162b6
+#: ../../source/backends/refc.rst:3 905a55ae07a74fc8b13efded537363df
 msgid "C with Reference Counting"
 msgstr ""
 
-#: ../../source/backends/refc.rst:5 32fc2c366bdf404e9da9079843097eae
+#: ../../source/backends/refc.rst:5 48a1b0654cf94d2985a9b78fcdde710c
 msgid ""
 "There is an experimental code generator which compiles to an executable "
 "via C, using a reference counting garbage collector. This is intended as "
@@ -29,7 +29,7 @@ msgid ""
 "ported to multiple platforms, especially those with memory constraints."
 msgstr ""
 
-#: ../../source/backends/refc.rst:10 02aed202f0174a879c0eef1baf4f62d2
+#: ../../source/backends/refc.rst:10 0433705b8a614458b67f8ca8be7a0bee
 msgid ""
 "Performance is not as good as the Scheme based code generators, partly "
 "because the reference counting has not yet had any optimisation, and "
@@ -38,25 +38,25 @@ msgid ""
 "a C compiler."
 msgstr ""
 
-#: ../../source/backends/refc.rst:15 7f4d8080fff842e0888eb1e0973ad470
+#: ../../source/backends/refc.rst:15 ca36fcb578764993ae6e6e335d201c3b
 msgid "This code generator can be accessed via the REPL command:"
 msgstr ""
 
-#: ../../source/backends/refc.rst:21 b784832994854f15be232550273df96a
+#: ../../source/backends/refc.rst:21 21fdf4ae818a42799101219150c719bd
 msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
 msgstr ""
 
-#: ../../source/backends/refc.rst:27 70c272967272433b9a8cf923f93f0cc6
+#: ../../source/backends/refc.rst:27 d76b2bcad5f5467b87901a185d7cb645
 msgid ""
 "The C compiler it invokes is determined by either the ``IDRIS2_CC`` or "
 "``CC`` environment variables. If neither is set, it uses ``cc``."
 msgstr ""
 
-#: ../../source/backends/refc.rst:30 d4f919a38cd046eb97e1a05d602f785a
+#: ../../source/backends/refc.rst:30 425e5f4941904cc49ad1796965d8feef
 msgid "This code generator does not yet support `:exec`, just `:c`."
 msgstr ""
 
-#: ../../source/backends/refc.rst:32 0adc893fa6a24760b126c3c655e6306a
+#: ../../source/backends/refc.rst:32 7c5e51916c034af9869aebc9b33cff50
 msgid ""
 "Also note that, if you link with any dynamic libraries for interfacing "
 "with C, you will need to arrange for them to be accessible via "
@@ -64,18 +64,18 @@ msgid ""
 "support libraries are statically linked."
 msgstr ""
 
-#: ../../source/backends/refc.rst:38 7ed2f9cf376d4f7d930e4c48e58f39b8
+#: ../../source/backends/refc.rst:38 34dfdd32a07c4c5696d912aa9ae98740
 msgid "Extending RefC"
 msgstr ""
 
-#: ../../source/backends/refc.rst:40 db43aced51164e9d833ae637cad04491
+#: ../../source/backends/refc.rst:40 320bf3669baa43ec89dbecdb5e82e190
 msgid ""
 "RefC can be extended to produce a new backend for languages that support "
 "C foreign functions. For example, a `Python backend for Idris "
 "<https://github.com/madman-bob/idris2-python>`_."
 msgstr ""
 
-#: ../../source/backends/refc.rst:44 48188f8241594fed92ad1fda089aad41
+#: ../../source/backends/refc.rst:44 9c06a62783dc421bbd524ca2b88ae49f
 msgid ""
 "In your backend, use the ``Compiler.RefC`` functions "
 "``generateCSourceFile``, ``compileCObjectFile {asLibrary = True}``, and "
@@ -83,22 +83,22 @@ msgid ""
 "file."
 msgstr ""
 
-#: ../../source/backends/refc.rst:54 9f62291f0d2a422b977d361ab8a01c09
+#: ../../source/backends/refc.rst:54 fcca73f853774ba8a7239344df811f8c
 msgid ""
 "To run a compiled Idris program, call the ``int main(int argc, char "
 "*argv[])`` function in the compiled ``.so`` file, with the arguments you "
 "wish to pass to the running program."
 msgstr ""
 
-#: ../../source/backends/refc.rst:58 4a5ed1dc371a4c09aaa430af03d08a78
+#: ../../source/backends/refc.rst:58 d4ee8643aac34f47a1a79672f4a4c871
 msgid "For example, in Python:"
 msgstr ""
 
-#: ../../source/backends/refc.rst:72 381be2808497441387b56c7af922d92f
+#: ../../source/backends/refc.rst:72 95ac66cb835648d79556aa99dd123778
 msgid "Extending RefC FFIs"
 msgstr ""
 
-#: ../../source/backends/refc.rst:74 8cec8c081eee41d89af45300b2e87cb6
+#: ../../source/backends/refc.rst:74 817e7df0e3e34d54a4be19ccd18dfb1d
 msgid ""
 "To make the generated C code recognize additional FFI languages beyond "
 "the standard RefC FFIs, pass the ``additionalFFILangs`` option to "
@@ -106,14 +106,14 @@ msgid ""
 "backend recognizes."
 msgstr ""
 
-#: ../../source/backends/refc.rst:83 85e3097fa7ad47edaea758baadc8f732
+#: ../../source/backends/refc.rst:83 702d839725a14235be19af21bf104bca
 msgid ""
 "This will generate stub FFI function pointers in the generated C file, "
 "which your backend should set to the appropriate C functions before "
 "``main`` is called."
 msgstr ""
 
-#: ../../source/backends/refc.rst:87 75208dae6fb949869d9896829e1f45ca
+#: ../../source/backends/refc.rst:87 1c035fb8101d480e9eef58202a551a3e
 #, python-format
 msgid ""
 "Each ``%foreign \"lang: foreignFuncName, opts\"`` definition for a "
@@ -122,12 +122,12 @@ msgid ""
 "where ``funcName`` is the fully qualified Idris name of that function."
 msgstr ""
 
-#: ../../source/backends/refc.rst:92 39bc709202cd4911ae336968a2169add
+#: ../../source/backends/refc.rst:92 c1f1bfb401cf40e5bdaf1d82be915dbf
 #, python-format
 msgid "So the ``%foreign`` function"
 msgstr ""
 
-#: ../../source/backends/refc.rst:99 4fa812a7d4cb41a6bb010812dbf1c31c
+#: ../../source/backends/refc.rst:99 1bee1a13f3214891b91a7da24b0c93d9
 msgid ""
 "produces a stub ``python_Main_abs``, which can be backpatched in Python "
 "by:"

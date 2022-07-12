@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 09:10+0800\n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/backends/javascript.rst:3 e49190e8fb914548a2ad5f831076de90
+#: ../../source/backends/javascript.rst:3 ce954af6f7ed474490fb9a75771fe7c3
 msgid "Javascript and Node Code Generators"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:5 5f4181db4f4c4075ba1bfa74902ca749
+#: ../../source/backends/javascript.rst:5 3bb72ccfd0404601b45ba46f0e852557
 msgid ""
 "There are two javascript code generators, ``node`` and ``javascript``. "
 "There are two differences between the two: the ``javascript`` code "
@@ -30,11 +30,11 @@ msgid ""
 "other distinction is on the ffi that will be explained below."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:13 0c9ccec23c5e4488bab5b7c9a2746977
+#: ../../source/backends/javascript.rst:13 90f10dbc0e674cf48b7270ccfb9f17bf
 msgid "Javascript FFI Specifiers"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:15 4c6e2d15fd9546b5b50fbc132a77b0ac
+#: ../../source/backends/javascript.rst:15 b9dfdb2122f64841b572eb0844da94ce
 msgid ""
 "There are three main kinds of javascript ffi specifiers ``javascript``, "
 "``node`` and ``browser``. ``javascript`` is for foreigns that are "
@@ -42,35 +42,35 @@ msgid ""
 "available on node and ``browser`` for browser only foreigns."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:20 06e236c5e9884beba599204f30b008a5
+#: ../../source/backends/javascript.rst:20 a9df4a09ad844f61a65de2b1e4dbcee1
 msgid "For ``node`` there are two ways of defining a foreign:"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:27 734f63861edb46ffaa368a8a1f3e5985
+#: ../../source/backends/javascript.rst:27 809ec3a9366d44328cde3028f253389a
 msgid ""
 "here ``lambda`` means that we are providing the definition as a lambda "
 "expression."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:36 b8dbb32aa0614673b93a29fe7f72f9bf
+#: ../../source/backends/javascript.rst:36 6072c30af3f64126b572e75b5ea3ea17
 msgid "``require`` can be used to import javascript modules."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:38 074ccbcb2e824b1b83ee5c9ae892496b
+#: ../../source/backends/javascript.rst:38 63d35f9775a84eff825dc5531e476391
 msgid ""
 "For completion below an example of a foreign available only with "
 "``browser`` codegen:"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:47 3173da2f19dc4fc2a182b06961694d8e
+#: ../../source/backends/javascript.rst:47 e47adccf94b6471fa5dee94eb73232a5
 msgid "Short Example"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:49 3f0ff840e0bb408db95c7b463eeee973
+#: ../../source/backends/javascript.rst:49 07f1bfc18d1448839b7f75db87e0f473
 msgid "An interesting example is creating a foreign for the setTimeout function:"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:59 ba41a7e471e74bbf8b7e819375c443f9
+#: ../../source/backends/javascript.rst:59 a791bbf1df824dcfbd1563b3f499e15c
 msgid ""
 "Note: Previous versions of the javascript backends treated ``Int`` as a "
 "64 bit signed integer represented by ``BigInt`` in javascript land. This "
@@ -79,7 +79,7 @@ msgid ""
 "and the backend."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:64 c901b00f2e7e4ce3b6accd890f061d2b
+#: ../../source/backends/javascript.rst:64 d1624f46c634479185ecba372aafd059
 msgid ""
 "However, unless you have good reasons to do otherwise, consider using one"
 " of the other fixed precision integral types. They are supposed to behave"
@@ -90,11 +90,11 @@ msgid ""
 "above could therefore be improved by using ``Int32`` instad of ``Int``:"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:81 fad4c4f466ed45fa838056e473a4edbf
+#: ../../source/backends/javascript.rst:81 00d47b0d56f84f16ba2d0917c82023f6
 msgid "Browser Example"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:83 80f7f9c081474fd1883aaa583dbdcad9
+#: ../../source/backends/javascript.rst:83 0238794fae7348e1b9a918bf802e6d33
 msgid ""
 "To build JavaScript aimed to use in the browser, the code must be "
 "compiled with the javascript codegen option. The compiler produces a "
@@ -102,42 +102,42 @@ msgid ""
 "HTML file can be created in two ways"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:87 f6e763b387264782837535d266e5840e
+#: ../../source/backends/javascript.rst:87 ed5f8472f749458d8f66b0636f8771ed
 msgid ""
 "If the ``.html`` suffix is given to the output file the compiler "
 "generates an HTML file which includes a wrapping around the generated "
 "JavaScript."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:89 44f8935a6fe1438db5370482191377d2
+#: ../../source/backends/javascript.rst:89 6c28d9455b0248ff8a90967c155d0cd8
 msgid ""
 "If *no* ``.html`` suffix is given, the generated file only contains the "
 "JavaScript code. In this case manual wrapping is needed."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:92 c7e6ca6b49bc463081fa54d742c121d5
+#: ../../source/backends/javascript.rst:92 dc691213083a40199d0e0444cb7a99d8
 msgid "Example of the wrapper HTML:"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:105 3c6678d1189a4750b36dd55df83ad6a7
+#: ../../source/backends/javascript.rst:105 46e017f0f65a47a4b2b5dcefca0738e7
 msgid ""
 "As our intention is to develop something that runs in the browser "
 "questions naturally arise:"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:107 fe60c86fe8b347cb98ccb7ac6e72fae3
+#: ../../source/backends/javascript.rst:107 01afd85f07484b15b5c379679df50d23
 msgid "How to interact with HTML elements?"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:108 cfd85d3688504f8c8cbaf3f3ddf70ac1
+#: ../../source/backends/javascript.rst:108 c194223e9fa742fc980e88cdd6320d5f
 msgid "More importantly, when does the generated Idris code start?"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:111 8baada67b096435bab2d5bca4802763c
+#: ../../source/backends/javascript.rst:111 29455ddc9aaf4f94bbc7faf949c6fc77
 msgid "Starting point of the Idris generated code"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:113 c497b1ee4ac94663a62e6351ddfd8b6d
+#: ../../source/backends/javascript.rst:113 41b45494a8eb4be6b4aaa4a40fbe1aa0
 msgid ""
 "The generated JavaScript for your program contains an entry point. The "
 "``main`` function is compiled to a JavaScript top-level expression, which"
@@ -145,11 +145,11 @@ msgid ""
 "the entry point for Idris generated program starting in the browser."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:118 42d4394c56f14280b7218e0e35a07a63
+#: ../../source/backends/javascript.rst:118 de69beec7058408da8736c051ae56ceb
 msgid "Interaction with HTML elements"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:120 803309f0b78f455b9e5c75572857898a
+#: ../../source/backends/javascript.rst:120 5bf1abe05e434eab91f185c667bff5b8
 #, python-format
 msgid ""
 "As sketched in the Short Example section, the FFI must be used when "
@@ -166,37 +166,37 @@ msgid ""
 "``primIO`` function. More on this can be found in the FFI chapter."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:131 390bb2ed899a47b7ae68b376ac51b267
+#: ../../source/backends/javascript.rst:131 55e295d1511d4608ae645347fb9e16b7
 msgid "Examples for JavaScript FFI"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:134 99ef92e9c78b4776ad382ad555859e5b
+#: ../../source/backends/javascript.rst:134 93b0b11f385d4d5d9aebfd2197991b5d
 msgid "console.log"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:144 deb9bfe0eb4f457ab68c03889a1b86c3
+#: ../../source/backends/javascript.rst:144 2992fcf397634ac3a43d0de83a1e6005
 msgid ""
 "String is a primitive type in Idris and it is represented as a JavaScript"
 " String. There is no need for any conversion between the Idris and the "
 "JavaScript."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:148 a69370123f944422bd34f64b30fe9a1d
+#: ../../source/backends/javascript.rst:148 f95a26050d8f4866a2b565e91dbafd0f
 msgid "setInterval"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:158 4b866331ec124f119a319caf6ba7676e
+#: ../../source/backends/javascript.rst:158 c351da01d8b14cce81583f808c241644
 msgid ""
 "The ``setInterval`` JavaScript function executes the given function in "
 "every ``x`` millisecond. We can use Idris generated functions in the "
 "callback as far as they have the type ``IO ()`` ."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:162 5b6060c97fa443a38614bd261377a5be
+#: ../../source/backends/javascript.rst:162 2f978c9361dc4d02884f50cae8690655
 msgid "HTML Dom elements"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:164 8fe005566ac742c985d515a0f6aed0a0
+#: ../../source/backends/javascript.rst:164 05deb40b8d9d4dc594eec5ad8b14d3ce
 msgid ""
 "Lets turn our attention to the Dom elements and events. As said above, "
 "anything that is not a primitive type should be handled via the "
@@ -205,7 +205,7 @@ msgid ""
 "advisory to separate the ``AnyPtr`` values into categories."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:179 8d674253d144458192e03ef08f28375d
+#: ../../source/backends/javascript.rst:179 13065caa717c44a9addafee8e16b2d26
 msgid ""
 "We create a ``DomNode`` type which holds an ``AnyPtr``. The "
 "``prim__body`` function wraps a lambda function with no parameters. In "
@@ -214,21 +214,21 @@ msgid ""
 "constructor."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:184 838159838e264a26bfcdb9b5a36d4786
+#: ../../source/backends/javascript.rst:184 9ab25c2e03334929bfb280a4d7c5b512
 msgid "Primitive values originated in JavaScript"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:186 a0abb758c95848f3872dd0322dc91c68
+#: ../../source/backends/javascript.rst:186 d854c254a37d4a57afbaa0d96cd1076d
 msgid ""
 "As a countinuation of the previous example, the ``width`` attribute of a "
 "DOM element can be retrieved via the FFI."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:198 b9f44539b85642d392f5be6b533497c3
+#: ../../source/backends/javascript.rst:198 16e35ecae8904ca18ed7630d5d8cb9f7
 msgid "Handling JavaScript events"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:212 b82584c2e1fa4fe7ad040a2a9034c9c8
+#: ../../source/backends/javascript.rst:212 12d0d9963a9a468aaf4ce39461f48fb9
 msgid ""
 "In this example shows how to attach an event handler to a particular DOM "
 "element. Values of events are also associated with ``AnyPtr`` on the "
@@ -237,11 +237,11 @@ msgid ""
 "defined in Idris can be used on the JavaScript side."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:218 3e05591a4f1b4420836318f27589152a
+#: ../../source/backends/javascript.rst:218 21720dea12834da3a9800aa94e7a5231
 msgid "Directives"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:220 2a3ad8d52b1b4eec99ae8bb9d1d4505e
+#: ../../source/backends/javascript.rst:220 d23eb03a3d2d454b8dea32823fca450b
 msgid ""
 "The javascript code generators accepts three different directives about "
 "how compact and obfusacted the generated code should be. The following "
@@ -251,20 +251,20 @@ msgid ""
 "run in browsers with ``--cg javascript``)."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:227 d16691a3f57243f0bc2d306380012863
+#: ../../source/backends/javascript.rst:227 1458d545de8f46099bda73fc1af31298
 msgid ""
 "With ``idris2 --cg node --directive pretty`` (the default, if no "
 "directive is given), a basic pretty printer is used to generate properly "
 "indented javascript code."
 msgstr ""
 
-#: ../../source/backends/javascript.rst:237 b0aee48884094a8b9b8922f038af4e4e
+#: ../../source/backends/javascript.rst:237 ac38a92d6cd4485f8725fef2110f2482
 msgid ""
 "With ``idris2 --cg node --directive compact``, every toplevel function is"
 " declared on a single line, and unneeded spaces are removed:"
 msgstr ""
 
-#: ../../source/backends/javascript.rst:244 74913796c16f4f01aa51d2e6f806d20b
+#: ../../source/backends/javascript.rst:244 01908fecfc544862a6d8e08e9a7921b5
 msgid ""
 "Finally, with ``idris2 --cg node --directive minimal``, toplevel function"
 " names are (with a few exceptions like the ones from the static preamble)"
