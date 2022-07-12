@@ -3,27 +3,30 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-12 03:38+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/appindex/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/app/index.rst:5 9e4c56c8c08946cdbbd92c46e6b5e3e8
 msgid "Structuring Idris 2 Applications"
-msgstr ""
+msgstr "构建 Idris 2 应用程序"
 
 #: ../../source/app/index.rst:7 fceb30e9ca4f4cc1abd55a6692c9992a
 msgid "A tutorial on structuring Idris 2 applications using ``Control.App``."
-msgstr ""
+msgstr "关于使用 ``Control.App`` 构建Idris 2应用程序的教程。"
 
 #: ../../source/app/index.rst:11 ae1d663796cb4d399e8ef1bca8e9b791
 msgid ""
@@ -32,12 +35,15 @@ msgid ""
 "Community* has waived all copyright and related or neighboring rights to "
 "Documentation for Idris."
 msgstr ""
+"Idris 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
 
 #: ../../source/app/index.rst:16 adc376ce3cdc4ef6a87baaaa29666305
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "http://creativecommons.org/publicdomain/zero/1.0/"
-msgstr ""
+msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommons.org/publicdomain/"
+"zero/1.0/"
 
 #: ../../source/app/index.rst:21 545d84435c6c4229a5976b486984de31
 msgid ""
@@ -93,4 +99,3 @@ msgid ""
 "We begin by introducing ``App``, with some small example programs, then "
 "show how to extend it with exceptions, state, and other interfaces."
 msgstr ""
-
