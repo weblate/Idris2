@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-13 02:03+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/backendsbackend-cookbook/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/backends/backend-cookbook.rst:2
@@ -221,7 +224,7 @@ msgstr ""
 #: ../../source/backends/backend-cookbook.rst:91
 #: a4e923d353394149a4ed93e31b0bc359
 msgid "Functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/backends/backend-cookbook.rst:92
 #: d99e979069e6459da4fce75b17bec53b
@@ -1346,4 +1349,3 @@ msgid ""
 "could have more than one world, resulting in parallel universes for "
 "``unsafePerformIO``."
 msgstr ""
-
