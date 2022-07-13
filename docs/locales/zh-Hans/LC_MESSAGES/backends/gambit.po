@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
+"PO-Revision-Date: 2022-07-13 15:23+0000\n"
+"Language-Team: Chinese Simplified (https://www.transifex.com/idriszhong-wen/teams/140912/zh-Hans/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-Hans\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/backends/gambit.rst:3 9cf8aada8a294cdab904692aa9b05277
+msgid "Gambit Scheme Code Generator"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:5 d4ed6ccd46664559823d59ce76bcf4fb
+msgid "The Gambit Scheme code generator can be accessed via the REPL command:"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:11 e0814f8499c84a24aaafb7411c92bf53
+msgid ""
+"Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:17 a7b597a0f5414031917dc579e575ee77
+msgid ""
+"To run Idris programs with this generator, you will need to install `Gambit "
+"Scheme <https://gambitscheme.org>`_. Gambit Scheme is free software, and "
+"available via most package managers."
+msgstr ""
+
+#: ../../source/backends/gambit.rst:21 a7da69de71d84ea8b316801a461b049e
+msgid ""
+"You can compile an expression ``expr`` of type ``IO ()`` to an executable as"
+" follows, at the REPL:"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:28 9b2ff76380574b7393728d24fb26b80c
+msgid ""
+"...where ``execname`` is the name of the executable file. This will generate"
+" the following:"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:31 ae3292f29b494533bce1293de4b07e71
+msgid "An executable binary ``build/exec/execname`` of the program."
+msgstr ""
+
+#: ../../source/backends/gambit.rst:32 4838cdfe7af2483fa6b8822d0d9ecf50
+msgid ""
+"A Gambit Scheme source file ``build/exec/execname.scm``, from which the "
+"binary is generated."
+msgstr ""
+
+#: ../../source/backends/gambit.rst:35 5773de5e3fa44bfcb65043a1cc7cc715
+msgid "You can also execute an expression directly:"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:41 b4f36bb30c124fcaa25fafc3fddecb74
+msgid ""
+"Again, ``expr`` must have type ``IO ()``. This will generate a temporary "
+"Scheme file, and execute the Gambit interpreter on it."
+msgstr ""
+
+#: ../../source/backends/gambit.rst:46 d27de474acdf4194afdfc9cb2b3a8026
+msgid "Gambit Directives"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:48 b06e031541f140139fd162953d04585a
+msgid "``--directive extraRuntime=<path>``"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:50 08d1b957092a4240b35ae95995c314d0
+msgid ""
+"Embed Scheme source from ``<path>`` directly into generated output. Can be "
+"specified more than once, in which case all given files will be included in "
+"the order specified."
+msgstr ""
+
+#: ../../source/backends/gambit.rst:70 fb57dda9fcea485aa13905890dabe79c
+msgid "``--directive C``"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:72 8c99b879e6244ed5a6f6158b4ffd77d7
+msgid "Compile to C."
+msgstr ""
+
+#: ../../source/backends/gambit.rst:75 f953e6a079244e8a8fa4b39179ce3fb2
+msgid "Gambit Environment Configurations"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:77 1a8e2225338c48cba3351bd4ca125cb8
+msgid "``GAMBIT_GSC_BACKEND``"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:79 1db0aa8e42214a968eefa959eb057f45
+msgid ""
+"The ``GAMBIT_GSC_BACKEND`` variable controls which C compiler Gambit will "
+"use during compilation. E.g. to use clang:"
+msgstr ""
+
+#: ../../source/backends/gambit.rst:85 dffc064ddf4b47dbabc9d00d53044990
+msgid ""
+"Gambit after version v4.9.3 supports the ``-cc`` option, which configures "
+"the compiler backend Gambit will use to build the binary. Currently to get "
+"this functionality Gambit needs to be built from source, since it is not yet"
+" available in a released version."
+msgstr ""

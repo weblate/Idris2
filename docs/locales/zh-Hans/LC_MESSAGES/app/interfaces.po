@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
+"PO-Revision-Date: 2022-07-13 15:22+0000\n"
+"Language-Team: Chinese Simplified (https://www.transifex.com/idriszhong-wen/teams/140912/zh-Hans/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-Hans\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/app/interfaces.rst:2 bbb3800959114ebf8791eac1ee7ca44d
+msgid "Defining Interfaces"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:4 8a28779b90494f6baa92db0a186de4d0
+msgid ""
+"The only way provided by ``Control.App`` to run an ``App`` is via the "
+"``run`` function, which takes a concrete list of errors ``Init``. All "
+"concrete extensions to this list of errors are via either ``handle``, to "
+"introduce a new exception, or ``new``, to introduce a new state. In order to"
+" compose ``App`` programs effectively, rather than introducing concrete "
+"exceptions and state in general, we define interfaces for collections of "
+"operations which work in a specific list of errors."
+msgstr ""
+
+#: ../../source/app/interfaces.rst:14 e5e22ecd503642e6ba64a48aafef553d
+msgid "Example: Console I/O"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:16 0d44675b4a38447195ff6a2d215916a8
+msgid ""
+"We have seen an initial example using the ``Console`` interface, which is "
+"declared as follows, in ``Control.App.Console``:"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:27 9c36069bd5694a3780dc318b8df1ac31
+msgid ""
+"It provides primitives for writing to and reading from the console, and "
+"generalising the path parameter to ``l`` means that neither can throw an "
+"exception, because they have to work in both the ``NoThrow`` and "
+"``MayThrow`` contexts."
+msgstr ""
+
+#: ../../source/app/interfaces.rst:32 274c4049cdc3445fb51747430af97823
+msgid ""
+"To implement this for use in a top level ``IO`` program, we need access to "
+"primitive ``IO`` operations. The ``Control.App`` library defines a primitive"
+" interface for this:"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:42 6194bc979fa2468fbf9b38fd5baf301a
+msgid ""
+"We use ``primIO`` to invoke an ``IO`` function. We also have a ``fork`` "
+"primitive, which starts a new thread in a new list of errors supporting "
+"``PrimIO``.  Note that ``fork`` starts a new list of errors ``e'`` so that "
+"states are only available in a single thread."
+msgstr ""
+
+#: ../../source/app/interfaces.rst:47 891bcfa43d6640748f00eec67146c32b
+msgid ""
+"There is an implementation of ``PrimIO`` for a list of errors which can "
+"throw the empty type as an exception. This means that if ``PrimIO`` is the "
+"only interface available, we cannot throw an exception, which is consistent "
+"with the definition of ``IO``. This also allows us to use ``PrimIO`` in the "
+"initial list of errors ``Init``."
+msgstr ""
+
+#: ../../source/app/interfaces.rst:57 2ffc165867f54a33b1187cd6a97c6195
+msgid ""
+"Given this, we can implement ``Console`` and run our ``hello`` program in "
+"``IO``. It is implemented as follows in ``Control.App.Console``:"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:69 2049f76c60484895a240ef95b8b2ded7
+msgid "Example: File I/O"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:71 0871097ca06f4d17a5329242b3d2acbb
+msgid ""
+"Console I/O can be implemented directly, but most I/O operations can fail. "
+"For example, opening a file can fail for several reasons: the file does not "
+"exist; the user has the wrong permissions, etc. In Idris, the ``IO`` "
+"primitive reflects this in its type:"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:80 2f9fd93b154f4790ac3ee1293187c165
+msgid ""
+"While precise, this becomes unwieldy when there are long sequences of ``IO``"
+" operations. Using ``App``, we can provide an interface which throws an "
+"exception when an operation fails, and guarantee that any exceptions are "
+"handled at the top level using ``handle``. We begin by defining the "
+"``FileIO`` interface, in ``Control.App.FileIO``:"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:101 5a65dc11e4e947ffb62be9bbcf17d045
+msgid ""
+"We use resource bracketing - passing a function to ``withFile`` for working "
+"with the opened file - rather than an explicit ``open`` operation, to open a"
+" file, to ensure that the file handle is cleaned up on completion."
+msgstr ""
+
+#: ../../source/app/interfaces.rst:106 7ead812ada634b38a3708befff9f5a62
+msgid ""
+"One could also imagine an interface using a linear resource for the file, "
+"which might be appropriate in some safety critical contexts, but for most "
+"programming tasks, exceptions should suffice. All of the operations can "
+"fail, and the interface makes this explicit by saying we can only implement "
+"``FileIO`` if the list of errors supports throwing and catching the "
+"``IOError`` exception. ``IOError`` is defined in ``Control.App``."
+msgstr ""
+
+#: ../../source/app/interfaces.rst:114 d98eae39e0b8480db8d60e3646841e4a
+msgid ""
+"For example, we can use this interface to implement ``readFile``, throwing "
+"an exception if opening the file fails in ``withFile``:"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:130 a1606fcb81c748468e8277532619ee87
+msgid "Again, this is defined in ``Control.App.FileIO``."
+msgstr ""
+
+#: ../../source/app/interfaces.rst:132 fe4f165697bf43cbb9908bcee2fc09a4
+msgid ""
+"To implement ``FileIO``, we need access to the primitive operations via "
+"``PrimIO``, and the ability to throw exceptions if any of the operations "
+"fail. With this, we can implement ``withFile`` as follows, for example:"
+msgstr ""
+
+#: ../../source/app/interfaces.rst:148 0b58f382a5bc418186abf3ce817e84ed
+msgid ""
+"Given this implementation of ``FileIO``, we can run ``readFile``, provided "
+"that we wrap it in a top level ``handle`` function to deal with any errors "
+"thrown by ``readFile``:"
+msgstr ""

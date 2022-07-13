@@ -1,0 +1,802 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
+"PO-Revision-Date: 2022-07-13 15:24+0000\n"
+"Language-Team: Chinese Simplified (https://www.transifex.com/idriszhong-wen/teams/140912/zh-Hans/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh-Hans\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../source/implementation/overview.rst:3 737d254ef9464680ae33f0d422fb6468
+msgid "Implementation Overview"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:5 83901897d87e4a46ad2d49bb81a2ded6
+msgid ""
+"These are some unsorted notes on aspects of the implementation. Sketchy, and"
+" not always completely up to date, but hopefully give some hints as to "
+"what's going on and some ideas where to look in the code to see how certain "
+"features work."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:11
+#: e3ecd98a843241db9373686476418e58
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:13
+#: 9fbf90e0444f4ae188081923e23a5ba0
+msgid ""
+"Core language TT (defined in ``Core.TT``), based on quantitative type theory"
+" (see https://bentnib.org/quantitative-type-theory.html). Binders have "
+"\"multiplicities\" which are either *0*, *1* or *unlimited*."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:17
+#: 805f54dd6cf446c1ac3178adfb5fdca0
+msgid ""
+"Terms are indexed over the names in scope so that we know terms are always "
+"well scoped. Values (i.e. normal forms) are defined in ``Core.Value`` as "
+"``NF``; constructors do not evaluate their arguments until explicitly "
+"requested."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:21
+#: 928d0be8a7aa4afdaddbaf5c88fb4c55
+msgid ""
+"Elaborate to *TT* from a higher level language *TTImp* (defined in "
+"``TTImp.TTImp``), which is TT with implicit arguments, local function "
+"definitions, case blocks, as patterns, qualified names with automatic type-"
+"directed disambiguation, and proof search."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:26
+#: ab64a2cf85ad45e396725e22e66b4579
+msgid ""
+"Elaboration relies on unification (in ``Core.Unify``), which allows "
+"postponing of unification problems. Essentially works the same way as Agda "
+"as described in Ulf Norell's thesis."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:30
+#: b3f872f2340540e8a79cbad2a15e2a80
+msgid ""
+"General idea is that high level languages will provide a translation to TT. "
+"In the ``Idris/`` namespace we define the high level syntax for Idris, which"
+" translates to TTImp by desugaring operators, do notation, etc."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:34
+#: 7b45c53efe7b4cdd8a6ba1347344a80a
+msgid ""
+"There is a separate linearity check after elaboration, which updates types "
+"of holes (and is aware of case blocks). This is implemented in "
+"``Core.LinearCheck``. During this check, we also recalculate the "
+"multiplicities in hole applications so that they are displayed appropriately"
+" (e.g. if a linear variable is unused elsewhere, it will always appear with "
+"multiplicity 1 in holes)."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:42
+#: 566f1e639ef34fed828d043186a3cb6d
+msgid "Where to find things:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:44
+#: e23aa47c547e4a66b5ec5c9c850dbf04
+msgid ""
+"``Core/`` -- anything related to the core TT, typechecking and unification"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:45
+#: 646e636d6aed4fea8b99bb9824a861e1
+msgid "``TTImp/`` -- anything related to the implicit TT and its elaboration"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:47
+#: b836d5b74b6441c99bd725667eb05f1e
+msgid "``TTImp/Elab/`` -- Elaboration state and elaboration of terms"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:48
+#: ebf00303cfd9481b946833432606e7d6
+msgid "``TTImp/Interactive/`` -- Interactive editing infrastructure"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:50
+#: 94fe6e2bd14644ee9aeb5be8f66ca3b3
+msgid ""
+"``Parser/`` -- various utilities for parsing and lexing TT and TTImp (and "
+"other things)"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:51
+#: b1e4f48cfeff4316ac03ad8cc15e5f3b
+msgid "``Utils/`` -- some generally useful utilities"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:52
+#: 429b8f9bb64648f4a6645feb801cf67c
+msgid ""
+"``Idris/`` -- anything relating to the high level language, translating to "
+"TTImp"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:54
+#: 1eebdc2cbf8b4d4d81405af58b11fa60
+msgid ""
+"``Idris/Elab/`` -- High level construct elaboration machinery (e.g. "
+"interfaces)"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:56
+#: 6b3a51a9f0114722adc18374755c544a
+msgid "``Compiler/`` -- back ends"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:59
+#: 4c157483f9354d3b86d630d9b2b00df5
+msgid "The Core Type, and Ref"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:61
+#: 1a86113aee354bd5b1e067c181d137e9
+msgid ""
+"``Core`` is a \"monad\" (not really, for efficiency reasons, at the "
+"moment...) supporting ``Error``'s and ``IO`` (I did originally plan to allow"
+" restricting this to some specific IO operations, but haven't yet).  The raw"
+" syntax is defined by a type ``RawImp`` which has a source location at each "
+"node, and any errors in elaboration note the location at the point where the"
+" error occurred, as a file context ``FC``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:68
+#: c9ffe6d040024bc2a472412405b7b562
+msgid ""
+"``Ref`` is essentially an ``IORef``. Typically we pass them implicitly and "
+"use labels to disambiguate which one we mean. See ``Core.Core`` for their "
+"definition. Again, ``IORef`` is for efficiency - even if it would be neater "
+"to use a state monad this turned out to be about 2-3 times faster, so I'm "
+"going with the \"ugly\" choice..."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:75
+#: 5fb1afdfa30946cc856c76ac8b03e20e
+msgid "Term representation"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:77
+#: 85cc517ee56f4a47896c084ab4931d30
+msgid ""
+"Terms in the core language are indexed by a list of the names in scope, most"
+" recently defined first:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:84
+#: 8861c879e47249cc8be35b7dd50dc4cc
+msgid ""
+"This means that terms are always well scoped, and we can use the type system"
+" to keep us right when manipulating names. For example, we have:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:92
+#: f26e9a48237b4e319a4ef00df45d5bed
+msgid ""
+"So local variables are represented by an index into the local context (a de "
+"Bruijn index, ``idx``), and a proof, erased at run time, that the index is "
+"valid. So everything is de Bruijn indexed, but the type checker still keeps "
+"track of the indices so that we don't have to think too hard!"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:97
+#: 53721e82f9db461d83ed90d51b292565
+msgid ""
+"``Core.TT`` contains various handy tools for manipulating terms with their "
+"indices, such as:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:108
+#: 3e96450b5d484d86b9357b1a76997669
+msgid ""
+"Note that the types are explicit about when the ``vars`` needs to be passed "
+"at run time, and when it isn't. Mostly where it's needed it's to help with "
+"displaying names, or name generation, rather than any fundamental reason in "
+"the core. In general, this isn't expensive at run time."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:113
+#: d8ba858a50b54c80b3db4919d3455a72
+msgid "Environments, defined in ``Core.Env``, map local variables to binders:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:119
+#: 3934ce68bb804123b9c3d28b936a960e
+msgid ""
+"A binders is typically a *lambda*, a *pi*, or a *let* (with a value), but "
+"can also be a *pattern variable*. See the definition of ``TT`` for more "
+"details. Where we have a term, we usually also need an ``Env``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:123
+#: 1d54be0105b94e30b0db9bc4c36f627d
+msgid ""
+"We also have values, which are in head normal form, and defined in "
+"``Core.Value``:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:130
+#: 6b88a5d607dc4fac8c2410de3514627a
+msgid "We can convert a term to a value by normalising..."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:137
+#: dae1f5e8f7754d79a6b1470df0c324fe
+msgid "...and back again, by quoting:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:144
+#: f34598028de74001ae5254be1382aa7a
+msgid ""
+"Both ``nf`` and ``quote`` are defined in ``Core.Normalise``. We don't always"
+" know whether we'll need to work with ``NF`` or ``Term``, so we also have a "
+"\"glued\" representation, ``Glued vars``, again defined in "
+"``Core.Normalise``, which lazily computes either a ``NF`` or ``Term`` as "
+"required. Elaborating a term returns the type as a ``Glued vars``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:150
+#: 6822e49793784725a50ba776ed886e4a
+msgid ""
+"``Term`` separates ``Ref`` (global user defined names) from ``Meta``, which "
+"are globally defined metavariables. For efficiency, metavariables are only "
+"substituted into terms if they have non-0 multiplicity, to preserve sharing "
+"as much as possible."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:156
+#: 3991559873ae4f85a6bd58b6e6db7a87
+msgid "Unification"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:157
+#: fc32be7f8e784a91a35fc45edd3482dc
+msgid ""
+"Unification is probably the most important part of the elaboration process, "
+"and infers values for implicit arguments. That is, it finds values for the "
+"things which are referred to by ``Meta`` in ``Term``. It is defined in "
+"``Core.Unify``, as the top level unification function has the following "
+"type:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:174
+#: f938882126504e1dbf5d0020de57b79f
+msgid ""
+"The ``Unify`` interface is there because it is convenient to be able to "
+"define unification on ``Term`` and ``NF``, as well as ``Closure`` (which is "
+"part of ``NF`` to represent unevaluated arguments to constructors)."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:178
+#: 2675899b2b9d409592a2d1d87e7ce92f
+msgid ""
+"This is one place where indexing over ``vars`` is extremely valuable: we "
+"have to keep the environment consistent, so unification won't accidentally "
+"introduce any scoping bugs!"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:182
+#: b69046276aaf46a4a3bc38233bc55b72
+msgid ""
+"Idris 2 implements pattern unification - see Adam Gundry's thesis for an "
+"accessible introduction."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:186
+#: fb4437dc00884705b102cd73f0d37a0a
+msgid "Context"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:188
+#: 73d84fc81f104ad7a640e0934c50cbbd
+msgid ""
+"``Core.Context`` defines all the things needed for TT. Most importantly: "
+"``Def`` gives definitions of names (case trees, builtins, constructors and "
+"holes, mostly); ``GlobalDef`` is a definition with all the other information"
+" about it (type, visibility, totality, etc); ``Context`` is a context "
+"mapping names to ``GlobalDef``, and ``Defs`` is the core data structure with"
+" everything needed to typecheck more definitions."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:195
+#: 04563d7f264144309b3676e97611abee
+msgid ""
+"The main Context type stores definitions in an array, indexed by a "
+"\"resolved name id\", an integer, for fast look up. This means that it also "
+"needs to be able to convert between resolved names and full names. The "
+"``HasNames`` interface defines methods for going back and forth between "
+"structures with human readable names, and structures with resolved integer "
+"names."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:201
+#: d77fdddec8984dac8ebff6638e065ffb
+msgid ""
+"Since we store names in an array, all the lookup functions need to be in the"
+" ``Core`` monad. This also turns out to help with loading checked files (see"
+" below)."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:206
+#: d405666abfaf4b75a3eeacbffb11fdaf
+msgid "Elaboration Overview"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:208
+#: 7f832f7060684befa6001cd09867692d
+msgid ""
+"Elaboration of ``RawImp`` to ``TT`` is driven by ``TTImp.Elab``, with the "
+"top level function for elaborating terms defined in ``TTImp.Elab.Term``, "
+"support functions defined in ``TTImp.Elab.Check``, and elaborators for the "
+"various TTImp constructs defined in separate files under ``TTImp.Elab.*``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:214
+#: 5844f04b30064adb90c408ed1de90238
+msgid "Laziness"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:216
+#: c0b7531fb85149a48aa4f4b700543769
+msgid ""
+"Like Idris 1, laziness is marked in types using ``Lazy``, ``Delay`` and "
+"``Force``, or ``Inf`` (instead of ``Lazy``) for codata. Unlike Idris 1, "
+"these are language primitives rather than special purpose names."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:220
+#: c75dc02dc113405583a14587f20beb8a
+msgid ""
+"Implicit laziness resolution is handled during unification (in "
+"``Core.Unify``). When unification is invoked (by ``convert`` in "
+"``TTImp.Elab.Check``) with the ``withLazy`` flag set, it checks whether it "
+"is converting a lazy type with a non-lazy type. If so, it continues with "
+"unification, but returning that either a ``Force`` or ``Delay`` needs "
+"inserting as appropriate."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:227
+#: 3e5c2932907e4e05ae69500903e8682f
+msgid "TTC format"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:229
+#: 40d96e77cb5c43d19c0ccc6cd16fd2e5
+msgid ""
+"We can save things to binary if we have an implementation of the TTC "
+"interface for it. See ``Utils.Binary`` to see how this is done. It uses a "
+"global reference ``Ref Bin Binary`` which uses ``Data.Buffer`` underneath."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:233
+#: 0def1f80333d4719a36e72dc20c338f0
+msgid ""
+"When we load checked TTC files, we don't process the definitions "
+"immediately, but rather store them as a ``ContextEntry``, which is either a "
+"``Binary`` blob, or a processed definition. We only process the definitions "
+"the first time they are looked up, since converting Binary to the definition"
+" is fairly costly (due to having to construct a lot of AST nodes), and often"
+" definitions in an imported file are never used."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:241
+#: c1121bc487074486b5b19702a0ed4106
+msgid "Bound Implicits"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:243
+#: 750078adb14246a2ae7b458aed581f2c
+msgid ""
+"The ``RawImp`` type has a constructor ``IBindVar``. The first time we "
+"encounter an ``IBindVar``, we record the name as one which will be "
+"implicitly bound. At the end of elaboration, we decide which holes should "
+"turn into bound variables (Pi bound in types, Pattern bound on a LHS, still "
+"holes on the RHS) by looking at the list of names bound as ``IBindVar``, the"
+" things they depend on, and sorting them so that they are bound in "
+"dependency order. This happens in ``TTImp.Implicit.getToBind``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:251
+#: e725902a1c5b4875a8771dd3d841432c
+msgid ""
+"Once we know what the bound implicits need to be, we bind them in "
+"``bindImplicits``. Any application of a hole which stands for a bound "
+"implicit gets turned into a local binding (either Pi or Pat as appropriate, "
+"or PLet for @-patterns)."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:257
+#: 1938df0d2d634c54a20938dc4625fb48
+msgid "Unbound Implicits"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:259
+#: 406f77c81ecf4758946611231e1e0748
+msgid ""
+"Any name beginning with a lower case letter is considered an unbound "
+"implicit. They are elaborated as holes, which may depend on the initial "
+"environment of the elaboration, and after elaboration they are converted to "
+"an implicit pi binding, with multiplicity 0. So, for example:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:268
+#: 633466a064ca4ee49f24c500a98b7396
+msgid "becomes:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:274
+#: 7b482f3f6732470fb8acb0b0ffd35fa0
+msgid ""
+"Bindings are ordered according to dependency. It'll infer any additional "
+"names, e.g. in:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:281
+#: b07ed4a05dcb4f08b5bb45cdd9866afd
+msgid ""
+"... where ``xs`` is a ``Vect n a``, it infers bindings for ``n`` and ``a``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:283
+#: bfa568203c0d4892b8699f43fa6cf396
+msgid ""
+"The ``%unbound_implicits`` directive means that it will no longer "
+"automatically bind names (that is, ``a`` and ``b`` in ``map`` above) but it "
+"will still infer the types for any additional names, e.g. if you write:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:291
+#: 5089c6c3fd8c42ccad53c2fb875dac48
+msgid ""
+"... it will still infer a type for ``xs`` and infer bindings for ``n`` and "
+"``a``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:295
+#: 3f2eb72933334a45b35fda5e75ba1dc7
+msgid "Implicit arguments"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:297
+#: 1582489abe464b0cb3e481d7e72599d9
+msgid ""
+"When we encounter an implicit argument (``_`` in the raw syntax, or added "
+"when we elaborate an application and see that there is an implicit needed) "
+"we make a new hole which is a fresh name applied to the current environment,"
+" and return that as the elaborated term. This happens in "
+"``TTImp.Elab.Check``, with the function ``metaVar``.  If there's enough "
+"information elsewhere we'll find the definition of the hole by unification."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:304
+#: 43ac7600e607403a93f998bcc5f1e488
+msgid ""
+"We never substitute holes in a term during elaboration and rely on "
+"normalisation if we need to look inside it. If there are holes remaining "
+"after elaboration of a definition, report an error (it's okay for a hole in "
+"a type as long as it's resolved by the time the definition is done)."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:309
+#: efc0fdd220314bb990568eac1a741741
+msgid ""
+"See ``Elab.App.makeImplicit``, ``Elab.App.makeAutoImplicit`` to see where we"
+" add holes for the implicit arguments in applications."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:312
+#: 177d3e89b6ee4d178439a67e8f17825e
+msgid ""
+"``Elab.App`` does quite a lot of tricky stuff! In an attempt to help with "
+"resolving ambiguous names and record updates, it will sometimes delay "
+"elaboration of an argument (see ``App.checkRestApp``) so that it can get "
+"more information about its type first."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:317
+#: 63039e6a63004dd790a57a5cb2804644
+msgid ""
+"``Core.Unify.solveConstraints`` revisits all of the currently unsolved holes"
+" and constrained definitions, and tries again to unify any constraints which"
+" they require. It also tries to resolve anything defined by proof search. "
+"The current state of unification is defined in ``Core.UnifyState``, and "
+"unification constraints record which metavariables are blocking them. This "
+"improves performance, since we'll only retry a constraint if one of the "
+"blocking metavariables has been resolved."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:326
+#: 6e7aa2c18dd347b6ba35f89d86011989
+msgid "Additional type inference"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:328
+#: db32632c83814cb597852711eb6f380c
+msgid ""
+"A ``?`` in a type means \"infer this part of the type\".  This is distinct "
+"from ``_`` in types, which means \"I don't care what this is\". The "
+"distinction is in what happens when inference fails.  If inference fails for"
+" ``_``, we implicitly bind a new name (just like pattern matching on the lhs"
+" - i.e. it means match anything). If inference fails for ``?``, we leave it "
+"as a hole and try to fill it in later. As a result, we can say:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:340
+#: c76f10ac638a41f3a3c199821de1f5a6
+msgid "... and the ``?`` will be inferred to be 4. But if we say:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:347
+#: 50078f32fcae447da709565d8fdd39a0
+msgid ""
+"... we'll get an error, because the ``_`` has been bound as a new name. Both"
+" ``?`` and ``_`` are represented in ``RawImp`` by the ``Implicit`` "
+"constructor, which has a boolean flag meaning \"bind if unresolved\"."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:351
+#: 5a8c4a5088ec49a9aa66c8c1af2fda02
+msgid ""
+"So the meaning of ``_`` is now consistent on the lhs and in types (i.e. it "
+"means infer a value and bind a variable on failure to infer anything). In "
+"practice, using ``_`` will get you the old Idris behaviour, but ``?`` might "
+"get you a bit more type inference."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:357
+#: 30cfc9b432144488a2f7ff01fe6a8b56
+msgid "Auto Implicits"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:359
+#: b28c525da8b64702a00d219862fe1376
+msgid ""
+"Auto implicits are resolved by proof search, and can be given explicit "
+"arguments in the same way as ordinary implicits: i.e. ``{x = exp}`` to give "
+"``exp`` as the value for auto implicit ``x``. Interfaces are syntactic sugar"
+" for auto implicits (it is the same resolution mechanism - interfaces "
+"translate into records, and implementations translate into hints for the "
+"search)."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:365
+#: 8a9b96278b8842f3b000f29ad770434d
+msgid ""
+"The argument syntax ``@{exp}`` means that the value of the next auto "
+"implicit in the application should be ``exp`` - this is the same as the "
+"syntax for invoking named implementations in Idris 1, but interfaces and "
+"auto implicits have been combined now."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:370
+#: 81a558a2a4e441f292a44c2f421d6997
+msgid ""
+"Implicit search is defined in ``Core.AutoSearch``. It will only begin a "
+"search if all the *determining arguments* of the goal are defined, meaning "
+"that they don't contain *any* holes. This avoids committing too early to the"
+" solution of a hole by resolving it by search, rather than unification, "
+"unless a programmer has explicitly said (via a ``search`` option on a data "
+"type) that that's what they want."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:378
+#: e4564d7b424f49009deb2407b88c31ef
+msgid "Dot Patterns"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:380
+#: 5fd960471b75442e9c12998f00b1f8d0
+msgid ""
+"``IMustUnify`` is a constructor of ``RawImp``. When we elaborate this, we "
+"generate a hole, then elaborate the term, and add a constraint that the "
+"generated hole must unify with the term which was explicitly given (in "
+"``UnifyState.addDot``), without resolving any holes. This is finally checked"
+" in ``UnifyState.checkDots``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:386
+#: 60a6e970ade84237bb710fd4f317f609
+msgid "Proof Search"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:388
+#: 542a128cc4304b3b8703c1fe755eeeb8
+msgid ""
+"A definition constructed with ``Core.Context.BySearch`` is a hole which will"
+" be resolved by searching for something which fits the type. This happens in"
+" ``Core.AutoSearch``. It checks all possible hints for a term, to ensure "
+"that only one is possible."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:394
+#: 788cb3be3f2a419eb3fbac482c0082d4
+msgid "@-Patterns"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:396
+#: db13cbe1c8af484b8848ebb727167f71
+msgid ""
+"Names which are bound in types are also bound as @-patterns, meaning that "
+"functions have access to them. For example, we can say:"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:405
+#: ea736f00472f475b9b0ccf677c8e30a9
+msgid ""
+"As patterns are implemented as a constructor of ``TT``, which makes a lot of"
+" things more convenient (especially case tree compilation)."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:409
+#: f49cd12be93d4218958ffb41d341bc4e
+msgid "Linear Types"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:411
+#: 3e2d9d0d43cf4f218ba5a30a9d3a78d2
+msgid ""
+"Following Conor McBride and Bob Atkey's work, all binders have a "
+"multiplicity annotation (``RigCount``). After elaboration in ``TTImp.Elab``,"
+" we do a separate linearity check which: a) makes sure that linear variables"
+" are used exactly once; b) updates hole types to properly reflect usage "
+"information."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:417
+#: c4099c3e350041248d77a5c5abc2fb2c
+msgid "Local definitions"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:419
+#: 87f57dcd50694cc69d14ded7f8a90d33
+msgid ""
+"We elaborate relative to an environment, meaning that we can elaborate local"
+" function definitions. We keep track of the names being defined in a nested "
+"block of declarations, and ensure that they are lifted to top level "
+"definitions in TT by applying them to every name in scope."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:424
+#: dbe6ef145f7c40659f8b7672180cfd20
+msgid ""
+"Since we don't know how many times a local definition will be applied, in "
+"general, anything bound with multiplicity 1 is passed to the local "
+"definition with multiplicity 0, so if you want to use it in a local "
+"definition, you need to pass it explicitly."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:430
+#: 917082a0f08e4c5dbdb6fb38f379eebc
+msgid "Case blocks"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:432
+#: 796ac70063df40e3aa92cfe96a8b29ad
+msgid ""
+"Similar to local definitions, these are lifted to top level definitions "
+"which represent the case block, which is immediately applied to the "
+"scrutinee of the case. We don't attempt to calculate the multiplicities of "
+"arguments when elaborating the case block, since we'll probably get it wrong"
+" - instead, these are checked during linearity checking, which knows about "
+"case functions."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:438
+#: 1cd0a73d5a2e425d9e4ef65ea121bc2b
+msgid ""
+"Case blocks in the scope of local definitions are tricky, because the names "
+"need to match up, and the types might be refined, but we also still need to "
+"apply the local names to the scope in which they were defined. This is a bit"
+" fiddly, and dealt with by the ``ICaseLocal`` constructor of ``RawImp``."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:443
+#: 233938a975fa44199aa707d5a1f9da5e
+msgid ""
+"Various parts of the system treat case blocks specially, even though they "
+"aren't strictly part of the core. In particular, these are linearity "
+"checking and totality checking."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:448
+#: 6c8c9f1cbac5474781e11d3c66767289
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:450
+#: 2ccac8ceff93403ba37eca40acfa8474
+msgid ""
+"The parameters to a data type are taken to be the arguments which appear, "
+"unchanged, in the same position, everywhere across a data definition."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:454
+#: 42b726a0e990491fa7fd01ac74f96d13
+msgid "Erasure"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:456
+#: 5bc3cd2c57a84e14b6e739f78aca8917
+msgid ""
+"Unbound implicits are given ``0`` multiplicity, so the rule is now that if "
+"you don't explicitly write it in the type of a function or constructor, the "
+"argument is erased at run time."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:460
+#: 30d5371ceb294066a285a4f081a368f9
+msgid ""
+"Elaboration and the case tree compiler check ensure that 0-multiplicity "
+"arguments are not inspected in case trees. In the compiler, 0-multiplicity "
+"arguments to constructors are erased completely, whereas 0-multiplicity "
+"arguments to functions are replaced with a placeholder erased value."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:466
+#: 274da16f8900453393fe765ffaeb743b
+msgid "Namespaces and name visibility"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:468
+#: 9a1ed7be79b54e1fa1515c10bbf41b6e
+msgid ""
+"Same rules mostly apply as in Idris 1. The difference is that visibility is "
+"*per namespace* not *per file* (that is, files have no relevance other "
+"except in that they introduce their own namespace, and in that they allow "
+"separate typechecking)."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:473
+#: dcb915f776514f639a425cc40234912d
+msgid ""
+"One effect of this is that when a file defines nested namespaces, the inner "
+"namespace can see what's in the outer namespace, but not vice versa unless "
+"names defined in the inner namespace are explicitly exported. The visibility"
+" modifiers ``export``, ``public export``, and ``private`` control whether "
+"the name can be seen in any other namespace, and it's nothing to do with the"
+" file they're defined in at all."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:480
+#: d2a0098c1a024102bd617ce69ae053b1
+msgid ""
+"Unlike Idris 1, there is no restriction on whether public definitions can "
+"refer to private names. The only restriction on ``private`` names is that "
+"they can't be referred to directly (i.e. in code) outside the namespace."
+msgstr ""
+
+#: ../../source/implementation/overview.rst:485
+#: 3a32065773d24398848137f489d6943a
+msgid "Records"
+msgstr ""
+
+#: ../../source/implementation/overview.rst:487
+#: d627110eea5b455ba34e80a311af77a4
+msgid ""
+"Records are part of TTImp (rather than the surface language). Elaborating a "
+"record declaration creates a data type and associated projection functions. "
+"Record setters are generated on demand while elaborating TTImp (in "
+"``TTImp.Elab.Record``). Setters are translated directly to ``case`` blocks, "
+"which means that update of dependent fields works as one might expect (i.e. "
+"it's safe as long as all of the fields are updated at the same time "
+"consistently)."
+msgstr ""

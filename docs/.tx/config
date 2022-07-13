@@ -1,0 +1,362 @@
+[main]
+host = https://www.transifex.com
+
+[idris2-doc.build_gettext_index]
+file_filter = locales/<lang>/LC_MESSAGES/index.po
+source_file = build/gettext/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_interp]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/interp.po
+source_file = build/gettext/tutorial/interp.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_conclusions]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/conclusions.po
+source_file = build/gettext/tutorial/conclusions.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_introduction]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/introduction.po
+source_file = build/gettext/tutorial/introduction.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_windows]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/windows.po
+source_file = build/gettext/tutorial/windows.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_interfaces]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/interfaces.po
+source_file = build/gettext/tutorial/interfaces.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_modules]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/modules.po
+source_file = build/gettext/tutorial/modules.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_multiplicities]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/multiplicities.po
+source_file = build/gettext/tutorial/multiplicities.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_packages]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/packages.po
+source_file = build/gettext/tutorial/packages.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_miscellany]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/miscellany.po
+source_file = build/gettext/tutorial/miscellany.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_views]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/views.po
+source_file = build/gettext/tutorial/views.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_interactive]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/interactive.po
+source_file = build/gettext/tutorial/interactive.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_theorems]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/theorems.po
+source_file = build/gettext/tutorial/theorems.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_index]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/index.po
+source_file = build/gettext/tutorial/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_starting]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/starting.po
+source_file = build/gettext/tutorial/starting.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_tutorial_typesfuns]
+file_filter = locales/<lang>/LC_MESSAGES/tutorial/typesfuns.po
+source_file = build/gettext/tutorial/typesfuns.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_app_linear]
+file_filter = locales/<lang>/LC_MESSAGES/app/linear.po
+source_file = build/gettext/app/linear.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_app_interfaces]
+file_filter = locales/<lang>/LC_MESSAGES/app/interfaces.po
+source_file = build/gettext/app/interfaces.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_app_exceptionsstate]
+file_filter = locales/<lang>/LC_MESSAGES/app/exceptionsstate.po
+source_file = build/gettext/app/exceptionsstate.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_app_index]
+file_filter = locales/<lang>/LC_MESSAGES/app/index.po
+source_file = build/gettext/app/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_app_introapp]
+file_filter = locales/<lang>/LC_MESSAGES/app/introapp.po
+source_file = build/gettext/app/introapp.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_faq_faq]
+file_filter = locales/<lang>/LC_MESSAGES/faq/faq.po
+source_file = build/gettext/faq/faq.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_refc]
+file_filter = locales/<lang>/LC_MESSAGES/backends/refc.po
+source_file = build/gettext/backends/refc.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_backend-cookbook]
+file_filter = locales/<lang>/LC_MESSAGES/backends/backend-cookbook.po
+source_file = build/gettext/backends/backend-cookbook.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_gambit]
+file_filter = locales/<lang>/LC_MESSAGES/backends/gambit.po
+source_file = build/gettext/backends/gambit.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_chez]
+file_filter = locales/<lang>/LC_MESSAGES/backends/chez.po
+source_file = build/gettext/backends/chez.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_javascript]
+file_filter = locales/<lang>/LC_MESSAGES/backends/javascript.po
+source_file = build/gettext/backends/javascript.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_libraries]
+file_filter = locales/<lang>/LC_MESSAGES/backends/libraries.po
+source_file = build/gettext/backends/libraries.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_custom]
+file_filter = locales/<lang>/LC_MESSAGES/backends/custom.po
+source_file = build/gettext/backends/custom.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_index]
+file_filter = locales/<lang>/LC_MESSAGES/backends/index.po
+source_file = build/gettext/backends/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_incremental]
+file_filter = locales/<lang>/LC_MESSAGES/backends/incremental.po
+source_file = build/gettext/backends/incremental.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_backends_racket]
+file_filter = locales/<lang>/LC_MESSAGES/backends/racket.po
+source_file = build/gettext/backends/racket.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_proofs_patterns]
+file_filter = locales/<lang>/LC_MESSAGES/proofs/patterns.po
+source_file = build/gettext/proofs/patterns.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_proofs_propositional]
+file_filter = locales/<lang>/LC_MESSAGES/proofs/propositional.po
+source_file = build/gettext/proofs/propositional.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_proofs_pluscomm]
+file_filter = locales/<lang>/LC_MESSAGES/proofs/pluscomm.po
+source_file = build/gettext/proofs/pluscomm.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_proofs_index]
+file_filter = locales/<lang>/LC_MESSAGES/proofs/index.po
+source_file = build/gettext/proofs/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_proofs_definitional]
+file_filter = locales/<lang>/LC_MESSAGES/proofs/definitional.po
+source_file = build/gettext/proofs/definitional.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_proofs_inductive]
+file_filter = locales/<lang>/LC_MESSAGES/proofs/inductive.po
+source_file = build/gettext/proofs/inductive.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_libraries_index]
+file_filter = locales/<lang>/LC_MESSAGES/libraries/index.po
+source_file = build/gettext/libraries/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_cookbook_parsing]
+file_filter = locales/<lang>/LC_MESSAGES/cookbook/parsing.po
+source_file = build/gettext/cookbook/parsing.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_cookbook_index]
+file_filter = locales/<lang>/LC_MESSAGES/cookbook/index.po
+source_file = build/gettext/cookbook/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_updates_updates]
+file_filter = locales/<lang>/LC_MESSAGES/updates/updates.po
+source_file = build/gettext/updates/updates.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_typedd_typedd]
+file_filter = locales/<lang>/LC_MESSAGES/typedd/typedd.po
+source_file = build/gettext/typedd/typedd.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_ffi_readline]
+file_filter = locales/<lang>/LC_MESSAGES/ffi/readline.po
+source_file = build/gettext/ffi/readline.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_ffi_ffi]
+file_filter = locales/<lang>/LC_MESSAGES/ffi/ffi.po
+source_file = build/gettext/ffi/ffi.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_ffi_index]
+file_filter = locales/<lang>/LC_MESSAGES/ffi/index.po
+source_file = build/gettext/ffi/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_implementation_ide-protocol]
+file_filter = locales/<lang>/LC_MESSAGES/implementation/ide-protocol.po
+source_file = build/gettext/implementation/ide-protocol.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_implementation_overview]
+file_filter = locales/<lang>/LC_MESSAGES/implementation/overview.po
+source_file = build/gettext/implementation/overview.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_implementation_index]
+file_filter = locales/<lang>/LC_MESSAGES/implementation/index.po
+source_file = build/gettext/implementation/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_builtins]
+file_filter = locales/<lang>/LC_MESSAGES/reference/builtins.po
+source_file = build/gettext/reference/builtins.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_pragmas]
+file_filter = locales/<lang>/LC_MESSAGES/reference/pragmas.po
+source_file = build/gettext/reference/pragmas.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_packages]
+file_filter = locales/<lang>/LC_MESSAGES/reference/packages.po
+source_file = build/gettext/reference/packages.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_strings]
+file_filter = locales/<lang>/LC_MESSAGES/reference/strings.po
+source_file = build/gettext/reference/strings.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_literate]
+file_filter = locales/<lang>/LC_MESSAGES/reference/literate.po
+source_file = build/gettext/reference/literate.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_debugging]
+file_filter = locales/<lang>/LC_MESSAGES/reference/debugging.po
+source_file = build/gettext/reference/debugging.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_index]
+file_filter = locales/<lang>/LC_MESSAGES/reference/index.po
+source_file = build/gettext/reference/index.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_overloadedlit]
+file_filter = locales/<lang>/LC_MESSAGES/reference/overloadedlit.po
+source_file = build/gettext/reference/overloadedlit.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_documenting]
+file_filter = locales/<lang>/LC_MESSAGES/reference/documenting.po
+source_file = build/gettext/reference/documenting.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_records]
+file_filter = locales/<lang>/LC_MESSAGES/reference/records.po
+source_file = build/gettext/reference/records.pot
+source_lang = en
+type = PO
+
+[idris2-doc.build_gettext_reference_envvars]
+file_filter = locales/<lang>/LC_MESSAGES/reference/envvars.po
+source_file = build/gettext/reference/envvars.pot
+source_lang = en
+type = PO
