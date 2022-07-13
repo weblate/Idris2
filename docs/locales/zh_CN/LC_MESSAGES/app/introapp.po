@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 11:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/app/introapp.rst:2 94b2475e694d4f8c91dfa20565303ab6
+msgid "Introducing App"
+msgstr ""
+
+#: ../../source/app/introapp.rst:4 f3699575ba6549c29747b213c438fdb0
+msgid ""
+"``App`` is declared as below, in a module ``Control.App``, which is part "
+"of the ``base`` libraries. It is parameterised by an implicit ``Path`` "
+"(which states whether the program's execution path is linear or might "
+"throw exceptions), which has a ``default`` value that the program might "
+"throw, and a ``List Error`` (which gives a list of exception types which "
+"can be thrown, ``Error`` is a synonym for ``Type``):"
+msgstr ""
+
+#: ../../source/app/introapp.rst:19 f2bc8557d0664de3b52db49a8e8cdf7f
+msgid ""
+"It serves the same purpose as ``IO``, but supports throwing and catching "
+"exceptions, and allows us to define more constrained interfaces "
+"parameterised by the list of errors ``es``. e.g. a program which supports"
+" console IO:"
+msgstr ""
+
+#: ../../source/app/introapp.rst:29 23be7801187242d8b31034967db705ed
+msgid "We can use this in a complete program as follows:"
+msgstr ""
+
+#: ../../source/app/introapp.rst:44 a888e867d4574d6180e5b035c6f6a543
+msgid ""
+"Or, a program which supports console IO and carries an ``Int`` state, "
+"labelled ``Counter``:"
+msgstr ""
+
+#: ../../source/app/introapp.rst:58 894a0e65380f4a3f824b057de8cc1173
+msgid ""
+"To run this as part of a complete program, we need to initialise the "
+"state."
+msgstr ""
+
+#: ../../source/app/introapp.rst:65 e3bd07b8c43d41118ac0a5317f367fbe
+msgid ""
+"For convenience, we can list multiple interfaces in one go, using a "
+"function ``Has``, defined in ``Control.App``, to compute the interface "
+"constraints:"
+msgstr ""
+
+#: ../../source/app/introapp.rst:76 85ab751d2fb64dcfafc4d14eef3dd6c8
+msgid ""
+"The purpose of ``Path`` is to state whether a program can throw "
+"exceptions, so that we can know where it is safe to reference linear "
+"resources. It is declared as follows:"
+msgstr ""
+
+#: ../../source/app/introapp.rst:84 312a6cd669474e2793ee8f2742043463
+msgid ""
+"The type of ``App`` states that ``MayThrow`` is the default. We expect "
+"this to be the most common case. After all, realistically, most "
+"operations have possible failure modes, especially those which interact "
+"with the outside world."
+msgstr ""
+
+#: ../../source/app/introapp.rst:89 1f6e0e2f3f924010b05817e34dcf2da6
+msgid ""
+"The ``0`` on the declaration of ``Has`` indicates that it can only be run"
+" in an erased context, so it will never be run at run-time. To run an "
+"``App`` inside ``IO``, we use an initial list of errors ``Init`` (recall "
+"that an ``Error`` is a synonym for ``Type``):"
+msgstr ""
+
+#: ../../source/app/introapp.rst:102 7a9f40ca8db04f30b4eb78bea2ee990e
+msgid ""
+"Generalising the ``Path`` parameter with ``l`` means that we can invoke "
+"``run`` for any application, whether the ``Path`` is ``NoThrow`` or "
+"``MayThrow``. But, in practice, all applications given to ``run`` will "
+"not throw at the top level, because the only exception type available is "
+"the type ``AppHasIO``. Any exceptions will have been introduced and "
+"handled inside the ``App``."
+msgstr ""
+
