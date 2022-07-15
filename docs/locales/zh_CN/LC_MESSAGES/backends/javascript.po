@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-15 00:48+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/backendsjavascript/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/backends/javascript.rst:3 ce954af6f7ed474490fb9a75771fe7c3
 msgid "Javascript and Node Code Generators"
-msgstr ""
+msgstr "Javascript 和 Node 代码生成器"
 
 #: ../../source/backends/javascript.rst:5 3bb72ccfd0404601b45ba46f0e852557
 msgid ""
@@ -29,10 +32,14 @@ msgid ""
 "HTML document with the generated code inside a ``<script>`` tag; the "
 "other distinction is on the ffi that will be explained below."
 msgstr ""
+"有两个 javascript 代码生成器， ``node`` 和 ``javascript`` "
+"。两者之间有两个区别： ``javascript`` 代码生成器在被调用时，如果输出是一个一"
+"个HTML文件，会同时生成一个基本的HTML文件，生成的代码在 ``<script>`` 标签内；"
+"另一个区别是在 ffi 上，将在下面解释。"
 
 #: ../../source/backends/javascript.rst:13 90f10dbc0e674cf48b7270ccfb9f17bf
 msgid "Javascript FFI Specifiers"
-msgstr ""
+msgstr "Javascript FFI 说明符"
 
 #: ../../source/backends/javascript.rst:15 b9dfdb2122f64841b572eb0844da94ce
 msgid ""
@@ -41,34 +48,37 @@ msgid ""
 "available on node and the browser, ``node`` for foreigns that are only "
 "available on node and ``browser`` for browser only foreigns."
 msgstr ""
+"有三种主要的 javascript ffi 说明符 ``javascript``, ``node`` 和 ``browser`` 。"
+" ``javascript`` 表示在node 和浏览器上均可用， ``node`` 仅在 node 上可用， "
+"``browser`` 仅在浏览器上可用。"
 
 #: ../../source/backends/javascript.rst:20 a9df4a09ad844f61a65de2b1e4dbcee1
 msgid "For ``node`` there are two ways of defining a foreign:"
-msgstr ""
+msgstr "对于 ``node`` 来说，有两种方法来定义一个外部函数："
 
 #: ../../source/backends/javascript.rst:27 809ec3a9366d44328cde3028f253389a
 msgid ""
 "here ``lambda`` means that we are providing the definition as a lambda "
 "expression."
-msgstr ""
+msgstr "这里的 ``lambda`` 表示我们将定义作为一个 lambda 表达式进行提供。"
 
 #: ../../source/backends/javascript.rst:36 6072c30af3f64126b572e75b5ea3ea17
 msgid "``require`` can be used to import javascript modules."
-msgstr ""
+msgstr "``require`` 可以用来导入 javascript 模块。"
 
 #: ../../source/backends/javascript.rst:38 63d35f9775a84eff825dc5531e476391
 msgid ""
 "For completion below an example of a foreign available only with "
 "``browser`` codegen:"
-msgstr ""
+msgstr "下面是一个完整示例，只有在 ``browser`` 的 codegen 是外部函数才可用："
 
 #: ../../source/backends/javascript.rst:47 e47adccf94b6471fa5dee94eb73232a5
 msgid "Short Example"
-msgstr ""
+msgstr "简短示例"
 
 #: ../../source/backends/javascript.rst:49 07f1bfc18d1448839b7f75db87e0f473
 msgid "An interesting example is creating a foreign for the setTimeout function:"
-msgstr ""
+msgstr "一个有趣的例子是为 setTimeout 函数创建一个外部函数："
 
 #: ../../source/backends/javascript.rst:59 a791bbf1df824dcfbd1563b3f499e15c
 msgid ""
@@ -270,4 +280,3 @@ msgid ""
 " names are (with a few exceptions like the ones from the static preamble)"
 " obfuscated to reduce the size of the generated javascript file:"
 msgstr ""
-
