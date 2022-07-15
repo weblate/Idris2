@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-12 05:11+0000\n"
+"PO-Revision-Date: 2022-07-15 00:48+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/implementationoverview/zh_Hans/>\n"
@@ -333,7 +333,7 @@ msgstr ""
 #: ../../source/implementation/overview.rst:214
 #: 5844f04b30064adb90c408ed1de90238
 msgid "Laziness"
-msgstr ""
+msgstr "惰性"
 
 #: ../../source/implementation/overview.rst:216
 #: c0b7531fb85149a48aa4f4b700543769

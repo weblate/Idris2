@@ -8,11 +8,11 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-13 16:23+0000\n"
+"PO-Revision-Date: 2022-07-15 00:48+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/tutorialtypesfuns/zh_Hans/>\n"
-"Language: zh-Hans\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +25,7 @@ msgstr "类型和函数"
 
 #: ../../source/tutorial/typesfuns.rst:8 476ccd0e15574f7bb673f6b7c6c40747
 msgid "Primitive Types"
-msgstr "原始类型"
+msgstr "原语类型"
 
 #: ../../source/tutorial/typesfuns.rst:10 6fc4e0ab8441460aa60cddd7b383e5a0
 msgid ""
@@ -37,11 +37,11 @@ msgid ""
 "following into a file ``Prims.idr`` and load it into the Idris interactive "
 "environment by typing ``idris2 Prims.idr``:"
 msgstr ""
-"Idris 定义了几个原始类型。 ``Int`` , ``Integer`` 和 ``Double`` 用于数字操"
-"作， ``Char`` 和 ``String`` 用于文本操作，以及 ``Ptr`` 表示外来指针。库中还声"
-"明了几种数据类型，包括 ``Bool`` ，其值为 ``True`` 和 ``False`` 。我们可以用这"
-"些类型声明一 些常量。在文件 ``Prims.idr`` 中输入以下内容，并通过输入 "
-"``idris2 Prims.idr`` 将其加载到 Idris 交互环境中："
+"Idris 定义了几个原语类型。 ``Int`` , ``Integer`` 和 ``Double`` 用于数字操作，"
+" ``Char`` 和 ``String`` 用于文本操作，以及 ``Ptr`` "
+"表示外来指针。库中还声明了几种数据类型，包括 ``Bool`` ，其值为 ``True`` 和 "
+"``False`` 。我们可以用这些类型声明一 些常量。在文件 ``Prims.idr`` "
+"中输入以下内容，并通过输入 ``idris2 Prims.idr`` 将其加载到 Idris 交互环境中："
 
 #: ../../source/tutorial/typesfuns.rst:34 d2f6789c0a9141a7bd5e4cbca464089f
 msgid ""
@@ -86,9 +86,10 @@ msgid ""
 "types. Boolean expressions can be tested with the ``if...then...else`` "
 "construct, for example:"
 msgstr ""
-"所有常见的算术和比较运算符都是为原始类型定义的。它们通过接口被重载，我们将"
-"在 :ref:`sect-interfaces` 一节中讨论，并且可以被扩展到用户定义的类型上工作。"
-"例如，布尔表达式可以用 ``if...then...else`` 构建来测试："
+"所有常见的算术和比较运算符都是被定义为原语类型的。它们通过接口被重载，"
+"我们将在 :ref:`sect-interfaces` "
+"一节中讨论，并且可以被扩展到用户定义的类型上工作。例如，布尔表达式可以用 "
+"``if...then...else`` 构建来测试："
 
 #: ../../source/tutorial/typesfuns.rst:73 0f8b86288a204a8090114c38d31197b5
 msgid "Data Types"
@@ -253,7 +254,7 @@ msgstr ""
 
 #: ../../source/tutorial/typesfuns.rst:238 f790cba5c9694329aa72a3ba5f819e66
 msgid "Totality and Covering"
-msgstr ""
+msgstr "完全性和覆盖性"
 
 #: ../../source/tutorial/typesfuns.rst:240 d7635c8fb8c546b1b96db92b526cdba6
 msgid ""
@@ -273,7 +274,7 @@ msgstr ""
 
 #: ../../source/tutorial/typesfuns.rst:257 eb8e98e2c6e1412fb9b185ae56b14e64
 msgid "You can override this with a ``partial`` annotation:"
-msgstr ""
+msgstr "你可以用 ``partial`` 注解来忽略这一警告。"
 
 #: ../../source/tutorial/typesfuns.rst:264 d7408089ceb2472fbd6864f5645114ed
 msgid ""
@@ -542,11 +543,11 @@ msgstr ""
 
 #: ../../source/tutorial/typesfuns.rst:483 4e23351f9f8844b5b1f7d527dbb09ca8
 msgid "Implicit Arguments"
-msgstr ""
+msgstr "隐式参数"
 
 #: ../../source/tutorial/typesfuns.rst:485 ae548052c79947c2be510074c3a00625
 msgid "Let us take a closer look at the type of ``index``:"
-msgstr ""
+msgstr "让我们仔细看看 ``index`` 的类型。"
 
 #: ../../source/tutorial/typesfuns.rst:491 4a594a3643764932a4c652685b55e56e
 msgid ""
@@ -555,6 +556,9 @@ msgid ""
 "``n`` and ``a``, which are not declared explicitly. These are *implicit* "
 "arguments to ``index``. We could also write the type of ``index`` as:"
 msgstr ""
+"它需要两个参数，一个是 ``n`` 个元素的有限集，一个是 ``n`` 个元素的向量，"
+"类型是 ``a`` 。但是还有两个名字， ``n`` 和 ``a`` ，这两个名字没有被明确声明。"
+" ``index`` 使用了 *隐式* 参数 。我们也可以把 ``index`` 的类型写成："
 
 #: ../../source/tutorial/typesfuns.rst:501 fc9ce79eb8444839bf3b9cd0f43a4ced
 msgid ""
@@ -567,18 +571,25 @@ msgid ""
 "lower case letter. Implicit arguments can still be given explicitly in "
 "applications, using ``{a=value}`` and ``{n=value}``, for example:"
 msgstr ""
+"隐式参数是用``forall``声明的，在 ``index`` 的应用中没有给出；它们的值可以从 "
+"``Fin n`` 和 ``Vect n a`` 参数的类型中推测出来。在类型声明中作为参数或索引出"
+"现的任何以小写字母开头的名称，如果没有应用于任何参数， *总是* 会自动被绑定为"
+"隐式参数；这就是为什么数据类型名称不能以小写字母开头。隐式参数仍然可以在应用"
+"程序中明确给出，例如，使用 ``{a=value}`` 和 ``{n=value}`` 。"
 
 #: ../../source/tutorial/typesfuns.rst:517 4e8fb1578718437fa86bcec0ac4b6187
 msgid ""
 "In fact, any argument, implicit or explicit, may be given a name. We could "
 "have declared the type of ``index`` as:"
-msgstr ""
+msgstr "事实上，任何参数，不管是隐式还是显式，都可以被赋予一个名字。我们可以将 "
+"``index`` 的类型声明为："
 
 #: ../../source/tutorial/typesfuns.rst:524 dd8a6197dbd74bcbadd0e1ba1b49aca9
 msgid ""
 "It is a matter of taste whether you want to do this — sometimes it can help "
 "document a function by making the purpose of an argument more clear."
-msgstr ""
+msgstr "你是否要这样做是一个品味问题--"
+"有时它可以帮助记录一个函数，使参数的目的更加明确。"
 
 #: ../../source/tutorial/typesfuns.rst:528 1f2a2065d25d407cb0e34d25b4cbeb43
 msgid ""
@@ -587,10 +598,13 @@ msgid ""
 "implicit arguments - we will discuss the question of what is available at "
 "run time, among other things, in Section :ref:`sect-multiplicities`"
 msgstr ""
+"隐式参数的名字在函数的主体中是有作用域的，尽管它们在运行时不能使用。关于隐式"
+"参数还有很多要说的--我们将在 :ref:`sect-multiplicities` "
+"一节中讨论在运行时也可以使用的问题，以及其他事项"
 
 #: ../../source/tutorial/typesfuns.rst:534 71e6159ac136491aac4349def4471c74
 msgid "Note: Declaration Order and ``mutual`` blocks"
-msgstr ""
+msgstr "注：声明顺序和 ``mutual`` 块"
 
 #: ../../source/tutorial/typesfuns.rst:536 9d0e5d7dfa384a3ab45076b980e5e295
 msgid ""
@@ -601,13 +615,18 @@ msgid ""
 "this restriction can be relaxed by using a ``mutual`` block, which allows "
 "data types and functions to be defined simultaneously:"
 msgstr ""
+"一般来说，函数和数据类型必须在使用前定义，因为依赖类型允许函数作为类型的一部"
+"分出现，而类型检查可以依赖于特定函数的定义方式（尽管这只适用于完全函数；见 "
+":ref:`sect-totality`）。然而，可以通过使用 ``mutual`` "
+"块来放宽这个限制，它允许数据类型和函数同时被定义："
 
 #: ../../source/tutorial/typesfuns.rst:554 1e50740f260e49f2ab49222ecf839c49
 msgid ""
 "In a ``mutual`` block, first all of the type declarations are added, then "
 "the function bodies. As a result, none of the function types can depend on "
 "the reduction behaviour of any of the functions in the block."
-msgstr ""
+msgstr "在 ``mutual`` 块中，首先添加所有的类型声明，然后是函数体。因此，任何一个函数"
+"类型都不会依赖于块中其它函数的递归行为。"
 
 #: ../../source/tutorial/typesfuns.rst:559 04b890f801174aaa9e0961da9bb4856c
 msgid ""
@@ -617,16 +636,19 @@ msgid ""
 "mutually defined function, or need to rely on the behaviour of a mutually "
 "defined function for something to typecheck."
 msgstr ""
+"前向声明可以让你对相互定义的概念的声明顺序有更精细的控制。如果你需要在相互定"
+"义的函数的类型中提到一个数据类型的构造函数，或者需要依靠相互定义的函数的行为"
+"来进行类型检查，这就很有用。"
 
 #: ../../source/tutorial/typesfuns.rst:602 9a6da6537c214a3c89c9a1930ea6ada1
 msgid ""
 "Placing signature declarations forward can suggest Idris to detect their "
 "corresponding mutual definitions."
-msgstr ""
+msgstr "将签名声明放在前面可以建议 Idris 检 测他们相应的相互定义。"
 
 #: ../../source/tutorial/typesfuns.rst:606 953a639c17834b1686f9573889674ab0
 msgid "I/O"
-msgstr ""
+msgstr "I/O"
 
 #: ../../source/tutorial/typesfuns.rst:608 56090831dece46eab178e8fb8804fce6
 msgid ""
@@ -637,6 +659,10 @@ msgid ""
 "which *describes* the interactions that the run-time system will perform "
 "when executing a function:"
 msgstr ""
+"如果计算机程序不以某种方式与用户或系统互动，那么它们就没有什么用处。像 Idris "
+"这样的纯语言 -- 即表达式没有副作用的语言 -- 的困难在于 I/O "
+"本质上是有副作用的。因此， Idris 提供了一个参数化的类型 ``IO`` ， *描述* "
+"运行时系统在执行一个函数时将执行的交互作用："
 
 #: ../../source/tutorial/typesfuns.rst:619 bce1c9fbc69a419abc441e0c646ce49f
 msgid ""
@@ -645,6 +671,9 @@ msgid ""
 "The resulting operations are executed externally, by the run-time system. "
 "We’ve already seen one I/O program:"
 msgstr ""
+"我们先给出 ``IO`` 的抽象化定义，但实际上它描述了要执行的 I/O 操作是什么，而不"
+"是如何执行它们。由此产生的操作是在外部由运行时系统执行的。我们已经看到了一个"
+"I/O程序："
 
 #: ../../source/tutorial/typesfuns.rst:629 2104b38ba729467a9948e21b0b306463
 msgid ""
@@ -652,25 +681,29 @@ msgid ""
 "action which produces an element of the unit type ``()``. There is a variant "
 "``putStr`` which decribes the output of a string without a newline:"
 msgstr ""
+"``putStrLn`` 的类型说明它接收一个字符串，并返回一个 I/O 动作，"
+"产生一个单元类型的元素 ``()`` 。另外它有一个变体 ``putStr`` "
+"，它描述了一个没有换行的字符串的输出："
 
 #: ../../source/tutorial/typesfuns.rst:638 167aeaa70acb41eca9d4da707eff3f5a
 msgid "We can also read strings from user input:"
-msgstr ""
+msgstr "我们还可以从用户输入中读取字符串："
 
 #: ../../source/tutorial/typesfuns.rst:644 05d47899721f42de9e4ee1af29a8df9d
 msgid ""
 "A number of other I/O operations are available. For example, by adding "
 "``import System.File`` to your program, you get access to functions for "
 "reading and writing files, including:"
-msgstr ""
+msgstr "还有一些其他的 I/O 操作可用。例如，通过在你的程序中添加 ``import System."
+"File`` ，你可以获得读写文件的函数，包括："
 
 #: ../../source/tutorial/typesfuns.rst:660 e1ff4240c38344418678188d3403d271
 msgid "Note that several of these return ``Either``, since they may fail."
-msgstr ""
+msgstr "请注意，其中几个会返回 ``Either`` ，因为它们可能会失败。"
 
 #: ../../source/tutorial/typesfuns.rst:665 26845935c3f34b5d840b2472cf71cbad
 msgid "“``do``” notation"
-msgstr ""
+msgstr "“ ``do`` ” 记法"
 
 #: ../../source/tutorial/typesfuns.rst:667 be067a6585db4e6190b9f454d03f2540
 msgid ""
@@ -679,6 +712,10 @@ msgid ""
 "however, so we can’t access the result of a computation directly. Instead, "
 "we sequence operations with ``do`` notation:"
 msgstr ""
+"I/O "
+"程序通常需要对行动进行排序，将一个计算的输出输入到下一个计算的输入中。然而， "
+"``IO`` 是一个抽象类型，所以我们不能直接访问一个计算的结果。相反，我们用 "
+"``do`` 记法来排列操作："
 
 #: ../../source/tutorial/typesfuns.rst:679 e780cd06647947fca9a6a0d5bfcd2a42
 msgid ""
@@ -689,29 +726,35 @@ msgid ""
 "begin in the same column. The ``pure`` operation allows us to inject a value "
 "directly into an IO operation:"
 msgstr ""
+"语法 ``x <- iovalue`` 执行I/O操作 ``iovalue`` ，类型为 ``IO a`` ，并将类型为 "
+"``a`` 的结果放入变量 ``x`` 。在这种情况下， ``getLine`` 返回一个 ``IO "
+"String`` ，所以 ``name`` 具有类型 ``String`` 。缩进很重要 -- do "
+"块中的每个语句必须在同一列开始。 ``pure`` 操作允许我们将一个值直接注入到一个 "
+"IO 操作中："
 
 #: ../../source/tutorial/typesfuns.rst:690 ce1239b7bee44ffda8a9b64182a01540
 msgid ""
 "As we will see later, ``do`` notation is more general than this, and can be "
 "overloaded."
-msgstr ""
+msgstr "我们将在后面看到， ``do`` 符号比这里展示的更加通用，而且可以重载。"
 
 #: ../../source/tutorial/typesfuns.rst:693 99430d8183424ffaac44b96cca37c168
 msgid ""
 "You can try executing ``greet`` at the Idris 2 REPL by running the command "
 "``:exec greet``:"
-msgstr ""
+msgstr "你可以尝试在 Idris 2 REPL 执行 ``greet`` ，运行命令 ``:exec greet`` ："
 
 #: ../../source/tutorial/typesfuns.rst:704 acfc5853bc714e2486d52ffe1f8d3dbf
 msgid "Laziness"
-msgstr ""
+msgstr "惰性"
 
 #: ../../source/tutorial/typesfuns.rst:706 f15aea90d4af444aa4c9fc5e3b6358bc
 msgid ""
 "Normally, arguments to functions are evaluated before the function itself "
 "(that is, Idris uses *eager* evaluation). However, this is not always the "
 "best approach. Consider the following function:"
-msgstr ""
+msgstr "通常情况下，函数的参数在函数本身之前被求值（也就是说，Idris使用 *及早* "
+"求值策略）。然而，这并不总是最好的方法。考虑一下下面的函数："
 
 #: ../../source/tutorial/typesfuns.rst:716 3fb52069e24e4347a7fff0db1207d161
 msgid ""
@@ -720,6 +763,9 @@ msgid ""
 "this, Idris provides a ``Lazy`` primitive, which allows evaluation to be "
 "suspended. It is a primitive, but conceptually we can think of it as follows:"
 msgstr ""
+"这个函数会使用 ``t`` 或 ``e`` 参数中的一个，而不是两个都用。我们希望 *只有* "
+"被使用的参数被求值。为了实现这一点，Idris 提供了一个 ``Lazy`` "
+"原语，它允许暂缓求值。它是一个原语，但在概念上我们可以把它看成是这样："
 
 #: ../../source/tutorial/typesfuns.rst:728 4e2d0b0c32ed4cb68641a618f879bdad
 msgid ""
@@ -729,17 +775,23 @@ msgid ""
 "can therefore write ``ifThenElse`` as follows, without any explicit use of "
 "``Force`` or ``Delay``:"
 msgstr ""
+"一个 ``Lazy a`` 类型的值是不被求值的，直到它被 ``Force`` 强迫。Idris "
+"类型检查器知道 ``Lazy`` 类型，并在必要时插入 ``Lazy a`` 和 ``a`` "
+"之间的转换，反之亦然。因此，我们可以这样写 ``ifThenElse`` ，而不需要明确使用 "
+"``Force`` 或 ``Delay`` ："
 
 #: ../../source/tutorial/typesfuns.rst:741 04aa9becff1c4b85a6d8acd23dcaf6f7
+#, fuzzy
 msgid "Infinite data Types"
-msgstr ""
+msgstr "余数据类型"
 
 #: ../../source/tutorial/typesfuns.rst:743 ad922d31944c4268838987581a4e442e
 msgid ""
 "Infinite data types (codata) allow us to define infinite data structures by "
 "marking recursive arguments as potentially infinite. One example of an "
 "infinite type is Stream, which is defined as follows."
-msgstr ""
+msgstr "我们可以通过余数据类型（codata），将递归参数标记为潜在无穷来定义无限的数据结"
+"构。余数据类型的一个例子是Stream，它的定义如下。"
 
 #: ../../source/tutorial/typesfuns.rst:752 8cff199642994bd2817412349742decc
 msgid ""
