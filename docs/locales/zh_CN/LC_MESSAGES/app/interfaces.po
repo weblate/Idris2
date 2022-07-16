@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-16 15:58+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/appinterfaces/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/app/interfaces.rst:2 bbb3800959114ebf8791eac1ee7ca44d
 msgid "Defining Interfaces"
-msgstr ""
+msgstr "定义接口"
 
 #: ../../source/app/interfaces.rst:4 8a28779b90494f6baa92db0a186de4d0
 msgid ""
@@ -31,6 +34,11 @@ msgid ""
 "concrete exceptions and state in general, we define interfaces for "
 "collections of operations which work in a specific list of errors."
 msgstr ""
+"``Control.App`` 提供的运行 ``App`` 的唯一方法是通过 ``run`` 函数，"
+"它接收一个具体的错误列表 ``Init`` 。对这个错误列表的所有具体扩展都是通过 "
+"``handle`` 以引入一个新的异常，或者 ``new`` 以引入一个新状态。为了有效地组成 "
+"``App`` 程序，而不是笼统地引入具体的异常和状态，我们为在特定错误列表中工作的"
+"操作集合定义接口。"
 
 #: ../../source/app/interfaces.rst:14 e5e22ecd503642e6ba64a48aafef553d
 msgid "Example: Console I/O"
@@ -142,4 +150,3 @@ msgid ""
 "provided that we wrap it in a top level ``handle`` function to deal with "
 "any errors thrown by ``readFile``:"
 msgstr ""
-

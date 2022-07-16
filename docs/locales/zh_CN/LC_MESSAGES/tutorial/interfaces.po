@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-16 15:58+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/tutorialinterfaces/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/tutorial/interfaces.rst:5 81fbbe3ced404f2e958f4187a9ae2f95
 msgid "Interfaces"
-msgstr ""
+msgstr "接口"
 
 #: ../../source/tutorial/interfaces.rst:7 566e24c6903c4ababf8db67d773da361
 msgid ""
@@ -29,6 +32,10 @@ msgid ""
 "``==`` to work on the majority of data types. We would like to be able to"
 " display different types in a uniform way."
 msgstr ""
+"我们经常希望定义的函数能在几种不同的数据类型中工作。例如，"
+"我们希望算术运算符至少能在 ``Int``, ``Integer`` 和 ``Double`` 上工作。"
+"我们希望 ``==`` "
+"能在大多数数据类型上工作。我们希望能够以一种统一的方式显示不同的类型。"
 
 #: ../../source/tutorial/interfaces.rst:13 906ac8e6c8ea482dbaab2d38b7e3e8d4
 msgid ""
@@ -38,12 +45,16 @@ msgid ""
 "interface, which is defined in the prelude and provides an interface for "
 "converting values to ``String``:"
 msgstr ""
+"为了实现这一点，我们使用 *接口* ，它类似于 Haskell 中的类型类或 Rust 中的 "
+"traits 。为了定义一个接口，我们提供一个可重载函数的集合。一个简单的例子是 "
+"``Show`` 接口，它被定义在 prelude 中，提供了一个将数值转换为 ``String`` "
+"的接口："
 
 #: ../../source/tutorial/interfaces.rst:24 fde6b8de03e0413783a2aee66143cb3f
 msgid ""
 "This generates a function of the following type (which we call a *method*"
 " of the ``Show`` interface):"
-msgstr ""
+msgstr "生成一个如下类型的函数（我们称之为 ``Show`` 接口的 *方法* ）："
 
 #: ../../source/tutorial/interfaces.rst:31 cba4291529ca40e28dd73a3ffdf5931c
 msgid ""
@@ -53,6 +64,10 @@ msgid ""
 "the methods of the interface. For example, the ``Show`` implementation "
 "for ``Nat`` could be defined as:"
 msgstr ""
+"我们可以把它理解为：“ 在 ``a`` 实现 ``Show`` 的约束下，该函数接受一个输入 "
+"``a`` 并返回一个 ``String`` "
+"”。我们可以通过为它定义接口的方法来实现该接口。例如， ``Nat`` 的 ``Show`` "
+"实现可以定义为："
 
 #: ../../source/tutorial/interfaces.rst:47 62533bca142b4e9abed6d18e26944f9b
 msgid ""
@@ -65,6 +80,11 @@ msgid ""
 "know that there is a ``Show`` implementation for the element type, "
 "because we are going to use it to convert each element to a ``String``:"
 msgstr ""
+"一个类型对于同一个接口只能有一种实现——实现不得重合。实现声明本身可以有约束。"
+"为了帮助解决这个问题，实现的参数必须是构造函数（数据或类型构造函数）或变量（"
+"也就是说，你无法为函数赋予实现）。例如，为向量定义一个 ``Show`` 的实现，"
+"我们需要知道有一个 ``Show`` 的实现用于元素类型，"
+"因为我们要用它把每个元素转换为 ``String`` ："
 
 #: ../../source/tutorial/interfaces.rst:65 a671917f2d7c4d46a6389450da4ac414
 msgid ""
@@ -72,24 +92,28 @@ msgid ""
 "because otherwise the ``n`` is already in scope, and fixed to the value "
 "of the top level ``n``."
 msgstr ""
+"请注意，我们需要在 ``show'`` 函数中明确 ``forall n .`` ，因为 ``n`` "
+"已经在作用域内，并且固定为顶层的 ``n`` 的值。"
 
 #: ../../source/tutorial/interfaces.rst:70 f2c909f0a12c4e65920882c48cf9286e
 msgid "Default Definitions"
-msgstr ""
+msgstr "默认定义"
 
 #: ../../source/tutorial/interfaces.rst:72 221f953472f842bfb4c5b1ec62393589
 msgid ""
 "The Prelude defines an ``Eq`` interface which provides methods for "
 "comparing values for equality or inequality, with implementations for all"
 " of the built-in types:"
-msgstr ""
+msgstr "Prelude 定义了一个 ``Eq`` "
+"接口，它提供了比较值的相等或不相等的方法，并为所有的内置类型提供了实现："
 
 #: ../../source/tutorial/interfaces.rst:82 f99cd84e47694bdd9061ba3f78a42dd9
 msgid ""
 "To declare an implementation for a type, we have to give definitions of "
 "all of the methods. For example, for an implementation of ``Eq`` for "
 "``Nat``:"
-msgstr ""
+msgstr "要为类型实现一个接口，我们必须给出所有方法的定义。例如， ``Nat`` 类型的 "
+"``Eq`` 接口实现："
 
 #: ../../source/tutorial/interfaces.rst:95 58a43c45e21b4d71adb87f5cfeacc471
 msgid ""
@@ -98,6 +122,9 @@ msgid ""
 "is therefore convenient to give a default definition for each method in "
 "the interface declaration, in terms of the other method:"
 msgstr ""
+"很难想象在很多情况下， ``/=`` 方法除了是应用 ``==`` 方法的结果的否定之外，还"
+"会是什么。因此，在接口声明中为每个方法给出一个默认的定义是很方便的，默认定义"
+"可以调用其它方法："
 
 #: ../../source/tutorial/interfaces.rst:109 ce304bb0625d4388bef25f8373ccdecd
 msgid ""
@@ -106,10 +133,12 @@ msgid ""
 "is missing, and there is a default definition for it, then the default is"
 " used instead."
 msgstr ""
+"``Eq`` 的最小完整实现需要定义 ``==`` 或 ``/=`` ，但不需要同时定义。如果缺少一"
+"个方法的定义，并且有一个默认的定义，那么就用默认的定义来代替。"
 
 #: ../../source/tutorial/interfaces.rst:115 c46b0c29e4514f89af1e9c203d480876
 msgid "Extending Interfaces"
-msgstr ""
+msgstr "扩展接口"
 
 #: ../../source/tutorial/interfaces.rst:117 12b1417231224d8ca6a3de8b93de86db
 msgid ""
@@ -640,4 +669,3 @@ msgid ""
 "DOI=10.1017/S0956796807006326 "
 "https://dx.doi.org/10.1017/S0956796807006326"
 msgstr ""
-
