@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-16 15:58+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/tutorialmodules/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/tutorial/modules.rst:5 a61b170945894f5f9fc9a2c1132792f0
 msgid "Modules and Namespaces"
-msgstr ""
+msgstr "模块和命名空间"
 
 #: ../../source/tutorial/modules.rst:7 49c43a743f814d2caf06c53fae12fb48
 msgid ""
@@ -31,74 +34,85 @@ msgid ""
 "module which defines a binary tree type ``BTree`` (in a file "
 "``BTree.idr``):"
 msgstr ""
+"一个 Idris 程序由一个模块的集合组成。每个模块包括一个可选的 ``module`` "
+"声明，用来给出模块的名称，一个 ``import`` 声明列表，给出要导入的其他模块，以"
+"及一个类型、接口和函数的声明和定义的集合。例如，"
+"下面的列表给出了一个定义二叉树类型的模块 ``BTree`` （在文件 ``BTree.idr`` "
+"中）："
 
 #: ../../source/tutorial/modules.rst:39 a57a3014abc14bbfb28e6970dcd49ef0
 msgid ""
 "The modifiers ``export`` and ``public export`` say which names are "
 "visible from other namespaces. These are explained further below."
-msgstr ""
+msgstr "修饰词 ``export`` 和 ``public export`` "
+"表示哪些名称对其他命名空间可见。这些将在下面进一步解释。"
 
 #: ../../source/tutorial/modules.rst:42 577963264d014dd18a03fc55a4b14859
 msgid ""
 "Then, this gives a main program (in a file ``bmain.idr``) which uses the "
 "``BTree`` module to sort a list:"
-msgstr ""
+msgstr "然后，这就给出了一个主程序（在文件 ``bmain.idr`` 中），它使用 ``BTree`` "
+"模块对一个列表进行排序："
 
 #: ../../source/tutorial/modules.rst:55 008e21737b4241d381044da9f73bb94a
 msgid ""
 "The same names can be defined in multiple modules: names are *qualified* "
 "with the name of the module. The names defined in the ``BTree`` module "
 "are, in full:"
-msgstr ""
+msgstr "相同的名字可以被定义在多个模块中：名字可以用模块的名字来 *限定* 。在 "
+"``BTree`` 模块中定义的名字，全限定名如下："
 
 #: ../../source/tutorial/modules.rst:58 8c061dda1c8b4f36914e79859da1a06e
+#, fuzzy
 msgid "``BTree.BTree``"
-msgstr ""
+msgstr "``BTree.BTree``"
 
 #: ../../source/tutorial/modules.rst:59 48097d8975bf436ca25b373b8e3319af
 msgid "``BTree.Leaf``"
-msgstr ""
+msgstr "``BTree.Leaf``"
 
 #: ../../source/tutorial/modules.rst:60 f8438582e7cb4268a9d06d8e291d0132
 msgid "``BTree.Node``"
-msgstr ""
+msgstr "``BTree.Node``"
 
 #: ../../source/tutorial/modules.rst:61 ffeffb5910bf452aada4629ffba70128
 msgid "``BTree.insert``"
-msgstr ""
+msgstr "``BTree.insert``"
 
 #: ../../source/tutorial/modules.rst:62 42ea9dad6ecb45a4990d6f84f28b3a7a
 msgid "``BTree.toList``"
-msgstr ""
+msgstr "``BTree.toList``"
 
 #: ../../source/tutorial/modules.rst:63 780a137448294737b7ab1574a8037eea
 msgid "``BTree.toTree``"
-msgstr ""
+msgstr "``BTree.toTree``"
 
 #: ../../source/tutorial/modules.rst:65 c63cb6750b90411ba9e772a39b7f6833
 msgid ""
 "If names are otherwise unambiguous, there is no need to give the fully "
 "qualified name. Names can be disambiguated either by giving an explicit "
 "qualification, using the ``with`` keyword, or according to their type."
-msgstr ""
+msgstr "如果名字没有歧义，就没有必要给出完全限定的名字。名称也可以通过使用 ``with`` "
+"关键字给出一个明确的限定，或者根据它们的类型来消除歧义。"
 
 #: ../../source/tutorial/modules.rst:69 5ac34d1576494b9fb70bbfa2ddab7cd2
 msgid "The ``with`` keyword in expressions comes in two variants:"
-msgstr ""
+msgstr "``with`` 表达式中的关键字有两种变体："
 
 #: ../../source/tutorial/modules.rst:71 9dba68a523f84629b1f8a33f2f146867
 msgid "``with BTree.insert (insert x empty)`` for one name"
-msgstr ""
+msgstr "``with BTree.insert (insert x empty)`` 用于单个名称"
 
 #: ../../source/tutorial/modules.rst:72 e8d0ee80151944ac9311a12e4c34c42b
 msgid "``with [BTree.insert, BTree.empty] (insert x empty)`` for multiple names"
-msgstr ""
+msgstr "``with [BTree.insert, BTree.empty] (insert x empty)`` 用于多个名称"
 
 #: ../../source/tutorial/modules.rst:74 558fc24df93341638dc06259d2408ec8
 msgid ""
 "This is particularly useful with ``do`` notation, where it can often "
 "improve error messages: ``with MyModule.(>>=) do ...``"
-msgstr ""
+msgstr "这对于 ``do`` 记法特别有用，它通常可以改善错误消息： ``with MyModule.(>>=) "
+"do ...``"
 
 #: ../../source/tutorial/modules.rst:77 950a150dbd5c41998bfeefe9d92baafa
 msgid ""
@@ -111,10 +125,15 @@ msgid ""
 "main module, with the ``main`` function, must be called ``Main`` — "
 "although its filename need not be ``Main.idr``."
 msgstr ""
+"尽管一般来说，模块名称和文件名之间没有正式的联系，模块和文件使用相同的名称是"
+"明智的。 ``import`` 语句指的是文件名，使用点来分隔目录。例如， ``import foo."
+"bar`` 将导入文件 ``foo/bar.idr`` ，按照惯例，该文件的模块声明是 ``module foo."
+"bar`` 。对模块名称的唯一要求是，带有 ``main`` 函数的主模块必须被称为 ``Main``"
+" —— 尽管其文件名不需要是 ``Main.idr`` 。"
 
 #: ../../source/tutorial/modules.rst:87 58dde4602c0543339eace11496201932
 msgid "Export Modifiers"
-msgstr ""
+msgstr "导出修饰符"
 
 #: ../../source/tutorial/modules.rst:89 70ef82d614ea4487841452d7dea1d0eb
 msgid ""
@@ -125,18 +144,23 @@ msgid ""
 "and interfaces to be marked as: ``private``, ``export``, or ``public "
 "export``. Their general meaning is as follows:"
 msgstr ""
+"Idris 允许对命名空间内容的可见性进行精细的控制。默认情况下，所有定义在名字空"
+"间的名字都是私有的。 这有助于规范一个最小的接口和隐藏内部细节。Idris "
+"允许函数、类型和接口被标记为 ``private``, ``export`` 或 ``public export`` "
+"。它们的一般含义如下："
 
 #: ../../source/tutorial/modules.rst:96 150e8eb5417b427fb7cc0fd3afe07077
+#, fuzzy
 msgid "``private`` meaning that it is not exported at all. This is the default."
-msgstr ""
+msgstr "``private`` 意味着它根本不被导出。这是默认设置。"
 
 #: ../../source/tutorial/modules.rst:98 33455184f9844b9f91bbb6d7313efbc9
 msgid "``export`` meaning that its top level type is exported."
-msgstr ""
+msgstr "``export`` 意味着顶层类型已被导出。"
 
 #: ../../source/tutorial/modules.rst:100 f221ad4d2907409397f0b209964fd1a2
 msgid "``public export`` meaning that the entire definition is exported."
-msgstr ""
+msgstr "``public export`` 意味着整个定义被导出。"
 
 #: ../../source/tutorial/modules.rst:102 cd2430cbb7084ea893a39f8308a4b1cc
 msgid ""
@@ -146,14 +170,17 @@ msgid ""
 "``export`` names, and ``export`` types cannot use ``private`` names. This"
 " is to prevent private names leaking into a module's interface."
 msgstr ""
+"修改可见性的另一个限制是，定义不能引用更低层次的可见性中的任何东西。例如， ``"
+"public export`` 定义不能使用 ``private`` 或 ``export`` 名称，而 ``export`` "
+"类型不能使用 ``private`` 名称。这是为了防止私有名称泄露到模块的接口中。"
 
 #: ../../source/tutorial/modules.rst:109 f80ecc4dceec4fdbb388b5139fac6db2
 msgid "Meaning for Functions"
-msgstr ""
+msgstr "用于函数时的含义"
 
 #: ../../source/tutorial/modules.rst:111 da0f4795844c435f948d4ce255b66441
 msgid "``export`` the type is exported"
-msgstr ""
+msgstr "``export`` 类型被导出"
 
 #: ../../source/tutorial/modules.rst:113 4248c482a71e4eb88e89ec61946d25f2
 msgid ""
@@ -163,6 +190,9 @@ msgid ""
 "name ``public export`` is intended to make you think twice about doing "
 "this."
 msgstr ""
+"``public export`` 类型和定义被导出，定义被导入后可以使用。换句话说，定义本身"
+"被认为是模块接口的一部分。 ``public export`` "
+"这个长名字是为了让你在做这件事时三思而行。"
 
 #: ../../source/tutorial/modules.rst:121 094cad4ae6ab456a86e2d1098227b1cd
 msgid ""
@@ -171,6 +201,9 @@ msgid ""
 "export`` all type synonyms if they are to be used outside the module. "
 "Otherwise, Idris won't know what the synonym is a synonym for."
 msgstr ""
+"Idris 中的类型同义词是通过编写函数创建的。设置模块的可见性时，如果要在模块外"
+"使用所有类型的同义词，最好将它们设置为 ``public export`` 。否则，Idris "
+"将不知道该同义词是谁的同义词。"
 
 #: ../../source/tutorial/modules.rst:127 b7ac5458996a41eeaf72b0cf37d6b9d0
 msgid ""
@@ -332,4 +365,3 @@ msgid ""
 "``xs`` and ``y`` arguments. Here, we can use placeholders for the values "
 "which can be inferred by the type checker:"
 msgstr ""
-
