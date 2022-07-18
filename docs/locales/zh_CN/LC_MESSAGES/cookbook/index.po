@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-18 01:34+0000\n"
+"PO-Revision-Date: 2022-07-19 12:08+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/cookbookindex/zh_Hans/>\n"
@@ -22,10 +22,10 @@ msgstr ""
 
 #: ../../source/cookbook/index.rst:4 dee9d2916dbb4f4f8c1bd5fb58b67645
 msgid "Cookbook"
-msgstr "食谱"
+msgstr "经典实例"
 
 #: ../../source/cookbook/index.rst:6 c43fbb932231463a8dff11871fafb456
 msgid ""
 "The cookbook provides common recipes for common patterns and applications"
 " in Idris 2."
-msgstr "该食谱为 Idris 2 中的常见模式和应用提供了常见的配方。"
+msgstr "经典实例是为 Idris 2 中的常见模式和应用提供常见的案例。"
