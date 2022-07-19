@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-12 03:38+0000\n"
+"PO-Revision-Date: 2022-07-19 12:25+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/updatesupdates/zh_Hans/>\n"
@@ -600,7 +600,7 @@ msgstr ""
 
 #: ../../source/updates/updates.rst:470 54d96853143045fc9a6876b89d5ae0cd
 msgid "Packages"
-msgstr ""
+msgstr "包"
 
 #: ../../source/updates/updates.rst:472 73d06c24c60748f9a0cc84feb67c4fee
 msgid ""
