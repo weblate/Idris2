@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-19 12:25+0000\n"
+"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"idris2/referencepackages/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/reference/packages.rst:5 308eab30895b401181160f1296402ac1
 msgid "Packages"
-msgstr ""
+msgstr "包"
 
 #: ../../source/reference/packages.rst:7 6fdf568c932f459187938b71936feef9
 msgid ""
@@ -30,11 +33,11 @@ msgstr ""
 
 #: ../../source/reference/packages.rst:12 dec9a2805a244e0b8b207ec2416f547e
 msgid "Package Descriptions"
-msgstr ""
+msgstr "包描述"
 
 #: ../../source/reference/packages.rst:14 8bab1e9b9f7b4082a53d9cee17845438
 msgid "A package description includes the following:"
-msgstr ""
+msgstr "一个包的描述包括以下内容："
 
 #: ../../source/reference/packages.rst:16 354b4d3323894ad79159db9e538a10a6
 msgid ""
@@ -68,6 +71,8 @@ msgid ""
 " the main Idris repository, and in `third-party libraries "
 "<https://github.com/idris-lang/Idris-dev/wiki/Libraries>`_."
 msgstr ""
+"其他包文件的例子可以在 ``libs`` 目录下的主Idris资源库中找到，也可以在 `"
+"第三方库 <https://github.com/idris-lang/Idris-dev/wiki/Libraries>`_中找到 。"
 
 #: ../../source/reference/packages.rst:39 821a118923e149cb9d2aae3b10070d54
 msgid "Metadata"
@@ -224,7 +229,7 @@ msgstr ""
 
 #: ../../source/reference/packages.rst:122 205f15a223c14c72a787fa1f5a437b89
 msgid "Using Package files"
-msgstr ""
+msgstr "使用包文件"
 
 #: ../../source/reference/packages.rst:124 162d434125954853a48af98a3e9e261b
 msgid ""
@@ -300,4 +305,3 @@ msgid ""
 "choose the one with the highest version number. If package versions are "
 "omitted in directory names, they are treated as the version ``0``."
 msgstr ""
-
