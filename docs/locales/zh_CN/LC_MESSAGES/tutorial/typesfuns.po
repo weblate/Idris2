@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-15 00:48+0000\n"
+"PO-Revision-Date: 2022-07-19 12:08+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/tutorialtypesfuns/zh_Hans/>\n"
@@ -781,9 +781,8 @@ msgstr ""
 "``Force`` 或 ``Delay`` ："
 
 #: ../../source/tutorial/typesfuns.rst:741 04aa9becff1c4b85a6d8acd23dcaf6f7
-#, fuzzy
 msgid "Infinite data Types"
-msgstr "余数据类型"
+msgstr "无限数据类型"
 
 #: ../../source/tutorial/typesfuns.rst:743 ad922d31944c4268838987581a4e442e
 msgid ""
@@ -798,11 +797,12 @@ msgid ""
 "The following is an example of how the codata type ``Stream`` can be used to "
 "form an infinite data structure. In this case we are creating an infinite "
 "stream of ones."
-msgstr ""
+msgstr "下面是一个例子，说明余数数据类型 ``Stream`` "
+"可以用来形成一个无限的数据结构。在这种情况下，我们正在创建一个无限的 1 的流。"
 
 #: ../../source/tutorial/typesfuns.rst:762 95fcb491526f4a6291cbe89212c044e6
 msgid "Useful Data Types"
-msgstr ""
+msgstr "有用的数据类型"
 
 #: ../../source/tutorial/typesfuns.rst:764 d9d717ff9a7f42aaaa5b909219f311dd
 msgid ""
@@ -811,14 +811,17 @@ msgid ""
 "idris-lang.org/pages/documentation.html>`_). This section describes a few of "
 "these, and how to import them."
 msgstr ""
+"Idris包括一些有用的数据类型和库函数（见发行版中的 ``libs/`` 目录，以及`文档 "
+"<https://www.idris-lang.org/pages/documentation.html>`_ "
+"）。本节描述了其中一些，以及如何导入它们。"
 
 #: ../../source/tutorial/typesfuns.rst:770 f941eb88370a4f879cab81d65a055ea1
 msgid "``List`` and ``Vect``"
-msgstr ""
+msgstr "``List`` 和 ``Vect``"
 
 #: ../../source/tutorial/typesfuns.rst:772 6b4f156154774d08b4e6b4def62ee12e
 msgid "We have already seen the ``List`` and ``Vect`` data types:"
-msgstr ""
+msgstr "我们已经看到过 ``List`` 和 ``Vect`` 数据类型："
 
 #: ../../source/tutorial/typesfuns.rst:782 8fcb81d9105e4256807c356d7cf76b5a
 msgid ""
@@ -829,32 +832,37 @@ msgid ""
 "resolved according to their type. As syntactic sugar, any implementation of "
 "the names ``Nil`` and ``::`` can be written in list form. For example:"
 msgstr ""
+"你可以通过 ``import Data.Vect`` 获得对 ``Vect`` 的访问。请注意，List 和 Vect "
+"每个构造函数的名字都是一样的 -- 构造函数的名字（事实上，一般的名字）可以被重"
+"载，只要它们被声明在不同的命名空间（见章节 :ref:`sect-namespaces` "
+"），并且通常会根据它们的类型来解析。作为语法糖，任何被命名为 ``Nil`` 和 "
+"``::`` 的实现都可以写成列表形式。例如："
 
 #: ../../source/tutorial/typesfuns.rst:790 eb69b09b95004211b338ef6671326e86
 msgid "``[]`` means ``Nil``"
-msgstr ""
+msgstr "``[]`` 意味着 ``Nil``"
 
 #: ../../source/tutorial/typesfuns.rst:792 f015e033a7e24cebbdc40405d9fc5b3e
 msgid "``[1,2,3]`` means ``1 :: 2 :: 3 :: Nil``"
-msgstr ""
+msgstr "``[1,2,3]`` 意味着 ``1 :: 2 :: 3 :: Nil``"
 
 #: ../../source/tutorial/typesfuns.rst:794 982881bbb15848469cd544228014c986
 msgid ""
 "Similarly, any implementation of the names ``Lin`` and ``:<`` can be written "
 "in **snoc**-list form:"
-msgstr ""
+msgstr "同样，任何名称为 ``Lin`` 和 ``:<`` 的实现都可以写成 **snoc**-list 形式："
 
 #: ../../source/tutorial/typesfuns.rst:797 c8d0fed7baa24419bac0e19b2794cd23
 msgid "``[<]`` mean ``Lin``"
-msgstr ""
+msgstr "``[<]`` 意味着 ``Lin``"
 
 #: ../../source/tutorial/typesfuns.rst:798 75b47c6b9beb45988f633a5742d3d2a5
 msgid "``[< 1, 2, 3]`` means ``Lin :< 1 :< 2 :< 3``."
-msgstr ""
+msgstr "``[< 1, 2, 3]`` 意味着 ``Lin :< 1 :< 2 :< 3``。"
 
 #: ../../source/tutorial/typesfuns.rst:800 098d8b70cb7f4d4486b6ba6030a1d270
 msgid "and the prelude includes a pre-defined datatype for snoc-lists:"
-msgstr ""
+msgstr "prelude 包括一个预定义的 snoc-lists 的数据类型："
 
 #: ../../source/tutorial/typesfuns.rst:807 49bf5786e5e640e78c9482799a5d6d68
 msgid ""
@@ -863,46 +871,49 @@ msgid ""
 "of precisely how later when we cover interfaces in Section :ref:`sect-"
 "interfaces`) and applies a function to every element of the list or vector."
 msgstr ""
+"该库还定义了一些用于操作这些类型的函数。 ``map`` 对 ``List`` 和 ``Vect`` "
+"都是重载的（我们将在后面的 :ref:`sect-interfaces` "
+"章节中讨论接口时看到更多精确的细节），并对列表或向量的每个元素应用一个函数。"
 
 #: ../../source/tutorial/typesfuns.rst:823 bc8a8c9d31054a708b6b46cac54a8d52
 msgid ""
 "For example, given the following vector of integers, and a function to "
 "double an integer:"
-msgstr ""
+msgstr "例如，给定以下的整数向量，和一个将整数加倍的函数："
 
 #: ../../source/tutorial/typesfuns.rst:834 f57027a4ca364d389cf8294a3eca512a
 msgid ""
 "the function ``map`` can be used as follows to double every element in the "
 "vector:"
-msgstr ""
+msgstr "函数 ``map`` 可用于将向量中的每个元素翻倍："
 
 #: ../../source/tutorial/typesfuns.rst:842 9ea28e896f3a4868b7dd2691cdef12bf
 msgid ""
 "For more details of the functions available on ``List`` and ``Vect``, look "
 "in the library files:"
-msgstr ""
+msgstr "关于 ``List`` 和 ``Vect`` 上的函数的更多细节，请查阅库文件："
 
 #: ../../source/tutorial/typesfuns.rst:845 7cbb428e4e7e4e498b79beab99354ed1
 msgid "``libs/base/Data/List.idr``"
-msgstr ""
+msgstr "``libs/base/Data/List.idr``"
 
 #: ../../source/tutorial/typesfuns.rst:847 f673be1f92f448b2934f5313e307fb7d
 msgid "``libs/base/Data/Vect.idr``"
-msgstr ""
+msgstr "``libs/base/Data/Vect.idr``"
 
 #: ../../source/tutorial/typesfuns.rst:849 c1e4503ef26d42c19d60e8bcb3099326
 msgid "Functions include filtering, appending, reversing, and so on."
-msgstr ""
+msgstr "函数包括过滤、追加、反转等。"
 
 #: ../../source/tutorial/typesfuns.rst:852 9f489d65f9c745488a9d0df659914b90
 msgid "Aside: Anonymous functions and operator sections"
-msgstr ""
+msgstr "题外话：匿名函数和操作符段"
 
 #: ../../source/tutorial/typesfuns.rst:854 24e99de770934f85aad67f87d872b030
 msgid ""
 "There are neater ways to write the above expression. One way would be to use "
 "an anonymous function:"
-msgstr ""
+msgstr "有更多的方法来写上述表达式。其中一种方法是使用匿名函数："
 
 #: ../../source/tutorial/typesfuns.rst:862 7d303ad031f249b9a2f2410b1a40cb28
 msgid ""
@@ -913,6 +924,11 @@ msgid ""
 "can pattern match, e.g. ``\\(x, y) => x + y``. We could also use an operator "
 "section:"
 msgstr ""
+"符号 ``\\x => val`` 构建了一个匿名函数，它接受一个参数 ``x`` 并返回表达式 "
+"``val`` 。匿名函数可以接受多个参数，用逗号分隔，例如： ``\\x, y, z => val`` "
+"。参数也可以被赋予明确的类型，例如： ``\\x : Int => x * 2`` "
+"，并且可以模式匹配，例如： ``\\(x, y) => x + y`` "
+"。另外我们也可以使用一个操作符段："
 
 #: ../../source/tutorial/typesfuns.rst:874 d7f4ebc9ea8e4340983573571dcd8fec
 msgid ""
@@ -920,30 +936,35 @@ msgid ""
 "expands to ``\\x => x * 2``. Similarly, ``(2*)`` would expand to ``\\x => 2 "
 "* x``."
 msgstr ""
+"``(*2)`` 是一个将一个数字乘以2的函数的缩写。它可以被扩展为 ``\\x => x * 2`` "
+"。类似地， ``(2*)`` 将被扩展为 ``\\x => 2 * x`` 。"
 
 #: ../../source/tutorial/typesfuns.rst:879 20efa38f81cf4e4ea0dd6c5bcbb618cf
 msgid "Maybe"
-msgstr ""
+msgstr "Maybe"
 
 #: ../../source/tutorial/typesfuns.rst:881 4f0a128a65f24d6eb502e65dd3185622
 msgid ""
 "``Maybe``, defined in the Prelude, describes an optional value. Either there "
 "is a value of the given type, or there isn’t:"
-msgstr ""
+msgstr "``Maybe`` 被定义在 Prelude "
+"中，描述了一个可选的值。要么有一个给定类型的值，要么没有："
 
 #: ../../source/tutorial/typesfuns.rst:888 fed64e0ba27d419e9fc0edda14fe1bc1
 msgid ""
 "``Maybe`` is one way of giving a type to an operation that may fail. For "
 "example, looking something up in a ``List`` (rather than a vector) may "
 "result in an out of bounds error:"
-msgstr ""
+msgstr "``Maybe`` 是给操作提供类型的一种方式，可能会失败。例如，在 ``List`` "
+"（而不是一个向量）中查找东西可能会导致越界错误："
 
 #: ../../source/tutorial/typesfuns.rst:899 2e0800df643541da8a5376c671638cf6
 msgid ""
 "The ``maybe`` function is used to process values of type ``Maybe``, either "
 "by applying a function to the value, if there is one, or by providing a "
 "default value:"
-msgstr ""
+msgstr "``maybe`` 函数用于处理 ``Maybe`` "
+"类型的值，如果有值可以对该值应用一个函数，或者提供一个默认值后再应用函数："
 
 #: ../../source/tutorial/typesfuns.rst:907 48c7af1270ad4fcf8fb48e9e2e04c300
 msgid ""
@@ -952,14 +973,17 @@ msgid ""
 "``Lazy`` in case they are large expressions where it would be wasteful to "
 "compute and then discard them."
 msgstr ""
+"注意，前两个参数的类型被包裹在 ``Lazy`` "
+"中。由于这两个参数中只有一个会被实际使用，我们把它们标记为 ``Lazy`` "
+"，以防它们是复杂的表达式，计算后再丢弃它们会很浪费。"
 
 #: ../../source/tutorial/typesfuns.rst:913 6d70c805747e499584cb4ea5f43fcc86
 msgid "Tuples"
-msgstr ""
+msgstr "元组"
 
 #: ../../source/tutorial/typesfuns.rst:915 ecf6a07d811a4237a37aecb5bce9bbff
 msgid "Values can be paired with the following built-in data type:"
-msgstr ""
+msgstr "值可以用以下内置数据类型配对："
 
 #: ../../source/tutorial/typesfuns.rst:921 ac809c323b1344c7beb774ccbfd2a232
 msgid ""
@@ -967,16 +991,18 @@ msgid ""
 "means either ``Pair a b`` or ``MkPair a b``. Tuples can contain an arbitrary "
 "number of values, represented as nested pairs:"
 msgstr ""
+"作为语法糖，我们可以写 ``(a, b)`` ，根据上下文，这意味着 ``Pair a b`` 或 ``"
+"MkPair a b`` 。元组可以包含任意数量的值，以嵌套对的形式表示："
 
 #: ../../source/tutorial/typesfuns.rst:943 0fcb1040b4a74bfe8a7cada2ab105d21
 msgid "Dependent Pairs"
-msgstr ""
+msgstr "依赖对"
 
 #: ../../source/tutorial/typesfuns.rst:945 0b4c7ed80bb5422a81eed99ac16d08d8
 msgid ""
 "Dependent pairs allow the type of the second element of a pair to depend on "
 "the value of the first element:"
-msgstr ""
+msgstr "依赖对允许一个对中的第二个元素的类型取决于第一个元素的值："
 
 #: ../../source/tutorial/typesfuns.rst:953 5c63122fd5fb4027bf9eb971bb50ba87
 msgid ""
@@ -985,10 +1011,13 @@ msgid ""
 "constructs a value of this type. For example, we can pair a number with a "
 "``Vect`` of a particular length:"
 msgstr ""
+"同样，这也有语法上的糖。 ``(x : a ** p)`` 是一对 A 和 P 的类型，其中名称 "
+"``x`` 可以出现在 ``p`` 里面。 ``( x ** p )`` 构建一个该类型的值。例如，"
+"我们可以将一个数字与一个特定长度的 ``Vect`` 配对："
 
 #: ../../source/tutorial/typesfuns.rst:963 35c72bdb524e42758b6127018c9e3d16
 msgid "If you like, you can write it out the long way; the two are equivalent:"
-msgstr ""
+msgstr "如果你愿意，你可以用长的方式写出来；两者是等同的："
 
 #: ../../source/tutorial/typesfuns.rst:970 4233363971c34981bb776c2b05876250
 msgid ""
@@ -996,13 +1025,14 @@ msgid ""
 "of the vector. We can write an underscore ``_`` in place of values which we "
 "expect the type checker to fill in, so the above definition could also be "
 "written as:"
-msgstr ""
+msgstr "类型检查器可以从向量的长度推断出第一个元素的值。我们可以写一个下划线``_``来代"
+"替我们期望类型检查器填写的值，所以上述定义也可以写成："
 
 #: ../../source/tutorial/typesfuns.rst:980 fea3898488db4a6896d40826c8e808d2
 msgid ""
 "We might also prefer to omit the type of the first element of the pair, "
 "since, again, it can be inferred:"
-msgstr ""
+msgstr "我们也可能倾向于省略这对元素中第一个元素的类型，因为它同样可以被推断出来："
 
 #: ../../source/tutorial/typesfuns.rst:988 9007eb7b50904e00b8d36580d0c28062
 msgid ""
@@ -1011,10 +1041,13 @@ msgid ""
 "elements out of a ``Vect`` according to some predicate, we will not know in "
 "advance what the length of the resulting vector will be:"
 msgstr ""
+"依赖对的一个用途是返回依赖类型的值，其中的索引不一定事先知道。例如，"
+"如果我们根据一些谓词从 ``Vect`` "
+"中过滤出元素，我们将不会事先知道所产生的向量的长度："
 
 #: ../../source/tutorial/typesfuns.rst:998 400d194ae9db4cb8afc4a78918b77043
 msgid "If the ``Vect`` is empty, the result is:"
-msgstr ""
+msgstr "如果 ``Vect`` 是空的，结果就是："
 
 #: ../../source/tutorial/typesfuns.rst:1004 85aa89279b714475874c74806028ac17
 msgid ""
@@ -1023,14 +1056,17 @@ msgid ""
 "we use a ``case`` expression, which allows pattern matching on intermediate "
 "values:"
 msgstr ""
+"在 ``::`` 的情况下，我们需要检查对 ``filter`` "
+"的递归调用的结果，从结果中提取长度和矢量。要做到这一点，我们使用 ``case`` "
+"表达式，它允许对中间值进行模式匹配："
 
 #: ../../source/tutorial/typesfuns.rst:1018 a496b587cce14aaab826e16dfc4575d8
 msgid "Dependent pairs are sometimes referred to as “Sigma types”."
-msgstr ""
+msgstr "依赖对有时被称为 \"Sigma 类型\"。"
 
 #: ../../source/tutorial/typesfuns.rst:1021 28445edc00d643e6823bf866a729603b
 msgid "Records"
-msgstr ""
+msgstr "记录"
 
 #: ../../source/tutorial/typesfuns.rst:1023 40a2362ff76345d5a1800a92f8194b17
 msgid ""
@@ -1041,6 +1077,10 @@ msgid ""
 "to that seen with Haskell. For example, we can represent a person’s name and "
 "age in a record:"
 msgstr ""
+"*记录* 是将几个值（记录的*字段* ）收集在一起的数据类型。Idris 提供了定义记录"
+"的语法，并自动生成字段访问和更新函数。与用于数据结构的语法不同，Idris "
+"中的记录遵循一种与 Haskell "
+"不同的语法。例如，我们可以在一个记录中表示一个人的名字和年龄："
 
 #: ../../source/tutorial/typesfuns.rst:1039 a947b4cd326547f3ad88d8362b573eaa
 msgid ""
@@ -1050,10 +1090,14 @@ msgid ""
 "You can declare multiple fields on a single line, provided that they have "
 "the same type. The field names can be used to access the field values:"
 msgstr ""
+"使用 ``constructor`` 关键字提供构造函数名称，然后给出*字段* ，这些字段在 "
+"`where` 关键字之后的缩进块中（这里是 ``firstName`` ， ``middleName`` ， "
+"``lastName`` ，和 ``age`` ）。你可以在一行中声明多个字段，只要它们具有相同的"
+"类型。字段名可以用来访问字段的值："
 
 #: ../../source/tutorial/typesfuns.rst:1054 68b1d9c12a394ce58e1adf5aa2f63678
 msgid "We can use prefix field projections, like in Haskell:"
-msgstr ""
+msgstr "我们可以使用前缀字段投影，就像在Haskell中一样："
 
 #: ../../source/tutorial/typesfuns.rst:1065 0fce4a72adad480398e993b59840f6cc
 msgid ""
@@ -1063,12 +1107,17 @@ msgid ""
 "end of the module or until the closest occurrence of ``"
 "%prefix_record_projections on``."
 msgstr ""
+"可以使用pragma ``%prefix_record_projections off`` 在每条记录的定义中禁用前缀"
+"字段投影，这使得所有随后定义的记录只产生点状的投影。这个 pragma "
+"在模块结束前或在最近一次出现 ``%prefix_record_projections on`` "
+"之前都是有效的。"
 
 #: ../../source/tutorial/typesfuns.rst:1071 995a715813a34304997415f145164a89
 msgid ""
 "We can also use the field names to update a record (or, more precisely, "
 "produce a copy of the record with the given fields updated):"
-msgstr ""
+msgstr "我们还可以使用字段名来更新一条记录（或者更准确地说，产生一个更新了给定字段的"
+"记录副本）："
 
 #: ../../source/tutorial/typesfuns.rst:1082 ce305d2931554c7997d513c850e58f1e
 msgid ""
@@ -1076,29 +1125,32 @@ msgid ""
 "given fields in a record. ``:=`` assigns a new value to a field, and ``$=`` "
 "applies a function to update its value."
 msgstr ""
+"语法 ``{ field := val, ... }`` 产生一个函数，更新记录中的给定字段。 ``:=`` "
+"给一个字段分配一个新的值， ``$=`` 应用一个函数来更新它的值。"
 
 #: ../../source/tutorial/typesfuns.rst:1086 7d31a9d2baf540ba9f6364793d667712
 msgid ""
 "Each record is defined in its own namespace, which means that field names "
 "can be reused in multiple records."
-msgstr ""
+msgstr "每条记录都被定义在自己的命名空间中，这意味着字段名可以在多条记录中重复使用。"
 
 #: ../../source/tutorial/typesfuns.rst:1089 6924d0833a404fffac4a875198f19de8
 msgid ""
 "Records, and fields within records, can have dependent types. Updates are "
 "allowed to change the type of a field, provided that the result is well-"
 "typed."
-msgstr ""
+msgstr "记录和记录中的字段可以有依赖类型。允许更新改变一个字段的类型，只要其结果是良"
+"类型。"
 
 #: ../../source/tutorial/typesfuns.rst:1100 15398f26f5004171a8ad62eaae799b54
 msgid ""
 "It is safe to update the ``students`` field to a vector of a different "
 "length because it will not affect the type of the record:"
-msgstr ""
+msgstr "将 ``students`` 字段更新为不同长度的向量是安全的，因为它不会影响记录的类型："
 
 #: ../../source/tutorial/typesfuns.rst:1113 f48564e4b0c34ce4977035a2970d4c23
 msgid "We could also use ``$=`` to define ``addStudent`` more concisely:"
-msgstr ""
+msgstr "我们也可以用 ``$=`` 来更简洁地定义 ``addStudent`` ："
 
 #: ../../source/tutorial/typesfuns.rst:1121 ec04b75a38814eb89ec6fcc84712e923
 msgid "Nested record projection"
