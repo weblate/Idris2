@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-19 12:25+0000\n"
+"PO-Revision-Date: 2022-07-21 14:13+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/updatesupdates/zh_Hans/>\n"
@@ -68,18 +68,21 @@ msgid ""
 " and Conor McBride. In practice, this means that every variable in Idris "
 "2 has a *quantity* associated with it. A quantity is one of:"
 msgstr ""
+"Idris 2 是基于 `量化类型理论（QTT） <https://bentnib.org/quantitative-type-"
+"theory.html>`_ ，这是由 Bob Atkey 和 Conor McBride 开发的核心语言。在实践中，"
+"Idris 2 中的每个变量都有一个 *数量* 与之相关。数量是的取值是下列其中之一："
 
 #: ../../source/updates/updates.rst:32 e8512eeff6464864be3153cb911b0966
 msgid "``0``, meaning that the variable is *erased* at run time"
-msgstr ""
+msgstr "``0`` ，表示变量在运行时被 *擦除*"
 
 #: ../../source/updates/updates.rst:33 e71a779d54ee485bb1a2e60542e1280d
 msgid "``1``, meaning that the variable is used *exactly once* at run time"
-msgstr ""
+msgstr "``1`` ，表示变量在运行时 *正好使用一次*"
 
 #: ../../source/updates/updates.rst:34 e8141a5e2f1b44c9831f4b9adabec03b
 msgid "*Unrestricted*, which is the same behaviour as Idris 1"
-msgstr ""
+msgstr "*不受限制* ，这与 Idris 1 的行为相同"
 
 #: ../../source/updates/updates.rst:36 ca94c10a28f34ebb9e6a9abce527e139
 msgid ""
@@ -90,7 +93,7 @@ msgstr ""
 
 #: ../../source/updates/updates.rst:41 7e4efa50d5744dcf9f005ffd4bd466d7
 msgid "Erasure"
-msgstr ""
+msgstr "擦除"
 
 #: ../../source/updates/updates.rst:43 211045c5eb5b4290a2542fb481e6ee7c
 msgid ""
@@ -140,23 +143,24 @@ msgstr ""
 
 #: ../../source/updates/updates.rst:91 ced94641a77b4d15957e562f4362c9ef
 msgid "In Idris 2, we need to state explicitly that ``n`` is needed at run time"
-msgstr ""
+msgstr "在 Idris 2 中，我们需要明确指出，在运行时需要 ``n``"
 
 #: ../../source/updates/updates.rst:98 e8b7130fabcc4e578583cbeb5a0d6265
 msgid ""
 "(Incidentally, also note that in Idris 2, names bound in types are also "
 "available in the definition without explicitly rebinding them.)"
-msgstr ""
+msgstr "(顺便说一下，还要注意在 Idris 2 "
+"中，在类型中绑定的名字也可以在定义中使用，而不需要明确地重新绑定它们)"
 
 #: ../../source/updates/updates.rst:101 eafae3420e594c7b935a18faa24c88ba
 msgid ""
 "This also means that when you call ``vlen``, you need the length "
 "available. For example, this will give an error"
-msgstr ""
+msgstr "这也意味着，当你调用 ``vlen`` 时，你需要可用的长度。例如，这将产生一个错误"
 
 #: ../../source/updates/updates.rst:109 8da2e8a4d61f4d6ab0ec93f0029f58e2
 msgid "Idris 2 reports::"
-msgstr ""
+msgstr "Idris 2 会报告："
 
 #: ../../source/updates/updates.rst:114 f96d31cf9579408f96a56a44c591804f
 msgid ""
@@ -164,28 +168,32 @@ msgid ""
 "xs``, where it needs to be available at run time, but ``m`` is not "
 "available in ``sumLengths`` because it has multiplicity ``0``."
 msgstr ""
+"这意味着它需要使用 ``m`` 作为参数传递给 ``vlen xs`` "
+"，在这里它需要在运行时可用，但是 ``m`` 在 ``sumLengths`` 中不可用，"
+"因为它有多重性 ``0`` 。"
 
 #: ../../source/updates/updates.rst:118 027322f056554c51b138d0276145bc65
 msgid ""
 "We can see this more clearly by replacing the right hand side of "
 "``sumLengths`` with a hole..."
-msgstr ""
+msgstr "我们可以通过将 ``sumLengths`` 的右侧替换成一个孔来更清楚地看到这一点......"
 
 #: ../../source/updates/updates.rst:126 bea0fb528d9043a19a7faf4b24f9da51
 msgid "...then checking the hole's type at the REPL::"
-msgstr ""
+msgstr "...然后在REPL检查孔的类型："
 
 #: ../../source/updates/updates.rst:137 5a40572df5f94524bab123453371a472
 msgid ""
 "Instead, we need to give bindings for ``m`` and ``n`` with unrestricted "
 "multiplicity"
-msgstr ""
+msgstr "相反，我们需要为 ``m`` 和 ``n`` 提供无限制多重性的绑定"
 
 #: ../../source/updates/updates.rst:145 467e771b0bf64540a25f8391d944d1df
 msgid ""
 "Remember that giving no multiplicity on a binder, as with ``m`` and ``n``"
 " here, means that the variable has unrestricted usage."
-msgstr ""
+msgstr "请记住，在绑定器上不给出多重性，就像这里的 ``m`` 和 ``n`` "
+"一样，意味着变量的使用不受限制。"
 
 #: ../../source/updates/updates.rst:148 bb44ca2363c44351ad22a672222376f8
 msgid ""
@@ -193,13 +201,16 @@ msgid ""
 "probably the biggest thing you need to think about. It is important to "
 "note, though, that if you have bound implicits, such as..."
 msgstr ""
+"如果你要将 Idris 1 程序转换到 Idris 2 中使用，这可能是你需要考虑的最大问题。"
+"但需要注意的是，如果你有绑定的隐式参数，例如..."
 
 #: ../../source/updates/updates.rst:156 d53b38d87364482e8ed2151208671078
 msgid ""
 "...then it's a good idea to make sure ``t`` really is needed, or "
 "performance might suffer due to the run time building the instance of "
 "``t`` unnecessarily!"
-msgstr ""
+msgstr "...那么最好确保 ``t`` 真的被需要，否则由于运行时间不必要地建立 ``t`` "
+"的实例，性能可能会受到影响！"
 
 #: ../../source/updates/updates.rst:159 636bcd931fea4a38a51db4c303853316
 msgid ""
@@ -207,10 +218,12 @@ msgid ""
 "argument with multiplicity ``0``, unless its value is inferrable from "
 "elsewhere. So, the following definition is rejected"
 msgstr ""
+"关于擦除的最后一点说明：试图对一个具有多重性 ``0`` 的参数进行模式匹配是一个错"
+"误，，除非其值可以从其他地方推断出来。因此，下面的定义会被拒绝"
 
 #: ../../source/updates/updates.rst:169 18f8b163abbc4f30b77ef913dad842bd
 msgid "This is rejected with the error::"
-msgstr ""
+msgstr "这被拒绝了，错误是："
 
 #: ../../source/updates/updates.rst:174 3a692d3eec5d4643834feb46dcf75d5d
 msgid ""
@@ -218,6 +231,8 @@ msgid ""
 "appear to match on the erased argument ``x``, its value is uniquely "
 "inferrable from the type of the second argument"
 msgstr ""
+"然而，下面的情况是好的，因为在 ``sNot`` 中，尽管我们似乎在被删除的参数 ``x`` "
+"上进行了匹配，但它的值是可以从第二个参数的类型中唯一推断出来的"
 
 #: ../../source/updates/updates.rst:188 2e7214fe353c4044854e8c96b4ddd114
 msgid ""
@@ -227,10 +242,14 @@ msgid ""
 "point out where you require an unbound implicit argument at run time - "
 "sometimes this is both surprising and enlightening!"
 msgstr ""
+"到目前为止，Idris 2 的经验表明，在大多数情况下，只要你在 Idris 1 "
+"程序中使用非绑定隐式参数，它们在 Idris 2 中无需过多修改即可工作。 Idris 2 "
+"类型检查器将指出你在运行时需要非绑定隐式参数的地方--"
+"有时这既令人惊讶又具有启发性！"
 
 #: ../../source/updates/updates.rst:196 17800533ccf84ec392cdc0cd1df430f7
 msgid "Linearity"
-msgstr ""
+msgstr "线性"
 
 #: ../../source/updates/updates.rst:198 dd8c48fa6a3b4da981d6612a29ed84e8
 msgid ""
