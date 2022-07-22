@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-19 12:08+0000\n"
+"PO-Revision-Date: 2022-07-22 00:29+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/tutorialtypesfuns/zh_Hans/>\n"
@@ -1154,11 +1154,11 @@ msgstr "我们也可以用 ``$=`` 来更简洁地定义 ``addStudent`` ："
 
 #: ../../source/tutorial/typesfuns.rst:1121 ec04b75a38814eb89ec6fcc84712e923
 msgid "Nested record projection"
-msgstr ""
+msgstr "嵌套记录投影"
 
 #: ../../source/tutorial/typesfuns.rst:1123 4bef749c9f6843a9aa0d46cbed900e9f
 msgid "Nested record fields can be accessed using the dot notation:"
-msgstr ""
+msgstr "嵌套的记录字段可以使用点符号访问："
 
 #: ../../source/tutorial/typesfuns.rst:1130 e5d54a42c57e4d69bf1f3bafb7a9f3e9
 msgid ""
@@ -1166,18 +1166,20 @@ msgid ""
 "be spaces before the dots. The composite projection must be parenthesised, "
 "otherwise ``map .a.b.c xs`` would be understood as ``map.a.b.c xs``."
 msgstr ""
+"对于点符号，点后不能有空格，但是点前可以有空格。合成投影必须有括号，否则 ``"
+"map .a.b.c xs`` 将被理解为 ``map.a.b.c xs`` 。"
 
 #: ../../source/tutorial/typesfuns.rst:1134 817ef356681a4a61bf84956997e4afeb
 msgid "Nested record fields can be accessed using the prefix notation, too:"
-msgstr ""
+msgstr "嵌套的记录字段也可以用前缀符号访问："
 
 #: ../../source/tutorial/typesfuns.rst:1141 3f06e1a701d4471ca504d6a69bfbd265
 msgid "Dots with spaces around them stand for function composition operators."
-msgstr ""
+msgstr "周围有空格的点代表函数组合运算符。"
 
 #: ../../source/tutorial/typesfuns.rst:1144 0fd3955931304f789e1afe3963433820
 msgid "Nested record update"
-msgstr ""
+msgstr "嵌套记录更新"
 
 #: ../../source/tutorial/typesfuns.rst:1146 b2f42aaeb6334a10a335a656d7f33c20
 msgid ""
@@ -1185,6 +1187,8 @@ msgid ""
 "records. For example, if a field is accessible with the expression ``x.a.b."
 "c``, it can be updated using the following syntax:"
 msgstr ""
+"Idris 还提供了一个方便的语法来访问和更新嵌套记录。例如，"
+"如果一个字段可以用表达式 ``x.a.b.c`` 来访问，它可以用以下语法来更新："
 
 #: ../../source/tutorial/typesfuns.rst:1155 9f818b412b304e74a9781b40fc2a8519
 msgid ""
@@ -1192,14 +1196,16 @@ msgid ""
 "to ``val``. The syntax is first class, i.e. ``{ a.b.c := val }`` itself has "
 "a function type."
 msgstr ""
+"这将返回一个新的记录，由路径 ``a.b.c`` 访问的字段被设置为 ``val`` "
+"。语法也是一等的，即 ``{ a.b.c := val }`` 本身有一个函数类型。"
 
 #: ../../source/tutorial/typesfuns.rst:1159 06afaf4616a343b9ab02eb9b9d5dbaf9
 msgid "The ``$=`` notation is also valid for nested record updates."
-msgstr ""
+msgstr "``$=`` 符号对嵌套的记录更新也有效。"
 
 #: ../../source/tutorial/typesfuns.rst:1162 3e23ba2e75c94e539ef5b131309a5e77
 msgid "Dependent Records"
-msgstr ""
+msgstr "依赖记录"
 
 #: ../../source/tutorial/typesfuns.rst:1164 21b8885897c94070b2027651d39c8fc5
 msgid ""
@@ -1208,13 +1214,17 @@ msgid ""
 "to the resulting type, and are written following the record type name. For "
 "example, a pair type could be defined as follows:"
 msgstr ""
+"记录也可以依赖于数值。记录有 *参数* ，这些参数不能像其他字段一样被更新。参数"
+"作为结果类型的参数出现，并写在记录类型名称的后面。例如，一个对类型可以定义如"
+"下："
 
 #: ../../source/tutorial/typesfuns.rst:1176 e8d4293d7ced44a7b26a747a2695f1c7
 msgid ""
 "Using the ``Class`` record from earlier, the size of the class can be "
 "restricted using a ``Vect`` and the size included in the type by "
 "parameterising the record with the size.  For example:"
-msgstr ""
+msgstr "使用前面的 ``Class`` 记录，可以用 ``Vect`` "
+"来限制类的大小，并通过对记录的大小进行参数化，将大小纳入类型。 例如："
 
 #: ../../source/tutorial/typesfuns.rst:1187 3c41a582cff942fd83f522e1b63dbfab
 msgid ""
@@ -1222,83 +1232,89 @@ msgid ""
 "``SizedClass`` since the size is implicit, and will be updated when a "
 "student is added:"
 msgstr ""
+"在前面 ``addStudent`` 的情况下，我们仍然可以在 ``SizedClass`` "
+"上添加一个学生，因为大小是隐含的，当添加一个学生的时候大小会被更新："
 
 #: ../../source/tutorial/typesfuns.rst:1196 7f6bb7f6983048ed9fa19df59ebf6981
 msgid ""
 "In fact, the dependent pair type we have just seen is, in practice, defined "
 "as a record, with fields ``fst`` and ``snd`` which allow projecting values "
 "out of the pair:"
-msgstr ""
+msgstr "事实上，我们刚才看到的依赖对类型在实践中被定义为一条记录，其字段 ``fst`` 和 "
+"``snd`` 允许从依赖对中投影出数值："
 
 #: ../../source/tutorial/typesfuns.rst:1207 96664233dfc34452866e642d2182cf70
 msgid ""
 "It is possible to use record update syntax to update dependent fields, "
 "provided that all related fields are updated at once. For example:"
-msgstr ""
+msgstr "可以使用记录更新语法来更新依赖字段，前提是所有相关字段都要一次性更新。例如："
 
 #: ../../source/tutorial/typesfuns.rst:1217 a4fabe57d83d46789eefa55a8da7e11d
 msgid "Or even:"
-msgstr ""
+msgstr "甚至可以更省事："
 
 #: ../../source/tutorial/typesfuns.rst:1230 93de1bc4e2b44c48add6c81eb0a8874d
 msgid "More Expressions"
-msgstr ""
+msgstr "更多表达式"
 
 #: ../../source/tutorial/typesfuns.rst:1235 a8ad953aea2d437ead4629e36d8a64c9
 msgid "``let`` bindings"
-msgstr ""
+msgstr "``let`` 绑定"
 
 #: ../../source/tutorial/typesfuns.rst:1237 c9dfea52d92d4441b5124c084afb468e
 msgid "Intermediate values can be calculated using ``let`` bindings:"
-msgstr ""
+msgstr "计算出的中间值可以使用 ``let`` 来绑定到变量："
 
 #: ../../source/tutorial/typesfuns.rst:1245 1310dc4f599a40dbbaf44a23735148d4
 msgid ""
 "We can do pattern matching in ``let`` bindings too. For example, we can "
 "extract fields from a record as follows, as well as by pattern matching at "
 "the top level:"
-msgstr ""
+msgstr "我们也可以在 ``let`` 绑定中进行模式匹配。例如，我们可以从记录中提取字段，如下"
+"所示，也可以通过在顶层进行模式匹配："
 
 #: ../../source/tutorial/typesfuns.rst:1257 3bf8f73ce1d347528186622c946b4347
 msgid "These let bindings can be annotated with a type:"
-msgstr ""
+msgstr "这些 let 绑定可以使用类型注解："
 
 #: ../../source/tutorial/typesfuns.rst:1265 626950aa096d40198f9e4f3ef5d253ad
 msgid ""
 "We can also use the symbol ``:=`` instead of ``=`` to, among other things, "
 "avoid ambiguities with propositional equality:"
-msgstr ""
+msgstr "我们还可以使用符号 ``:=`` 来代替 ``=`` ，除其他事项外，避免命题相等的歧义："
 
 #: ../../source/tutorial/typesfuns.rst:1273 320ce9d23fe44b618f5c67837838d1a3
 msgid ""
 "Local definitions can also be introduced using ``let``. Just like top level "
 "ones and ones defined in a ``where`` clause you need to:"
-msgstr ""
+msgstr "本地定义也可以使用 ``let`` 引入。就像顶层定义和在 ``where`` "
+"子句中定义的一样，你需要："
 
 #: ../../source/tutorial/typesfuns.rst:1276 931452047f1e465783ce1c68cc845b54
 msgid "declare the function and its type"
-msgstr ""
+msgstr "声明函数和它的类型"
 
 #: ../../source/tutorial/typesfuns.rst:1277 7e8e7402b8d9433b9b86bf8ebe1800dc
 msgid "define the function by pattern matching"
-msgstr ""
+msgstr "通过模式匹配来定义函数"
 
 #: ../../source/tutorial/typesfuns.rst:1286 23745cd6553d4241a3fe87dd94be9414
 msgid ""
 "The symbol ``:=`` cannot be used in a local function definition. Which means "
 "that it can be used to interleave let bindings and local definitions without "
 "introducing ambiguities."
-msgstr ""
+msgstr "符号 ``:=`` 不能在局部函数定义中使用。这意味着它可以用来交错使用 let "
+"绑定和局部定义，而不会引入歧义。"
 
 #: ../../source/tutorial/typesfuns.rst:1301 ecb9ee3b06434a3398737baa4b6d680d
 msgid "List comprehensions"
-msgstr ""
+msgstr "列表推导式"
 
 #: ../../source/tutorial/typesfuns.rst:1303 4b8eca59e8c0479ab354bb84e71d5741
 msgid ""
 "Idris provides *comprehension* notation as a convenient shorthand for "
 "building lists. The general form is:"
-msgstr ""
+msgstr "Idris提 供了 *推导式* 符号，作为建立列表的方便速记法。其一般形式是："
 
 #: ../../source/tutorial/typesfuns.rst:1310 01912b4d531948c4a651ba234d9c3b1e
 msgid ""
@@ -1306,6 +1322,8 @@ msgid ""
 "according to the conditions given by the comma separated ``qualifiers``. For "
 "example, we can build a list of Pythagorean triples as follows:"
 msgstr ""
+"通过对 ``expression`` 进行求值，根据逗号分隔的 ``qualifiers`` 给出的条件生成"
+"一个符合条件的列表。例如，我们可以建立一个毕达哥拉斯三段论的列表，如下所示："
 
 #: ../../source/tutorial/typesfuns.rst:1321 ee8f4055a6ea4cb19080b0fa9ac0fc06
 msgid ""
@@ -1316,17 +1334,22 @@ msgid ""
 "``Integer``, using the ``enumFromTo`` and ``enumFromThenTo`` function from "
 "the prelude."
 msgstr ""
+"``[a..b]`` 符号是另一种速记方法，它在 ``a`` 和 ``b`` 之间建立一个数字列表。"
+"或者 ``[a,b..c]`` 在 ``a`` 和 ``c`` 之间建立一个数字列表，增量由 ``a`` 和 "
+"``b`` 之间的差异指定。这适用于 ``Nat``, ``Int`` 和 ``Integer`` 类型，是 "
+"prelude 中的 ``enumFromTo`` 和 ``enumFromThenTo`` 函数的语法糖。"
 
 #: ../../source/tutorial/typesfuns.rst:1329 c65bd7ee4ecf495683fac1f44f2c6893
 msgid "``case`` expressions"
-msgstr ""
+msgstr "``case`` 表达式"
 
 #: ../../source/tutorial/typesfuns.rst:1331 d58b9a65a8724a4bb1388afca4b73cf0
 msgid ""
 "Another way of inspecting intermediate values is to use a ``case`` "
 "expression. The following function, for example, splits a string into two at "
 "a given character:"
-msgstr ""
+msgstr "另一种检查中间值的方法是使用 ``case`` "
+"表达式。例如，下面的函数在一个给定的字符处将一个字符串分成两个："
 
 #: ../../source/tutorial/typesfuns.rst:1341 b560b76f54974170b4c885947eb6e180
 msgid ""
@@ -1334,6 +1357,9 @@ msgid ""
 "at the point where the given function returns true. We then deconstruct the "
 "pair it returns, and remove the first character of the second string."
 msgstr ""
+"``break`` 是一个库函数，它在给定函数返回真值的地方将一个字符串分解成一对子字"
+"符串。然后我们对它返回的一对子字符串进行解构，并删除第二个子字符串的第一个字"
+"符。"
 
 #: ../../source/tutorial/typesfuns.rst:1346 47b16651478d482dae41b64cce1b4fb8
 msgid ""
@@ -1343,30 +1369,34 @@ msgid ""
 "We can use this to write ``lookup_default``, which looks up an index and "
 "returns a default value if the index is out of bounds:"
 msgstr ""
+"一个 ``case`` 表达式可以匹配多种情况，例如，检查一个中间值的类型 ``Maybe a`` "
+"。回顾 ``list_lookup`` 函数，它在一个列表中查找一个索引，如果索引出界则返回 "
+"``Nothing`` 。我们可以用它来写 ``lookup_default`` "
+"，它查找一个索引，如果索引出界则返回一个默认值："
 
 #: ../../source/tutorial/typesfuns.rst:1360 49d74dbf54694b438a5e42efff7c9a64
 msgid ""
 "If the index is in bounds, we get the value at that index, otherwise we get "
 "a default value:"
-msgstr ""
+msgstr "如果索引在范围内，我们得到该索引的值，否则我们得到一个默认值："
 
 #: ../../source/tutorial/typesfuns.rst:1371 ca3e1b4036f64f53a4fb368424cc27d3
 msgid "Totality"
-msgstr ""
+msgstr "完全性"
 
 #: ../../source/tutorial/typesfuns.rst:1373 ca6a64671d7741968d6a1969349d2fee
 msgid ""
 "Idris distinguishes between *total* and *partial* functions. A total "
 "function is a function that either:"
-msgstr ""
+msgstr "Idris 区分了 *完全* 和 *部分* 函数。完全函数是一个这样的函数，它要么："
 
 #: ../../source/tutorial/typesfuns.rst:1376 8dc3d4b9b72d47e3ae5a6f03db477920
 msgid "Terminates for all possible inputs, or"
-msgstr ""
+msgstr "对所有可能的输入终止，或者"
 
 #: ../../source/tutorial/typesfuns.rst:1377 24e4f60d592b4928b93e5b3e08fb7d5a
 msgid "Produces a non-empty, finite, prefix of a possibly infinite result"
-msgstr ""
+msgstr "产生一个非空的、有限的、或者一个可能是无限结果的前缀"
 
 #: ../../source/tutorial/typesfuns.rst:1379 20d0805b2961422db9a485b895444f5b
 msgid ""
@@ -1375,17 +1405,20 @@ msgid ""
 "type of ``String`` we know something different, depending on whether or not "
 "it's total:"
 msgstr ""
+"如果一个函数是完全的，我们可以认为其类型是对该函数将做什么的精确描述。例如，"
+"如果我们有一个返回类型为 ``String`` "
+"的函数，我们知道一些不同的东西，这取决于它是否是完全的："
 
 #: ../../source/tutorial/typesfuns.rst:1384 901b2dfeebb64ed5919f86f8872d5fdd
 msgid ""
 "If it's total, it will return a value of type ``String`` in finite time;"
-msgstr ""
+msgstr "如果是完全的，它将在有限时间内返回一个类型为 ``String`` 的值："
 
 #: ../../source/tutorial/typesfuns.rst:1385 2108596dfc394d14a211e36f356bf708
 msgid ""
 "If it's partial, then as long as it doesn't crash or enter an infinite loop, "
 "it will return a ``String``."
-msgstr ""
+msgstr "如果是部分的，那么只要不崩溃或进入无限循环，就会返回一个 ``String`` 。"
 
 #: ../../source/tutorial/typesfuns.rst:1388 0e3052f7dc1248f7a3e28fa3a5238a21
 msgid ""
@@ -1396,3 +1429,7 @@ msgid ""
 "functions will be evaluated during type checking. Partial functions can "
 "still be used in types, but will not be evaluated further."
 msgstr ""
+"Idris 做了这个区分，所以它知道哪些函数在类型检查时是安全的（正如我们在 :ref"
+":`sect-fctypes` 中看到的）。毕竟，如果它试图在类型检查期间求值一个没有终止的"
+"函数，那么类型检查就不会终止！因此，在类型检查期间，只有完全函数会被求值。部"
+"分函数仍然可以在类型中使用，但不会被进一步求值。"
