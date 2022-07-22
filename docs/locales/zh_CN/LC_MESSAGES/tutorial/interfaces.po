@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-22 05:11+0000\n"
+"PO-Revision-Date: 2022-07-22 06:32+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/tutorialinterfaces/zh_Hans/>\n"
@@ -376,7 +376,7 @@ msgstr "``Prelude.do`` 意味着 Idris 将使用在 ``Prelude`` 中定义的 ``(
 
 #: ../../source/tutorial/interfaces.rst:344 7aee92002658430193635000c4f410a3
 msgid "Pattern Matching Bind"
-msgstr ""
+msgstr "模式匹配绑定"
 
 #: ../../source/tutorial/interfaces.rst:346 025d801000d44b7eb9119c9e87b3ce4c
 msgid ""
@@ -385,6 +385,9 @@ msgid ""
 "``readNumber`` which reads a number from the console, returning a value "
 "of the form ``Just x`` if the number is valid, or ``Nothing`` otherwise:"
 msgstr ""
+"在 ``do`` 记法中，有时我们想在一个函数的结果上立即进行模式匹配，例如，"
+"假设我们有一个函数 ``readNumber`` 从控制台读取一个数字，如果该数字有效，"
+"则返回一个形式为 ``Just x`` 的值，否则为 ``Nothing`` ："
 
 #: ../../source/tutorial/interfaces.rst:362 6c7bc2681cc744dfbb59c3db5c2860b7
 msgid ""
@@ -392,6 +395,8 @@ msgid ""
 "``Nothing`` if neither are valid, then we would like to pattern match on "
 "the result of ``readNumber``:"
 msgstr ""
+"如果我们用它来写一个函数来读取两个数字，如果两个数字都无效，则返回 "
+"``Nothing`` ，然后我们想对 ``readNumber`` 的结果进行模式匹配："
 
 #: ../../source/tutorial/interfaces.rst:378 3b5ab2f4927f4e61864506487c3cc3ca
 msgid ""
@@ -400,6 +405,8 @@ msgid ""
 " line. For example, we could try pattern matching on values of the form "
 "``Just x_ok``:"
 msgstr ""
+"如果有大量的错误处理，这可能很快就会被深度嵌套！所以我们可以在一行中结合绑定"
+"和模式匹配。例如，我们可以尝试对形式为 ``Just x_ok`` 的值进行模式匹配："
 
 #: ../../source/tutorial/interfaces.rst:390 80a04eed40434f3ebb64bb48827d5b83
 msgid ""
@@ -407,6 +414,9 @@ msgid ""
 " ``Nothing`` so ``readNumbers`` is no longer total! We can add the "
 "``Nothing`` case back as follows:"
 msgstr ""
+"然而，仍然有一个问题，因为我们现在省略了 ``Nothing`` 的情况，所以 "
+"``readNumbers`` 不再是完全函数！我们可以把 ``Nothing`` "
+"的情况加回来，如下所示："
 
 #: ../../source/tutorial/interfaces.rst:404 4e35b0e17db944a5b500e27d7c024d04
 msgid ""
@@ -417,6 +427,10 @@ msgid ""
 " continue with the rest of the ``do`` block. The second part gives the "
 "alternative bindings, of which there may be more than one."
 msgstr ""
+"这个版本的 ``readNumbers`` 的效果与第一个版本相同（事实上，这是它的句法糖，会"
+"直接翻译成第一个版本的形式）。每个语句的第一部分（ ``Just x_ok <-`` 和 ``"
+"Just y_ok <-`` ）给出了首选的绑定方式--如果匹配，将继续执行 ``do`` "
+"块的其余部分。第二部分给出了备选的绑定方式，其中可能有多个绑定方式。"
 
 #: ../../source/tutorial/interfaces.rst:412 c205e892b58644a5b1e5bdea5b32d829
 msgid "``!``-notation"
