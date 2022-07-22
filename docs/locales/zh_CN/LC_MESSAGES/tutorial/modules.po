@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-16 15:58+0000\n"
+"PO-Revision-Date: 2022-07-22 13:19+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/tutorialmodules/zh_Hans/>\n"
@@ -63,7 +63,6 @@ msgstr "相同的名字可以被定义在多个模块中：名字可以用模块
 "``BTree`` 模块中定义的名字，全限定名如下："
 
 #: ../../source/tutorial/modules.rst:58 8c061dda1c8b4f36914e79859da1a06e
-#, fuzzy
 msgid "``BTree.BTree``"
 msgstr "``BTree.BTree``"
 
@@ -150,9 +149,8 @@ msgstr ""
 "。它们的一般含义如下："
 
 #: ../../source/tutorial/modules.rst:96 150e8eb5417b427fb7cc0fd3afe07077
-#, fuzzy
 msgid "``private`` meaning that it is not exported at all. This is the default."
-msgstr "``private`` 意味着它根本不被导出。这是默认设置。"
+msgstr "``private`` 意味着它不会被导出。这是默认设置。"
 
 #: ../../source/tutorial/modules.rst:98 33455184f9844b9f91bbb6d7313efbc9
 msgid "``export`` meaning that its top level type is exported."
@@ -212,6 +210,10 @@ msgid ""
 "Therefore, it's generally a good idea to avoid using ``public export`` "
 "for functions unless you really mean to export the full definition."
 msgstr ""
+"由于 ``public export`` 意味着一个函数的定义被导出，"
+"这实际上使函数定义成为模块 API "
+"的一部分。因此，一般来说，除非你真的想导出完整的定义，否则最好不要对函数使用 "
+"``public export`` 。"
 
 #: ../../source/tutorial/modules.rst:133 cd522525c8c44c948bee5853d0cef988
 msgid ""
@@ -225,68 +227,78 @@ msgid ""
 "``plus``, which includes the equation ``plus Z m = m``. Therefore, in "
 "this case, ``plus`` has to be marked as ``public export``."
 msgstr ""
+"*对于初学者* 。如果函数只需要在运行时访问，使用 ``export`` 。但是，"
+"如果它也要在 *编译时使用* （例如，证明一个定理），则使用 ``public export`` "
+"。例如，考虑前面讨论的函数 ``plus : Nat -> Nat -> Nat`` ，以及下面的定理。 ``"
+"thm : plus Z m = m`` 。为了证明它，类型检查器需要将 ``plus Z m`` 还原为 ``m``"
+" （从而得到 ``thm : m = m`` ）。* 为了实现这一点，它需要访问*的定义 ``plus`` "
+"，其中包括方程式 ``plus Z m = m`` 。因此，在这种情况下， ``plus`` "
+"必须被标记为 ``public export`` 。"
 
 #: ../../source/tutorial/modules.rst:146 a35aa5bd1ff44acebaa67b4aed759d76
 msgid "Meaning for Data Types"
-msgstr ""
+msgstr "数据类型的含义"
 
 #: ../../source/tutorial/modules.rst:148 53a4b2b00fd14755898ee4fae8e3518f
 msgid "For data types, the meanings are:"
-msgstr ""
+msgstr "对于数据类型，其含义是："
 
 #: ../../source/tutorial/modules.rst:150 ffdb6c54d0264f1d8cec73a56fb60fe8
 msgid "``export`` the type constructor is exported"
-msgstr ""
+msgstr "``export`` 类型构造器被导出"
 
 #: ../../source/tutorial/modules.rst:152 5078b0a0d1474085a6312f10a7aee7da
 msgid "``public export`` the type constructor and data constructors are exported"
-msgstr ""
+msgstr "``public export`` 类型构造器和数据构造器会被导出"
 
 #: ../../source/tutorial/modules.rst:156 9b7687c2c49941b3b233e249fb42e3cf
 msgid "Meaning for Interfaces"
-msgstr ""
+msgstr "接口上的含义"
 
 #: ../../source/tutorial/modules.rst:158 3a3255c6482840a8ad68c0ec46d3a79b
 msgid "For interfaces, the meanings are:"
-msgstr ""
+msgstr "对于接口，其含义是："
 
 #: ../../source/tutorial/modules.rst:160 4f6503fafca94db5af6cf4e8045841c1
 msgid "``export`` the interface name is exported"
-msgstr ""
+msgstr "``export`` 接口名称被导出"
 
 #: ../../source/tutorial/modules.rst:162 a743b968a53b418992c5a40776ad092b
 msgid ""
 "``public export`` the interface name, method names and default "
 "definitions are exported"
-msgstr ""
+msgstr "``public export`` 接口名称、方法名称和默认定义被导出"
 
 #: ../../source/tutorial/modules.rst:166 97e7f4f6dd5e47f2a966867b0113b470
 msgid "Propagating Inner Module API's"
-msgstr ""
+msgstr "传播内部模块的 API"
 
 #: ../../source/tutorial/modules.rst:168 5295d9e60bfc4d63a659ea0e2c5d6b7a
 msgid ""
 "Additionally, a module can re-export a module it has imported, by using "
 "the ``public`` modifier on an ``import``. For example:"
-msgstr ""
+msgstr "此外，一个模块可以重新输出它所导入的模块，方法是在 ``public`` 修改器上使用 "
+"``import`` 。例如："
 
 #: ../../source/tutorial/modules.rst:178 c0a8f872fcf84816a410ffd19bbe605a
 msgid ""
 "The module ``A`` will export the name ``a``, as well as any public or "
 "abstract names in module ``C``, but will not re-export anything from "
 "module ``B``."
-msgstr ""
+msgstr "模块 ``A`` 将导出名称 ``a`` 以及模块 ``C`` 中的任何公共或抽象名称，"
+"但不会从模块 ``B`` 重新导出任何东西。"
 
 #: ../../source/tutorial/modules.rst:183 d2e135a95aeb4ba88ee05070d123e678
 msgid "Renaming imports"
-msgstr ""
+msgstr "重命名导入"
 
 #: ../../source/tutorial/modules.rst:185 2619ba40ad2746af8fdf82e0a76ddb1b
 msgid ""
 "Sometimes it is convenient to be able to access the names in another "
 "module via a different namespace (typically, a shorter one). For this, "
 "you can use `import...as`. For example:"
-msgstr ""
+msgstr "有时，能够通过不同的命名空间（通常是较短的命名空间）访问另一个模块中的名称是"
+"很方便的。为此，你可以使用 `import...as` 。例如："
 
 #: ../../source/tutorial/modules.rst:195 9dba00e17367400e815c6f73f09d53d9
 msgid ""
@@ -295,6 +307,9 @@ msgid ""
 "``L``. ``import...as`` can also be combined with ``import public`` to "
 "create a module which exports a larger API from other sub-modules:"
 msgstr ""
+"这个模块 ``A`` 可以访问从模块 ``Data.List`` 导出的名称，但也可以通过模块名称 "
+"``L`` 明确地访问它们。 ``import...as`` 也可以与 ``import public`` "
+"结合起来，创建一个模块，从其他子模块导出一个更大的API："
 
 #: ../../source/tutorial/modules.rst:207 8fbcb029836c4d27b021e14f509443fc
 msgid ""
@@ -302,24 +317,28 @@ msgid ""
 " interfaces of ``Books.Hardback`` and ``Books.Comic`` both under the "
 "namespace ``Books``."
 msgstr ""
+"在这里，任何导入 ``Books`` 的模块都可以访问 ``Books.Hardback`` 和 ``Books."
+"Comic`` 的导出接口，两者都在命名空间 ``Books`` 。"
 
 #: ../../source/tutorial/modules.rst:212 739752078d6c42caa2f2cd62328e2767
 msgid "Explicit Namespaces"
-msgstr ""
+msgstr "显式命名空间"
 
 #: ../../source/tutorial/modules.rst:214 758d3a928bd84ad7ab85b6d637c5198a
 msgid ""
 "Defining a module also defines a namespace implicitly. However, "
 "namespaces can also be given *explicitly*. This is most useful if you "
 "wish to overload names within the same module:"
-msgstr ""
+msgstr "定义一个模块也隐含地定义了一个命名空间。然而，命名空间也可以被 *明确* 地赋予 "
+"。如果你想在同一个模块中重载名字，这会非常有用："
 
 #: ../../source/tutorial/modules.rst:232 063f8818d3cb407c8a6cfc2fe23a0f59
 msgid ""
 "This (admittedly contrived) module defines two functions with fully "
 "qualified names ``Foo.X.test`` and ``Foo.Y.test``, which can be "
 "disambiguated by their types:"
-msgstr ""
+msgstr "这个模块（公认是设计好的）定义了两个函数，其全称是 ``Foo.X.test`` 和 ``Foo.Y."
+"test`` ，可以通过其类型来区分："
 
 #: ../../source/tutorial/modules.rst:243 22b1ef81baa442169e41dfeb15a63500
 msgid ""
@@ -327,16 +346,19 @@ msgid ""
 "not *per file*, so the two ``test`` definitions above need the ``export``"
 " flag to be visible outside their own namespaces."
 msgstr ""
+"导出规则 ``public export`` 和 ``export`` ，是 *按命名空间* ，而不是 *按文件* "
+"，所以上面的两个 ``test`` 定义需要 ``export`` "
+"标志才能在它们自己的命名空间之外可见。"
 
 #: ../../source/tutorial/modules.rst:248 2918fda26abf4d9199f452446203bc6b
 msgid "Parameterised blocks"
-msgstr ""
+msgstr "参数化块"
 
 #: ../../source/tutorial/modules.rst:250 cd6e4bb5f0014767986c0518aec62f8d
 msgid ""
 "Groups of functions can be parameterised over a number of arguments using"
 " a ``parameters`` declaration, for example:"
-msgstr ""
+msgstr "例如，可以使用 ``parameters`` 声明，在一些参数上对函数组进行参数化："
 
 #: ../../source/tutorial/modules.rst:259 ff8ac0c9dff543c0bfbcc6d5d0d1c3cf
 msgid ""
@@ -347,17 +369,21 @@ msgid ""
 "``addAll`` function, when called from the REPL, will thus have the "
 "following type signature."
 msgstr ""
+"``parameters`` 块的作用是将声明的参数添加到该块内的每个函数、类型和数据构造器"
+"中。具体来说，就是将参数添加到参数列表的前面。在块之外，必须明确地给出参数。 "
+"``addAll`` 函数，当从 REPL 中调用时，将有以下类型签名。"
 
 #: ../../source/tutorial/modules.rst:271 185dc391a4e74144a7eb5babf340b769
 msgid "and the following definition."
-msgstr ""
+msgstr "和以下定义。"
 
 #: ../../source/tutorial/modules.rst:278 a81494a3e1064656a63c1b30fb8871bc
 msgid ""
 "Parameters blocks can be nested, and can also include data declarations, "
 "in which case the parameters are added explicitly to all type and data "
 "constructors. They may also be dependent types with implicit arguments:"
-msgstr ""
+msgstr "参数块可以是嵌套的，也可以包括数据声明，在这种情况下，参数被明确地添加到所有"
+"类型和数据构造器中。它们也可以是具有隐含参数的依赖类型："
 
 #: ../../source/tutorial/modules.rst:291 0025d14812af472e9a10700cafda136d
 msgid ""
@@ -365,3 +391,5 @@ msgid ""
 "``xs`` and ``y`` arguments. Here, we can use placeholders for the values "
 "which can be inferred by the type checker:"
 msgstr ""
+"要在块外使用 ``Vects`` 或 ``append`` ，我们还必须给出 ``xs`` 和 ``y`` "
+"的参数。在这里，我们可以使用占位符来表示可以由类型检查器推断出来的值："
