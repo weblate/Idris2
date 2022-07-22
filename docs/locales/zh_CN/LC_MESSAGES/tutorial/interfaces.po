@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-16 15:58+0000\n"
+"PO-Revision-Date: 2022-07-22 01:10+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/tutorialinterfaces/zh_Hans/>\n"
@@ -147,6 +147,9 @@ msgid ""
 "an ``Ord`` interface which inherits methods from ``Eq`` as well as "
 "defining some of its own:"
 msgstr ""
+"接口也可以被扩展。相等关系 ``Eq`` 的下一个逻辑步骤是定义一个排序关系 ``Ord`` "
+"。我们可以定义一个 ``Ord`` 接口，它继承了 ``Eq`` "
+"的方法，同时也定义了一些自己的方法："
 
 #: ../../source/tutorial/interfaces.rst:138 3a0e24c5a63248c8ac8505d74cd56767
 msgid ""
@@ -158,29 +161,36 @@ msgid ""
 "the constraints on the type variables left of the fat arrow ``=>``, and "
 "the function type to the right of the fat arrow:"
 msgstr ""
+"``Ord`` 接口允许我们比较两个值并确定它们的顺序。只有 ``compare`` 方法是必需的"
+"；其他每个方法都有一个默认的定义。利用这一点，我们可以写一些函数，比如 "
+"``sort`` ，这个函数可以将一个列表按递增顺序排序，前提是列表的元素类型在 "
+"``Ord`` 接口中。我们在胖箭头 ``=>`` "
+"的左边给出类型变量的约束，在胖箭头的右边给出函数类型："
 
 #: ../../source/tutorial/interfaces.rst:150 d722f474afa449bf85af6b4514a9c712
 msgid ""
 "Functions, interfaces and implementations can have multiple constraints. "
 "Multiple constraints are written in brackets in a comma separated list, "
 "for example:"
-msgstr ""
+msgstr "函数、接口和实现可以有多个约束。多个约束条件以逗号分隔的列表方式写在括号里，"
+"例如："
 
 #: ../../source/tutorial/interfaces.rst:159 e89d437d9a504e94875bbcfa43f112e5
 msgid ""
 "Constraints are, like types, first class objects in the language. You can"
 " see this at the REPL:"
-msgstr ""
+msgstr "约束和类型一样，是语言中的一等对象。你可以在 REPL 中看到这一点："
 
 #: ../../source/tutorial/interfaces.rst:167 fad2cba11f6542229ed53bc8d23efc77
 msgid ""
 "So, ``(Ord a, Show a)`` is an ordinary pair of ``Types``, with two "
 "constraints as the first and second element of the pair."
-msgstr ""
+msgstr "所以， ``(Ord a, Show a)`` 是一对普通的 ``Types`` "
+"，将两个约束作为该对的第一个和第二个元素。"
 
 #: ../../source/tutorial/interfaces.rst:171 0cd32f24e362491ab5b3101ca157e2c9
 msgid "Note: Interfaces and ``mutual`` blocks"
-msgstr ""
+msgstr "注：接口和 ``mutual`` 块"
 
 #: ../../source/tutorial/interfaces.rst:173 a087799745c7400eaab97bdbd6e3fed1
 msgid ""
@@ -191,10 +201,14 @@ msgid ""
 " method types on the first pass, and elaborates the method types and any "
 "default definitions on the second pass."
 msgstr ""
+"Idris是严格的 \"先定义后使用\"，除了在 ``mutual`` 块中。在 ``mutual`` 块中，"
+"Idris 分两遍进行扫描：第一遍是类型，第二遍是定义。当 mutual 块包含一个接口声"
+"明时，它在第一遍中扫描接口头，但没有方法类型，在第二遍扫描方法类型和所有的默"
+"认定义。"
 
 #: ../../source/tutorial/interfaces.rst:181 a32915be6a044927b1d9945f195854bd
 msgid "Quantities for Parameters"
-msgstr ""
+msgstr "参数的量"
 
 #: ../../source/tutorial/interfaces.rst:183 ded9ef99e3034d5abc1ed3f233d6b4ec
 msgid ""
@@ -203,12 +217,15 @@ msgid ""
 "that the parameter is not available to use at runtime in the methods' "
 "definitions."
 msgstr ""
+"默认情况下，在 ``interface`` 声明中没有明确赋予类型的参数被分配为数量 ``0`` "
+"。这意味着该参数在运行时不能在方法的定义中使用。"
 
 #: ../../source/tutorial/interfaces.rst:187 f19074a07efa4ca29601314ccbef3a9e
 msgid ""
 "For instance, ``Show a`` gives rise to a ``0``-quantified type variable "
 "``a`` in the type of the ``show`` method:"
-msgstr ""
+msgstr "例如， ``Show a`` 在 ``show`` 方法的类型中产生了一个数量为 ``0`` 的类型变量 "
+"``a`` ："
 
 #: ../../source/tutorial/interfaces.rst:196 ae85e4217a964e8db905f7288755cee6
 msgid ""
@@ -217,6 +234,9 @@ msgid ""
 "``Storable`` types. The constraint ``Storable a size`` means that we can "
 "store values of type ``a`` in a ``Buffer`` in exactly ``size`` bytes."
 msgstr ""
+"然而有些用例要求一些参数在运行时可用。例如，我们可能想为 ``Storable`` "
+"类型声明一个接口。约束 ``Storable a size`` 意味着我们可以将 ``a`` "
+"类型的值存储在一个 ``Buffer`` 中，正好是 ``size`` 字节。"
 
 #: ../../source/tutorial/interfaces.rst:201 069ddb0da6cd4c3db5ebf897a3ab65c4
 msgid ""
@@ -227,6 +247,10 @@ msgid ""
 "``peekElementOff`` implemented in terms of ``peekByteOff`` and the "
 "parameter ``size``."
 msgstr ""
+"如果用户提供一个方法来在通过给定一个偏移量读取类型 ``a`` 的值，"
+"那么我们可以通过计算 ``k`` 和 ``size`` 的适当偏移量来读取存储在缓冲区中的 "
+"``k`` 的元素。这可以通过为 ``peekElementOff`` 方法提供一个默认的实现来证明，"
+"该方法通过 ``peekByteOff`` 和参数 ``size`` 来实现。"
 
 #: ../../source/tutorial/interfaces.rst:219 e2b0bdcfcf774c0688b57fc7e92633fd
 msgid ""
@@ -235,6 +259,9 @@ msgid ""
 "Storable a (size : Nat)``. The meaning of ``| a`` is explained in "
 ":ref:`DeterminingParameters`."
 msgstr ""
+"请注意， ``a`` 被明确标记为运行时不相关，所以它被编译器删除了。"
+"相当于我们可以写成 ``interface Storable a (size : Nat)`` 。 ``| a`` 的含义在 "
+":ref:`DeterminingParameters` 中有解释。"
 
 #: ../../source/tutorial/interfaces.rst:225 ebf30f75c5b54c04a97cdba5a01637e7
 msgid "Functors and Applicatives"
