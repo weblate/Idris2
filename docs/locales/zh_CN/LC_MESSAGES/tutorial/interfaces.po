@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-22 01:10+0000\n"
+"PO-Revision-Date: 2022-07-22 05:11+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "idris2/tutorialinterfaces/zh_Hans/>\n"
@@ -265,7 +265,7 @@ msgstr ""
 
 #: ../../source/tutorial/interfaces.rst:225 ebf30f75c5b54c04a97cdba5a01637e7
 msgid "Functors and Applicatives"
-msgstr ""
+msgstr "函子与应用子"
 
 #: ../../source/tutorial/interfaces.rst:227 bc7fccbb6e0e458999fbec8556596edb
 msgid ""
@@ -275,22 +275,27 @@ msgid ""
 "parameter is not ``Type``, we need to give an explicit type declaration. "
 "For example, the ``Functor`` interface is defined in the prelude:"
 msgstr ""
+"到目前为止，我们看到的都是单参数接口，其中参数的类型是 ``Type`` "
+"。一般来说，可以有任何数量的参数（甚至是零个），而且参数可以有 *任何* 类型。"
+"如果参数的类型不是 ``Type`` ，我们需要给出一个明确的类型声明。例如， "
+"``Functor`` 接口在 prelude 中是这样定义的："
 
 #: ../../source/tutorial/interfaces.rst:240 181134a62ae04fc7b7c21815ea9122df
 msgid ""
 "A functor allows a function to be applied across a structure, for example"
 " to apply a function to every element in a ``List``:"
-msgstr ""
+msgstr "函子允许在结构中应用一个函数，例如，将一个函数应用于 ``List`` 中的每个元素："
 
 #: ../../source/tutorial/interfaces.rst:254 423c2b3b3c804eef92deb0fcd907b7fa
 msgid ""
 "Having defined ``Functor``, we can define ``Applicative`` which abstracts"
 " the notion of function application:"
-msgstr ""
+msgstr "在定义了 ``Functor`` 之后，我们可以定义 ``Applicative`` "
+"，它抽象了函数应用的概念："
 
 #: ../../source/tutorial/interfaces.rst:268 307e973a6baf4a62be4d79b0846e7daf
 msgid "Monads and ``do``-notation"
-msgstr ""
+msgstr "单子和 ``do``- 记法"
 
 #: ../../source/tutorial/interfaces.rst:270 ae6ef1d127834140b68d9d43985b8759
 msgid ""
@@ -299,41 +304,45 @@ msgid ""
 "do`. It extends ``Applicative`` as defined above, and is defined as "
 "follows:"
 msgstr ""
+"``Monad`` 接口允许我们对绑定和计算进行封装，它是 :ref:`sect-do` 一节中 ``do``"
+" 记法的基础 。它扩展了上面定义的 ``Applicative`` ，并有如下定义："
 
 #: ../../source/tutorial/interfaces.rst:280 1399f771dbaa478fba0cbe31846bb244
 msgid "There is also a non-binding sequencing operator, defined for ``Monad`` as:"
-msgstr ""
+msgstr "还有一个不进行绑定操作的运算符， ``Monad`` 将其定义为："
 
 #: ../../source/tutorial/interfaces.rst:286 e6eea63f4b3b4c7c90dd9efec2834d1d
 msgid ""
 "Inside a ``do`` block, the following syntactic transformations are "
 "applied:"
-msgstr ""
+msgstr "在 ``do`` 块内，应用以下语法转换："
 
 #: ../../source/tutorial/interfaces.rst:289 d300beded1f14630b1b405d8c66bee01
 msgid "``x <- v; e`` becomes ``v >>= (\\x => e)``"
-msgstr ""
+msgstr "``x <- v; e`` 变成 ``v >>= (\\x => e)``"
 
 #: ../../source/tutorial/interfaces.rst:291 3f8f4e38bd154b89aaa14dfe4969849e
 msgid "``v; e`` becomes ``v >> e``"
-msgstr ""
+msgstr "``v; e`` 变成 ``v >> e``"
 
 #: ../../source/tutorial/interfaces.rst:293 a5afb6c9805a4bb49712cc38b37f8a2a
 msgid "``let x = v; e`` becomes ``let x = v in e``"
-msgstr ""
+msgstr "``let x = v; e`` 变成 ``let x = v in e``"
 
 #: ../../source/tutorial/interfaces.rst:295 89a88ee3fa2a41858215e02d6a9542ce
 msgid ""
 "``IO`` has an implementation of ``Monad``, defined using primitive "
 "functions. We can also define an implementation for ``Maybe``, as "
 "follows:"
-msgstr ""
+msgstr "``IO`` 有一个 ``Monad`` 的实现，是使用原语函数定义。我们也可以为 ``Maybe`` "
+"定义一个实现，如下所示："
 
 #: ../../source/tutorial/interfaces.rst:304 36f9312460c04e4dbf0481f3a69fca43
 msgid ""
 "Using this we can, for example, define a function which adds two ``Maybe "
 "Int``, using the monad to encapsulate the error handling:"
-msgstr ""
+msgstr "利用这一点，我们可以做更多的事情，例如，定义用于对 ``Maybe Int`` "
+"进行加法操作的函数，使用单子来封装错误处理："
 
 #: ../../source/tutorial/interfaces.rst:314 60519b1a5083484a9d634a762ae528ef
 msgid ""
@@ -342,6 +351,9 @@ msgid ""
 "fast\"). Managing the ``Nothing`` cases is achieved by the ``>>=`` "
 "operator, hidden by the ``do`` notation."
 msgstr ""
+"如果两个值都是有值的，这个函数将从 ``x`` 和 ``y`` "
+"中提取数值，或者如果一个或两个都不是（\"快速失败\"），则返回 ``Nothing`` 。"
+"管理 ``Nothing`` 的情况是由 ``>>=`` 操作符实现的，被 ``do`` 符号所隐藏。"
 
 #: ../../source/tutorial/interfaces.rst:326 7f4a5136b74540b093dc791088c09078
 msgid ""
@@ -351,12 +363,16 @@ msgid ""
 "which operators you mean by type, but you can explicitly choose with "
 "qualified do notation, for example:"
 msgstr ""
+"``do`` 符号的翻译完全是句法性的，所以没有必要将 ``(>>=)`` 和 ``(>>)`` "
+"操作符作为 ``Monad`` 接口中定义的操作符。一般来说，Idris "
+"会尝试区分你所指的运算符的类型，但你可以用限定的 do 符号明确选择，例如："
 
 #: ../../source/tutorial/interfaces.rst:340 10499e87429a4ba0b16ea45a305b31a3
 msgid ""
 "The ``Prelude.do`` means that Idris will use the ``(>>=)`` and ``(>>)`` "
 "operators defined in the ``Prelude``."
-msgstr ""
+msgstr "``Prelude.do`` 意味着 Idris 将使用在 ``Prelude`` 中定义的 ``(>>=)`` 和 "
+"``(>>)`` 。"
 
 #: ../../source/tutorial/interfaces.rst:344 7aee92002658430193635000c4f410a3
 msgid "Pattern Matching Bind"
